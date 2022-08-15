@@ -1,0 +1,402 @@
+# Review of Differential Calculus and Optimization
+
+Given that all students must have taken a course in calculus before enrolling for this class, it is assumed that everyone in the class is comfortable with concepts such as derivatives, partial derivatives, and optimization. In this chapter, I will provide a brief review of some concepts that are most pertinent for Econometrics. I strongly encourage that you read your lecture notes for Calculus if you find it difficult to follow the material presented in this chapter.
+
+## Derivative of a single variable function
+
+```{definition, name="Derivative of a function"}
+Consider the following function, $y=f(x)$. The *derivative* of this function measures the rate of change in $y$ caused by a change in $x$. 
+
+```
+There are two alternative notations for the derivative of $y$ with respect to $x$: $f'(x)$ or $\displaystyle{\frac{dy}{dx}}$.
+
+The derivative of a function is very closely related to the concept of *slope* of a function. Let $\Delta$ denotes change in  a variable. Then, by definition, the slope of $y$ with respect to $x$ is given by: 
+
+\[slope=\frac{\Delta y}{\Delta x}\]
+
+The derivative of $y$ with respect to $x$ is the limit value of the slope as $\Delta x \rightarrow 0$. Hence,
+ \[\frac{dy}{dx} \ or \ f'(x)=\lim_{\Delta x \to 0} \left( \frac{\Delta y}{\Delta x}\right) \]
+
+### Rules of Differentiation
+
+1. Derivative of a constant is $0$. 
+
+2. Derivative of a function multiplied by a constant is constant times the derivative of the function:
+
+\[\frac{d}{dx} [\ a\times f(x)]=a\times f'(x)\] 
+
+where it is assumed that $a$ is an constant.
+
+3. Addition  rule:
+
+\[ \frac{d}{dx} [f(x)+ g(x)]=f'(x)+ g'(x) \]
+ 
+4. Subtraction  rule:
+
+\[ \frac{d}{dx} [f(x)- g(x)]=f'(x)-g'(x) \]
+
+5. Product rule:
+
+\[ \frac{d}{dx} [f(x)\times g(x)]= f(x) \times g'(x) + g(x)\times f'(x)\]
+
+6. Quotient rule:
+
+\[ \frac{d}{dx} \left[\frac{f(x)}{g(x)}\right]=\frac{f'(x) \times g(x) - g'(x) \times f(x)}{g(x)^2}\]
+
+7. Chain rule:
+
+\[ \frac{d}{dx} [f(g(x))] = f'(g(x)) \times g'(x)\]
+
+8. Derivative of some common functions:
+
+    a. Power function: $f(x)=x^a$. Then,
+       \[f'(x)=a \times x^{a-1}\]
+       
+    b. Natural log function: $f(x)=ln(x)$. Then,
+     \[f'(x) = \frac{1}{x}\]
+     
+    
+    c. Exponential function: $f(x)=e^x$
+    \[f'(x)=e^x\]
+
+
+## Second derivative and non-linearity
+
+```{definition, name="Second derivative of a function"}
+Consider the following function, $y=f(x)$. The *second derivative* of this function measures the change in the rate of change of this function. Formally it is denoted by $f''(x)$ or $\displaystyle{\frac{d^2y}{dx^2}}$.
+
+```
+
+The second derivative measures the *curvature* of the function and hence can be used to distinguish a *linear* function from a *non-linear* function. By definition, a linear function has a constant slope implying the its second derivative must be zero. 
+
+```{example}
+For example, consider the following linear function:
+  
+\[f(x) = mx +b\]
+
+Here$f'(x)=m$ and $f''(x)=0$.
+
+```
+
+
+A non-linear function will have a non-zero second derivative. There are only two possibilities:
+
+1. $f''(x)<0$. In this case we have a concave relationship. An example from economics is the production function where the relationship between output and input is concave.
+
+```{r,echo=FALSE}
+x <- (rep(1:50))
+y=x^0.15
+plot(x,y, type="l", main="Production Function", xlab="Labor", ylab="Labor")
+```
+
+2. $f''(x)>$. In this case we have a convex relationship. An example from economics is the marginal cost function where the relationship between cost of production and level of output can be convex.
+
+```{r, echo=FALSE}
+x <- seq(1,50,0.5)
+y=2*x^2+0.5
+plot(x,y, type="l", main="Marginal Cost Function", xlab="Output", ylab="Cost")
+```
+
+
+## Partial derivatives: Multi-variable functions
+
+*Ceteris paribus* aka *holding other things equal* is one of the key concepts used in Economic analysis. A *partial derivative* is a mathematical counterpart of this assumption.
+
+```{definition, name="Partial Derivative"}
+Consider a function of n-variables given by $y=f(x_1,x_2, x_3,...,x_n)$. Then, there are n partial derivatives of this function that can be obtained by taking derivative with respect to one of the $x$-variables, holding all other constant. Formally, the partial derivative of $y$ with respect to $x_i$ is denoted by $\displaystyle{f_{x_i} \text{or} \frac{\partial y}{\partial x_i}}$.
+
+```{example}
+Consider the following 3-variable function:
+  
+  \[y=ln(x_1)+x_1\times x_2+3x_2^2 + x_1 \times x_3 + ln(x_3)\]
+
+Then we can compute three partial derivatives of this function:
+  
++ Partial derivative of $y$ with respect to $x_1$, treating $x_2$ and $x_3$ as constants:
+  \[\frac{\partial y}{\partial x_1} = \frac{1}{x_1} + x_2+x_3\]
+
++ Partial derivative of $y$ with respect to $x_2$, treating $x_1$ and $x_3$ as constants:
+  \[\frac{\partial y}{\partial x_2} = x_1+6x_2\]
+
++ Partial derivative of $y$ with respect to $x_3$, treating $x_1$ and $x_2$ as constants:
+  \[\frac{\partial y}{\partial x_3} = x_1+ \frac{1}{x_3}\]
+
+```
+
+
+```{example, name="Cobb-Douglas Production Function"}
+One of the most used functional form for the production function is the Cobb-Douglas production function. Suppose you have two inputs: labor (L) and capital (K). Let Y denotes output. Then, the Cobb-Douglas production function is given by:
+
+  
+  \[Y=L^{\beta_1}K^{\beta_2}\]
+
+
+Now, output can change because we change our labor input or our capital input. In each case, we are thinking about a change in output caused by change in one input, holding the other input constant. This is exactly what a partial derivative captures! In what follows next we will use two mathematical concepts to further our understanding of economics of production:
+  
+1. Change in natural logs of a variable approximates percent change in that variable. Formally, $\Delta ln(x) \times 100 \approx \text{\% change in x}$.  Hence, it is often useful to express economic relationships in natural logs. The Cobb-Douglas production function in natural logs is given by:
+
+ \[ln(Y)=\beta_1 \times ln(L) + \beta_2 \times ln(K) \]
+
+2. The partial derivative of the above equation gives us **elasticity of output** with respect to each input.
+
+    a. Output elasticity of Labor:
+      \[\frac{\% \ \text{change in Y}}{\% \ \text{change in L}} = \frac{\partial ln(Y) \times 100}{ \partial ln(L) \times 100}=\beta_1\]
+
+    b. Output elasticity of Capital:
+      \[\frac{\% \ \text{change in Y}}{\% \ \text{change in K}} = \frac{\partial ln(Y) \times 100}{ \partial ln(K) \times 100}=\beta_2\]
+
+
+Note that we can also infer whether production is subject to increasing, decreasing, or constant returns to scale from the numerical values assigned to $\beta_1$ and $\beta_2$. Returns to scale is simply the sum of output elasiticities with respect to labor and capital:
+  
+  \[\text{Returns to scale}= \frac{\% \ \text{change in Y}}{\% \  \text{change in L}}+\frac{\% \ \text{change in Y}}{\% \ \text{change in K}}=\beta_1+\beta_2\]
+
+Hence, we obtain constant returns to scale as long as $\beta_1+\beta_2=1$. We get decreasing returns to scale if $\beta_1+\beta_2<1$. Finally, increasing returns to scale require $\beta_1+\beta_2>1$.
+
+```
+
+
+
+## Optimization
+
+In Economics it is often assumed that rational individuals *optimize*. For instance, firms seek to maximize profits (or minimize costs) and households seek to maximize utility. Mathematically, this is equivalent to finding **extreme** values of an **objective function**. 
+
+```{example}
+Consider a firm that is choosing a level of output $(q)$ to maximize its profits. By definition, profits are total revenue $R(q)$ minus total cost $C(q)$. The resulting profit function $\pi(q)$ is the firm's objective function and $q$ is the control variable:
+
+\[\pi(q)=R(q)- C(q)\]
+
+The firm will choose a value of $q$ that will maximize its profits. Mathematically, this can be written as:
+
+\[ \max_{q} \pi(q)\]
+```
+
+One way to solve this problem, is to assume a functional form for profits and evaluate this function for all possible values of $q$. Then, select the value of $q$ that yields highest value for profits. This approach is called **numerical optimization** and is often used for complicated objective functions. But in many cases, we can use calculus and obtain an *analytical* solution for the optimization problem.
+
+Formally, suppose the objective function is denoted by $f(x)$ and assume that this function is continuous and twice differentiable. Then,
+
+1. $x^*$ is a maximizer if $f(x^*)\geq f(x)$ for all $x\neq x^*$.  Note that at this point the slope of the tangent to the function is $0$, i.e., $f'(x^*)=0$. This is the **first order condition (foc)** for obtaining a maximum. The graph below illustrates the maximum of a generic function. Note that the slope of the function changes sign from positive to negative around $x^*$. This will give us the **second order condition** for obtaining a maximum.
+
+```{r, echo=F}
+x <- seq(1,99,1)
+y=150*x-1.5*x^2
+
+plot(x,y,type="l", main="Maximum of a concave function", ylab="f(x)", ylim=c(0,4500))
+segments(x0=20,y0=max(y),x1=80,y1=max(y),col="red")
+xmax <- which.max(y)
+segments(x0=x[xmax],y0=par("usr")[3],x1=x[xmax],y1=max(y),col="red", lty="dotted")
+
+```
+
+
+2.  $x^*$ is a minimizer if $f(x^*)\leq f(x)$ for all $x\neq x^*$.  Note that at this point the slope of the tangent to the function is $0$, i.e., $f'(x^*)=0$. This is the **first order condition (foc)** for obtaining a minimum. The graph below illustrates the minimum of a generic function. Note that the slope of the function changes sign from negative to positive around $x^*$. This will give us the **second order condition** for obtaining a minimum.
+
+```{r, echo=F}
+x <- seq(-70,30,1)
+y=-1500+50*x+1.5*x^2
+
+
+plot(x,y,type="l", main="Minimum of a convex function", ylab="f(x)", ylim=c(-3000, 2500))
+segments(x0=-40,y0=min(y),x1=10,y1=min(y),col="red")
+xmin <- which.min(y)
+segments(x0=x[xmin],y0=min(y),x1=x[xmin],y1=par("usr")[3],col="red",lty="dotted")
+
+
+
+```
+
+Note for a maximum,  Similarly, we can now outline the steps for computing a maximum or minimum of a given function.
+
+1. First-order condition: Compute the first derivative of the function and equate it to 0. The solution to this equation gives us $x^*$:
+
+\[ f'(x^*) = 0\]
+
+2. Second-order condition: Compute the second derivative of the function and evaluate it at $x^*$.
+
+    a. If $f''(x^*) < 0$, then $x^*$ is a maxmizer.
+    
+    b. If $f''(x^*) > 0$, then $x^*$ is a minimizer.
+
+
+```{example, name="Single variable optimization example"}
+
+Consider a firm that produces a single good $q$ and sells it at a price of $10 per unit. The cost of production is given by:
+  \[C(q)=2q+ 5+0.1q^2\]
+At what level of output would profits be maximized?
+```
+
+```{solution}
+The profit of a firm is revenue minus cost:
+  
+  \[\pi(q)= R(q) -C(q)= 10q-2q-5-0.1q^2=8q-5-0.1q^2\]
+
+Hence, we want to solve the following problem:
+  \[\max_{q} \pi(q)\]
+
+The first order condition is given by:
+  
+  \[\pi'(q)=0 \Rightarrow 8-0.2q=0 \rightarrow q^*=40 \]
+
+The second order condition is given by:
+\[\pi''(q)=-0.2<0\]
+
+Hence, $q^*=10$ maximizes the profits. The maximum level of profits is given by $\pi(q^*)=8\times 40-5-0.1\times 40^2=155$.
+
+  
+```
+
+
+Note that the above process can be easily applied to multivariate functions. In that case there will be one first order condition for every control variable. 
+
+```{example, name="Multi-variable optimization example"}
+
+Consider a two-variable function:
+  
+\[f(x_1,x_2)=2x_1x_2 + \frac{100}{x_1} - 4x_2^2\]
+    
+Solve the following minimization problem:
+
+  \[\min_{x_1,x_2} f(x_1,x_2)\]
+
+
+```
+
+
+```{solution}
+Now we have two first order conditions:
+
+  \[f_{x_1}(x_1,x_2) = 0 \Rightarrow 2x_2 -\frac{100}{x_1^2}=0\]  
+   \[f_{x_2}(x_1,x_2) = 0 \Rightarrow 2x_1 -8x_2=0\]  
+
+So we have two equations in two unknowns. You can show that $x_1*=5.84$ and $x_2^*=1.46$. The minimum of this function is given by $f(x_1^*,x_2^*)=2\times 5.84*1.46+\frac{100}{5.84} - 4\times 1.46^2=25.65$.
+  
+```
+
+## Problems{-}
+
+
+
+```{exercise}
+Compute the derivative of the following functions.
+
+a. $f(x)=2x^2$
+  
+b. $f(x)=2x^2+ ln(x)$
+  
+c. $f(x)=e^{ax}$
+  
+d. $f(x)= (2x+x^2)^3$
+  
+e. $f(x)= ln(5x+x^2)$
+  
+f. $f(x)= \displaystyle{\frac{x+ln(x)}{x^3}}$
+
+```
+
+```{exercise}
+Compute the second derivative of each function given in Exercise 1.1.
+```
+
+```{exercise}
+
+Compute the partial derivative for each variable for the following functions:
+  
+a. $f(x_1,x_2,x_3)=4x_1^3x_2-e^{x_3}x_1+3 x_2$
+
+b. $\displaystyle{f(x_1,x_2)=\frac{2x_1 +3x_2}{4x_1^3-7x_1x_2}}$
+
+c. $\displaystyle{f(x, y)= ln(y^2)-ln(x)+2 ln\left(\frac{x}{y}\right)}$
+
+d. $f(x,y)=2x^{0.4} y^{0.8}+2x$
+
+```
+
+```{exercise}
+Solve the following optimization problems. In each case compute the maximizer(s) (or minimizer(s)) for the function as well as the optimum value of the function.
+
+a. $\displaystyle{\max_x f(x) = 3ln(x) - 0.5x+4}$
+
+
+b. $\displaystyle{\min_{x,y} f(x,y) = 2xy+\frac{2000}{x}+\frac{2000}{y}}$
+  
+
+c. $\displaystyle{\max_x f(x) = ax^{0.5} - bx+4}$
+
+```
+## Solutions{-}
+
+**Exercise 1.1:**
+
+a. $f'(x)=4x$
+    
+b. $f'(x)=4x+\frac{1}{x}$
+    
+c. $f'(x)=ae^{ax}$
+    
+d. $f'(x)=3(2x+x^2)^2(2+2x)$
+    
+e. $f'(x)=\displaystyle \frac{5+2x}{5x+x^2}$
+    
+f. $f'(x)=\displaystyle \frac{x^3(1+1/x)-3x^2(x+ln(x))}{x^6}= \frac{x^2-2x^3-3x^2 ln(x)}{x^6}$
+
+**Exercise 1.2:**
+
+a. $f''(x)=4$
+    
+b. $f''(x)=4-x^{-2}$
+    
+c. $f''(x)=a^2e^{ax}$
+    
+d. $f''(x)= 6(2x+x^2)^2+ 6(2x+x^2)(2+2x)^2$
+    
+e. $f''(x)=\displaystyle \frac{2(5x+x^2)-(5+2x)^2}{(5x+x^2)^2}$
+    
+f. $f''(x)=\displaystyle \frac{x^6(-x-6x^2-6xln(x))-6x^5(x^2-2x^3-3x^2 ln(x))}{x^{12}}$
+
+**Exercise 1.3:**
+
+a. $$\frac{\partial f}{\partial x_1}=12x_1^2x_2-e^{x_3} $$
+
+$$\frac{\partial f}{\partial x_2}=4x_1^3+3 $$
+
+$$\frac{\partial f}{\partial x_3}=-e^{x_3}x_1 $$
+
+b. $$\frac{\partial f}{\partial x_1}=\frac{2(4x_1^3-7x_1x_2)-(2x_1+3_x2)(12x_1^2-7x_2)}{(4x_1^3-7x_1x_2)^2}$$
+
+$$\frac{\partial f}{\partial x_2}=\frac{3(4x_1^3-7x_1x_2)+7x_1(2x_1+3_x2)}{(4x_1^3-7x_1x_2)^2}$$
+
+c. [Hint: simplify using properties of logs before taking the partial derivative.]
+$$\frac{\partial f}{\partial x}=\frac{1}{x}$$
+
+$$\frac{\partial f}{\partial y}=0$$
+
+d. $$\frac{\partial f}{\partial x}=0.8x^{-0.6}y^{0.8} +2$$
+
+
+$$\frac{\partial f}{\partial y}=1.6x^{0.4}y^{-0.2}$$
+**Exercise 1.4:**
+
+a. First order condition for maximum gives us:
+
+
+$$f'(x)=0 \Rightarrow \frac{3}{x}-0.5=0 \Rightarrow x^*= 6$$
+
+The maximum of the function is given by:
+$$f(x^*)= 3 \times ln(6)-0.5\times 6 + 4=6.375$$
+
+b. Now we have the following two first order conditions:
+
+$$\frac{\partial f}{\partial x}= 2y -\frac{2000}{x^2}=0 $$
+
+$$\frac{\partial f}{\partial y}= 2x -\frac{2000}{y^2}=0 $$
+
+Solving for $x$ and $y$ gives us $x^*=10$ and $y^*=10$. The minimum of the function is given by:
+
+\[f(x^*,y^*) = 2 \times 10 \times 10+ \frac{2000}{10}+\frac{2000}{10}=600\]
+
+c. The first order condition gives us:
+
+\[f'(x)= 0.5ax^{-0.5}-b=0 \Rightarrow x^*=\left(\frac{a}{2b}\right )^2\]
+
+The maximum of the function is given by:
+
+\[f(x^*) = \frac{a^2}{2b}-\frac{a}{2}+4\]
