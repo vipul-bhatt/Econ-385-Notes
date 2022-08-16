@@ -1,37 +1,7 @@
-## Welcome to GitHub Pages
+# Preface{-}
+These lecture notes are prepared for an introductory course in Econometrics. These notes borrow heavily from the teaching material that I have developed over several years of instruction of this course at the James Madison University. 
 
-You can use the [editor on GitHub](https://github.com/vipul-bhatt/Econ-385-Notes/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+One of my main objectives is to develop a textbook in Economterics that is more accessible to undergraduate students than standard textbooks available in the market. Most of these textbooks in my opinion are densely written and assume advanced mathematical skills on the part of our students.  Further, I have also struggled with their topic selection and organization.  Often I end up not following the chapters in order and modify content (by adding or subtracting) to meet my students needs. Such changes causes confusion for some students and more importantly discourages optimal use of the textbook. Hence, this is an undertaking to develop a primer on Econometrics that is accessible, follows a more logical sequencing of topics, and covers content that is most useful for undergraduate students in business and economics. 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/vipul-bhatt/Econ-385-Notes/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+*Note:  These notes have been prepared by me using various sources, published and unpublished. All errors that remain are mine.*
