@@ -1584,7 +1584,7 @@ The degrees of freedom is \(N-1=99\) and at 5\% level of significance the critic
 Often we are interested in testing a restriction that is a linear combination of two or more population means. Similarly, we maybe interested in comparing the variance of two different populations. In such cases we need to develop statistical tests that allow for comparison between parameters of different populations with given means and variances.
 
 \begin{example}[t-test for comparing population mean of two populations]
-\protect\hypertarget{exm:unnamed-chunk-50}{}\label{exm:unnamed-chunk-50}Suppose you are interested in comparing mean weekly hours studied by Econ majors (X) and non-Econ majors in the college of business. For this purpose, you collect a sample of 25 econ majors and a sample of 30 non-econ majors. The sample mean of weekly hours studied by econ majors is 10 hours with a standard deviation of 4 hours. The sample mean of weekly hours studied by non-econ majors is 8 hours with a standard deviation of 2 hours. Also suppose that the covariance between weekly average hours studied by econ and non-econ majors is 0.12. Test whether mean weekly hours studied by econ majors is more than the mean weekly hours studied by non-Econ majors.
+\protect\hypertarget{exm:unnamed-chunk-50}{}\label{exm:unnamed-chunk-50}Suppose you are interested in comparing mean weekly hours studied by Econ majors (X) and non-Econ majors in the college of business. For this purpose, you collect a sample of 25 econ majors and a sample of 30 non-econ majors. The sample mean of weekly hours studied by econ majors is 10 hours with a standard deviation of 4 hours. The sample mean of weekly hours studied by non-econ majors is 8 hours with a standard deviation of 2 hours. Test whether mean weekly hours studied by econ majors is more than the mean weekly hours studied by non-Econ majors.
 
 Let \(X\) denote hours studied, \(N_X\) denotes sample size, \(\hat{\mu}_X\), and \(\hat{\sigma}_X\) denote sample mean and standard deviation, respectively for econ majors. Similarly, let \(Y\) denote hours studied, \(N_Y\) denotes sample size, \(\hat{\mu}_Y\), and \(\hat{\sigma}_Y\) denote sample mean and standard deviation, respectively for non-econ majors.
 
@@ -1597,14 +1597,14 @@ The next step is to compute the relevant test statistic, which in this case is t
 
 \[t= \frac{(\hat{\mu_X}-\hat{\mu_Y})-0}{s.e.(\hat{\mu_X}-\hat{\mu_Y})}\]
 
-Using the properties of variance, we get:
-\[s.e.(\hat{\mu_X}-\hat{\mu_Y})=\sqrt{Var(\hat{\mu_X})+Var(\hat{\mu_Y})-2 \times Cov(\hat{\mu_X},\hat{\mu_Y})}\]
+Using the properties of variance and assuming that two samples are independent of each other, we get:
+\[s.e.(\hat{\mu_X}-\hat{\mu_Y})=\sqrt{Var(\hat{\mu_X})+Var(\hat{\mu_Y})}\]
 
 Note that \(\displaystyle Var(\hat{\mu_X})= \frac{\widehat{\sigma_X}^2}{N_X}\) and \(\displaystyle Var(\hat{\mu_Y})= \frac{\widehat{\sigma_Y}^2}{N_Y}\). Using this we get:
 
-\[s.e.(\hat{\mu_X}-\hat{\mu_Y})=\sqrt{\frac{\widehat{\sigma_X}^2}{N_X}+\frac{\widehat{\sigma_Y}^2}{N_Y}-2 \times Cov(\hat{\mu_X},\hat{\mu_Y})}=\sqrt{\frac{16}{25}+\frac{4}{30}-2 \times 0.12}=0.73 \]
+\[s.e.(\hat{\mu_X}-\hat{\mu_Y})=\sqrt{\frac{\widehat{\sigma_X}^2}{N_X}+\frac{\widehat{\sigma_Y}^2}{N_Y}}=\sqrt{\frac{16}{25}+\frac{4}{30}}=0.88 \]
 
-So, \(t=\displaystyle \frac{10-8}{0.73}=2.74\)
+So, \(t=\displaystyle \frac{10-8}{0.88}=2.27\)
 
 The sample size here is \(N_X+N_Y=55\). Using 5\% level of significance and degrees of freedom of 53, the critical value from the t-distribution table for the one-sided alternative is 1.67. Because the \textbar t\textbar{} is more than 1.67, we reject the null hypothesis. We find evidence for econ majors studying more on average than non-econ majors in our sample.
 \end{example}
@@ -1710,7 +1710,7 @@ Suppose you collect a random sample of 100 observations and find that sample mea
 \begin{exercise}
 \protect\hypertarget{exr:unnamed-chunk-57}{}\label{exr:unnamed-chunk-57}
 
-Suppose you are interested in comparing performance of two different mutual funds, \(X\) and \(Y\). Let \(\mu_X\) and \(\mu_Y\) denote unknown population mean returns on investment in \(X\) and \(Y\), respectively. Suppose you collect past 20 months data for both mutual funds and find that sample mean for fund \(X\) is 2\% with a standard deviation of 0.5\%. In contrast, the sample mean for fund \(Y\) is 5\% with a standard deviation of 2\%. Suppose that the correlation between returns on these two funds is 0.
+Suppose you are interested in comparing performance of two different mutual funds, \(X\) and \(Y\). Let \(\mu_X\) and \(\mu_Y\) denote unknown population mean returns on investment in \(X\) and \(Y\), respectively. Suppose you collect past 20 months data for both mutual funds and find that sample mean for fund \(X\) is 2\% with a standard deviation of 0.5\%. In contrast, the sample mean for fund \(Y\) is 5\% with a standard deviation of 2\%.
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi}.}
