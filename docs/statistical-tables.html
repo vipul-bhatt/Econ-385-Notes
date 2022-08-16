@@ -1,0 +1,4545 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>A Statistical Tables | Introduction to Econometrics</title>
+  <meta name="description" content="Lecture notes for Introduction to Econometrics" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="A Statistical Tables | Introduction to Econometrics" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Lecture notes for Introduction to Econometrics" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="A Statistical Tables | Introduction to Econometrics" />
+  
+  <meta name="twitter:description" content="Lecture notes for Introduction to Econometrics" />
+  
+
+<meta name="author" content="Vipul Bhatt" />
+
+
+<meta name="date" content="2022-08-16" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="classical-assumptions-and-ols-estimator.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Introduction to Econometrics</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="1" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html"><i class="fa fa-check"></i><b>1</b> Review of Differential Calculus and Optimization</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#derivative-of-a-single-variable-function"><i class="fa fa-check"></i><b>1.1</b> Derivative of a single variable function</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#rules-of-differentiation"><i class="fa fa-check"></i><b>1.1.1</b> Rules of Differentiation</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#second-derivative-and-non-linearity"><i class="fa fa-check"></i><b>1.2</b> Second derivative and non-linearity</a></li>
+<li class="chapter" data-level="1.3" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#partial-derivatives-multi-variable-functions"><i class="fa fa-check"></i><b>1.3</b> Partial derivatives: Multi-variable functions</a></li>
+<li class="chapter" data-level="1.4" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#optimization"><i class="fa fa-check"></i><b>1.4</b> Optimization</a></li>
+<li class="chapter" data-level="" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#problems"><i class="fa fa-check"></i>Problems</a></li>
+<li class="chapter" data-level="" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#solutions"><i class="fa fa-check"></i>Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html"><i class="fa fa-check"></i><b>2</b> Review of Probability and Statistics</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#probability"><i class="fa fa-check"></i><b>2.1</b> Probability</a></li>
+<li class="chapter" data-level="2.2" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#random-variable"><i class="fa fa-check"></i><b>2.2</b> Random Variable</a></li>
+<li class="chapter" data-level="2.3" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#probability-distribution"><i class="fa fa-check"></i><b>2.3</b> Probability distribution</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#probability-distribution-of-a-discrete-random-variable"><i class="fa fa-check"></i><b>2.3.1</b> Probability distribution of a discrete random variable</a></li>
+<li class="chapter" data-level="2.3.2" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#probability-distribution-of-a-continuous-random-variable"><i class="fa fa-check"></i><b>2.3.2</b> Probability distribution of a continuous random variable</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#moments-of-a-probability-distribution-function"><i class="fa fa-check"></i><b>2.4</b> Moments of a probability distribution function</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#first-moment-of-a-probability-distribution-expected-value"><i class="fa fa-check"></i><b>2.4.1</b> First moment of a probability distribution: Expected value</a></li>
+<li class="chapter" data-level="2.4.2" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#second-moment-of-the-distribution."><i class="fa fa-check"></i><b>2.4.2</b> Second moment of the distribution.</a></li>
+<li class="chapter" data-level="2.4.3" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#third-and-fourth-moments-skewness-and-kurtosis"><i class="fa fa-check"></i><b>2.4.3</b> Third and Fourth Moments: Skewness and Kurtosis</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#useful-probability-distributions"><i class="fa fa-check"></i><b>2.5</b> Useful probability distributions</a></li>
+<li class="chapter" data-level="2.6" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#joint-probability-distribution"><i class="fa fa-check"></i><b>2.6</b> Joint Probability Distribution</a></li>
+<li class="chapter" data-level="2.7" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#measures-of-statistical-association"><i class="fa fa-check"></i><b>2.7</b> Measures of statistical association</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#rules-of-expectation-and-variances"><i class="fa fa-check"></i><b>2.7.1</b> Rules of expectation and variances</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#sampling-and-estimation"><i class="fa fa-check"></i><b>2.8</b> Sampling and Estimation</a></li>
+<li class="chapter" data-level="2.9" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#hypothesis-testing"><i class="fa fa-check"></i><b>2.9</b> Hypothesis testing</a>
+<ul>
+<li class="chapter" data-level="2.9.1" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#testing-a-restriction-on-a-single-population-parameter"><i class="fa fa-check"></i><b>2.9.1</b> Testing a restriction on a single population parameter</a></li>
+<li class="chapter" data-level="2.9.2" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#testing-a-restriction-on-multiple-population-parameter"><i class="fa fa-check"></i><b>2.9.2</b> Testing a restriction on multiple population parameter</a></li>
+<li class="chapter" data-level="2.9.3" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#confidence-interval-and-hypothesis-testing"><i class="fa fa-check"></i><b>2.9.3</b> Confidence interval and Hypothesis testing</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#problems-1"><i class="fa fa-check"></i>Problems</a></li>
+<li class="chapter" data-level="" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#solutions-1"><i class="fa fa-check"></i>Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="simple-regression-model.html"><a href="simple-regression-model.html"><i class="fa fa-check"></i><b>3</b> Simple Regression Model</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="simple-regression-model.html"><a href="simple-regression-model.html#statistical-foundation-of-the-simple-regression-model"><i class="fa fa-check"></i><b>3.1</b> Statistical foundation of the simple regression model</a></li>
+<li class="chapter" data-level="3.2" data-path="simple-regression-model.html"><a href="simple-regression-model.html#ordinary-least-squares-ols"><i class="fa fa-check"></i><b>3.2</b> Ordinary Least Squares (OLS)</a></li>
+<li class="chapter" data-level="3.3" data-path="simple-regression-model.html"><a href="simple-regression-model.html#goodness-of-fit"><i class="fa fa-check"></i><b>3.3</b> Goodness of fit</a></li>
+<li class="chapter" data-level="3.4" data-path="simple-regression-model.html"><a href="simple-regression-model.html#applications-of-the-simple-regression-model"><i class="fa fa-check"></i><b>3.4</b> Applications of the simple regression model</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="simple-regression-model.html"><a href="simple-regression-model.html#aggregate-consumption-function"><i class="fa fa-check"></i><b>3.4.1</b> Aggregate consumption function</a></li>
+<li class="chapter" data-level="3.4.2" data-path="simple-regression-model.html"><a href="simple-regression-model.html#returns-to-education"><i class="fa fa-check"></i><b>3.4.2</b> Returns to education</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="simple-regression-model.html"><a href="simple-regression-model.html#use-of-natural-logs-and-interpretation-of-the-slope-coefficients"><i class="fa fa-check"></i><b>3.5</b> Use of natural logs and interpretation of the slope coefficients</a></li>
+<li class="chapter" data-level="3.6" data-path="simple-regression-model.html"><a href="simple-regression-model.html#hypothesis-testing-and-confidence-interval-estimation"><i class="fa fa-check"></i><b>3.6</b> Hypothesis testing and confidence interval estimation</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="simple-regression-model.html"><a href="simple-regression-model.html#confidence-interval-for-regression-coefficients"><i class="fa fa-check"></i><b>3.6.1</b> Confidence interval for regression coefficients</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="simple-regression-model.html"><a href="simple-regression-model.html#problems-2"><i class="fa fa-check"></i>Problems</a></li>
+<li class="chapter" data-level="" data-path="simple-regression-model.html"><a href="simple-regression-model.html#solutions-2"><i class="fa fa-check"></i>Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html"><i class="fa fa-check"></i><b>4</b> Multiple regression model</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#multiple-regression-model-1"><i class="fa fa-check"></i><b>4.1</b> Multiple Regression Model</a></li>
+<li class="chapter" data-level="4.2" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#goodness-of-fit-redux"><i class="fa fa-check"></i><b>4.2</b> Goodness of fit redux</a></li>
+<li class="chapter" data-level="4.3" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#hypothesis-testing-in-a-multiple-regression-model"><i class="fa fa-check"></i><b>4.3</b> Hypothesis testing in a multiple regression model</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#test-of-statistical-significance-of-the-entire-model"><i class="fa fa-check"></i><b>4.3.1</b> Test of statistical significance of the entire model</a></li>
+<li class="chapter" data-level="4.3.2" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#testing-whether-one-or-more-of-the-variables-can-be-eliminated-from-the-model"><i class="fa fa-check"></i><b>4.3.2</b> Testing whether one or more of the variables can be eliminated from the model</a></li>
+<li class="chapter" data-level="4.3.3" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#testing-a-linear-restriction-on-slope-coefficients"><i class="fa fa-check"></i><b>4.3.3</b> Testing a linear restriction on slope coefficients</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#problems-3"><i class="fa fa-check"></i>Problems</a></li>
+<li class="chapter" data-level="" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#solutions-3"><i class="fa fa-check"></i>Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html"><i class="fa fa-check"></i><b>5</b> Functional form and dummy variables</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html#polynomials-in-the-regression-model"><i class="fa fa-check"></i><b>5.1</b> Polynomials in the regression model</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html#obtaining-optimal-polynomial-order-using-goodness-of-fit"><i class="fa fa-check"></i><b>5.1.1</b> Obtaining optimal polynomial order using goodness of fit</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html#step-functions-dummy-variables-in-the-regression-model"><i class="fa fa-check"></i><b>5.2</b> Step functions: Dummy variables in the regression model</a></li>
+<li class="chapter" data-level="" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html#problems-4"><i class="fa fa-check"></i>Problems</a></li>
+<li class="chapter" data-level="" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html#solutions-4"><i class="fa fa-check"></i>Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html"><i class="fa fa-check"></i><b>6</b> Classical assumptions and OLS estimator</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#classical-assumptions"><i class="fa fa-check"></i><b>6.1</b> Classical Assumptions</a></li>
+<li class="chapter" data-level="6.2" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#heteroscedasticity"><i class="fa fa-check"></i><b>6.2</b> Heteroscedasticity</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#consequences-of-heteroscedasticity-for-the-ols-estimator"><i class="fa fa-check"></i><b>6.2.1</b> Consequences of Heteroscedasticity for the OLS estimator</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#testing-for-hetroscedasticity-in-data"><i class="fa fa-check"></i><b>6.3</b> Testing for Hetroscedasticity in data</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#lm-test-for-linear-heteroscedasticity-bp-test"><i class="fa fa-check"></i><b>6.3.1</b> LM test for linear heteroscedasticity: BP test</a></li>
+<li class="chapter" data-level="6.3.2" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#lm-test-for-linear-heteroscedasticity-whites-test"><i class="fa fa-check"></i><b>6.3.2</b> LM test for linear heteroscedasticity: White’s test</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#heteroscedasticity-robust-standard-errors"><i class="fa fa-check"></i><b>6.4</b> Heteroscedasticity robust standard errors</a></li>
+<li class="chapter" data-level="6.5" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#serial-correlation"><i class="fa fa-check"></i><b>6.5</b> Serial correlation</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#consequences-of-serial-correlation-for-the-ols-estimator"><i class="fa fa-check"></i><b>6.5.1</b> Consequences of Serial Correlation for the OLS estimator</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#testing-for-serial-correlation-in-data"><i class="fa fa-check"></i><b>6.6</b> Testing for Serial Correlation in data</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#durbin-watson-test-for-first-order-serial-correlation"><i class="fa fa-check"></i><b>6.6.1</b> Durbin-Watson test for first order serial correlation</a></li>
+<li class="chapter" data-level="6.6.2" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#breusch-godfrey-bg-test-for-serial-correlation"><i class="fa fa-check"></i><b>6.6.2</b> Breusch-Godfrey (BG) test for serial correlation</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#serial-correlation-robust-standard-errors"><i class="fa fa-check"></i><b>6.7</b> Serial correlation robust standard errors</a></li>
+<li class="chapter" data-level="6.8" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#omitted-variable-bias"><i class="fa fa-check"></i><b>6.8</b> Omitted variable bias</a>
+<ul>
+<li class="chapter" data-level="6.8.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#consequence-of-omitted-variable-on-ols-estimator"><i class="fa fa-check"></i><b>6.8.1</b> Consequence of omitted variable on OLS estimator</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#problems-5"><i class="fa fa-check"></i>Problems</a></li>
+<li class="chapter" data-level="" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#solutions-5"><i class="fa fa-check"></i>Solutions</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="statistical-tables.html"><a href="statistical-tables.html"><i class="fa fa-check"></i><b>A</b> Statistical Tables</a>
+<ul>
+<li class="chapter" data-level="" data-path="statistical-tables.html"><a href="statistical-tables.html#table-a-critical-values-for-the-t-distribution"><i class="fa fa-check"></i>Table A: Critical Values for the t-distribution</a></li>
+<li class="chapter" data-level="" data-path="statistical-tables.html"><a href="statistical-tables.html#table-b-critical-values-for-the-chi-square-distribution"><i class="fa fa-check"></i>Table B: Critical Values for the Chi-square distribution</a></li>
+<li class="chapter" data-level="" data-path="statistical-tables.html"><a href="statistical-tables.html#table-c-1-critical-values-for-the-f-distribution"><i class="fa fa-check"></i>Table C: 1% Critical Values for the F distribution</a></li>
+<li class="chapter" data-level="" data-path="statistical-tables.html"><a href="statistical-tables.html#table-d-5-critical-values-for-the-f-distribution"><i class="fa fa-check"></i>Table D: 5% Critical Values for the F distribution</a></li>
+<li class="chapter" data-level="" data-path="statistical-tables.html"><a href="statistical-tables.html#table-e-10-critical-values-for-the-f-distribution"><i class="fa fa-check"></i>Table E: 10% Critical Values for the F distribution</a></li>
+<li class="chapter" data-level="" data-path="statistical-tables.html"><a href="statistical-tables.html#table-f-5-one-sided-critical-values-for-the-durbin-watson-distribution"><i class="fa fa-check"></i>Table F: 5% One-sided Critical Values for the Durbin-Watson Distribution</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://vipul-bhatt.github.io/Econ-385-Notes/" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introduction to Econometrics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="statistical-tables" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">A</span> Statistical Tables<a href="statistical-tables.html#statistical-tables" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="table-a-critical-values-for-the-t-distribution" class="section level2 unnumbered hasAnchor">
+<h2>Table A: Critical Values for the t-distribution<a href="statistical-tables.html#table-a-critical-values-for-the-t-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<table>
+<thead>
+<tr class="header">
+<th align="center">1-tailed<br>2-tailed</th>
+<th align="center">0.10<br>0.20</th>
+<th align="center">0.05<br>0.1</th>
+<th align="center">0.025<br>0.05</th>
+<th align="center">0.01<br>0.02</th>
+<th align="center">0.005<br>0.01</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">3.078</td>
+<td align="center">6.314</td>
+<td align="center">12.706</td>
+<td align="center">31.821</td>
+<td align="center">63.657</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="center">1.886</td>
+<td align="center">2.920</td>
+<td align="center">4.303</td>
+<td align="center">6.965</td>
+<td align="center">9.925</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="center">1.638</td>
+<td align="center">2.353</td>
+<td align="center">3.182</td>
+<td align="center">4.541</td>
+<td align="center">5.841</td>
+</tr>
+<tr class="even">
+<td align="center">4</td>
+<td align="center">1.533</td>
+<td align="center">2.132</td>
+<td align="center">2.776</td>
+<td align="center">3.747</td>
+<td align="center">4.604</td>
+</tr>
+<tr class="odd">
+<td align="center">5</td>
+<td align="center">1.476</td>
+<td align="center">2.015</td>
+<td align="center">2.571</td>
+<td align="center">3.365</td>
+<td align="center">4.032</td>
+</tr>
+<tr class="even">
+<td align="center">6</td>
+<td align="center">1.440</td>
+<td align="center">1.943</td>
+<td align="center">2.447</td>
+<td align="center">3.143</td>
+<td align="center">3.707</td>
+</tr>
+<tr class="odd">
+<td align="center">7</td>
+<td align="center">1.415</td>
+<td align="center">1.895</td>
+<td align="center">2.365</td>
+<td align="center">2.998</td>
+<td align="center">3.499</td>
+</tr>
+<tr class="even">
+<td align="center">8</td>
+<td align="center">1.397</td>
+<td align="center">1.860</td>
+<td align="center">2.306</td>
+<td align="center">2.896</td>
+<td align="center">3.355</td>
+</tr>
+<tr class="odd">
+<td align="center">9</td>
+<td align="center">1.383</td>
+<td align="center">1.833</td>
+<td align="center">2.262</td>
+<td align="center">2.821</td>
+<td align="center">3.250</td>
+</tr>
+<tr class="even">
+<td align="center">10</td>
+<td align="center">1.372</td>
+<td align="center">1.812</td>
+<td align="center">2.228</td>
+<td align="center">2.764</td>
+<td align="center">3.169</td>
+</tr>
+<tr class="odd">
+<td align="center">11</td>
+<td align="center">1.363</td>
+<td align="center">1.796</td>
+<td align="center">2.201</td>
+<td align="center">2.718</td>
+<td align="center">3.106</td>
+</tr>
+<tr class="even">
+<td align="center">12</td>
+<td align="center">1.356</td>
+<td align="center">1.782</td>
+<td align="center">2.179</td>
+<td align="center">2.681</td>
+<td align="center">3.055</td>
+</tr>
+<tr class="odd">
+<td align="center">13</td>
+<td align="center">1.350</td>
+<td align="center">1.771</td>
+<td align="center">2.160</td>
+<td align="center">2.650</td>
+<td align="center">3.012</td>
+</tr>
+<tr class="even">
+<td align="center">14</td>
+<td align="center">1.345</td>
+<td align="center">1.761</td>
+<td align="center">2.145</td>
+<td align="center">2.624</td>
+<td align="center">2.977</td>
+</tr>
+<tr class="odd">
+<td align="center">15</td>
+<td align="center">1.341</td>
+<td align="center">1.753</td>
+<td align="center">2.131</td>
+<td align="center">2.602</td>
+<td align="center">2.947</td>
+</tr>
+<tr class="even">
+<td align="center">16</td>
+<td align="center">1.337</td>
+<td align="center">1.746</td>
+<td align="center">2.120</td>
+<td align="center">2.583</td>
+<td align="center">2.921</td>
+</tr>
+<tr class="odd">
+<td align="center">17</td>
+<td align="center">1.333</td>
+<td align="center">1.740</td>
+<td align="center">2.110</td>
+<td align="center">2.567</td>
+<td align="center">2.898</td>
+</tr>
+<tr class="even">
+<td align="center">18</td>
+<td align="center">1.330</td>
+<td align="center">1.734</td>
+<td align="center">2.101</td>
+<td align="center">2.552</td>
+<td align="center">2.878</td>
+</tr>
+<tr class="odd">
+<td align="center">19</td>
+<td align="center">1.328</td>
+<td align="center">1.729</td>
+<td align="center">2.093</td>
+<td align="center">2.539</td>
+<td align="center">2.861</td>
+</tr>
+<tr class="even">
+<td align="center">20</td>
+<td align="center">1.325</td>
+<td align="center">1.725</td>
+<td align="center">2.086</td>
+<td align="center">2.528</td>
+<td align="center">2.845</td>
+</tr>
+<tr class="odd">
+<td align="center">21</td>
+<td align="center">1.323</td>
+<td align="center">1.721</td>
+<td align="center">2.080</td>
+<td align="center">2.518</td>
+<td align="center">2.831</td>
+</tr>
+<tr class="even">
+<td align="center">22</td>
+<td align="center">1.321</td>
+<td align="center">1.717</td>
+<td align="center">2.074</td>
+<td align="center">2.508</td>
+<td align="center">2.819</td>
+</tr>
+<tr class="odd">
+<td align="center">23</td>
+<td align="center">1.319</td>
+<td align="center">1.714</td>
+<td align="center">2.069</td>
+<td align="center">2.500</td>
+<td align="center">2.807</td>
+</tr>
+<tr class="even">
+<td align="center">24</td>
+<td align="center">1.318</td>
+<td align="center">1.711</td>
+<td align="center">2.064</td>
+<td align="center">2.492</td>
+<td align="center">2.797</td>
+</tr>
+<tr class="odd">
+<td align="center">25</td>
+<td align="center">1.316</td>
+<td align="center">1.708</td>
+<td align="center">2.060</td>
+<td align="center">2.485</td>
+<td align="center">2.787</td>
+</tr>
+<tr class="even">
+<td align="center">26</td>
+<td align="center">1.315</td>
+<td align="center">1.706</td>
+<td align="center">2.056</td>
+<td align="center">2.479</td>
+<td align="center">2.779</td>
+</tr>
+<tr class="odd">
+<td align="center">27</td>
+<td align="center">1.314</td>
+<td align="center">1.703</td>
+<td align="center">2.052</td>
+<td align="center">2.473</td>
+<td align="center">2.771</td>
+</tr>
+<tr class="even">
+<td align="center">28</td>
+<td align="center">1.313</td>
+<td align="center">1.701</td>
+<td align="center">2.048</td>
+<td align="center">2.467</td>
+<td align="center">2.763</td>
+</tr>
+<tr class="odd">
+<td align="center">29</td>
+<td align="center">1.311</td>
+<td align="center">1.699</td>
+<td align="center">2.045</td>
+<td align="center">2.462</td>
+<td align="center">2.756</td>
+</tr>
+<tr class="even">
+<td align="center">30</td>
+<td align="center">1.310</td>
+<td align="center">1.697</td>
+<td align="center">2.042</td>
+<td align="center">2.457</td>
+<td align="center">2.750</td>
+</tr>
+<tr class="odd">
+<td align="center">40</td>
+<td align="center">1.303</td>
+<td align="center">1.684</td>
+<td align="center">2.021</td>
+<td align="center">2.423</td>
+<td align="center">2.704</td>
+</tr>
+<tr class="even">
+<td align="center">50</td>
+<td align="center">1.299</td>
+<td align="center">1.676</td>
+<td align="center">2.009</td>
+<td align="center">2.403</td>
+<td align="center">2.678</td>
+</tr>
+<tr class="odd">
+<td align="center">60</td>
+<td align="center">1.296</td>
+<td align="center">1.671</td>
+<td align="center">2.000</td>
+<td align="center">2.390</td>
+<td align="center">2.660</td>
+</tr>
+<tr class="even">
+<td align="center">70</td>
+<td align="center">1.294</td>
+<td align="center">1.667</td>
+<td align="center">1.994</td>
+<td align="center">2.381</td>
+<td align="center">2.648</td>
+</tr>
+<tr class="odd">
+<td align="center">80</td>
+<td align="center">1.292</td>
+<td align="center">1.664</td>
+<td align="center">1.990</td>
+<td align="center">2.374</td>
+<td align="center">2.639</td>
+</tr>
+<tr class="even">
+<td align="center">90</td>
+<td align="center">1.291</td>
+<td align="center">1.662</td>
+<td align="center">1.987</td>
+<td align="center">2.368</td>
+<td align="center">2.632</td>
+</tr>
+<tr class="odd">
+<td align="center">100</td>
+<td align="center">1.290</td>
+<td align="center">1.660</td>
+<td align="center">1.984</td>
+<td align="center">2.364</td>
+<td align="center">2.626</td>
+</tr>
+<tr class="even">
+<td align="center">110</td>
+<td align="center">1.289</td>
+<td align="center">1.659</td>
+<td align="center">1.982</td>
+<td align="center">2.361</td>
+<td align="center">2.621</td>
+</tr>
+<tr class="odd">
+<td align="center">120</td>
+<td align="center">1.289</td>
+<td align="center">1.658</td>
+<td align="center">1.980</td>
+<td align="center">2.358</td>
+<td align="center">2.617</td>
+</tr>
+<tr class="even">
+<td align="center">Inf</td>
+<td align="center">1.282</td>
+<td align="center">1.645</td>
+<td align="center">1.960</td>
+<td align="center">2.326</td>
+<td align="center">2.576</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="table-b-critical-values-for-the-chi-square-distribution" class="section level2 unnumbered hasAnchor">
+<h2>Table B: Critical Values for the Chi-square distribution<a href="statistical-tables.html#table-b-critical-values-for-the-chi-square-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<table>
+<thead>
+<tr class="header">
+<th align="center">df</th>
+<th align="center">0.10</th>
+<th align="center">0.05</th>
+<th align="center">0.01</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">2.71</td>
+<td align="center">3.84</td>
+<td align="center">6.63</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="center">4.61</td>
+<td align="center">5.99</td>
+<td align="center">9.21</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="center">6.25</td>
+<td align="center">7.81</td>
+<td align="center">11.34</td>
+</tr>
+<tr class="even">
+<td align="center">4</td>
+<td align="center">7.78</td>
+<td align="center">9.49</td>
+<td align="center">13.28</td>
+</tr>
+<tr class="odd">
+<td align="center">5</td>
+<td align="center">9.24</td>
+<td align="center">11.07</td>
+<td align="center">15.09</td>
+</tr>
+<tr class="even">
+<td align="center">6</td>
+<td align="center">10.64</td>
+<td align="center">12.59</td>
+<td align="center">16.81</td>
+</tr>
+<tr class="odd">
+<td align="center">7</td>
+<td align="center">12.02</td>
+<td align="center">14.07</td>
+<td align="center">18.48</td>
+</tr>
+<tr class="even">
+<td align="center">8</td>
+<td align="center">13.36</td>
+<td align="center">15.51</td>
+<td align="center">20.09</td>
+</tr>
+<tr class="odd">
+<td align="center">9</td>
+<td align="center">14.68</td>
+<td align="center">16.92</td>
+<td align="center">21.67</td>
+</tr>
+<tr class="even">
+<td align="center">10</td>
+<td align="center">15.99</td>
+<td align="center">18.31</td>
+<td align="center">23.21</td>
+</tr>
+<tr class="odd">
+<td align="center">11</td>
+<td align="center">17.28</td>
+<td align="center">19.68</td>
+<td align="center">24.72</td>
+</tr>
+<tr class="even">
+<td align="center">12</td>
+<td align="center">18.55</td>
+<td align="center">21.03</td>
+<td align="center">26.22</td>
+</tr>
+<tr class="odd">
+<td align="center">13</td>
+<td align="center">19.81</td>
+<td align="center">22.36</td>
+<td align="center">27.69</td>
+</tr>
+<tr class="even">
+<td align="center">14</td>
+<td align="center">21.06</td>
+<td align="center">23.68</td>
+<td align="center">29.14</td>
+</tr>
+<tr class="odd">
+<td align="center">15</td>
+<td align="center">22.31</td>
+<td align="center">25.00</td>
+<td align="center">30.58</td>
+</tr>
+<tr class="even">
+<td align="center">16</td>
+<td align="center">23.54</td>
+<td align="center">26.30</td>
+<td align="center">32.00</td>
+</tr>
+<tr class="odd">
+<td align="center">17</td>
+<td align="center">24.77</td>
+<td align="center">27.59</td>
+<td align="center">33.41</td>
+</tr>
+<tr class="even">
+<td align="center">18</td>
+<td align="center">25.99</td>
+<td align="center">28.87</td>
+<td align="center">34.81</td>
+</tr>
+<tr class="odd">
+<td align="center">19</td>
+<td align="center">27.20</td>
+<td align="center">30.14</td>
+<td align="center">36.19</td>
+</tr>
+<tr class="even">
+<td align="center">20</td>
+<td align="center">28.41</td>
+<td align="center">31.41</td>
+<td align="center">37.57</td>
+</tr>
+<tr class="odd">
+<td align="center">21</td>
+<td align="center">29.62</td>
+<td align="center">32.67</td>
+<td align="center">38.93</td>
+</tr>
+<tr class="even">
+<td align="center">22</td>
+<td align="center">30.81</td>
+<td align="center">33.92</td>
+<td align="center">40.29</td>
+</tr>
+<tr class="odd">
+<td align="center">23</td>
+<td align="center">32.01</td>
+<td align="center">35.17</td>
+<td align="center">41.64</td>
+</tr>
+<tr class="even">
+<td align="center">24</td>
+<td align="center">33.20</td>
+<td align="center">36.42</td>
+<td align="center">42.98</td>
+</tr>
+<tr class="odd">
+<td align="center">25</td>
+<td align="center">34.38</td>
+<td align="center">37.65</td>
+<td align="center">44.31</td>
+</tr>
+<tr class="even">
+<td align="center">26</td>
+<td align="center">35.56</td>
+<td align="center">38.89</td>
+<td align="center">45.64</td>
+</tr>
+<tr class="odd">
+<td align="center">27</td>
+<td align="center">36.74</td>
+<td align="center">40.11</td>
+<td align="center">46.96</td>
+</tr>
+<tr class="even">
+<td align="center">28</td>
+<td align="center">37.92</td>
+<td align="center">41.34</td>
+<td align="center">48.28</td>
+</tr>
+<tr class="odd">
+<td align="center">29</td>
+<td align="center">39.09</td>
+<td align="center">42.56</td>
+<td align="center">49.59</td>
+</tr>
+<tr class="even">
+<td align="center">30</td>
+<td align="center">40.26</td>
+<td align="center">43.77</td>
+<td align="center">50.89</td>
+</tr>
+<tr class="odd">
+<td align="center">40</td>
+<td align="center">51.81</td>
+<td align="center">55.76</td>
+<td align="center">63.69</td>
+</tr>
+<tr class="even">
+<td align="center">50</td>
+<td align="center">63.17</td>
+<td align="center">67.50</td>
+<td align="center">76.15</td>
+</tr>
+<tr class="odd">
+<td align="center">60</td>
+<td align="center">74.40</td>
+<td align="center">79.08</td>
+<td align="center">88.38</td>
+</tr>
+<tr class="even">
+<td align="center">70</td>
+<td align="center">85.53</td>
+<td align="center">90.53</td>
+<td align="center">100.43</td>
+</tr>
+<tr class="odd">
+<td align="center">80</td>
+<td align="center">96.58</td>
+<td align="center">101.88</td>
+<td align="center">112.33</td>
+</tr>
+<tr class="even">
+<td align="center">90</td>
+<td align="center">107.57</td>
+<td align="center">113.15</td>
+<td align="center">124.12</td>
+</tr>
+<tr class="odd">
+<td align="center">100</td>
+<td align="center">118.50</td>
+<td align="center">124.34</td>
+<td align="center">135.81</td>
+</tr>
+<tr class="even">
+<td align="center">110</td>
+<td align="center">129.39</td>
+<td align="center">135.48</td>
+<td align="center">147.41</td>
+</tr>
+<tr class="odd">
+<td align="center">120</td>
+<td align="center">140.23</td>
+<td align="center">146.57</td>
+<td align="center">158.95</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="table-c-1-critical-values-for-the-f-distribution" class="section level2 unnumbered hasAnchor">
+<h2>Table C: 1% Critical Values for the F distribution<a href="statistical-tables.html#table-c-1-critical-values-for-the-f-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<table>
+<thead>
+<tr class="header">
+<th align="center">df2/df1</th>
+<th align="center">1</th>
+<th align="center">2</th>
+<th align="center">3</th>
+<th align="center">4</th>
+<th align="center">5</th>
+<th align="center">6</th>
+<th align="center">7</th>
+<th align="center">8</th>
+<th align="center">9</th>
+<th align="center">10</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">10</td>
+<td align="center">10.04</td>
+<td align="center">7.56</td>
+<td align="center">6.55</td>
+<td align="center">5.99</td>
+<td align="center">5.64</td>
+<td align="center">5.39</td>
+<td align="center">5.20</td>
+<td align="center">5.06</td>
+<td align="center">4.94</td>
+<td align="center">4.85</td>
+</tr>
+<tr class="even">
+<td align="center">11</td>
+<td align="center">9.65</td>
+<td align="center">7.21</td>
+<td align="center">6.22</td>
+<td align="center">5.67</td>
+<td align="center">5.32</td>
+<td align="center">5.07</td>
+<td align="center">4.89</td>
+<td align="center">4.74</td>
+<td align="center">4.63</td>
+<td align="center">4.54</td>
+</tr>
+<tr class="odd">
+<td align="center">12</td>
+<td align="center">9.33</td>
+<td align="center">6.93</td>
+<td align="center">5.95</td>
+<td align="center">5.41</td>
+<td align="center">5.06</td>
+<td align="center">4.82</td>
+<td align="center">4.64</td>
+<td align="center">4.50</td>
+<td align="center">4.39</td>
+<td align="center">4.30</td>
+</tr>
+<tr class="even">
+<td align="center">13</td>
+<td align="center">9.07</td>
+<td align="center">6.70</td>
+<td align="center">5.74</td>
+<td align="center">5.21</td>
+<td align="center">4.86</td>
+<td align="center">4.62</td>
+<td align="center">4.44</td>
+<td align="center">4.30</td>
+<td align="center">4.19</td>
+<td align="center">4.10</td>
+</tr>
+<tr class="odd">
+<td align="center">14</td>
+<td align="center">8.86</td>
+<td align="center">6.51</td>
+<td align="center">5.56</td>
+<td align="center">5.04</td>
+<td align="center">4.69</td>
+<td align="center">4.46</td>
+<td align="center">4.28</td>
+<td align="center">4.14</td>
+<td align="center">4.03</td>
+<td align="center">3.94</td>
+</tr>
+<tr class="even">
+<td align="center">15</td>
+<td align="center">8.68</td>
+<td align="center">6.36</td>
+<td align="center">5.42</td>
+<td align="center">4.89</td>
+<td align="center">4.56</td>
+<td align="center">4.32</td>
+<td align="center">4.14</td>
+<td align="center">4.00</td>
+<td align="center">3.89</td>
+<td align="center">3.80</td>
+</tr>
+<tr class="odd">
+<td align="center">16</td>
+<td align="center">8.53</td>
+<td align="center">6.23</td>
+<td align="center">5.29</td>
+<td align="center">4.77</td>
+<td align="center">4.44</td>
+<td align="center">4.20</td>
+<td align="center">4.03</td>
+<td align="center">3.89</td>
+<td align="center">3.78</td>
+<td align="center">3.69</td>
+</tr>
+<tr class="even">
+<td align="center">17</td>
+<td align="center">8.40</td>
+<td align="center">6.11</td>
+<td align="center">5.18</td>
+<td align="center">4.67</td>
+<td align="center">4.34</td>
+<td align="center">4.10</td>
+<td align="center">3.93</td>
+<td align="center">3.79</td>
+<td align="center">3.68</td>
+<td align="center">3.59</td>
+</tr>
+<tr class="odd">
+<td align="center">18</td>
+<td align="center">8.29</td>
+<td align="center">6.01</td>
+<td align="center">5.09</td>
+<td align="center">4.58</td>
+<td align="center">4.25</td>
+<td align="center">4.01</td>
+<td align="center">3.84</td>
+<td align="center">3.71</td>
+<td align="center">3.60</td>
+<td align="center">3.51</td>
+</tr>
+<tr class="even">
+<td align="center">19</td>
+<td align="center">8.18</td>
+<td align="center">5.93</td>
+<td align="center">5.01</td>
+<td align="center">4.50</td>
+<td align="center">4.17</td>
+<td align="center">3.94</td>
+<td align="center">3.77</td>
+<td align="center">3.63</td>
+<td align="center">3.52</td>
+<td align="center">3.43</td>
+</tr>
+<tr class="odd">
+<td align="center">20</td>
+<td align="center">8.10</td>
+<td align="center">5.85</td>
+<td align="center">4.94</td>
+<td align="center">4.43</td>
+<td align="center">4.10</td>
+<td align="center">3.87</td>
+<td align="center">3.70</td>
+<td align="center">3.56</td>
+<td align="center">3.46</td>
+<td align="center">3.37</td>
+</tr>
+<tr class="even">
+<td align="center">21</td>
+<td align="center">8.02</td>
+<td align="center">5.78</td>
+<td align="center">4.87</td>
+<td align="center">4.37</td>
+<td align="center">4.04</td>
+<td align="center">3.81</td>
+<td align="center">3.64</td>
+<td align="center">3.51</td>
+<td align="center">3.40</td>
+<td align="center">3.31</td>
+</tr>
+<tr class="odd">
+<td align="center">22</td>
+<td align="center">7.95</td>
+<td align="center">5.72</td>
+<td align="center">4.82</td>
+<td align="center">4.31</td>
+<td align="center">3.99</td>
+<td align="center">3.76</td>
+<td align="center">3.59</td>
+<td align="center">3.45</td>
+<td align="center">3.35</td>
+<td align="center">3.26</td>
+</tr>
+<tr class="even">
+<td align="center">23</td>
+<td align="center">7.88</td>
+<td align="center">5.66</td>
+<td align="center">4.76</td>
+<td align="center">4.26</td>
+<td align="center">3.94</td>
+<td align="center">3.71</td>
+<td align="center">3.54</td>
+<td align="center">3.41</td>
+<td align="center">3.30</td>
+<td align="center">3.21</td>
+</tr>
+<tr class="odd">
+<td align="center">24</td>
+<td align="center">7.82</td>
+<td align="center">5.61</td>
+<td align="center">4.72</td>
+<td align="center">4.22</td>
+<td align="center">3.90</td>
+<td align="center">3.67</td>
+<td align="center">3.50</td>
+<td align="center">3.36</td>
+<td align="center">3.26</td>
+<td align="center">3.17</td>
+</tr>
+<tr class="even">
+<td align="center">25</td>
+<td align="center">7.77</td>
+<td align="center">5.57</td>
+<td align="center">4.68</td>
+<td align="center">4.18</td>
+<td align="center">3.85</td>
+<td align="center">3.63</td>
+<td align="center">3.46</td>
+<td align="center">3.32</td>
+<td align="center">3.22</td>
+<td align="center">3.13</td>
+</tr>
+<tr class="odd">
+<td align="center">26</td>
+<td align="center">7.72</td>
+<td align="center">5.53</td>
+<td align="center">4.64</td>
+<td align="center">4.14</td>
+<td align="center">3.82</td>
+<td align="center">3.59</td>
+<td align="center">3.42</td>
+<td align="center">3.29</td>
+<td align="center">3.18</td>
+<td align="center">3.09</td>
+</tr>
+<tr class="even">
+<td align="center">27</td>
+<td align="center">7.68</td>
+<td align="center">5.49</td>
+<td align="center">4.60</td>
+<td align="center">4.11</td>
+<td align="center">3.78</td>
+<td align="center">3.56</td>
+<td align="center">3.39</td>
+<td align="center">3.26</td>
+<td align="center">3.15</td>
+<td align="center">3.06</td>
+</tr>
+<tr class="odd">
+<td align="center">28</td>
+<td align="center">7.64</td>
+<td align="center">5.45</td>
+<td align="center">4.57</td>
+<td align="center">4.07</td>
+<td align="center">3.75</td>
+<td align="center">3.53</td>
+<td align="center">3.36</td>
+<td align="center">3.23</td>
+<td align="center">3.12</td>
+<td align="center">3.03</td>
+</tr>
+<tr class="even">
+<td align="center">29</td>
+<td align="center">7.60</td>
+<td align="center">5.42</td>
+<td align="center">4.54</td>
+<td align="center">4.04</td>
+<td align="center">3.73</td>
+<td align="center">3.50</td>
+<td align="center">3.33</td>
+<td align="center">3.20</td>
+<td align="center">3.09</td>
+<td align="center">3.00</td>
+</tr>
+<tr class="odd">
+<td align="center">30</td>
+<td align="center">7.56</td>
+<td align="center">5.39</td>
+<td align="center">4.51</td>
+<td align="center">4.02</td>
+<td align="center">3.70</td>
+<td align="center">3.47</td>
+<td align="center">3.30</td>
+<td align="center">3.17</td>
+<td align="center">3.07</td>
+<td align="center">2.98</td>
+</tr>
+<tr class="even">
+<td align="center">31</td>
+<td align="center">7.53</td>
+<td align="center">5.36</td>
+<td align="center">4.48</td>
+<td align="center">3.99</td>
+<td align="center">3.67</td>
+<td align="center">3.45</td>
+<td align="center">3.28</td>
+<td align="center">3.15</td>
+<td align="center">3.04</td>
+<td align="center">2.96</td>
+</tr>
+<tr class="odd">
+<td align="center">32</td>
+<td align="center">7.50</td>
+<td align="center">5.34</td>
+<td align="center">4.46</td>
+<td align="center">3.97</td>
+<td align="center">3.65</td>
+<td align="center">3.43</td>
+<td align="center">3.26</td>
+<td align="center">3.13</td>
+<td align="center">3.02</td>
+<td align="center">2.93</td>
+</tr>
+<tr class="even">
+<td align="center">33</td>
+<td align="center">7.47</td>
+<td align="center">5.31</td>
+<td align="center">4.44</td>
+<td align="center">3.95</td>
+<td align="center">3.63</td>
+<td align="center">3.41</td>
+<td align="center">3.24</td>
+<td align="center">3.11</td>
+<td align="center">3.00</td>
+<td align="center">2.91</td>
+</tr>
+<tr class="odd">
+<td align="center">34</td>
+<td align="center">7.44</td>
+<td align="center">5.29</td>
+<td align="center">4.42</td>
+<td align="center">3.93</td>
+<td align="center">3.61</td>
+<td align="center">3.39</td>
+<td align="center">3.22</td>
+<td align="center">3.09</td>
+<td align="center">2.98</td>
+<td align="center">2.89</td>
+</tr>
+<tr class="even">
+<td align="center">35</td>
+<td align="center">7.42</td>
+<td align="center">5.27</td>
+<td align="center">4.40</td>
+<td align="center">3.91</td>
+<td align="center">3.59</td>
+<td align="center">3.37</td>
+<td align="center">3.20</td>
+<td align="center">3.07</td>
+<td align="center">2.96</td>
+<td align="center">2.88</td>
+</tr>
+<tr class="odd">
+<td align="center">36</td>
+<td align="center">7.40</td>
+<td align="center">5.25</td>
+<td align="center">4.38</td>
+<td align="center">3.89</td>
+<td align="center">3.57</td>
+<td align="center">3.35</td>
+<td align="center">3.18</td>
+<td align="center">3.05</td>
+<td align="center">2.95</td>
+<td align="center">2.86</td>
+</tr>
+<tr class="even">
+<td align="center">37</td>
+<td align="center">7.37</td>
+<td align="center">5.23</td>
+<td align="center">4.36</td>
+<td align="center">3.87</td>
+<td align="center">3.56</td>
+<td align="center">3.33</td>
+<td align="center">3.17</td>
+<td align="center">3.04</td>
+<td align="center">2.93</td>
+<td align="center">2.84</td>
+</tr>
+<tr class="odd">
+<td align="center">38</td>
+<td align="center">7.35</td>
+<td align="center">5.21</td>
+<td align="center">4.34</td>
+<td align="center">3.86</td>
+<td align="center">3.54</td>
+<td align="center">3.32</td>
+<td align="center">3.15</td>
+<td align="center">3.02</td>
+<td align="center">2.92</td>
+<td align="center">2.83</td>
+</tr>
+<tr class="even">
+<td align="center">39</td>
+<td align="center">7.33</td>
+<td align="center">5.19</td>
+<td align="center">4.33</td>
+<td align="center">3.84</td>
+<td align="center">3.53</td>
+<td align="center">3.30</td>
+<td align="center">3.14</td>
+<td align="center">3.01</td>
+<td align="center">2.90</td>
+<td align="center">2.81</td>
+</tr>
+<tr class="odd">
+<td align="center">40</td>
+<td align="center">7.31</td>
+<td align="center">5.18</td>
+<td align="center">4.31</td>
+<td align="center">3.83</td>
+<td align="center">3.51</td>
+<td align="center">3.29</td>
+<td align="center">3.12</td>
+<td align="center">2.99</td>
+<td align="center">2.89</td>
+<td align="center">2.80</td>
+</tr>
+<tr class="even">
+<td align="center">41</td>
+<td align="center">7.30</td>
+<td align="center">5.16</td>
+<td align="center">4.30</td>
+<td align="center">3.81</td>
+<td align="center">3.50</td>
+<td align="center">3.28</td>
+<td align="center">3.11</td>
+<td align="center">2.98</td>
+<td align="center">2.87</td>
+<td align="center">2.79</td>
+</tr>
+<tr class="odd">
+<td align="center">42</td>
+<td align="center">7.28</td>
+<td align="center">5.15</td>
+<td align="center">4.29</td>
+<td align="center">3.80</td>
+<td align="center">3.49</td>
+<td align="center">3.27</td>
+<td align="center">3.10</td>
+<td align="center">2.97</td>
+<td align="center">2.86</td>
+<td align="center">2.78</td>
+</tr>
+<tr class="even">
+<td align="center">43</td>
+<td align="center">7.26</td>
+<td align="center">5.14</td>
+<td align="center">4.27</td>
+<td align="center">3.79</td>
+<td align="center">3.48</td>
+<td align="center">3.25</td>
+<td align="center">3.09</td>
+<td align="center">2.96</td>
+<td align="center">2.85</td>
+<td align="center">2.76</td>
+</tr>
+<tr class="odd">
+<td align="center">44</td>
+<td align="center">7.25</td>
+<td align="center">5.12</td>
+<td align="center">4.26</td>
+<td align="center">3.78</td>
+<td align="center">3.47</td>
+<td align="center">3.24</td>
+<td align="center">3.08</td>
+<td align="center">2.95</td>
+<td align="center">2.84</td>
+<td align="center">2.75</td>
+</tr>
+<tr class="even">
+<td align="center">45</td>
+<td align="center">7.23</td>
+<td align="center">5.11</td>
+<td align="center">4.25</td>
+<td align="center">3.77</td>
+<td align="center">3.45</td>
+<td align="center">3.23</td>
+<td align="center">3.07</td>
+<td align="center">2.94</td>
+<td align="center">2.83</td>
+<td align="center">2.74</td>
+</tr>
+<tr class="odd">
+<td align="center">46</td>
+<td align="center">7.22</td>
+<td align="center">5.10</td>
+<td align="center">4.24</td>
+<td align="center">3.76</td>
+<td align="center">3.44</td>
+<td align="center">3.22</td>
+<td align="center">3.06</td>
+<td align="center">2.93</td>
+<td align="center">2.82</td>
+<td align="center">2.73</td>
+</tr>
+<tr class="even">
+<td align="center">47</td>
+<td align="center">7.21</td>
+<td align="center">5.09</td>
+<td align="center">4.23</td>
+<td align="center">3.75</td>
+<td align="center">3.43</td>
+<td align="center">3.21</td>
+<td align="center">3.05</td>
+<td align="center">2.92</td>
+<td align="center">2.81</td>
+<td align="center">2.72</td>
+</tr>
+<tr class="odd">
+<td align="center">48</td>
+<td align="center">7.19</td>
+<td align="center">5.08</td>
+<td align="center">4.22</td>
+<td align="center">3.74</td>
+<td align="center">3.43</td>
+<td align="center">3.20</td>
+<td align="center">3.04</td>
+<td align="center">2.91</td>
+<td align="center">2.80</td>
+<td align="center">2.71</td>
+</tr>
+<tr class="even">
+<td align="center">49</td>
+<td align="center">7.18</td>
+<td align="center">5.07</td>
+<td align="center">4.21</td>
+<td align="center">3.73</td>
+<td align="center">3.42</td>
+<td align="center">3.19</td>
+<td align="center">3.03</td>
+<td align="center">2.90</td>
+<td align="center">2.79</td>
+<td align="center">2.71</td>
+</tr>
+<tr class="odd">
+<td align="center">50</td>
+<td align="center">7.17</td>
+<td align="center">5.06</td>
+<td align="center">4.20</td>
+<td align="center">3.72</td>
+<td align="center">3.41</td>
+<td align="center">3.19</td>
+<td align="center">3.02</td>
+<td align="center">2.89</td>
+<td align="center">2.78</td>
+<td align="center">2.70</td>
+</tr>
+<tr class="even">
+<td align="center">51</td>
+<td align="center">7.16</td>
+<td align="center">5.05</td>
+<td align="center">4.19</td>
+<td align="center">3.71</td>
+<td align="center">3.40</td>
+<td align="center">3.18</td>
+<td align="center">3.01</td>
+<td align="center">2.88</td>
+<td align="center">2.78</td>
+<td align="center">2.69</td>
+</tr>
+<tr class="odd">
+<td align="center">52</td>
+<td align="center">7.15</td>
+<td align="center">5.04</td>
+<td align="center">4.18</td>
+<td align="center">3.70</td>
+<td align="center">3.39</td>
+<td align="center">3.17</td>
+<td align="center">3.00</td>
+<td align="center">2.87</td>
+<td align="center">2.77</td>
+<td align="center">2.68</td>
+</tr>
+<tr class="even">
+<td align="center">53</td>
+<td align="center">7.14</td>
+<td align="center">5.03</td>
+<td align="center">4.17</td>
+<td align="center">3.70</td>
+<td align="center">3.38</td>
+<td align="center">3.16</td>
+<td align="center">3.00</td>
+<td align="center">2.87</td>
+<td align="center">2.76</td>
+<td align="center">2.68</td>
+</tr>
+<tr class="odd">
+<td align="center">54</td>
+<td align="center">7.13</td>
+<td align="center">5.02</td>
+<td align="center">4.17</td>
+<td align="center">3.69</td>
+<td align="center">3.38</td>
+<td align="center">3.16</td>
+<td align="center">2.99</td>
+<td align="center">2.86</td>
+<td align="center">2.76</td>
+<td align="center">2.67</td>
+</tr>
+<tr class="even">
+<td align="center">55</td>
+<td align="center">7.12</td>
+<td align="center">5.01</td>
+<td align="center">4.16</td>
+<td align="center">3.68</td>
+<td align="center">3.37</td>
+<td align="center">3.15</td>
+<td align="center">2.98</td>
+<td align="center">2.85</td>
+<td align="center">2.75</td>
+<td align="center">2.66</td>
+</tr>
+<tr class="odd">
+<td align="center">56</td>
+<td align="center">7.11</td>
+<td align="center">5.01</td>
+<td align="center">4.15</td>
+<td align="center">3.67</td>
+<td align="center">3.36</td>
+<td align="center">3.14</td>
+<td align="center">2.98</td>
+<td align="center">2.85</td>
+<td align="center">2.74</td>
+<td align="center">2.66</td>
+</tr>
+<tr class="even">
+<td align="center">57</td>
+<td align="center">7.10</td>
+<td align="center">5.00</td>
+<td align="center">4.15</td>
+<td align="center">3.67</td>
+<td align="center">3.36</td>
+<td align="center">3.14</td>
+<td align="center">2.97</td>
+<td align="center">2.84</td>
+<td align="center">2.74</td>
+<td align="center">2.65</td>
+</tr>
+<tr class="odd">
+<td align="center">58</td>
+<td align="center">7.09</td>
+<td align="center">4.99</td>
+<td align="center">4.14</td>
+<td align="center">3.66</td>
+<td align="center">3.35</td>
+<td align="center">3.13</td>
+<td align="center">2.96</td>
+<td align="center">2.83</td>
+<td align="center">2.73</td>
+<td align="center">2.64</td>
+</tr>
+<tr class="even">
+<td align="center">59</td>
+<td align="center">7.08</td>
+<td align="center">4.98</td>
+<td align="center">4.13</td>
+<td align="center">3.65</td>
+<td align="center">3.34</td>
+<td align="center">3.12</td>
+<td align="center">2.96</td>
+<td align="center">2.83</td>
+<td align="center">2.72</td>
+<td align="center">2.64</td>
+</tr>
+<tr class="odd">
+<td align="center">60</td>
+<td align="center">7.08</td>
+<td align="center">4.98</td>
+<td align="center">4.13</td>
+<td align="center">3.65</td>
+<td align="center">3.34</td>
+<td align="center">3.12</td>
+<td align="center">2.95</td>
+<td align="center">2.82</td>
+<td align="center">2.72</td>
+<td align="center">2.63</td>
+</tr>
+<tr class="even">
+<td align="center">61</td>
+<td align="center">7.07</td>
+<td align="center">4.97</td>
+<td align="center">4.12</td>
+<td align="center">3.64</td>
+<td align="center">3.33</td>
+<td align="center">3.11</td>
+<td align="center">2.95</td>
+<td align="center">2.82</td>
+<td align="center">2.71</td>
+<td align="center">2.63</td>
+</tr>
+<tr class="odd">
+<td align="center">62</td>
+<td align="center">7.06</td>
+<td align="center">4.96</td>
+<td align="center">4.11</td>
+<td align="center">3.64</td>
+<td align="center">3.33</td>
+<td align="center">3.11</td>
+<td align="center">2.94</td>
+<td align="center">2.81</td>
+<td align="center">2.71</td>
+<td align="center">2.62</td>
+</tr>
+<tr class="even">
+<td align="center">63</td>
+<td align="center">7.06</td>
+<td align="center">4.96</td>
+<td align="center">4.11</td>
+<td align="center">3.63</td>
+<td align="center">3.32</td>
+<td align="center">3.10</td>
+<td align="center">2.94</td>
+<td align="center">2.81</td>
+<td align="center">2.70</td>
+<td align="center">2.62</td>
+</tr>
+<tr class="odd">
+<td align="center">64</td>
+<td align="center">7.05</td>
+<td align="center">4.95</td>
+<td align="center">4.10</td>
+<td align="center">3.63</td>
+<td align="center">3.32</td>
+<td align="center">3.10</td>
+<td align="center">2.93</td>
+<td align="center">2.80</td>
+<td align="center">2.70</td>
+<td align="center">2.61</td>
+</tr>
+<tr class="even">
+<td align="center">65</td>
+<td align="center">7.04</td>
+<td align="center">4.95</td>
+<td align="center">4.10</td>
+<td align="center">3.62</td>
+<td align="center">3.31</td>
+<td align="center">3.09</td>
+<td align="center">2.93</td>
+<td align="center">2.80</td>
+<td align="center">2.69</td>
+<td align="center">2.61</td>
+</tr>
+<tr class="odd">
+<td align="center">66</td>
+<td align="center">7.04</td>
+<td align="center">4.94</td>
+<td align="center">4.09</td>
+<td align="center">3.62</td>
+<td align="center">3.31</td>
+<td align="center">3.09</td>
+<td align="center">2.92</td>
+<td align="center">2.79</td>
+<td align="center">2.69</td>
+<td align="center">2.60</td>
+</tr>
+<tr class="even">
+<td align="center">67</td>
+<td align="center">7.03</td>
+<td align="center">4.94</td>
+<td align="center">4.09</td>
+<td align="center">3.61</td>
+<td align="center">3.30</td>
+<td align="center">3.08</td>
+<td align="center">2.92</td>
+<td align="center">2.79</td>
+<td align="center">2.68</td>
+<td align="center">2.60</td>
+</tr>
+<tr class="odd">
+<td align="center">68</td>
+<td align="center">7.02</td>
+<td align="center">4.93</td>
+<td align="center">4.08</td>
+<td align="center">3.61</td>
+<td align="center">3.30</td>
+<td align="center">3.08</td>
+<td align="center">2.91</td>
+<td align="center">2.78</td>
+<td align="center">2.68</td>
+<td align="center">2.59</td>
+</tr>
+<tr class="even">
+<td align="center">69</td>
+<td align="center">7.02</td>
+<td align="center">4.93</td>
+<td align="center">4.08</td>
+<td align="center">3.60</td>
+<td align="center">3.29</td>
+<td align="center">3.08</td>
+<td align="center">2.91</td>
+<td align="center">2.78</td>
+<td align="center">2.68</td>
+<td align="center">2.59</td>
+</tr>
+<tr class="odd">
+<td align="center">70</td>
+<td align="center">7.01</td>
+<td align="center">4.92</td>
+<td align="center">4.07</td>
+<td align="center">3.60</td>
+<td align="center">3.29</td>
+<td align="center">3.07</td>
+<td align="center">2.91</td>
+<td align="center">2.78</td>
+<td align="center">2.67</td>
+<td align="center">2.59</td>
+</tr>
+<tr class="even">
+<td align="center">71</td>
+<td align="center">7.01</td>
+<td align="center">4.92</td>
+<td align="center">4.07</td>
+<td align="center">3.60</td>
+<td align="center">3.29</td>
+<td align="center">3.07</td>
+<td align="center">2.90</td>
+<td align="center">2.77</td>
+<td align="center">2.67</td>
+<td align="center">2.58</td>
+</tr>
+<tr class="odd">
+<td align="center">72</td>
+<td align="center">7.00</td>
+<td align="center">4.91</td>
+<td align="center">4.07</td>
+<td align="center">3.59</td>
+<td align="center">3.28</td>
+<td align="center">3.06</td>
+<td align="center">2.90</td>
+<td align="center">2.77</td>
+<td align="center">2.66</td>
+<td align="center">2.58</td>
+</tr>
+<tr class="even">
+<td align="center">73</td>
+<td align="center">7.00</td>
+<td align="center">4.91</td>
+<td align="center">4.06</td>
+<td align="center">3.59</td>
+<td align="center">3.28</td>
+<td align="center">3.06</td>
+<td align="center">2.89</td>
+<td align="center">2.77</td>
+<td align="center">2.66</td>
+<td align="center">2.57</td>
+</tr>
+<tr class="odd">
+<td align="center">74</td>
+<td align="center">6.99</td>
+<td align="center">4.90</td>
+<td align="center">4.06</td>
+<td align="center">3.58</td>
+<td align="center">3.28</td>
+<td align="center">3.06</td>
+<td align="center">2.89</td>
+<td align="center">2.76</td>
+<td align="center">2.66</td>
+<td align="center">2.57</td>
+</tr>
+<tr class="even">
+<td align="center">75</td>
+<td align="center">6.99</td>
+<td align="center">4.90</td>
+<td align="center">4.05</td>
+<td align="center">3.58</td>
+<td align="center">3.27</td>
+<td align="center">3.05</td>
+<td align="center">2.89</td>
+<td align="center">2.76</td>
+<td align="center">2.65</td>
+<td align="center">2.57</td>
+</tr>
+<tr class="odd">
+<td align="center">76</td>
+<td align="center">6.98</td>
+<td align="center">4.90</td>
+<td align="center">4.05</td>
+<td align="center">3.58</td>
+<td align="center">3.27</td>
+<td align="center">3.05</td>
+<td align="center">2.88</td>
+<td align="center">2.75</td>
+<td align="center">2.65</td>
+<td align="center">2.56</td>
+</tr>
+<tr class="even">
+<td align="center">77</td>
+<td align="center">6.98</td>
+<td align="center">4.89</td>
+<td align="center">4.05</td>
+<td align="center">3.57</td>
+<td align="center">3.26</td>
+<td align="center">3.05</td>
+<td align="center">2.88</td>
+<td align="center">2.75</td>
+<td align="center">2.65</td>
+<td align="center">2.56</td>
+</tr>
+<tr class="odd">
+<td align="center">78</td>
+<td align="center">6.97</td>
+<td align="center">4.89</td>
+<td align="center">4.04</td>
+<td align="center">3.57</td>
+<td align="center">3.26</td>
+<td align="center">3.04</td>
+<td align="center">2.88</td>
+<td align="center">2.75</td>
+<td align="center">2.64</td>
+<td align="center">2.56</td>
+</tr>
+<tr class="even">
+<td align="center">79</td>
+<td align="center">6.97</td>
+<td align="center">4.88</td>
+<td align="center">4.04</td>
+<td align="center">3.57</td>
+<td align="center">3.26</td>
+<td align="center">3.04</td>
+<td align="center">2.87</td>
+<td align="center">2.75</td>
+<td align="center">2.64</td>
+<td align="center">2.55</td>
+</tr>
+<tr class="odd">
+<td align="center">80</td>
+<td align="center">6.96</td>
+<td align="center">4.88</td>
+<td align="center">4.04</td>
+<td align="center">3.56</td>
+<td align="center">3.26</td>
+<td align="center">3.04</td>
+<td align="center">2.87</td>
+<td align="center">2.74</td>
+<td align="center">2.64</td>
+<td align="center">2.55</td>
+</tr>
+<tr class="even">
+<td align="center">81</td>
+<td align="center">6.96</td>
+<td align="center">4.88</td>
+<td align="center">4.03</td>
+<td align="center">3.56</td>
+<td align="center">3.25</td>
+<td align="center">3.03</td>
+<td align="center">2.87</td>
+<td align="center">2.74</td>
+<td align="center">2.63</td>
+<td align="center">2.55</td>
+</tr>
+<tr class="odd">
+<td align="center">82</td>
+<td align="center">6.95</td>
+<td align="center">4.87</td>
+<td align="center">4.03</td>
+<td align="center">3.56</td>
+<td align="center">3.25</td>
+<td align="center">3.03</td>
+<td align="center">2.87</td>
+<td align="center">2.74</td>
+<td align="center">2.63</td>
+<td align="center">2.54</td>
+</tr>
+<tr class="even">
+<td align="center">83</td>
+<td align="center">6.95</td>
+<td align="center">4.87</td>
+<td align="center">4.03</td>
+<td align="center">3.55</td>
+<td align="center">3.25</td>
+<td align="center">3.03</td>
+<td align="center">2.86</td>
+<td align="center">2.73</td>
+<td align="center">2.63</td>
+<td align="center">2.54</td>
+</tr>
+<tr class="odd">
+<td align="center">84</td>
+<td align="center">6.95</td>
+<td align="center">4.87</td>
+<td align="center">4.02</td>
+<td align="center">3.55</td>
+<td align="center">3.24</td>
+<td align="center">3.02</td>
+<td align="center">2.86</td>
+<td align="center">2.73</td>
+<td align="center">2.63</td>
+<td align="center">2.54</td>
+</tr>
+<tr class="even">
+<td align="center">85</td>
+<td align="center">6.94</td>
+<td align="center">4.86</td>
+<td align="center">4.02</td>
+<td align="center">3.55</td>
+<td align="center">3.24</td>
+<td align="center">3.02</td>
+<td align="center">2.86</td>
+<td align="center">2.73</td>
+<td align="center">2.62</td>
+<td align="center">2.54</td>
+</tr>
+<tr class="odd">
+<td align="center">86</td>
+<td align="center">6.94</td>
+<td align="center">4.86</td>
+<td align="center">4.02</td>
+<td align="center">3.55</td>
+<td align="center">3.24</td>
+<td align="center">3.02</td>
+<td align="center">2.85</td>
+<td align="center">2.73</td>
+<td align="center">2.62</td>
+<td align="center">2.53</td>
+</tr>
+<tr class="even">
+<td align="center">87</td>
+<td align="center">6.94</td>
+<td align="center">4.86</td>
+<td align="center">4.02</td>
+<td align="center">3.54</td>
+<td align="center">3.24</td>
+<td align="center">3.02</td>
+<td align="center">2.85</td>
+<td align="center">2.72</td>
+<td align="center">2.62</td>
+<td align="center">2.53</td>
+</tr>
+<tr class="odd">
+<td align="center">88</td>
+<td align="center">6.93</td>
+<td align="center">4.85</td>
+<td align="center">4.01</td>
+<td align="center">3.54</td>
+<td align="center">3.23</td>
+<td align="center">3.01</td>
+<td align="center">2.85</td>
+<td align="center">2.72</td>
+<td align="center">2.62</td>
+<td align="center">2.53</td>
+</tr>
+<tr class="even">
+<td align="center">89</td>
+<td align="center">6.93</td>
+<td align="center">4.85</td>
+<td align="center">4.01</td>
+<td align="center">3.54</td>
+<td align="center">3.23</td>
+<td align="center">3.01</td>
+<td align="center">2.85</td>
+<td align="center">2.72</td>
+<td align="center">2.61</td>
+<td align="center">2.53</td>
+</tr>
+<tr class="odd">
+<td align="center">90</td>
+<td align="center">6.93</td>
+<td align="center">4.85</td>
+<td align="center">4.01</td>
+<td align="center">3.53</td>
+<td align="center">3.23</td>
+<td align="center">3.01</td>
+<td align="center">2.84</td>
+<td align="center">2.72</td>
+<td align="center">2.61</td>
+<td align="center">2.52</td>
+</tr>
+<tr class="even">
+<td align="center">91</td>
+<td align="center">6.92</td>
+<td align="center">4.85</td>
+<td align="center">4.00</td>
+<td align="center">3.53</td>
+<td align="center">3.23</td>
+<td align="center">3.01</td>
+<td align="center">2.84</td>
+<td align="center">2.71</td>
+<td align="center">2.61</td>
+<td align="center">2.52</td>
+</tr>
+<tr class="odd">
+<td align="center">92</td>
+<td align="center">6.92</td>
+<td align="center">4.84</td>
+<td align="center">4.00</td>
+<td align="center">3.53</td>
+<td align="center">3.22</td>
+<td align="center">3.00</td>
+<td align="center">2.84</td>
+<td align="center">2.71</td>
+<td align="center">2.61</td>
+<td align="center">2.52</td>
+</tr>
+<tr class="even">
+<td align="center">93</td>
+<td align="center">6.92</td>
+<td align="center">4.84</td>
+<td align="center">4.00</td>
+<td align="center">3.53</td>
+<td align="center">3.22</td>
+<td align="center">3.00</td>
+<td align="center">2.84</td>
+<td align="center">2.71</td>
+<td align="center">2.60</td>
+<td align="center">2.52</td>
+</tr>
+<tr class="odd">
+<td align="center">94</td>
+<td align="center">6.91</td>
+<td align="center">4.84</td>
+<td align="center">4.00</td>
+<td align="center">3.53</td>
+<td align="center">3.22</td>
+<td align="center">3.00</td>
+<td align="center">2.84</td>
+<td align="center">2.71</td>
+<td align="center">2.60</td>
+<td align="center">2.52</td>
+</tr>
+<tr class="even">
+<td align="center">95</td>
+<td align="center">6.91</td>
+<td align="center">4.84</td>
+<td align="center">3.99</td>
+<td align="center">3.52</td>
+<td align="center">3.22</td>
+<td align="center">3.00</td>
+<td align="center">2.83</td>
+<td align="center">2.70</td>
+<td align="center">2.60</td>
+<td align="center">2.51</td>
+</tr>
+<tr class="odd">
+<td align="center">96</td>
+<td align="center">6.91</td>
+<td align="center">4.83</td>
+<td align="center">3.99</td>
+<td align="center">3.52</td>
+<td align="center">3.21</td>
+<td align="center">3.00</td>
+<td align="center">2.83</td>
+<td align="center">2.70</td>
+<td align="center">2.60</td>
+<td align="center">2.51</td>
+</tr>
+<tr class="even">
+<td align="center">97</td>
+<td align="center">6.90</td>
+<td align="center">4.83</td>
+<td align="center">3.99</td>
+<td align="center">3.52</td>
+<td align="center">3.21</td>
+<td align="center">2.99</td>
+<td align="center">2.83</td>
+<td align="center">2.70</td>
+<td align="center">2.60</td>
+<td align="center">2.51</td>
+</tr>
+<tr class="odd">
+<td align="center">98</td>
+<td align="center">6.90</td>
+<td align="center">4.83</td>
+<td align="center">3.99</td>
+<td align="center">3.52</td>
+<td align="center">3.21</td>
+<td align="center">2.99</td>
+<td align="center">2.83</td>
+<td align="center">2.70</td>
+<td align="center">2.59</td>
+<td align="center">2.51</td>
+</tr>
+<tr class="even">
+<td align="center">99</td>
+<td align="center">6.90</td>
+<td align="center">4.83</td>
+<td align="center">3.99</td>
+<td align="center">3.51</td>
+<td align="center">3.21</td>
+<td align="center">2.99</td>
+<td align="center">2.83</td>
+<td align="center">2.70</td>
+<td align="center">2.59</td>
+<td align="center">2.51</td>
+</tr>
+<tr class="odd">
+<td align="center">100</td>
+<td align="center">6.90</td>
+<td align="center">4.82</td>
+<td align="center">3.98</td>
+<td align="center">3.51</td>
+<td align="center">3.21</td>
+<td align="center">2.99</td>
+<td align="center">2.82</td>
+<td align="center">2.69</td>
+<td align="center">2.59</td>
+<td align="center">2.50</td>
+</tr>
+<tr class="even">
+<td align="center">Inf</td>
+<td align="center">6.63</td>
+<td align="center">4.61</td>
+<td align="center">3.78</td>
+<td align="center">3.32</td>
+<td align="center">3.02</td>
+<td align="center">2.80</td>
+<td align="center">2.64</td>
+<td align="center">2.51</td>
+<td align="center">2.41</td>
+<td align="center">2.32</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="table-d-5-critical-values-for-the-f-distribution" class="section level2 unnumbered hasAnchor">
+<h2>Table D: 5% Critical Values for the F distribution<a href="statistical-tables.html#table-d-5-critical-values-for-the-f-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<table>
+<thead>
+<tr class="header">
+<th align="center">df2/df1</th>
+<th align="center">1</th>
+<th align="center">2</th>
+<th align="center">3</th>
+<th align="center">4</th>
+<th align="center">5</th>
+<th align="center">6</th>
+<th align="center">7</th>
+<th align="center">8</th>
+<th align="center">9</th>
+<th align="center">10</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">10</td>
+<td align="center">4.96</td>
+<td align="center">4.10</td>
+<td align="center">3.71</td>
+<td align="center">3.48</td>
+<td align="center">3.33</td>
+<td align="center">3.22</td>
+<td align="center">3.14</td>
+<td align="center">3.07</td>
+<td align="center">3.02</td>
+<td align="center">2.98</td>
+</tr>
+<tr class="even">
+<td align="center">11</td>
+<td align="center">4.84</td>
+<td align="center">3.98</td>
+<td align="center">3.59</td>
+<td align="center">3.36</td>
+<td align="center">3.20</td>
+<td align="center">3.09</td>
+<td align="center">3.01</td>
+<td align="center">2.95</td>
+<td align="center">2.90</td>
+<td align="center">2.85</td>
+</tr>
+<tr class="odd">
+<td align="center">12</td>
+<td align="center">4.75</td>
+<td align="center">3.89</td>
+<td align="center">3.49</td>
+<td align="center">3.26</td>
+<td align="center">3.11</td>
+<td align="center">3.00</td>
+<td align="center">2.91</td>
+<td align="center">2.85</td>
+<td align="center">2.80</td>
+<td align="center">2.75</td>
+</tr>
+<tr class="even">
+<td align="center">13</td>
+<td align="center">4.67</td>
+<td align="center">3.81</td>
+<td align="center">3.41</td>
+<td align="center">3.18</td>
+<td align="center">3.03</td>
+<td align="center">2.92</td>
+<td align="center">2.83</td>
+<td align="center">2.77</td>
+<td align="center">2.71</td>
+<td align="center">2.67</td>
+</tr>
+<tr class="odd">
+<td align="center">14</td>
+<td align="center">4.60</td>
+<td align="center">3.74</td>
+<td align="center">3.34</td>
+<td align="center">3.11</td>
+<td align="center">2.96</td>
+<td align="center">2.85</td>
+<td align="center">2.76</td>
+<td align="center">2.70</td>
+<td align="center">2.65</td>
+<td align="center">2.60</td>
+</tr>
+<tr class="even">
+<td align="center">15</td>
+<td align="center">4.54</td>
+<td align="center">3.68</td>
+<td align="center">3.29</td>
+<td align="center">3.06</td>
+<td align="center">2.90</td>
+<td align="center">2.79</td>
+<td align="center">2.71</td>
+<td align="center">2.64</td>
+<td align="center">2.59</td>
+<td align="center">2.54</td>
+</tr>
+<tr class="odd">
+<td align="center">16</td>
+<td align="center">4.49</td>
+<td align="center">3.63</td>
+<td align="center">3.24</td>
+<td align="center">3.01</td>
+<td align="center">2.85</td>
+<td align="center">2.74</td>
+<td align="center">2.66</td>
+<td align="center">2.59</td>
+<td align="center">2.54</td>
+<td align="center">2.49</td>
+</tr>
+<tr class="even">
+<td align="center">17</td>
+<td align="center">4.45</td>
+<td align="center">3.59</td>
+<td align="center">3.20</td>
+<td align="center">2.96</td>
+<td align="center">2.81</td>
+<td align="center">2.70</td>
+<td align="center">2.61</td>
+<td align="center">2.55</td>
+<td align="center">2.49</td>
+<td align="center">2.45</td>
+</tr>
+<tr class="odd">
+<td align="center">18</td>
+<td align="center">4.41</td>
+<td align="center">3.55</td>
+<td align="center">3.16</td>
+<td align="center">2.93</td>
+<td align="center">2.77</td>
+<td align="center">2.66</td>
+<td align="center">2.58</td>
+<td align="center">2.51</td>
+<td align="center">2.46</td>
+<td align="center">2.41</td>
+</tr>
+<tr class="even">
+<td align="center">19</td>
+<td align="center">4.38</td>
+<td align="center">3.52</td>
+<td align="center">3.13</td>
+<td align="center">2.90</td>
+<td align="center">2.74</td>
+<td align="center">2.63</td>
+<td align="center">2.54</td>
+<td align="center">2.48</td>
+<td align="center">2.42</td>
+<td align="center">2.38</td>
+</tr>
+<tr class="odd">
+<td align="center">20</td>
+<td align="center">4.35</td>
+<td align="center">3.49</td>
+<td align="center">3.10</td>
+<td align="center">2.87</td>
+<td align="center">2.71</td>
+<td align="center">2.60</td>
+<td align="center">2.51</td>
+<td align="center">2.45</td>
+<td align="center">2.39</td>
+<td align="center">2.35</td>
+</tr>
+<tr class="even">
+<td align="center">21</td>
+<td align="center">4.32</td>
+<td align="center">3.47</td>
+<td align="center">3.07</td>
+<td align="center">2.84</td>
+<td align="center">2.68</td>
+<td align="center">2.57</td>
+<td align="center">2.49</td>
+<td align="center">2.42</td>
+<td align="center">2.37</td>
+<td align="center">2.32</td>
+</tr>
+<tr class="odd">
+<td align="center">22</td>
+<td align="center">4.30</td>
+<td align="center">3.44</td>
+<td align="center">3.05</td>
+<td align="center">2.82</td>
+<td align="center">2.66</td>
+<td align="center">2.55</td>
+<td align="center">2.46</td>
+<td align="center">2.40</td>
+<td align="center">2.34</td>
+<td align="center">2.30</td>
+</tr>
+<tr class="even">
+<td align="center">23</td>
+<td align="center">4.28</td>
+<td align="center">3.42</td>
+<td align="center">3.03</td>
+<td align="center">2.80</td>
+<td align="center">2.64</td>
+<td align="center">2.53</td>
+<td align="center">2.44</td>
+<td align="center">2.37</td>
+<td align="center">2.32</td>
+<td align="center">2.27</td>
+</tr>
+<tr class="odd">
+<td align="center">24</td>
+<td align="center">4.26</td>
+<td align="center">3.40</td>
+<td align="center">3.01</td>
+<td align="center">2.78</td>
+<td align="center">2.62</td>
+<td align="center">2.51</td>
+<td align="center">2.42</td>
+<td align="center">2.36</td>
+<td align="center">2.30</td>
+<td align="center">2.25</td>
+</tr>
+<tr class="even">
+<td align="center">25</td>
+<td align="center">4.24</td>
+<td align="center">3.39</td>
+<td align="center">2.99</td>
+<td align="center">2.76</td>
+<td align="center">2.60</td>
+<td align="center">2.49</td>
+<td align="center">2.40</td>
+<td align="center">2.34</td>
+<td align="center">2.28</td>
+<td align="center">2.24</td>
+</tr>
+<tr class="odd">
+<td align="center">26</td>
+<td align="center">4.23</td>
+<td align="center">3.37</td>
+<td align="center">2.98</td>
+<td align="center">2.74</td>
+<td align="center">2.59</td>
+<td align="center">2.47</td>
+<td align="center">2.39</td>
+<td align="center">2.32</td>
+<td align="center">2.27</td>
+<td align="center">2.22</td>
+</tr>
+<tr class="even">
+<td align="center">27</td>
+<td align="center">4.21</td>
+<td align="center">3.35</td>
+<td align="center">2.96</td>
+<td align="center">2.73</td>
+<td align="center">2.57</td>
+<td align="center">2.46</td>
+<td align="center">2.37</td>
+<td align="center">2.31</td>
+<td align="center">2.25</td>
+<td align="center">2.20</td>
+</tr>
+<tr class="odd">
+<td align="center">28</td>
+<td align="center">4.20</td>
+<td align="center">3.34</td>
+<td align="center">2.95</td>
+<td align="center">2.71</td>
+<td align="center">2.56</td>
+<td align="center">2.45</td>
+<td align="center">2.36</td>
+<td align="center">2.29</td>
+<td align="center">2.24</td>
+<td align="center">2.19</td>
+</tr>
+<tr class="even">
+<td align="center">29</td>
+<td align="center">4.18</td>
+<td align="center">3.33</td>
+<td align="center">2.93</td>
+<td align="center">2.70</td>
+<td align="center">2.55</td>
+<td align="center">2.43</td>
+<td align="center">2.35</td>
+<td align="center">2.28</td>
+<td align="center">2.22</td>
+<td align="center">2.18</td>
+</tr>
+<tr class="odd">
+<td align="center">30</td>
+<td align="center">4.17</td>
+<td align="center">3.32</td>
+<td align="center">2.92</td>
+<td align="center">2.69</td>
+<td align="center">2.53</td>
+<td align="center">2.42</td>
+<td align="center">2.33</td>
+<td align="center">2.27</td>
+<td align="center">2.21</td>
+<td align="center">2.16</td>
+</tr>
+<tr class="even">
+<td align="center">31</td>
+<td align="center">4.16</td>
+<td align="center">3.30</td>
+<td align="center">2.91</td>
+<td align="center">2.68</td>
+<td align="center">2.52</td>
+<td align="center">2.41</td>
+<td align="center">2.32</td>
+<td align="center">2.25</td>
+<td align="center">2.20</td>
+<td align="center">2.15</td>
+</tr>
+<tr class="odd">
+<td align="center">32</td>
+<td align="center">4.15</td>
+<td align="center">3.29</td>
+<td align="center">2.90</td>
+<td align="center">2.67</td>
+<td align="center">2.51</td>
+<td align="center">2.40</td>
+<td align="center">2.31</td>
+<td align="center">2.24</td>
+<td align="center">2.19</td>
+<td align="center">2.14</td>
+</tr>
+<tr class="even">
+<td align="center">33</td>
+<td align="center">4.14</td>
+<td align="center">3.28</td>
+<td align="center">2.89</td>
+<td align="center">2.66</td>
+<td align="center">2.50</td>
+<td align="center">2.39</td>
+<td align="center">2.30</td>
+<td align="center">2.23</td>
+<td align="center">2.18</td>
+<td align="center">2.13</td>
+</tr>
+<tr class="odd">
+<td align="center">34</td>
+<td align="center">4.13</td>
+<td align="center">3.28</td>
+<td align="center">2.88</td>
+<td align="center">2.65</td>
+<td align="center">2.49</td>
+<td align="center">2.38</td>
+<td align="center">2.29</td>
+<td align="center">2.23</td>
+<td align="center">2.17</td>
+<td align="center">2.12</td>
+</tr>
+<tr class="even">
+<td align="center">35</td>
+<td align="center">4.12</td>
+<td align="center">3.27</td>
+<td align="center">2.87</td>
+<td align="center">2.64</td>
+<td align="center">2.49</td>
+<td align="center">2.37</td>
+<td align="center">2.29</td>
+<td align="center">2.22</td>
+<td align="center">2.16</td>
+<td align="center">2.11</td>
+</tr>
+<tr class="odd">
+<td align="center">36</td>
+<td align="center">4.11</td>
+<td align="center">3.26</td>
+<td align="center">2.87</td>
+<td align="center">2.63</td>
+<td align="center">2.48</td>
+<td align="center">2.36</td>
+<td align="center">2.28</td>
+<td align="center">2.21</td>
+<td align="center">2.15</td>
+<td align="center">2.11</td>
+</tr>
+<tr class="even">
+<td align="center">37</td>
+<td align="center">4.11</td>
+<td align="center">3.25</td>
+<td align="center">2.86</td>
+<td align="center">2.63</td>
+<td align="center">2.47</td>
+<td align="center">2.36</td>
+<td align="center">2.27</td>
+<td align="center">2.20</td>
+<td align="center">2.14</td>
+<td align="center">2.10</td>
+</tr>
+<tr class="odd">
+<td align="center">38</td>
+<td align="center">4.10</td>
+<td align="center">3.24</td>
+<td align="center">2.85</td>
+<td align="center">2.62</td>
+<td align="center">2.46</td>
+<td align="center">2.35</td>
+<td align="center">2.26</td>
+<td align="center">2.19</td>
+<td align="center">2.14</td>
+<td align="center">2.09</td>
+</tr>
+<tr class="even">
+<td align="center">39</td>
+<td align="center">4.09</td>
+<td align="center">3.24</td>
+<td align="center">2.85</td>
+<td align="center">2.61</td>
+<td align="center">2.46</td>
+<td align="center">2.34</td>
+<td align="center">2.26</td>
+<td align="center">2.19</td>
+<td align="center">2.13</td>
+<td align="center">2.08</td>
+</tr>
+<tr class="odd">
+<td align="center">40</td>
+<td align="center">4.08</td>
+<td align="center">3.23</td>
+<td align="center">2.84</td>
+<td align="center">2.61</td>
+<td align="center">2.45</td>
+<td align="center">2.34</td>
+<td align="center">2.25</td>
+<td align="center">2.18</td>
+<td align="center">2.12</td>
+<td align="center">2.08</td>
+</tr>
+<tr class="even">
+<td align="center">41</td>
+<td align="center">4.08</td>
+<td align="center">3.23</td>
+<td align="center">2.83</td>
+<td align="center">2.60</td>
+<td align="center">2.44</td>
+<td align="center">2.33</td>
+<td align="center">2.24</td>
+<td align="center">2.17</td>
+<td align="center">2.12</td>
+<td align="center">2.07</td>
+</tr>
+<tr class="odd">
+<td align="center">42</td>
+<td align="center">4.07</td>
+<td align="center">3.22</td>
+<td align="center">2.83</td>
+<td align="center">2.59</td>
+<td align="center">2.44</td>
+<td align="center">2.32</td>
+<td align="center">2.24</td>
+<td align="center">2.17</td>
+<td align="center">2.11</td>
+<td align="center">2.06</td>
+</tr>
+<tr class="even">
+<td align="center">43</td>
+<td align="center">4.07</td>
+<td align="center">3.21</td>
+<td align="center">2.82</td>
+<td align="center">2.59</td>
+<td align="center">2.43</td>
+<td align="center">2.32</td>
+<td align="center">2.23</td>
+<td align="center">2.16</td>
+<td align="center">2.11</td>
+<td align="center">2.06</td>
+</tr>
+<tr class="odd">
+<td align="center">44</td>
+<td align="center">4.06</td>
+<td align="center">3.21</td>
+<td align="center">2.82</td>
+<td align="center">2.58</td>
+<td align="center">2.43</td>
+<td align="center">2.31</td>
+<td align="center">2.23</td>
+<td align="center">2.16</td>
+<td align="center">2.10</td>
+<td align="center">2.05</td>
+</tr>
+<tr class="even">
+<td align="center">45</td>
+<td align="center">4.06</td>
+<td align="center">3.20</td>
+<td align="center">2.81</td>
+<td align="center">2.58</td>
+<td align="center">2.42</td>
+<td align="center">2.31</td>
+<td align="center">2.22</td>
+<td align="center">2.15</td>
+<td align="center">2.10</td>
+<td align="center">2.05</td>
+</tr>
+<tr class="odd">
+<td align="center">46</td>
+<td align="center">4.05</td>
+<td align="center">3.20</td>
+<td align="center">2.81</td>
+<td align="center">2.57</td>
+<td align="center">2.42</td>
+<td align="center">2.30</td>
+<td align="center">2.22</td>
+<td align="center">2.15</td>
+<td align="center">2.09</td>
+<td align="center">2.04</td>
+</tr>
+<tr class="even">
+<td align="center">47</td>
+<td align="center">4.05</td>
+<td align="center">3.20</td>
+<td align="center">2.80</td>
+<td align="center">2.57</td>
+<td align="center">2.41</td>
+<td align="center">2.30</td>
+<td align="center">2.21</td>
+<td align="center">2.14</td>
+<td align="center">2.09</td>
+<td align="center">2.04</td>
+</tr>
+<tr class="odd">
+<td align="center">48</td>
+<td align="center">4.04</td>
+<td align="center">3.19</td>
+<td align="center">2.80</td>
+<td align="center">2.57</td>
+<td align="center">2.41</td>
+<td align="center">2.29</td>
+<td align="center">2.21</td>
+<td align="center">2.14</td>
+<td align="center">2.08</td>
+<td align="center">2.03</td>
+</tr>
+<tr class="even">
+<td align="center">49</td>
+<td align="center">4.04</td>
+<td align="center">3.19</td>
+<td align="center">2.79</td>
+<td align="center">2.56</td>
+<td align="center">2.40</td>
+<td align="center">2.29</td>
+<td align="center">2.20</td>
+<td align="center">2.13</td>
+<td align="center">2.08</td>
+<td align="center">2.03</td>
+</tr>
+<tr class="odd">
+<td align="center">50</td>
+<td align="center">4.03</td>
+<td align="center">3.18</td>
+<td align="center">2.79</td>
+<td align="center">2.56</td>
+<td align="center">2.40</td>
+<td align="center">2.29</td>
+<td align="center">2.20</td>
+<td align="center">2.13</td>
+<td align="center">2.07</td>
+<td align="center">2.03</td>
+</tr>
+<tr class="even">
+<td align="center">51</td>
+<td align="center">4.03</td>
+<td align="center">3.18</td>
+<td align="center">2.79</td>
+<td align="center">2.55</td>
+<td align="center">2.40</td>
+<td align="center">2.28</td>
+<td align="center">2.20</td>
+<td align="center">2.13</td>
+<td align="center">2.07</td>
+<td align="center">2.02</td>
+</tr>
+<tr class="odd">
+<td align="center">52</td>
+<td align="center">4.03</td>
+<td align="center">3.18</td>
+<td align="center">2.78</td>
+<td align="center">2.55</td>
+<td align="center">2.39</td>
+<td align="center">2.28</td>
+<td align="center">2.19</td>
+<td align="center">2.12</td>
+<td align="center">2.07</td>
+<td align="center">2.02</td>
+</tr>
+<tr class="even">
+<td align="center">53</td>
+<td align="center">4.02</td>
+<td align="center">3.17</td>
+<td align="center">2.78</td>
+<td align="center">2.55</td>
+<td align="center">2.39</td>
+<td align="center">2.28</td>
+<td align="center">2.19</td>
+<td align="center">2.12</td>
+<td align="center">2.06</td>
+<td align="center">2.01</td>
+</tr>
+<tr class="odd">
+<td align="center">54</td>
+<td align="center">4.02</td>
+<td align="center">3.17</td>
+<td align="center">2.78</td>
+<td align="center">2.54</td>
+<td align="center">2.39</td>
+<td align="center">2.27</td>
+<td align="center">2.18</td>
+<td align="center">2.12</td>
+<td align="center">2.06</td>
+<td align="center">2.01</td>
+</tr>
+<tr class="even">
+<td align="center">55</td>
+<td align="center">4.02</td>
+<td align="center">3.16</td>
+<td align="center">2.77</td>
+<td align="center">2.54</td>
+<td align="center">2.38</td>
+<td align="center">2.27</td>
+<td align="center">2.18</td>
+<td align="center">2.11</td>
+<td align="center">2.06</td>
+<td align="center">2.01</td>
+</tr>
+<tr class="odd">
+<td align="center">56</td>
+<td align="center">4.01</td>
+<td align="center">3.16</td>
+<td align="center">2.77</td>
+<td align="center">2.54</td>
+<td align="center">2.38</td>
+<td align="center">2.27</td>
+<td align="center">2.18</td>
+<td align="center">2.11</td>
+<td align="center">2.05</td>
+<td align="center">2.00</td>
+</tr>
+<tr class="even">
+<td align="center">57</td>
+<td align="center">4.01</td>
+<td align="center">3.16</td>
+<td align="center">2.77</td>
+<td align="center">2.53</td>
+<td align="center">2.38</td>
+<td align="center">2.26</td>
+<td align="center">2.18</td>
+<td align="center">2.11</td>
+<td align="center">2.05</td>
+<td align="center">2.00</td>
+</tr>
+<tr class="odd">
+<td align="center">58</td>
+<td align="center">4.01</td>
+<td align="center">3.16</td>
+<td align="center">2.76</td>
+<td align="center">2.53</td>
+<td align="center">2.37</td>
+<td align="center">2.26</td>
+<td align="center">2.17</td>
+<td align="center">2.10</td>
+<td align="center">2.05</td>
+<td align="center">2.00</td>
+</tr>
+<tr class="even">
+<td align="center">59</td>
+<td align="center">4.00</td>
+<td align="center">3.15</td>
+<td align="center">2.76</td>
+<td align="center">2.53</td>
+<td align="center">2.37</td>
+<td align="center">2.26</td>
+<td align="center">2.17</td>
+<td align="center">2.10</td>
+<td align="center">2.04</td>
+<td align="center">2.00</td>
+</tr>
+<tr class="odd">
+<td align="center">60</td>
+<td align="center">4.00</td>
+<td align="center">3.15</td>
+<td align="center">2.76</td>
+<td align="center">2.53</td>
+<td align="center">2.37</td>
+<td align="center">2.25</td>
+<td align="center">2.17</td>
+<td align="center">2.10</td>
+<td align="center">2.04</td>
+<td align="center">1.99</td>
+</tr>
+<tr class="even">
+<td align="center">61</td>
+<td align="center">4.00</td>
+<td align="center">3.15</td>
+<td align="center">2.76</td>
+<td align="center">2.52</td>
+<td align="center">2.37</td>
+<td align="center">2.25</td>
+<td align="center">2.16</td>
+<td align="center">2.09</td>
+<td align="center">2.04</td>
+<td align="center">1.99</td>
+</tr>
+<tr class="odd">
+<td align="center">62</td>
+<td align="center">4.00</td>
+<td align="center">3.15</td>
+<td align="center">2.75</td>
+<td align="center">2.52</td>
+<td align="center">2.36</td>
+<td align="center">2.25</td>
+<td align="center">2.16</td>
+<td align="center">2.09</td>
+<td align="center">2.03</td>
+<td align="center">1.99</td>
+</tr>
+<tr class="even">
+<td align="center">63</td>
+<td align="center">3.99</td>
+<td align="center">3.14</td>
+<td align="center">2.75</td>
+<td align="center">2.52</td>
+<td align="center">2.36</td>
+<td align="center">2.25</td>
+<td align="center">2.16</td>
+<td align="center">2.09</td>
+<td align="center">2.03</td>
+<td align="center">1.98</td>
+</tr>
+<tr class="odd">
+<td align="center">64</td>
+<td align="center">3.99</td>
+<td align="center">3.14</td>
+<td align="center">2.75</td>
+<td align="center">2.52</td>
+<td align="center">2.36</td>
+<td align="center">2.24</td>
+<td align="center">2.16</td>
+<td align="center">2.09</td>
+<td align="center">2.03</td>
+<td align="center">1.98</td>
+</tr>
+<tr class="even">
+<td align="center">65</td>
+<td align="center">3.99</td>
+<td align="center">3.14</td>
+<td align="center">2.75</td>
+<td align="center">2.51</td>
+<td align="center">2.36</td>
+<td align="center">2.24</td>
+<td align="center">2.15</td>
+<td align="center">2.08</td>
+<td align="center">2.03</td>
+<td align="center">1.98</td>
+</tr>
+<tr class="odd">
+<td align="center">66</td>
+<td align="center">3.99</td>
+<td align="center">3.14</td>
+<td align="center">2.74</td>
+<td align="center">2.51</td>
+<td align="center">2.35</td>
+<td align="center">2.24</td>
+<td align="center">2.15</td>
+<td align="center">2.08</td>
+<td align="center">2.03</td>
+<td align="center">1.98</td>
+</tr>
+<tr class="even">
+<td align="center">67</td>
+<td align="center">3.98</td>
+<td align="center">3.13</td>
+<td align="center">2.74</td>
+<td align="center">2.51</td>
+<td align="center">2.35</td>
+<td align="center">2.24</td>
+<td align="center">2.15</td>
+<td align="center">2.08</td>
+<td align="center">2.02</td>
+<td align="center">1.98</td>
+</tr>
+<tr class="odd">
+<td align="center">68</td>
+<td align="center">3.98</td>
+<td align="center">3.13</td>
+<td align="center">2.74</td>
+<td align="center">2.51</td>
+<td align="center">2.35</td>
+<td align="center">2.24</td>
+<td align="center">2.15</td>
+<td align="center">2.08</td>
+<td align="center">2.02</td>
+<td align="center">1.97</td>
+</tr>
+<tr class="even">
+<td align="center">69</td>
+<td align="center">3.98</td>
+<td align="center">3.13</td>
+<td align="center">2.74</td>
+<td align="center">2.50</td>
+<td align="center">2.35</td>
+<td align="center">2.23</td>
+<td align="center">2.15</td>
+<td align="center">2.08</td>
+<td align="center">2.02</td>
+<td align="center">1.97</td>
+</tr>
+<tr class="odd">
+<td align="center">70</td>
+<td align="center">3.98</td>
+<td align="center">3.13</td>
+<td align="center">2.74</td>
+<td align="center">2.50</td>
+<td align="center">2.35</td>
+<td align="center">2.23</td>
+<td align="center">2.14</td>
+<td align="center">2.07</td>
+<td align="center">2.02</td>
+<td align="center">1.97</td>
+</tr>
+<tr class="even">
+<td align="center">71</td>
+<td align="center">3.98</td>
+<td align="center">3.13</td>
+<td align="center">2.73</td>
+<td align="center">2.50</td>
+<td align="center">2.34</td>
+<td align="center">2.23</td>
+<td align="center">2.14</td>
+<td align="center">2.07</td>
+<td align="center">2.01</td>
+<td align="center">1.97</td>
+</tr>
+<tr class="odd">
+<td align="center">72</td>
+<td align="center">3.97</td>
+<td align="center">3.12</td>
+<td align="center">2.73</td>
+<td align="center">2.50</td>
+<td align="center">2.34</td>
+<td align="center">2.23</td>
+<td align="center">2.14</td>
+<td align="center">2.07</td>
+<td align="center">2.01</td>
+<td align="center">1.96</td>
+</tr>
+<tr class="even">
+<td align="center">73</td>
+<td align="center">3.97</td>
+<td align="center">3.12</td>
+<td align="center">2.73</td>
+<td align="center">2.50</td>
+<td align="center">2.34</td>
+<td align="center">2.23</td>
+<td align="center">2.14</td>
+<td align="center">2.07</td>
+<td align="center">2.01</td>
+<td align="center">1.96</td>
+</tr>
+<tr class="odd">
+<td align="center">74</td>
+<td align="center">3.97</td>
+<td align="center">3.12</td>
+<td align="center">2.73</td>
+<td align="center">2.50</td>
+<td align="center">2.34</td>
+<td align="center">2.22</td>
+<td align="center">2.14</td>
+<td align="center">2.07</td>
+<td align="center">2.01</td>
+<td align="center">1.96</td>
+</tr>
+<tr class="even">
+<td align="center">75</td>
+<td align="center">3.97</td>
+<td align="center">3.12</td>
+<td align="center">2.73</td>
+<td align="center">2.49</td>
+<td align="center">2.34</td>
+<td align="center">2.22</td>
+<td align="center">2.13</td>
+<td align="center">2.06</td>
+<td align="center">2.01</td>
+<td align="center">1.96</td>
+</tr>
+<tr class="odd">
+<td align="center">76</td>
+<td align="center">3.97</td>
+<td align="center">3.12</td>
+<td align="center">2.72</td>
+<td align="center">2.49</td>
+<td align="center">2.33</td>
+<td align="center">2.22</td>
+<td align="center">2.13</td>
+<td align="center">2.06</td>
+<td align="center">2.01</td>
+<td align="center">1.96</td>
+</tr>
+<tr class="even">
+<td align="center">77</td>
+<td align="center">3.97</td>
+<td align="center">3.12</td>
+<td align="center">2.72</td>
+<td align="center">2.49</td>
+<td align="center">2.33</td>
+<td align="center">2.22</td>
+<td align="center">2.13</td>
+<td align="center">2.06</td>
+<td align="center">2.00</td>
+<td align="center">1.96</td>
+</tr>
+<tr class="odd">
+<td align="center">78</td>
+<td align="center">3.96</td>
+<td align="center">3.11</td>
+<td align="center">2.72</td>
+<td align="center">2.49</td>
+<td align="center">2.33</td>
+<td align="center">2.22</td>
+<td align="center">2.13</td>
+<td align="center">2.06</td>
+<td align="center">2.00</td>
+<td align="center">1.95</td>
+</tr>
+<tr class="even">
+<td align="center">79</td>
+<td align="center">3.96</td>
+<td align="center">3.11</td>
+<td align="center">2.72</td>
+<td align="center">2.49</td>
+<td align="center">2.33</td>
+<td align="center">2.22</td>
+<td align="center">2.13</td>
+<td align="center">2.06</td>
+<td align="center">2.00</td>
+<td align="center">1.95</td>
+</tr>
+<tr class="odd">
+<td align="center">80</td>
+<td align="center">3.96</td>
+<td align="center">3.11</td>
+<td align="center">2.72</td>
+<td align="center">2.49</td>
+<td align="center">2.33</td>
+<td align="center">2.21</td>
+<td align="center">2.13</td>
+<td align="center">2.06</td>
+<td align="center">2.00</td>
+<td align="center">1.95</td>
+</tr>
+<tr class="even">
+<td align="center">81</td>
+<td align="center">3.96</td>
+<td align="center">3.11</td>
+<td align="center">2.72</td>
+<td align="center">2.48</td>
+<td align="center">2.33</td>
+<td align="center">2.21</td>
+<td align="center">2.12</td>
+<td align="center">2.05</td>
+<td align="center">2.00</td>
+<td align="center">1.95</td>
+</tr>
+<tr class="odd">
+<td align="center">82</td>
+<td align="center">3.96</td>
+<td align="center">3.11</td>
+<td align="center">2.72</td>
+<td align="center">2.48</td>
+<td align="center">2.33</td>
+<td align="center">2.21</td>
+<td align="center">2.12</td>
+<td align="center">2.05</td>
+<td align="center">2.00</td>
+<td align="center">1.95</td>
+</tr>
+<tr class="even">
+<td align="center">83</td>
+<td align="center">3.96</td>
+<td align="center">3.11</td>
+<td align="center">2.71</td>
+<td align="center">2.48</td>
+<td align="center">2.32</td>
+<td align="center">2.21</td>
+<td align="center">2.12</td>
+<td align="center">2.05</td>
+<td align="center">1.99</td>
+<td align="center">1.95</td>
+</tr>
+<tr class="odd">
+<td align="center">84</td>
+<td align="center">3.95</td>
+<td align="center">3.11</td>
+<td align="center">2.71</td>
+<td align="center">2.48</td>
+<td align="center">2.32</td>
+<td align="center">2.21</td>
+<td align="center">2.12</td>
+<td align="center">2.05</td>
+<td align="center">1.99</td>
+<td align="center">1.95</td>
+</tr>
+<tr class="even">
+<td align="center">85</td>
+<td align="center">3.95</td>
+<td align="center">3.10</td>
+<td align="center">2.71</td>
+<td align="center">2.48</td>
+<td align="center">2.32</td>
+<td align="center">2.21</td>
+<td align="center">2.12</td>
+<td align="center">2.05</td>
+<td align="center">1.99</td>
+<td align="center">1.94</td>
+</tr>
+<tr class="odd">
+<td align="center">86</td>
+<td align="center">3.95</td>
+<td align="center">3.10</td>
+<td align="center">2.71</td>
+<td align="center">2.48</td>
+<td align="center">2.32</td>
+<td align="center">2.21</td>
+<td align="center">2.12</td>
+<td align="center">2.05</td>
+<td align="center">1.99</td>
+<td align="center">1.94</td>
+</tr>
+<tr class="even">
+<td align="center">87</td>
+<td align="center">3.95</td>
+<td align="center">3.10</td>
+<td align="center">2.71</td>
+<td align="center">2.48</td>
+<td align="center">2.32</td>
+<td align="center">2.20</td>
+<td align="center">2.12</td>
+<td align="center">2.05</td>
+<td align="center">1.99</td>
+<td align="center">1.94</td>
+</tr>
+<tr class="odd">
+<td align="center">88</td>
+<td align="center">3.95</td>
+<td align="center">3.10</td>
+<td align="center">2.71</td>
+<td align="center">2.48</td>
+<td align="center">2.32</td>
+<td align="center">2.20</td>
+<td align="center">2.12</td>
+<td align="center">2.05</td>
+<td align="center">1.99</td>
+<td align="center">1.94</td>
+</tr>
+<tr class="even">
+<td align="center">89</td>
+<td align="center">3.95</td>
+<td align="center">3.10</td>
+<td align="center">2.71</td>
+<td align="center">2.47</td>
+<td align="center">2.32</td>
+<td align="center">2.20</td>
+<td align="center">2.11</td>
+<td align="center">2.04</td>
+<td align="center">1.99</td>
+<td align="center">1.94</td>
+</tr>
+<tr class="odd">
+<td align="center">90</td>
+<td align="center">3.95</td>
+<td align="center">3.10</td>
+<td align="center">2.71</td>
+<td align="center">2.47</td>
+<td align="center">2.32</td>
+<td align="center">2.20</td>
+<td align="center">2.11</td>
+<td align="center">2.04</td>
+<td align="center">1.99</td>
+<td align="center">1.94</td>
+</tr>
+<tr class="even">
+<td align="center">91</td>
+<td align="center">3.95</td>
+<td align="center">3.10</td>
+<td align="center">2.70</td>
+<td align="center">2.47</td>
+<td align="center">2.31</td>
+<td align="center">2.20</td>
+<td align="center">2.11</td>
+<td align="center">2.04</td>
+<td align="center">1.98</td>
+<td align="center">1.94</td>
+</tr>
+<tr class="odd">
+<td align="center">92</td>
+<td align="center">3.94</td>
+<td align="center">3.10</td>
+<td align="center">2.70</td>
+<td align="center">2.47</td>
+<td align="center">2.31</td>
+<td align="center">2.20</td>
+<td align="center">2.11</td>
+<td align="center">2.04</td>
+<td align="center">1.98</td>
+<td align="center">1.94</td>
+</tr>
+<tr class="even">
+<td align="center">93</td>
+<td align="center">3.94</td>
+<td align="center">3.09</td>
+<td align="center">2.70</td>
+<td align="center">2.47</td>
+<td align="center">2.31</td>
+<td align="center">2.20</td>
+<td align="center">2.11</td>
+<td align="center">2.04</td>
+<td align="center">1.98</td>
+<td align="center">1.93</td>
+</tr>
+<tr class="odd">
+<td align="center">94</td>
+<td align="center">3.94</td>
+<td align="center">3.09</td>
+<td align="center">2.70</td>
+<td align="center">2.47</td>
+<td align="center">2.31</td>
+<td align="center">2.20</td>
+<td align="center">2.11</td>
+<td align="center">2.04</td>
+<td align="center">1.98</td>
+<td align="center">1.93</td>
+</tr>
+<tr class="even">
+<td align="center">95</td>
+<td align="center">3.94</td>
+<td align="center">3.09</td>
+<td align="center">2.70</td>
+<td align="center">2.47</td>
+<td align="center">2.31</td>
+<td align="center">2.20</td>
+<td align="center">2.11</td>
+<td align="center">2.04</td>
+<td align="center">1.98</td>
+<td align="center">1.93</td>
+</tr>
+<tr class="odd">
+<td align="center">96</td>
+<td align="center">3.94</td>
+<td align="center">3.09</td>
+<td align="center">2.70</td>
+<td align="center">2.47</td>
+<td align="center">2.31</td>
+<td align="center">2.19</td>
+<td align="center">2.11</td>
+<td align="center">2.04</td>
+<td align="center">1.98</td>
+<td align="center">1.93</td>
+</tr>
+<tr class="even">
+<td align="center">97</td>
+<td align="center">3.94</td>
+<td align="center">3.09</td>
+<td align="center">2.70</td>
+<td align="center">2.47</td>
+<td align="center">2.31</td>
+<td align="center">2.19</td>
+<td align="center">2.11</td>
+<td align="center">2.04</td>
+<td align="center">1.98</td>
+<td align="center">1.93</td>
+</tr>
+<tr class="odd">
+<td align="center">98</td>
+<td align="center">3.94</td>
+<td align="center">3.09</td>
+<td align="center">2.70</td>
+<td align="center">2.46</td>
+<td align="center">2.31</td>
+<td align="center">2.19</td>
+<td align="center">2.10</td>
+<td align="center">2.03</td>
+<td align="center">1.98</td>
+<td align="center">1.93</td>
+</tr>
+<tr class="even">
+<td align="center">99</td>
+<td align="center">3.94</td>
+<td align="center">3.09</td>
+<td align="center">2.70</td>
+<td align="center">2.46</td>
+<td align="center">2.31</td>
+<td align="center">2.19</td>
+<td align="center">2.10</td>
+<td align="center">2.03</td>
+<td align="center">1.98</td>
+<td align="center">1.93</td>
+</tr>
+<tr class="odd">
+<td align="center">100</td>
+<td align="center">3.94</td>
+<td align="center">3.09</td>
+<td align="center">2.70</td>
+<td align="center">2.46</td>
+<td align="center">2.31</td>
+<td align="center">2.19</td>
+<td align="center">2.10</td>
+<td align="center">2.03</td>
+<td align="center">1.97</td>
+<td align="center">1.93</td>
+</tr>
+<tr class="even">
+<td align="center">Inf</td>
+<td align="center">3.84</td>
+<td align="center">3.00</td>
+<td align="center">2.60</td>
+<td align="center">2.37</td>
+<td align="center">2.21</td>
+<td align="center">2.10</td>
+<td align="center">2.01</td>
+<td align="center">1.94</td>
+<td align="center">1.88</td>
+<td align="center">1.83</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="table-e-10-critical-values-for-the-f-distribution" class="section level2 unnumbered hasAnchor">
+<h2>Table E: 10% Critical Values for the F distribution<a href="statistical-tables.html#table-e-10-critical-values-for-the-f-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<table>
+<thead>
+<tr class="header">
+<th align="center">df2/df1</th>
+<th align="center">1</th>
+<th align="center">2</th>
+<th align="center">3</th>
+<th align="center">4</th>
+<th align="center">5</th>
+<th align="center">6</th>
+<th align="center">7</th>
+<th align="center">8</th>
+<th align="center">9</th>
+<th align="center">10</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">10</td>
+<td align="center">3.29</td>
+<td align="center">2.92</td>
+<td align="center">2.73</td>
+<td align="center">2.61</td>
+<td align="center">2.52</td>
+<td align="center">2.46</td>
+<td align="center">2.41</td>
+<td align="center">2.38</td>
+<td align="center">2.35</td>
+<td align="center">2.32</td>
+</tr>
+<tr class="even">
+<td align="center">11</td>
+<td align="center">3.23</td>
+<td align="center">2.86</td>
+<td align="center">2.66</td>
+<td align="center">2.54</td>
+<td align="center">2.45</td>
+<td align="center">2.39</td>
+<td align="center">2.34</td>
+<td align="center">2.30</td>
+<td align="center">2.27</td>
+<td align="center">2.25</td>
+</tr>
+<tr class="odd">
+<td align="center">12</td>
+<td align="center">3.18</td>
+<td align="center">2.81</td>
+<td align="center">2.61</td>
+<td align="center">2.48</td>
+<td align="center">2.39</td>
+<td align="center">2.33</td>
+<td align="center">2.28</td>
+<td align="center">2.24</td>
+<td align="center">2.21</td>
+<td align="center">2.19</td>
+</tr>
+<tr class="even">
+<td align="center">13</td>
+<td align="center">3.14</td>
+<td align="center">2.76</td>
+<td align="center">2.56</td>
+<td align="center">2.43</td>
+<td align="center">2.35</td>
+<td align="center">2.28</td>
+<td align="center">2.23</td>
+<td align="center">2.20</td>
+<td align="center">2.16</td>
+<td align="center">2.14</td>
+</tr>
+<tr class="odd">
+<td align="center">14</td>
+<td align="center">3.10</td>
+<td align="center">2.73</td>
+<td align="center">2.52</td>
+<td align="center">2.39</td>
+<td align="center">2.31</td>
+<td align="center">2.24</td>
+<td align="center">2.19</td>
+<td align="center">2.15</td>
+<td align="center">2.12</td>
+<td align="center">2.10</td>
+</tr>
+<tr class="even">
+<td align="center">15</td>
+<td align="center">3.07</td>
+<td align="center">2.70</td>
+<td align="center">2.49</td>
+<td align="center">2.36</td>
+<td align="center">2.27</td>
+<td align="center">2.21</td>
+<td align="center">2.16</td>
+<td align="center">2.12</td>
+<td align="center">2.09</td>
+<td align="center">2.06</td>
+</tr>
+<tr class="odd">
+<td align="center">16</td>
+<td align="center">3.05</td>
+<td align="center">2.67</td>
+<td align="center">2.46</td>
+<td align="center">2.33</td>
+<td align="center">2.24</td>
+<td align="center">2.18</td>
+<td align="center">2.13</td>
+<td align="center">2.09</td>
+<td align="center">2.06</td>
+<td align="center">2.03</td>
+</tr>
+<tr class="even">
+<td align="center">17</td>
+<td align="center">3.03</td>
+<td align="center">2.64</td>
+<td align="center">2.44</td>
+<td align="center">2.31</td>
+<td align="center">2.22</td>
+<td align="center">2.15</td>
+<td align="center">2.10</td>
+<td align="center">2.06</td>
+<td align="center">2.03</td>
+<td align="center">2.00</td>
+</tr>
+<tr class="odd">
+<td align="center">18</td>
+<td align="center">3.01</td>
+<td align="center">2.62</td>
+<td align="center">2.42</td>
+<td align="center">2.29</td>
+<td align="center">2.20</td>
+<td align="center">2.13</td>
+<td align="center">2.08</td>
+<td align="center">2.04</td>
+<td align="center">2.00</td>
+<td align="center">1.98</td>
+</tr>
+<tr class="even">
+<td align="center">19</td>
+<td align="center">2.99</td>
+<td align="center">2.61</td>
+<td align="center">2.40</td>
+<td align="center">2.27</td>
+<td align="center">2.18</td>
+<td align="center">2.11</td>
+<td align="center">2.06</td>
+<td align="center">2.02</td>
+<td align="center">1.98</td>
+<td align="center">1.96</td>
+</tr>
+<tr class="odd">
+<td align="center">20</td>
+<td align="center">2.97</td>
+<td align="center">2.59</td>
+<td align="center">2.38</td>
+<td align="center">2.25</td>
+<td align="center">2.16</td>
+<td align="center">2.09</td>
+<td align="center">2.04</td>
+<td align="center">2.00</td>
+<td align="center">1.96</td>
+<td align="center">1.94</td>
+</tr>
+<tr class="even">
+<td align="center">21</td>
+<td align="center">2.96</td>
+<td align="center">2.57</td>
+<td align="center">2.36</td>
+<td align="center">2.23</td>
+<td align="center">2.14</td>
+<td align="center">2.08</td>
+<td align="center">2.02</td>
+<td align="center">1.98</td>
+<td align="center">1.95</td>
+<td align="center">1.92</td>
+</tr>
+<tr class="odd">
+<td align="center">22</td>
+<td align="center">2.95</td>
+<td align="center">2.56</td>
+<td align="center">2.35</td>
+<td align="center">2.22</td>
+<td align="center">2.13</td>
+<td align="center">2.06</td>
+<td align="center">2.01</td>
+<td align="center">1.97</td>
+<td align="center">1.93</td>
+<td align="center">1.90</td>
+</tr>
+<tr class="even">
+<td align="center">23</td>
+<td align="center">2.94</td>
+<td align="center">2.55</td>
+<td align="center">2.34</td>
+<td align="center">2.21</td>
+<td align="center">2.11</td>
+<td align="center">2.05</td>
+<td align="center">1.99</td>
+<td align="center">1.95</td>
+<td align="center">1.92</td>
+<td align="center">1.89</td>
+</tr>
+<tr class="odd">
+<td align="center">24</td>
+<td align="center">2.93</td>
+<td align="center">2.54</td>
+<td align="center">2.33</td>
+<td align="center">2.19</td>
+<td align="center">2.10</td>
+<td align="center">2.04</td>
+<td align="center">1.98</td>
+<td align="center">1.94</td>
+<td align="center">1.91</td>
+<td align="center">1.88</td>
+</tr>
+<tr class="even">
+<td align="center">25</td>
+<td align="center">2.92</td>
+<td align="center">2.53</td>
+<td align="center">2.32</td>
+<td align="center">2.18</td>
+<td align="center">2.09</td>
+<td align="center">2.02</td>
+<td align="center">1.97</td>
+<td align="center">1.93</td>
+<td align="center">1.89</td>
+<td align="center">1.87</td>
+</tr>
+<tr class="odd">
+<td align="center">26</td>
+<td align="center">2.91</td>
+<td align="center">2.52</td>
+<td align="center">2.31</td>
+<td align="center">2.17</td>
+<td align="center">2.08</td>
+<td align="center">2.01</td>
+<td align="center">1.96</td>
+<td align="center">1.92</td>
+<td align="center">1.88</td>
+<td align="center">1.86</td>
+</tr>
+<tr class="even">
+<td align="center">27</td>
+<td align="center">2.90</td>
+<td align="center">2.51</td>
+<td align="center">2.30</td>
+<td align="center">2.17</td>
+<td align="center">2.07</td>
+<td align="center">2.00</td>
+<td align="center">1.95</td>
+<td align="center">1.91</td>
+<td align="center">1.87</td>
+<td align="center">1.85</td>
+</tr>
+<tr class="odd">
+<td align="center">28</td>
+<td align="center">2.89</td>
+<td align="center">2.50</td>
+<td align="center">2.29</td>
+<td align="center">2.16</td>
+<td align="center">2.06</td>
+<td align="center">2.00</td>
+<td align="center">1.94</td>
+<td align="center">1.90</td>
+<td align="center">1.87</td>
+<td align="center">1.84</td>
+</tr>
+<tr class="even">
+<td align="center">29</td>
+<td align="center">2.89</td>
+<td align="center">2.50</td>
+<td align="center">2.28</td>
+<td align="center">2.15</td>
+<td align="center">2.06</td>
+<td align="center">1.99</td>
+<td align="center">1.93</td>
+<td align="center">1.89</td>
+<td align="center">1.86</td>
+<td align="center">1.83</td>
+</tr>
+<tr class="odd">
+<td align="center">30</td>
+<td align="center">2.88</td>
+<td align="center">2.49</td>
+<td align="center">2.28</td>
+<td align="center">2.14</td>
+<td align="center">2.05</td>
+<td align="center">1.98</td>
+<td align="center">1.93</td>
+<td align="center">1.88</td>
+<td align="center">1.85</td>
+<td align="center">1.82</td>
+</tr>
+<tr class="even">
+<td align="center">31</td>
+<td align="center">2.87</td>
+<td align="center">2.48</td>
+<td align="center">2.27</td>
+<td align="center">2.14</td>
+<td align="center">2.04</td>
+<td align="center">1.97</td>
+<td align="center">1.92</td>
+<td align="center">1.88</td>
+<td align="center">1.84</td>
+<td align="center">1.81</td>
+</tr>
+<tr class="odd">
+<td align="center">32</td>
+<td align="center">2.87</td>
+<td align="center">2.48</td>
+<td align="center">2.26</td>
+<td align="center">2.13</td>
+<td align="center">2.04</td>
+<td align="center">1.97</td>
+<td align="center">1.91</td>
+<td align="center">1.87</td>
+<td align="center">1.83</td>
+<td align="center">1.81</td>
+</tr>
+<tr class="even">
+<td align="center">33</td>
+<td align="center">2.86</td>
+<td align="center">2.47</td>
+<td align="center">2.26</td>
+<td align="center">2.12</td>
+<td align="center">2.03</td>
+<td align="center">1.96</td>
+<td align="center">1.91</td>
+<td align="center">1.86</td>
+<td align="center">1.83</td>
+<td align="center">1.80</td>
+</tr>
+<tr class="odd">
+<td align="center">34</td>
+<td align="center">2.86</td>
+<td align="center">2.47</td>
+<td align="center">2.25</td>
+<td align="center">2.12</td>
+<td align="center">2.02</td>
+<td align="center">1.96</td>
+<td align="center">1.90</td>
+<td align="center">1.86</td>
+<td align="center">1.82</td>
+<td align="center">1.79</td>
+</tr>
+<tr class="even">
+<td align="center">35</td>
+<td align="center">2.85</td>
+<td align="center">2.46</td>
+<td align="center">2.25</td>
+<td align="center">2.11</td>
+<td align="center">2.02</td>
+<td align="center">1.95</td>
+<td align="center">1.90</td>
+<td align="center">1.85</td>
+<td align="center">1.82</td>
+<td align="center">1.79</td>
+</tr>
+<tr class="odd">
+<td align="center">36</td>
+<td align="center">2.85</td>
+<td align="center">2.46</td>
+<td align="center">2.24</td>
+<td align="center">2.11</td>
+<td align="center">2.01</td>
+<td align="center">1.94</td>
+<td align="center">1.89</td>
+<td align="center">1.85</td>
+<td align="center">1.81</td>
+<td align="center">1.78</td>
+</tr>
+<tr class="even">
+<td align="center">37</td>
+<td align="center">2.85</td>
+<td align="center">2.45</td>
+<td align="center">2.24</td>
+<td align="center">2.10</td>
+<td align="center">2.01</td>
+<td align="center">1.94</td>
+<td align="center">1.89</td>
+<td align="center">1.84</td>
+<td align="center">1.81</td>
+<td align="center">1.78</td>
+</tr>
+<tr class="odd">
+<td align="center">38</td>
+<td align="center">2.84</td>
+<td align="center">2.45</td>
+<td align="center">2.23</td>
+<td align="center">2.10</td>
+<td align="center">2.01</td>
+<td align="center">1.94</td>
+<td align="center">1.88</td>
+<td align="center">1.84</td>
+<td align="center">1.80</td>
+<td align="center">1.77</td>
+</tr>
+<tr class="even">
+<td align="center">39</td>
+<td align="center">2.84</td>
+<td align="center">2.44</td>
+<td align="center">2.23</td>
+<td align="center">2.09</td>
+<td align="center">2.00</td>
+<td align="center">1.93</td>
+<td align="center">1.88</td>
+<td align="center">1.83</td>
+<td align="center">1.80</td>
+<td align="center">1.77</td>
+</tr>
+<tr class="odd">
+<td align="center">40</td>
+<td align="center">2.84</td>
+<td align="center">2.44</td>
+<td align="center">2.23</td>
+<td align="center">2.09</td>
+<td align="center">2.00</td>
+<td align="center">1.93</td>
+<td align="center">1.87</td>
+<td align="center">1.83</td>
+<td align="center">1.79</td>
+<td align="center">1.76</td>
+</tr>
+<tr class="even">
+<td align="center">41</td>
+<td align="center">2.83</td>
+<td align="center">2.44</td>
+<td align="center">2.22</td>
+<td align="center">2.09</td>
+<td align="center">1.99</td>
+<td align="center">1.92</td>
+<td align="center">1.87</td>
+<td align="center">1.82</td>
+<td align="center">1.79</td>
+<td align="center">1.76</td>
+</tr>
+<tr class="odd">
+<td align="center">42</td>
+<td align="center">2.83</td>
+<td align="center">2.43</td>
+<td align="center">2.22</td>
+<td align="center">2.08</td>
+<td align="center">1.99</td>
+<td align="center">1.92</td>
+<td align="center">1.86</td>
+<td align="center">1.82</td>
+<td align="center">1.78</td>
+<td align="center">1.75</td>
+</tr>
+<tr class="even">
+<td align="center">43</td>
+<td align="center">2.83</td>
+<td align="center">2.43</td>
+<td align="center">2.22</td>
+<td align="center">2.08</td>
+<td align="center">1.99</td>
+<td align="center">1.92</td>
+<td align="center">1.86</td>
+<td align="center">1.82</td>
+<td align="center">1.78</td>
+<td align="center">1.75</td>
+</tr>
+<tr class="odd">
+<td align="center">44</td>
+<td align="center">2.82</td>
+<td align="center">2.43</td>
+<td align="center">2.21</td>
+<td align="center">2.08</td>
+<td align="center">1.98</td>
+<td align="center">1.91</td>
+<td align="center">1.86</td>
+<td align="center">1.81</td>
+<td align="center">1.78</td>
+<td align="center">1.75</td>
+</tr>
+<tr class="even">
+<td align="center">45</td>
+<td align="center">2.82</td>
+<td align="center">2.42</td>
+<td align="center">2.21</td>
+<td align="center">2.07</td>
+<td align="center">1.98</td>
+<td align="center">1.91</td>
+<td align="center">1.85</td>
+<td align="center">1.81</td>
+<td align="center">1.77</td>
+<td align="center">1.74</td>
+</tr>
+<tr class="odd">
+<td align="center">46</td>
+<td align="center">2.82</td>
+<td align="center">2.42</td>
+<td align="center">2.21</td>
+<td align="center">2.07</td>
+<td align="center">1.98</td>
+<td align="center">1.91</td>
+<td align="center">1.85</td>
+<td align="center">1.81</td>
+<td align="center">1.77</td>
+<td align="center">1.74</td>
+</tr>
+<tr class="even">
+<td align="center">47</td>
+<td align="center">2.82</td>
+<td align="center">2.42</td>
+<td align="center">2.20</td>
+<td align="center">2.07</td>
+<td align="center">1.97</td>
+<td align="center">1.90</td>
+<td align="center">1.85</td>
+<td align="center">1.80</td>
+<td align="center">1.77</td>
+<td align="center">1.74</td>
+</tr>
+<tr class="odd">
+<td align="center">48</td>
+<td align="center">2.81</td>
+<td align="center">2.42</td>
+<td align="center">2.20</td>
+<td align="center">2.07</td>
+<td align="center">1.97</td>
+<td align="center">1.90</td>
+<td align="center">1.85</td>
+<td align="center">1.80</td>
+<td align="center">1.77</td>
+<td align="center">1.73</td>
+</tr>
+<tr class="even">
+<td align="center">49</td>
+<td align="center">2.81</td>
+<td align="center">2.41</td>
+<td align="center">2.20</td>
+<td align="center">2.06</td>
+<td align="center">1.97</td>
+<td align="center">1.90</td>
+<td align="center">1.84</td>
+<td align="center">1.80</td>
+<td align="center">1.76</td>
+<td align="center">1.73</td>
+</tr>
+<tr class="odd">
+<td align="center">50</td>
+<td align="center">2.81</td>
+<td align="center">2.41</td>
+<td align="center">2.20</td>
+<td align="center">2.06</td>
+<td align="center">1.97</td>
+<td align="center">1.90</td>
+<td align="center">1.84</td>
+<td align="center">1.80</td>
+<td align="center">1.76</td>
+<td align="center">1.73</td>
+</tr>
+<tr class="even">
+<td align="center">51</td>
+<td align="center">2.81</td>
+<td align="center">2.41</td>
+<td align="center">2.19</td>
+<td align="center">2.06</td>
+<td align="center">1.96</td>
+<td align="center">1.89</td>
+<td align="center">1.84</td>
+<td align="center">1.79</td>
+<td align="center">1.76</td>
+<td align="center">1.73</td>
+</tr>
+<tr class="odd">
+<td align="center">52</td>
+<td align="center">2.80</td>
+<td align="center">2.41</td>
+<td align="center">2.19</td>
+<td align="center">2.06</td>
+<td align="center">1.96</td>
+<td align="center">1.89</td>
+<td align="center">1.84</td>
+<td align="center">1.79</td>
+<td align="center">1.75</td>
+<td align="center">1.72</td>
+</tr>
+<tr class="even">
+<td align="center">53</td>
+<td align="center">2.80</td>
+<td align="center">2.41</td>
+<td align="center">2.19</td>
+<td align="center">2.05</td>
+<td align="center">1.96</td>
+<td align="center">1.89</td>
+<td align="center">1.83</td>
+<td align="center">1.79</td>
+<td align="center">1.75</td>
+<td align="center">1.72</td>
+</tr>
+<tr class="odd">
+<td align="center">54</td>
+<td align="center">2.80</td>
+<td align="center">2.40</td>
+<td align="center">2.19</td>
+<td align="center">2.05</td>
+<td align="center">1.96</td>
+<td align="center">1.89</td>
+<td align="center">1.83</td>
+<td align="center">1.79</td>
+<td align="center">1.75</td>
+<td align="center">1.72</td>
+</tr>
+<tr class="even">
+<td align="center">55</td>
+<td align="center">2.80</td>
+<td align="center">2.40</td>
+<td align="center">2.19</td>
+<td align="center">2.05</td>
+<td align="center">1.95</td>
+<td align="center">1.88</td>
+<td align="center">1.83</td>
+<td align="center">1.78</td>
+<td align="center">1.75</td>
+<td align="center">1.72</td>
+</tr>
+<tr class="odd">
+<td align="center">56</td>
+<td align="center">2.80</td>
+<td align="center">2.40</td>
+<td align="center">2.18</td>
+<td align="center">2.05</td>
+<td align="center">1.95</td>
+<td align="center">1.88</td>
+<td align="center">1.83</td>
+<td align="center">1.78</td>
+<td align="center">1.75</td>
+<td align="center">1.71</td>
+</tr>
+<tr class="even">
+<td align="center">57</td>
+<td align="center">2.80</td>
+<td align="center">2.40</td>
+<td align="center">2.18</td>
+<td align="center">2.05</td>
+<td align="center">1.95</td>
+<td align="center">1.88</td>
+<td align="center">1.82</td>
+<td align="center">1.78</td>
+<td align="center">1.74</td>
+<td align="center">1.71</td>
+</tr>
+<tr class="odd">
+<td align="center">58</td>
+<td align="center">2.79</td>
+<td align="center">2.40</td>
+<td align="center">2.18</td>
+<td align="center">2.04</td>
+<td align="center">1.95</td>
+<td align="center">1.88</td>
+<td align="center">1.82</td>
+<td align="center">1.78</td>
+<td align="center">1.74</td>
+<td align="center">1.71</td>
+</tr>
+<tr class="even">
+<td align="center">59</td>
+<td align="center">2.79</td>
+<td align="center">2.39</td>
+<td align="center">2.18</td>
+<td align="center">2.04</td>
+<td align="center">1.95</td>
+<td align="center">1.88</td>
+<td align="center">1.82</td>
+<td align="center">1.78</td>
+<td align="center">1.74</td>
+<td align="center">1.71</td>
+</tr>
+<tr class="odd">
+<td align="center">60</td>
+<td align="center">2.79</td>
+<td align="center">2.39</td>
+<td align="center">2.18</td>
+<td align="center">2.04</td>
+<td align="center">1.95</td>
+<td align="center">1.87</td>
+<td align="center">1.82</td>
+<td align="center">1.77</td>
+<td align="center">1.74</td>
+<td align="center">1.71</td>
+</tr>
+<tr class="even">
+<td align="center">61</td>
+<td align="center">2.79</td>
+<td align="center">2.39</td>
+<td align="center">2.18</td>
+<td align="center">2.04</td>
+<td align="center">1.94</td>
+<td align="center">1.87</td>
+<td align="center">1.82</td>
+<td align="center">1.77</td>
+<td align="center">1.74</td>
+<td align="center">1.71</td>
+</tr>
+<tr class="odd">
+<td align="center">62</td>
+<td align="center">2.79</td>
+<td align="center">2.39</td>
+<td align="center">2.17</td>
+<td align="center">2.04</td>
+<td align="center">1.94</td>
+<td align="center">1.87</td>
+<td align="center">1.82</td>
+<td align="center">1.77</td>
+<td align="center">1.73</td>
+<td align="center">1.70</td>
+</tr>
+<tr class="even">
+<td align="center">63</td>
+<td align="center">2.79</td>
+<td align="center">2.39</td>
+<td align="center">2.17</td>
+<td align="center">2.04</td>
+<td align="center">1.94</td>
+<td align="center">1.87</td>
+<td align="center">1.81</td>
+<td align="center">1.77</td>
+<td align="center">1.73</td>
+<td align="center">1.70</td>
+</tr>
+<tr class="odd">
+<td align="center">64</td>
+<td align="center">2.79</td>
+<td align="center">2.39</td>
+<td align="center">2.17</td>
+<td align="center">2.03</td>
+<td align="center">1.94</td>
+<td align="center">1.87</td>
+<td align="center">1.81</td>
+<td align="center">1.77</td>
+<td align="center">1.73</td>
+<td align="center">1.70</td>
+</tr>
+<tr class="even">
+<td align="center">65</td>
+<td align="center">2.78</td>
+<td align="center">2.39</td>
+<td align="center">2.17</td>
+<td align="center">2.03</td>
+<td align="center">1.94</td>
+<td align="center">1.87</td>
+<td align="center">1.81</td>
+<td align="center">1.77</td>
+<td align="center">1.73</td>
+<td align="center">1.70</td>
+</tr>
+<tr class="odd">
+<td align="center">66</td>
+<td align="center">2.78</td>
+<td align="center">2.38</td>
+<td align="center">2.17</td>
+<td align="center">2.03</td>
+<td align="center">1.94</td>
+<td align="center">1.87</td>
+<td align="center">1.81</td>
+<td align="center">1.77</td>
+<td align="center">1.73</td>
+<td align="center">1.70</td>
+</tr>
+<tr class="even">
+<td align="center">67</td>
+<td align="center">2.78</td>
+<td align="center">2.38</td>
+<td align="center">2.17</td>
+<td align="center">2.03</td>
+<td align="center">1.94</td>
+<td align="center">1.86</td>
+<td align="center">1.81</td>
+<td align="center">1.76</td>
+<td align="center">1.73</td>
+<td align="center">1.70</td>
+</tr>
+<tr class="odd">
+<td align="center">68</td>
+<td align="center">2.78</td>
+<td align="center">2.38</td>
+<td align="center">2.17</td>
+<td align="center">2.03</td>
+<td align="center">1.93</td>
+<td align="center">1.86</td>
+<td align="center">1.81</td>
+<td align="center">1.76</td>
+<td align="center">1.73</td>
+<td align="center">1.69</td>
+</tr>
+<tr class="even">
+<td align="center">69</td>
+<td align="center">2.78</td>
+<td align="center">2.38</td>
+<td align="center">2.16</td>
+<td align="center">2.03</td>
+<td align="center">1.93</td>
+<td align="center">1.86</td>
+<td align="center">1.81</td>
+<td align="center">1.76</td>
+<td align="center">1.72</td>
+<td align="center">1.69</td>
+</tr>
+<tr class="odd">
+<td align="center">70</td>
+<td align="center">2.78</td>
+<td align="center">2.38</td>
+<td align="center">2.16</td>
+<td align="center">2.03</td>
+<td align="center">1.93</td>
+<td align="center">1.86</td>
+<td align="center">1.80</td>
+<td align="center">1.76</td>
+<td align="center">1.72</td>
+<td align="center">1.69</td>
+</tr>
+<tr class="even">
+<td align="center">71</td>
+<td align="center">2.78</td>
+<td align="center">2.38</td>
+<td align="center">2.16</td>
+<td align="center">2.03</td>
+<td align="center">1.93</td>
+<td align="center">1.86</td>
+<td align="center">1.80</td>
+<td align="center">1.76</td>
+<td align="center">1.72</td>
+<td align="center">1.69</td>
+</tr>
+<tr class="odd">
+<td align="center">72</td>
+<td align="center">2.78</td>
+<td align="center">2.38</td>
+<td align="center">2.16</td>
+<td align="center">2.02</td>
+<td align="center">1.93</td>
+<td align="center">1.86</td>
+<td align="center">1.80</td>
+<td align="center">1.76</td>
+<td align="center">1.72</td>
+<td align="center">1.69</td>
+</tr>
+<tr class="even">
+<td align="center">73</td>
+<td align="center">2.78</td>
+<td align="center">2.38</td>
+<td align="center">2.16</td>
+<td align="center">2.02</td>
+<td align="center">1.93</td>
+<td align="center">1.86</td>
+<td align="center">1.80</td>
+<td align="center">1.76</td>
+<td align="center">1.72</td>
+<td align="center">1.69</td>
+</tr>
+<tr class="odd">
+<td align="center">74</td>
+<td align="center">2.77</td>
+<td align="center">2.38</td>
+<td align="center">2.16</td>
+<td align="center">2.02</td>
+<td align="center">1.93</td>
+<td align="center">1.86</td>
+<td align="center">1.80</td>
+<td align="center">1.75</td>
+<td align="center">1.72</td>
+<td align="center">1.69</td>
+</tr>
+<tr class="even">
+<td align="center">75</td>
+<td align="center">2.77</td>
+<td align="center">2.37</td>
+<td align="center">2.16</td>
+<td align="center">2.02</td>
+<td align="center">1.93</td>
+<td align="center">1.85</td>
+<td align="center">1.80</td>
+<td align="center">1.75</td>
+<td align="center">1.72</td>
+<td align="center">1.69</td>
+</tr>
+<tr class="odd">
+<td align="center">76</td>
+<td align="center">2.77</td>
+<td align="center">2.37</td>
+<td align="center">2.16</td>
+<td align="center">2.02</td>
+<td align="center">1.92</td>
+<td align="center">1.85</td>
+<td align="center">1.80</td>
+<td align="center">1.75</td>
+<td align="center">1.72</td>
+<td align="center">1.68</td>
+</tr>
+<tr class="even">
+<td align="center">77</td>
+<td align="center">2.77</td>
+<td align="center">2.37</td>
+<td align="center">2.16</td>
+<td align="center">2.02</td>
+<td align="center">1.92</td>
+<td align="center">1.85</td>
+<td align="center">1.80</td>
+<td align="center">1.75</td>
+<td align="center">1.71</td>
+<td align="center">1.68</td>
+</tr>
+<tr class="odd">
+<td align="center">78</td>
+<td align="center">2.77</td>
+<td align="center">2.37</td>
+<td align="center">2.16</td>
+<td align="center">2.02</td>
+<td align="center">1.92</td>
+<td align="center">1.85</td>
+<td align="center">1.80</td>
+<td align="center">1.75</td>
+<td align="center">1.71</td>
+<td align="center">1.68</td>
+</tr>
+<tr class="even">
+<td align="center">79</td>
+<td align="center">2.77</td>
+<td align="center">2.37</td>
+<td align="center">2.15</td>
+<td align="center">2.02</td>
+<td align="center">1.92</td>
+<td align="center">1.85</td>
+<td align="center">1.79</td>
+<td align="center">1.75</td>
+<td align="center">1.71</td>
+<td align="center">1.68</td>
+</tr>
+<tr class="odd">
+<td align="center">80</td>
+<td align="center">2.77</td>
+<td align="center">2.37</td>
+<td align="center">2.15</td>
+<td align="center">2.02</td>
+<td align="center">1.92</td>
+<td align="center">1.85</td>
+<td align="center">1.79</td>
+<td align="center">1.75</td>
+<td align="center">1.71</td>
+<td align="center">1.68</td>
+</tr>
+<tr class="even">
+<td align="center">81</td>
+<td align="center">2.77</td>
+<td align="center">2.37</td>
+<td align="center">2.15</td>
+<td align="center">2.02</td>
+<td align="center">1.92</td>
+<td align="center">1.85</td>
+<td align="center">1.79</td>
+<td align="center">1.75</td>
+<td align="center">1.71</td>
+<td align="center">1.68</td>
+</tr>
+<tr class="odd">
+<td align="center">82</td>
+<td align="center">2.77</td>
+<td align="center">2.37</td>
+<td align="center">2.15</td>
+<td align="center">2.01</td>
+<td align="center">1.92</td>
+<td align="center">1.85</td>
+<td align="center">1.79</td>
+<td align="center">1.75</td>
+<td align="center">1.71</td>
+<td align="center">1.68</td>
+</tr>
+<tr class="even">
+<td align="center">83</td>
+<td align="center">2.77</td>
+<td align="center">2.37</td>
+<td align="center">2.15</td>
+<td align="center">2.01</td>
+<td align="center">1.92</td>
+<td align="center">1.85</td>
+<td align="center">1.79</td>
+<td align="center">1.75</td>
+<td align="center">1.71</td>
+<td align="center">1.68</td>
+</tr>
+<tr class="odd">
+<td align="center">84</td>
+<td align="center">2.77</td>
+<td align="center">2.37</td>
+<td align="center">2.15</td>
+<td align="center">2.01</td>
+<td align="center">1.92</td>
+<td align="center">1.85</td>
+<td align="center">1.79</td>
+<td align="center">1.74</td>
+<td align="center">1.71</td>
+<td align="center">1.68</td>
+</tr>
+<tr class="even">
+<td align="center">85</td>
+<td align="center">2.77</td>
+<td align="center">2.37</td>
+<td align="center">2.15</td>
+<td align="center">2.01</td>
+<td align="center">1.92</td>
+<td align="center">1.84</td>
+<td align="center">1.79</td>
+<td align="center">1.74</td>
+<td align="center">1.71</td>
+<td align="center">1.67</td>
+</tr>
+<tr class="odd">
+<td align="center">86</td>
+<td align="center">2.76</td>
+<td align="center">2.37</td>
+<td align="center">2.15</td>
+<td align="center">2.01</td>
+<td align="center">1.92</td>
+<td align="center">1.84</td>
+<td align="center">1.79</td>
+<td align="center">1.74</td>
+<td align="center">1.71</td>
+<td align="center">1.67</td>
+</tr>
+<tr class="even">
+<td align="center">87</td>
+<td align="center">2.76</td>
+<td align="center">2.36</td>
+<td align="center">2.15</td>
+<td align="center">2.01</td>
+<td align="center">1.91</td>
+<td align="center">1.84</td>
+<td align="center">1.79</td>
+<td align="center">1.74</td>
+<td align="center">1.70</td>
+<td align="center">1.67</td>
+</tr>
+<tr class="odd">
+<td align="center">88</td>
+<td align="center">2.76</td>
+<td align="center">2.36</td>
+<td align="center">2.15</td>
+<td align="center">2.01</td>
+<td align="center">1.91</td>
+<td align="center">1.84</td>
+<td align="center">1.79</td>
+<td align="center">1.74</td>
+<td align="center">1.70</td>
+<td align="center">1.67</td>
+</tr>
+<tr class="even">
+<td align="center">89</td>
+<td align="center">2.76</td>
+<td align="center">2.36</td>
+<td align="center">2.15</td>
+<td align="center">2.01</td>
+<td align="center">1.91</td>
+<td align="center">1.84</td>
+<td align="center">1.79</td>
+<td align="center">1.74</td>
+<td align="center">1.70</td>
+<td align="center">1.67</td>
+</tr>
+<tr class="odd">
+<td align="center">90</td>
+<td align="center">2.76</td>
+<td align="center">2.36</td>
+<td align="center">2.15</td>
+<td align="center">2.01</td>
+<td align="center">1.91</td>
+<td align="center">1.84</td>
+<td align="center">1.78</td>
+<td align="center">1.74</td>
+<td align="center">1.70</td>
+<td align="center">1.67</td>
+</tr>
+<tr class="even">
+<td align="center">91</td>
+<td align="center">2.76</td>
+<td align="center">2.36</td>
+<td align="center">2.14</td>
+<td align="center">2.01</td>
+<td align="center">1.91</td>
+<td align="center">1.84</td>
+<td align="center">1.78</td>
+<td align="center">1.74</td>
+<td align="center">1.70</td>
+<td align="center">1.67</td>
+</tr>
+<tr class="odd">
+<td align="center">92</td>
+<td align="center">2.76</td>
+<td align="center">2.36</td>
+<td align="center">2.14</td>
+<td align="center">2.01</td>
+<td align="center">1.91</td>
+<td align="center">1.84</td>
+<td align="center">1.78</td>
+<td align="center">1.74</td>
+<td align="center">1.70</td>
+<td align="center">1.67</td>
+</tr>
+<tr class="even">
+<td align="center">93</td>
+<td align="center">2.76</td>
+<td align="center">2.36</td>
+<td align="center">2.14</td>
+<td align="center">2.01</td>
+<td align="center">1.91</td>
+<td align="center">1.84</td>
+<td align="center">1.78</td>
+<td align="center">1.74</td>
+<td align="center">1.70</td>
+<td align="center">1.67</td>
+</tr>
+<tr class="odd">
+<td align="center">94</td>
+<td align="center">2.76</td>
+<td align="center">2.36</td>
+<td align="center">2.14</td>
+<td align="center">2.01</td>
+<td align="center">1.91</td>
+<td align="center">1.84</td>
+<td align="center">1.78</td>
+<td align="center">1.74</td>
+<td align="center">1.70</td>
+<td align="center">1.67</td>
+</tr>
+<tr class="even">
+<td align="center">95</td>
+<td align="center">2.76</td>
+<td align="center">2.36</td>
+<td align="center">2.14</td>
+<td align="center">2.00</td>
+<td align="center">1.91</td>
+<td align="center">1.84</td>
+<td align="center">1.78</td>
+<td align="center">1.74</td>
+<td align="center">1.70</td>
+<td align="center">1.67</td>
+</tr>
+<tr class="odd">
+<td align="center">96</td>
+<td align="center">2.76</td>
+<td align="center">2.36</td>
+<td align="center">2.14</td>
+<td align="center">2.00</td>
+<td align="center">1.91</td>
+<td align="center">1.84</td>
+<td align="center">1.78</td>
+<td align="center">1.74</td>
+<td align="center">1.70</td>
+<td align="center">1.67</td>
+</tr>
+<tr class="even">
+<td align="center">97</td>
+<td align="center">2.76</td>
+<td align="center">2.36</td>
+<td align="center">2.14</td>
+<td align="center">2.00</td>
+<td align="center">1.91</td>
+<td align="center">1.84</td>
+<td align="center">1.78</td>
+<td align="center">1.73</td>
+<td align="center">1.70</td>
+<td align="center">1.67</td>
+</tr>
+<tr class="odd">
+<td align="center">98</td>
+<td align="center">2.76</td>
+<td align="center">2.36</td>
+<td align="center">2.14</td>
+<td align="center">2.00</td>
+<td align="center">1.91</td>
+<td align="center">1.84</td>
+<td align="center">1.78</td>
+<td align="center">1.73</td>
+<td align="center">1.70</td>
+<td align="center">1.66</td>
+</tr>
+<tr class="even">
+<td align="center">99</td>
+<td align="center">2.76</td>
+<td align="center">2.36</td>
+<td align="center">2.14</td>
+<td align="center">2.00</td>
+<td align="center">1.91</td>
+<td align="center">1.83</td>
+<td align="center">1.78</td>
+<td align="center">1.73</td>
+<td align="center">1.70</td>
+<td align="center">1.66</td>
+</tr>
+<tr class="odd">
+<td align="center">100</td>
+<td align="center">2.76</td>
+<td align="center">2.36</td>
+<td align="center">2.14</td>
+<td align="center">2.00</td>
+<td align="center">1.91</td>
+<td align="center">1.83</td>
+<td align="center">1.78</td>
+<td align="center">1.73</td>
+<td align="center">1.69</td>
+<td align="center">1.66</td>
+</tr>
+<tr class="even">
+<td align="center">Inf</td>
+<td align="center">2.71</td>
+<td align="center">2.30</td>
+<td align="center">2.08</td>
+<td align="center">1.94</td>
+<td align="center">1.85</td>
+<td align="center">1.77</td>
+<td align="center">1.72</td>
+<td align="center">1.67</td>
+<td align="center">1.63</td>
+<td align="center">1.60</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="table-f-5-one-sided-critical-values-for-the-durbin-watson-distribution" class="section level2 unnumbered hasAnchor">
+<h2>Table F: 5% One-sided Critical Values for the Durbin-Watson Distribution<a href="statistical-tables.html#table-f-5-one-sided-critical-values-for-the-durbin-watson-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><img src="images/durbin.png" /><!-- --></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="classical-assumptions-and-ols-estimator.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

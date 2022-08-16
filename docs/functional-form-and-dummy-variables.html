@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 5 Functional form and dummy variables | Introduction to Econometrics</title>
+  <meta name="description" content="Lecture notes for Introduction to Econometrics" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 5 Functional form and dummy variables | Introduction to Econometrics" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Lecture notes for Introduction to Econometrics" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 Functional form and dummy variables | Introduction to Econometrics" />
+  
+  <meta name="twitter:description" content="Lecture notes for Introduction to Econometrics" />
+  
+
+<meta name="author" content="Vipul Bhatt" />
+
+
+<meta name="date" content="2022-08-16" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="multiple-regression-model.html"/>
+<link rel="next" href="classical-assumptions-and-ols-estimator.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Introduction to Econometrics</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="1" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html"><i class="fa fa-check"></i><b>1</b> Review of Differential Calculus and Optimization</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#derivative-of-a-single-variable-function"><i class="fa fa-check"></i><b>1.1</b> Derivative of a single variable function</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#rules-of-differentiation"><i class="fa fa-check"></i><b>1.1.1</b> Rules of Differentiation</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#second-derivative-and-non-linearity"><i class="fa fa-check"></i><b>1.2</b> Second derivative and non-linearity</a></li>
+<li class="chapter" data-level="1.3" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#partial-derivatives-multi-variable-functions"><i class="fa fa-check"></i><b>1.3</b> Partial derivatives: Multi-variable functions</a></li>
+<li class="chapter" data-level="1.4" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#optimization"><i class="fa fa-check"></i><b>1.4</b> Optimization</a></li>
+<li class="chapter" data-level="" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#problems"><i class="fa fa-check"></i>Problems</a></li>
+<li class="chapter" data-level="" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#solutions"><i class="fa fa-check"></i>Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html"><i class="fa fa-check"></i><b>2</b> Review of Probability and Statistics</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#probability"><i class="fa fa-check"></i><b>2.1</b> Probability</a></li>
+<li class="chapter" data-level="2.2" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#random-variable"><i class="fa fa-check"></i><b>2.2</b> Random Variable</a></li>
+<li class="chapter" data-level="2.3" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#probability-distribution"><i class="fa fa-check"></i><b>2.3</b> Probability distribution</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#probability-distribution-of-a-discrete-random-variable"><i class="fa fa-check"></i><b>2.3.1</b> Probability distribution of a discrete random variable</a></li>
+<li class="chapter" data-level="2.3.2" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#probability-distribution-of-a-continuous-random-variable"><i class="fa fa-check"></i><b>2.3.2</b> Probability distribution of a continuous random variable</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#moments-of-a-probability-distribution-function"><i class="fa fa-check"></i><b>2.4</b> Moments of a probability distribution function</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#first-moment-of-a-probability-distribution-expected-value"><i class="fa fa-check"></i><b>2.4.1</b> First moment of a probability distribution: Expected value</a></li>
+<li class="chapter" data-level="2.4.2" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#second-moment-of-the-distribution."><i class="fa fa-check"></i><b>2.4.2</b> Second moment of the distribution.</a></li>
+<li class="chapter" data-level="2.4.3" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#third-and-fourth-moments-skewness-and-kurtosis"><i class="fa fa-check"></i><b>2.4.3</b> Third and Fourth Moments: Skewness and Kurtosis</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#useful-probability-distributions"><i class="fa fa-check"></i><b>2.5</b> Useful probability distributions</a></li>
+<li class="chapter" data-level="2.6" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#joint-probability-distribution"><i class="fa fa-check"></i><b>2.6</b> Joint Probability Distribution</a></li>
+<li class="chapter" data-level="2.7" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#measures-of-statistical-association"><i class="fa fa-check"></i><b>2.7</b> Measures of statistical association</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#rules-of-expectation-and-variances"><i class="fa fa-check"></i><b>2.7.1</b> Rules of expectation and variances</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#sampling-and-estimation"><i class="fa fa-check"></i><b>2.8</b> Sampling and Estimation</a></li>
+<li class="chapter" data-level="2.9" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#hypothesis-testing"><i class="fa fa-check"></i><b>2.9</b> Hypothesis testing</a>
+<ul>
+<li class="chapter" data-level="2.9.1" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#testing-a-restriction-on-a-single-population-parameter"><i class="fa fa-check"></i><b>2.9.1</b> Testing a restriction on a single population parameter</a></li>
+<li class="chapter" data-level="2.9.2" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#testing-a-restriction-on-multiple-population-parameter"><i class="fa fa-check"></i><b>2.9.2</b> Testing a restriction on multiple population parameter</a></li>
+<li class="chapter" data-level="2.9.3" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#confidence-interval-and-hypothesis-testing"><i class="fa fa-check"></i><b>2.9.3</b> Confidence interval and Hypothesis testing</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#problems-1"><i class="fa fa-check"></i>Problems</a></li>
+<li class="chapter" data-level="" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#solutions-1"><i class="fa fa-check"></i>Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="simple-regression-model.html"><a href="simple-regression-model.html"><i class="fa fa-check"></i><b>3</b> Simple Regression Model</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="simple-regression-model.html"><a href="simple-regression-model.html#statistical-foundation-of-the-simple-regression-model"><i class="fa fa-check"></i><b>3.1</b> Statistical foundation of the simple regression model</a></li>
+<li class="chapter" data-level="3.2" data-path="simple-regression-model.html"><a href="simple-regression-model.html#ordinary-least-squares-ols"><i class="fa fa-check"></i><b>3.2</b> Ordinary Least Squares (OLS)</a></li>
+<li class="chapter" data-level="3.3" data-path="simple-regression-model.html"><a href="simple-regression-model.html#goodness-of-fit"><i class="fa fa-check"></i><b>3.3</b> Goodness of fit</a></li>
+<li class="chapter" data-level="3.4" data-path="simple-regression-model.html"><a href="simple-regression-model.html#applications-of-the-simple-regression-model"><i class="fa fa-check"></i><b>3.4</b> Applications of the simple regression model</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="simple-regression-model.html"><a href="simple-regression-model.html#aggregate-consumption-function"><i class="fa fa-check"></i><b>3.4.1</b> Aggregate consumption function</a></li>
+<li class="chapter" data-level="3.4.2" data-path="simple-regression-model.html"><a href="simple-regression-model.html#returns-to-education"><i class="fa fa-check"></i><b>3.4.2</b> Returns to education</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="simple-regression-model.html"><a href="simple-regression-model.html#use-of-natural-logs-and-interpretation-of-the-slope-coefficients"><i class="fa fa-check"></i><b>3.5</b> Use of natural logs and interpretation of the slope coefficients</a></li>
+<li class="chapter" data-level="3.6" data-path="simple-regression-model.html"><a href="simple-regression-model.html#hypothesis-testing-and-confidence-interval-estimation"><i class="fa fa-check"></i><b>3.6</b> Hypothesis testing and confidence interval estimation</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="simple-regression-model.html"><a href="simple-regression-model.html#confidence-interval-for-regression-coefficients"><i class="fa fa-check"></i><b>3.6.1</b> Confidence interval for regression coefficients</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="simple-regression-model.html"><a href="simple-regression-model.html#problems-2"><i class="fa fa-check"></i>Problems</a></li>
+<li class="chapter" data-level="" data-path="simple-regression-model.html"><a href="simple-regression-model.html#solutions-2"><i class="fa fa-check"></i>Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html"><i class="fa fa-check"></i><b>4</b> Multiple regression model</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#multiple-regression-model-1"><i class="fa fa-check"></i><b>4.1</b> Multiple Regression Model</a></li>
+<li class="chapter" data-level="4.2" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#goodness-of-fit-redux"><i class="fa fa-check"></i><b>4.2</b> Goodness of fit redux</a></li>
+<li class="chapter" data-level="4.3" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#hypothesis-testing-in-a-multiple-regression-model"><i class="fa fa-check"></i><b>4.3</b> Hypothesis testing in a multiple regression model</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#test-of-statistical-significance-of-the-entire-model"><i class="fa fa-check"></i><b>4.3.1</b> Test of statistical significance of the entire model</a></li>
+<li class="chapter" data-level="4.3.2" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#testing-whether-one-or-more-of-the-variables-can-be-eliminated-from-the-model"><i class="fa fa-check"></i><b>4.3.2</b> Testing whether one or more of the variables can be eliminated from the model</a></li>
+<li class="chapter" data-level="4.3.3" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#testing-a-linear-restriction-on-slope-coefficients"><i class="fa fa-check"></i><b>4.3.3</b> Testing a linear restriction on slope coefficients</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#problems-3"><i class="fa fa-check"></i>Problems</a></li>
+<li class="chapter" data-level="" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#solutions-3"><i class="fa fa-check"></i>Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html"><i class="fa fa-check"></i><b>5</b> Functional form and dummy variables</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html#polynomials-in-the-regression-model"><i class="fa fa-check"></i><b>5.1</b> Polynomials in the regression model</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html#obtaining-optimal-polynomial-order-using-goodness-of-fit"><i class="fa fa-check"></i><b>5.1.1</b> Obtaining optimal polynomial order using goodness of fit</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html#step-functions-dummy-variables-in-the-regression-model"><i class="fa fa-check"></i><b>5.2</b> Step functions: Dummy variables in the regression model</a></li>
+<li class="chapter" data-level="" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html#problems-4"><i class="fa fa-check"></i>Problems</a></li>
+<li class="chapter" data-level="" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html#solutions-4"><i class="fa fa-check"></i>Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html"><i class="fa fa-check"></i><b>6</b> Classical assumptions and OLS estimator</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#classical-assumptions"><i class="fa fa-check"></i><b>6.1</b> Classical Assumptions</a></li>
+<li class="chapter" data-level="6.2" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#heteroscedasticity"><i class="fa fa-check"></i><b>6.2</b> Heteroscedasticity</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#consequences-of-heteroscedasticity-for-the-ols-estimator"><i class="fa fa-check"></i><b>6.2.1</b> Consequences of Heteroscedasticity for the OLS estimator</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#testing-for-hetroscedasticity-in-data"><i class="fa fa-check"></i><b>6.3</b> Testing for Hetroscedasticity in data</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#lm-test-for-linear-heteroscedasticity-bp-test"><i class="fa fa-check"></i><b>6.3.1</b> LM test for linear heteroscedasticity: BP test</a></li>
+<li class="chapter" data-level="6.3.2" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#lm-test-for-linear-heteroscedasticity-whites-test"><i class="fa fa-check"></i><b>6.3.2</b> LM test for linear heteroscedasticity: White’s test</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#heteroscedasticity-robust-standard-errors"><i class="fa fa-check"></i><b>6.4</b> Heteroscedasticity robust standard errors</a></li>
+<li class="chapter" data-level="6.5" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#serial-correlation"><i class="fa fa-check"></i><b>6.5</b> Serial correlation</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#consequences-of-serial-correlation-for-the-ols-estimator"><i class="fa fa-check"></i><b>6.5.1</b> Consequences of Serial Correlation for the OLS estimator</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#testing-for-serial-correlation-in-data"><i class="fa fa-check"></i><b>6.6</b> Testing for Serial Correlation in data</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#durbin-watson-test-for-first-order-serial-correlation"><i class="fa fa-check"></i><b>6.6.1</b> Durbin-Watson test for first order serial correlation</a></li>
+<li class="chapter" data-level="6.6.2" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#breusch-godfrey-bg-test-for-serial-correlation"><i class="fa fa-check"></i><b>6.6.2</b> Breusch-Godfrey (BG) test for serial correlation</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#serial-correlation-robust-standard-errors"><i class="fa fa-check"></i><b>6.7</b> Serial correlation robust standard errors</a></li>
+<li class="chapter" data-level="6.8" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#omitted-variable-bias"><i class="fa fa-check"></i><b>6.8</b> Omitted variable bias</a>
+<ul>
+<li class="chapter" data-level="6.8.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#consequence-of-omitted-variable-on-ols-estimator"><i class="fa fa-check"></i><b>6.8.1</b> Consequence of omitted variable on OLS estimator</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#problems-5"><i class="fa fa-check"></i>Problems</a></li>
+<li class="chapter" data-level="" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#solutions-5"><i class="fa fa-check"></i>Solutions</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="statistical-tables.html"><a href="statistical-tables.html"><i class="fa fa-check"></i><b>A</b> Statistical Tables</a>
+<ul>
+<li class="chapter" data-level="" data-path="statistical-tables.html"><a href="statistical-tables.html#table-a-critical-values-for-the-t-distribution"><i class="fa fa-check"></i>Table A: Critical Values for the t-distribution</a></li>
+<li class="chapter" data-level="" data-path="statistical-tables.html"><a href="statistical-tables.html#table-b-critical-values-for-the-chi-square-distribution"><i class="fa fa-check"></i>Table B: Critical Values for the Chi-square distribution</a></li>
+<li class="chapter" data-level="" data-path="statistical-tables.html"><a href="statistical-tables.html#table-c-1-critical-values-for-the-f-distribution"><i class="fa fa-check"></i>Table C: 1% Critical Values for the F distribution</a></li>
+<li class="chapter" data-level="" data-path="statistical-tables.html"><a href="statistical-tables.html#table-d-5-critical-values-for-the-f-distribution"><i class="fa fa-check"></i>Table D: 5% Critical Values for the F distribution</a></li>
+<li class="chapter" data-level="" data-path="statistical-tables.html"><a href="statistical-tables.html#table-e-10-critical-values-for-the-f-distribution"><i class="fa fa-check"></i>Table E: 10% Critical Values for the F distribution</a></li>
+<li class="chapter" data-level="" data-path="statistical-tables.html"><a href="statistical-tables.html#table-f-5-one-sided-critical-values-for-the-durbin-watson-distribution"><i class="fa fa-check"></i>Table F: 5% One-sided Critical Values for the Durbin-Watson Distribution</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://vipul-bhatt.github.io/Econ-385-Notes/" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introduction to Econometrics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="functional-form-and-dummy-variables" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Functional form and dummy variables<a href="functional-form-and-dummy-variables.html#functional-form-and-dummy-variables" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Suppose we are interested in estimating a relationship between <span class="math inline">\(Y\)</span> and <span class="math inline">\(X\)</span>. In general the population regression function is an unknown function of <span class="math inline">\(X\)</span>, that is:</p>
+<p><span class="math display">\[E(Y_i|X_i) = f(X_i)\]</span></p>
+<p>Our discussion on regression model thus far has mostly focused on the linear relationship between <span class="math inline">\(Y\)</span> and <span class="math inline">\(X\)</span> variable, with the exception of using natural log transformations. In this chapter we will look at two alternative ways of capturing non-linearity in economic relationships. Our objective is to find specifications for <span class="math inline">\(f(X_i)\)</span> that allow for non-linear terms in <span class="math inline">\(X\)</span>.</p>
+<div id="polynomials-in-the-regression-model" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Polynomials in the regression model<a href="functional-form-and-dummy-variables.html#polynomials-in-the-regression-model" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>One way to capture non-linear relationship between the dependent variable, <span class="math inline">\(Y\)</span>, and the independent variable, <span class="math inline">\(X\)</span> is to use polynomials in <span class="math inline">\(X\)</span>. For example, consider the following polyonomial of order 2 (quadratic):</p>
+<p><span class="math display">\[Y_i=\beta_0 +\beta_1 X_i + \beta_2 X_i^2+\epsilon_i\]</span></p>
+<p>In the above model, the first and second derivatives of <span class="math inline">\(Y\)</span> with respect to <span class="math inline">\(X\)</span> allow us to capture the non-linear relationship between these two variables. The first derivative of <span class="math inline">\(Y\)</span> with respect to <span class="math inline">\(X\)</span> gives us:</p>
+<p><span class="math display">\[\frac{dY_i}{dX_i}=\beta_1 + 2 \beta_2 X_i\]</span></p>
+<p>Note that:</p>
+<ol style="list-style-type: decimal">
+<li><p>The effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span> now depends on the level of <span class="math inline">\(X\)</span>.</p></li>
+<li><p>We cannot interepret <span class="math inline">\(\beta_1\)</span> as the effect of <span class="math inline">\(X_i\)</span> on <span class="math inline">\(Y\)</span>, holding <span class="math inline">\(X_i^2\)</span> constant. This is because when <span class="math inline">\(X_i\)</span> changes, <span class="math inline">\(X_i^2\)</span> changes as well. Hence, best way is to simply plot the non-linear relationship and/or compute the effect on predicted value of <span class="math inline">\(Y\)</span> due to change in <span class="math inline">\(X\)</span>.</p></li>
+<li><p>Further, taking the second derivative we get:</p></li>
+</ol>
+<p><span class="math display">\[\frac{d^2Y_i}{dX_i^2}=2 \beta_2\]</span></p>
+<p>Hence, the sign of <span class="math inline">\(\beta_2\)</span> tells us whether the relationship is <em>concave</em> (<span class="math inline">\(\beta_2&lt;0\)</span>) or <em>convex</em> (<span class="math inline">\(\beta_2&gt;0\)</span>).</p>
+<ol start="4" style="list-style-type: decimal">
+<li>Finally, we can set the first derivative equal to <span class="math inline">\(0\)</span> and solve for <span class="math inline">\(X^*\)</span> as follows:</li>
+</ol>
+<p><span class="math display">\[\frac{dY_i}{dX_i}=\beta_1 + 2 \beta_2 X_i= 0 \Rightarrow X^*_i=-\frac{\beta_1}{2\beta_2}\]</span></p>
+<p><span class="math inline">\(X^*_i\)</span> will either maximize or minimize <span class="math inline">\(Y\)</span> depending on the sign of <span class="math inline">\(\beta_2\)</span>.</p>
+<div id="obtaining-optimal-polynomial-order-using-goodness-of-fit" class="section level3 hasAnchor" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> Obtaining optimal polynomial order using goodness of fit<a href="functional-form-and-dummy-variables.html#obtaining-optimal-polynomial-order-using-goodness-of-fit" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In general we do not know the order of polynomial and in theory can express the relationship between <span class="math inline">\(Y\)</span> and <span class="math inline">\(X\)</span> as a polynomial of order <span class="math inline">\(q\)</span> given by:</p>
+<p><span class="math display">\[Y_i = \beta_0 + \beta_1 X_i + \beta_2 X_i^2 + \beta_3 X_i^3+...+ \beta_q X_i^q + \epsilon_i\]</span></p>
+<p>In order to determine what value of <span class="math inline">\(q\)</span> best explain our data we need to compare models with different number of explanatory variables. For example, to compare a quadratic model with a cubic model, we are comparing a model with two explanatory variables (<span class="math inline">\(X_i\)</span> and <span class="math inline">\(X_i^2\)</span>) with a model with three independent variables (<span class="math inline">\(X_i\)</span>, <span class="math inline">\(X_i^2\)</span>, and <span class="math inline">\(X_i^3\)</span>). Such comparisons require us to incorporate the tradeoff between improved fit and loss of degrees of freedom. In practice, do determine a value for <span class="math inline">\(q\)</span> we can follow the following procedure:</p>
+<p>Step 1: Pick a maximum value for <span class="math inline">\(q\)</span>. This part is arbitrary and usually will affect your final answer. Let us denote this value as <span class="math inline">\(q_{max}\)</span>.</p>
+<p>Step 2: Estimate the polynomial of order <span class="math inline">\(q_{max}\)</span>:</p>
+<p><span class="math display">\[Y_i = \beta_0 + \beta_1 X_i + \beta_2 X_i^2 + \beta_3 X_i^3+...+ \beta_q X_i^{q_{max}} + \epsilon_i\]</span></p>
+<p>This is our unrestricted model and we denote R-squared from this model as <span class="math inline">\(R^2_U\)</span>.</p>
+<p>Step 3: Estimate the polynomial of order <span class="math inline">\(q_{max}-1\)</span></p>
+<p><span class="math display">\[Y_i = \beta_0 + \beta_1 X_i + \beta_2 X_i^2 + \beta_3 X_i^3+...+ \beta_q X_i^{q_{max}-1} + \epsilon_i\]</span></p>
+<p>This is our restricted model and we denote R-squared from this model as <span class="math inline">\(R^2_R\)</span>.</p>
+<p>Step 4: Test whether there is a loss in fit between step 2 and step 3 using the F-test:</p>
+<p><span class="math display">\[H_0: \text{True model is polynomial of order} \ q_{max}-1 \]</span>
+<span class="math display">\[H_A: \text{True model is polynomial of order} \ q_{max}\]</span></p>
+<p>The test statistic is given by:</p>
+<p><span class="math display">\[F=\frac{(R^2_U-R^2_R)/1}{(1-R^2_U)/(N-q_{max}-1)}\]</span></p>
+<p>Under the null-hypothesis, the test statistic follows F distribution with <span class="math inline">\(v_1=1\)</span> and <span class="math inline">\(v_2=N-q_{max}-1\)</span> degrees of freedom. If you reject the null hypothesis, stop and conclude that <span class="math inline">\(q=q_{max}\)</span> is the final model.</p>
+<p>Step 5: If you do not reject the null hypothesis in Step 4, continue the process until you find the highest order polynomial where you reject the null hypothesis.</p>
+<div class="example">
+<p><span id="exm:unnamed-chunk-80" class="example"><strong>Example 5.1  </strong></span>Suppose we are interested in estimating the relationship between wages (<span class="math inline">\(Y\)</span>) and labor market characteristics of workers. Specifically, we collect data on years of education (<span class="math inline">\(X_1\)</span>) and years of experience (<span class="math inline">\(X_2\)</span>). Consider the following specification:</p>
+<p><span class="math display">\[Y_i= \beta_0 + \beta_1 X_{1i} + \beta_2 X_{2i} + \beta_3 X_{2i}^2 + \epsilon_i\]</span></p>
+<p>In the above model we assume that the relationship between wages and years of experience is quadratic. We can test this formally by estimating the following restricted version of the model with only linear term in experience.</p>
+<p><span class="math display">\[Y_i= \beta_0 + \beta_1 X_{1i} + \beta_2 X_{2i} + \epsilon_i\]</span></p>
+<p>If the true relationship between experience and wages is indeed quadratic, then estimating the restricted model will result in substantial loss of fit and hence will be rejected by our F-test. Table <a href="functional-form-and-dummy-variables.html#tab:ch5table1">5.1</a> below provides the estimation results of these two models. Notice that there is an drop in <span class="math inline">\(R^2\)</span> from 19.8%, to 16% indicating that removal of squared experience does lead to loss of fit. Next, we test whether this loss in fit is statistically significant using the F-test:</p>
+<p><span class="math display">\[H_0: \text{True model is linear in experience} \]</span>
+<span class="math display">\[H_A: \text{True model is quadratic in experience}\]</span></p>
+<p><span class="math display">\[F=\frac{(R^2_U-R^2_R)/1}{(1-R^2_U)/(N-3-1)}=\frac{0.198-0.16}{(1-0.198)/(100-3-1)}=47.19202\]</span></p>
+<p>The critical value from F-table with <span class="math inline">\(v_1=1\)</span> and <span class="math inline">\(v_2=1000-3-1=996\)</span> is 3.84. Because the F statistic is greater than this critical value, we reject the null hypothesis and conclude that the relationship between wages and experience is quadratic. Also note that the coefficient of the squared term in experience is negative implying a concave relationship between experience and wages. Finally, we can also compute the level of experience that maximizes wages by taking the first derivative with respect to experience and setttin it 0:</p>
+<p><span class="math display">\[\frac{dY_i}{d X_{2i}}= \beta_2 + 2\beta_3 X_{2i}=0 \Rightarrow X^*_{2i}=-\frac{\beta_1}{2\beta_2}\]</span></p>
+<p>Given our estimates, this indicates that for <span class="math inline">\(X^*_{2i}=-\displaystyle \frac{0.058}{2\times (-0.001)}=29\)</span> years, we expect wages to reach a maximum with respect to experience and then level off or decline after that.</p>
+</div>
+
+<div class="rmdCaution">
+The use of the squared experience term is motivated by the empirical literature on determinants of earnings. As discussed earlier, the orginal Mincerian equation included a squared experience to capture the non-linear relationship between wages and experience.
+</div>
+<table style="border: solid 2px;">
+<tr>
+<th style="font-weight: bold; border-top: solid 2px; text-align:left; ">
+ 
+</th>
+<th colspan="4" style="font-weight: bold; border-top: solid 2px;">
+Model 1
+</th>
+<th colspan="4" style="font-weight: bold; border-top: solid 2px;">
+Model 2
+</th>
+</tr>
+<tr>
+<td style="border: solid 1px; font-weight:bold; border-top: solid 2px; text-align:left; ">
+Explanatory Variables
+</td>
+<td style="border: solid 1px; font-weight:bold; border-top: solid 2px; text-align: center;">
+b
+</td>
+<td style="border: solid 1px; font-weight:bold; border-top: solid 2px; text-align:center;">
+s.e.(b)
+</td>
+<td style="border: solid 1px; font-weight:bold; border-top: solid 2px; text-align: center;">
+t-ratio
+</td>
+<td style="border: solid 1px; font-weight:bold; border-top: solid 2px; text-align: center;">
+p-value
+</td>
+<td style="border: solid 1px; font-weight:bold; border-top: solid 2px; ">
+b
+</td>
+<td style="border: solid 1px; font-weight:bold; border-top: solid 2px; col7">
+s.e.(b)
+</td>
+<td style="border: solid 1px; font-weight:bold; border-top: solid 2px; col8">
+t-ratio
+</td>
+<td style="border: solid 1px; font-weight:bold; border-top: solid 2px; col9">
+p-value
+</td>
+</tr>
+<tr>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+Intercept
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align: center;">
+8.455
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align:center;">
+0.154
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align: center;">
+54.821
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align: center;">
+<strong>&lt;0.001</strong>
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+8.792
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
+0.150
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col8">
+58.795
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col9">
+<strong>&lt;0.001</strong>
+</td>
+</tr>
+<tr>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+Education
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align: center;">
+0.113
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align:center;">
+0.009
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align: center;">
+12.840
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align: center;">
+<strong>&lt;0.001</strong>
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+0.118
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
+0.009
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col8">
+13.094
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col9">
+<strong>&lt;0.001</strong>
+</td>
+</tr>
+<tr>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+Experience
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align: center;">
+0.058
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align:center;">
+0.007
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align: center;">
+8.461
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align: center;">
+<strong>&lt;0.001</strong>
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+0.013
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
+0.002
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col8">
+6.699
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col9">
+<strong>&lt;0.001</strong>
+</td>
+</tr>
+<tr>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+Experience-squared
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align: center;">
+-0.001
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align:center;">
+0.000
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align: center;">
+-6.863
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align: center;">
+<strong>&lt;0.001</strong>
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col8">
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col9">
+</td>
+</tr>
+<tr>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm; border-top:2px solid;">
+Observations
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:center; border-top:2px solid;" colspan="4">
+1000
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:center; border-top:2px solid;" colspan="4">
+1000
+</td>
+</tr>
+<tr>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
+R<sup>2</sup> / R<sup>2</sup> adjusted
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:center;" colspan="4">
+0.198 / 0.195
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:center;" colspan="4">
+0.160 / 0.158
+</td>
+</tr>
+<tr>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
+log-Likelihood
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:center;" colspan="4">
+-1082.573
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:center;" colspan="4">
+-1105.673
+</td>
+</tr>
+</table>
+<caption>
+<span id="tab:ch5table1">Table 5.1: </span> OLS Estimation of Earnings Equation
+</caption>
+</div>
+</div>
+<div id="step-functions-dummy-variables-in-the-regression-model" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Step functions: Dummy variables in the regression model<a href="functional-form-and-dummy-variables.html#step-functions-dummy-variables-in-the-regression-model" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In many practical applications we may wish to estimate the effect of qualitative variables on an outcome of interest. For example,</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>what is the effect of a worker’s occupation or race on wages?</p></li>
+<li><p>do we have an increase in consumer spending during Christmas season?</p></li>
+<li><p>how does college major affects starting salary of graduates? Or</p></li>
+</ol>
+<p>In each of the above examples, we want to estimate the effect of <strong>group membership</strong> on the outcome of interest. For example, do observations that belong to Christmas season have higher consumer spending than observations in non-Christmas season. One important thing to note here is that incorporating such variables in our regression mean that we need a <strong>step-function</strong> because we beleive there is a discrete jump in the outcome variable as we compare groups.</p>
+<p>By definition qualitative variables are non-numeric in nature. One way to incorporte such variables is to use <strong>dummy variables</strong>. A dummy variable is an indicator variable that takes value of <span class="math inline">\(1\)</span>
+if an observation belongs to a particular category and <span class="math inline">\(0\)</span> otherwise. For example, suppose we are interested in finding the effect of race on wages. Then, we can define a dummy variable, <span class="math inline">\(D_i\)</span> as follows:
+<span class="math display">\[D_i= \begin{cases}
+1 &amp; \text{if observation} \ i \ \text{is white} \\
+0 &amp; \text{otherwise}
+\end{cases}\]</span></p>
+<p>Once we have defined the dummy variable, we can add it to the regression model as any other independent variable. Note that:</p>
+<ol style="list-style-type: decimal">
+<li><p>A qualitative variable with <span class="math inline">\(J\)</span> categories can be incorporated by adding <span class="math inline">\(J-1\)</span> dummy variables in the regression model. The excluded category is called the <strong>base group</strong> and serves as the benchmark category relative to which the effect on the dependent variable is measured. For example, in the dummy variable we defined above, we have two categories in our data: white and non-white. The way we have defined the dummy variable implies that our excluded group is non-white workers. This is to avoid the <em>dummy variable trap</em>, where adding <span class="math inline">\(J\)</span> dummy variables for a qualitative variable with <span class="math inline">\(J\)</span> categories leads to perfectly linear relationship between included independent variables in our model.</p></li>
+<li><p>The effect on the regression model depends on how we add the dummy variable to our regression model. There are two options:</p>
+<p>2.1. Intercept dummy: here we are only interested in the categorical effect alone. This can be done by adding a dummy variable to the regression model and has the effect of shifting the intercept of the regression model.</p>
+<p>2.2. Slope dummy: here we are interested in capturing any interaction a categorical variable may have with other indepedent variables in the regression model. This can be done by adding a product of the dummy variable with the independent variable in question and has the effect of shifting the slope of the regression model.</p></li>
+</ol>
+<div class="example">
+<p><span id="exm:unnamed-chunk-84" class="example"><strong>Example 5.2  (Intercept Dummy in Earnings Function) </strong></span>Let us continue our example of the earnings function. Now suppose we want to find out whether being male has an effect on wages,i.e, if we compare two workers with same years of education (<span class="math inline">\(X_{1}\)</span>) and experience (<span class="math inline">\(X_2\)</span>), but one is male and other is female, do we see any difference in their wages. This can be done by estimating the following regression model:</p>
+<p><span class="math display">\[Y_i= \beta_0 + \beta_1 X_{1i} + \beta_2 X_{2i} + \beta_3 X_{2i}^2 + \beta_4 Male_i+ \epsilon_i\]</span></p>
+<p>where, <span class="math display">\[Male_i= \begin{cases}
+1 &amp; \text{if observation} \ i \ \text{is male} \\
+0 &amp; \text{otherwise}
+\end{cases}\]</span></p>
+<p>In this model, <span class="math inline">\(\beta_4\)</span> measures the effect of being male on wages for individuals with same years of education and experience. To see this, lets write down the predicted wage from our model for male and female workers separately:<span class="math display">\[\widehat{Y^m_i}=\widehat{\beta_0} + \widehat{\beta_1} X^m_{1i} + \widehat{\beta_2} X^m_{2i} + \widehat{\beta_3} (X^m_{2i})^2 + \widehat{\beta_4}\]</span></p>
+<p><span class="math display">\[\widehat{Y^f_i}= \widehat{\beta_0} + \widehat{\beta_1} X^f_{1i} + \widehat{\beta_2} X^f_{2i} + \widehat{\beta_3} (X^f_{2i})^2\]</span></p>
+<p>Here the superscripts <span class="math inline">\(m\)</span> denotes male and <span class="math inline">\(f\)</span> denotes female. Note that if we equalize education and experience between men and women, then:</p>
+<p><span class="math display">\[\widehat{Y^m_i}-\widehat{Y^f_i}=\widehat{\beta_4}\]</span></p>
+<p>Consquently, adding an intercept dummy simply changes the intercept of the regression line by the parameter of the intecept dummy. Table <a href="functional-form-and-dummy-variables.html#tab:ch5table2">5.2</a> provides the estimation results for this model. Note that the estimated coefficient of Male dummy variable is 0.306. This means that a male worker’s wages is 30.6% higher than a female worker with same years of education and experience.</p>
+</div>
+<table style="border: solid 2px;">
+<tr>
+<th style="font-weight: bold; border-top: solid 2px; text-align:left; ">
+ 
+</th>
+<th colspan="4" style="font-weight: bold; border-top: solid 2px;">
+Dependent variable: Natural logs of wages
+</th>
+</tr>
+<tr>
+<td style="border: solid 1px; font-weight:bold; border-top: solid 2px; text-align:left; ">
+Explanatory Variables
+</td>
+<td style="border: solid 1px; font-weight:bold; border-top: solid 2px; text-align: center;">
+b
+</td>
+<td style="border: solid 1px; font-weight:bold; border-top: solid 2px; text-align:center;">
+s.e.(b)
+</td>
+<td style="border: solid 1px; font-weight:bold; border-top: solid 2px; text-align: center;">
+t-ratio
+</td>
+<td style="border: solid 1px; font-weight:bold; border-top: solid 2px; text-align: center;">
+p-value
+</td>
+</tr>
+<tr>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+Intercept
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align: center;">
+8.114
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align:center;">
+0.159
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align: center;">
+50.933
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align: center;">
+<strong>&lt;0.001</strong>
+</td>
+</tr>
+<tr>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+Education
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align: center;">
+0.124
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align:center;">
+0.009
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align: center;">
+14.103
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align: center;">
+<strong>&lt;0.001</strong>
+</td>
+</tr>
+<tr>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+Experience
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align: center;">
+0.060
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align:center;">
+0.007
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align: center;">
+8.860
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align: center;">
+<strong>&lt;0.001</strong>
+</td>
+</tr>
+<tr>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+Experience-squared
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align: center;">
+-0.001
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align:center;">
+0.000
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align: center;">
+-7.267
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align: center;">
+<strong>&lt;0.001</strong>
+</td>
+</tr>
+<tr>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+Male
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align: center;">
+0.306
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align:center;">
+0.046
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align: center;">
+6.694
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align: center;">
+<strong>&lt;0.001</strong>
+</td>
+</tr>
+<tr>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm; border-top:2px solid;">
+Observations
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:center; border-top:2px solid;" colspan="4">
+1000
+</td>
+</tr>
+<tr>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
+R<sup>2</sup> / R<sup>2</sup> adjusted
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:center;" colspan="4">
+0.232 / 0.229
+</td>
+</tr>
+<tr>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
+log-Likelihood
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:center;" colspan="4">
+-1060.549
+</td>
+</tr>
+</table>
+<caption>
+<span id="tab:ch5table2">Table 5.2: </span> Earnings Equation with intercept dummy variable
+</caption>
+<div class="example">
+<p><span id="exm:unnamed-chunk-87" class="example"><strong>Example 5.3  (Slope Dummy in Earnings Function) </strong></span>In the previous example, we investigated whether being Male affects wages once we have controlled for education and experience. But in that analysis we assumed that there is not interaction between whether a worker is make with his years of education or experience. But is quite easy to think of interactions between the sex of a worker and their education or experience. For example, on average women tend to accumulate less years of experience than men of same age due to women taking more breaks from work due to child birth. Similarly, in many economies, men tend to have greater level of education, especially in emerging economies where parents allocate resources differentially between male and female child. To capture such interactions, we can use slope dummy variables. Consider the following regression model:</p>
+<p><span class="math display">\[Y_i= \beta_0 + \beta_1 X_{1i} + \beta_2 X_{2i} + \beta_3 X_{2i}^2 + \beta_4 Male_i+ \beta_5 (Male_i \times X_{1i}) +\epsilon_i\]</span></p>
+<p>In this model, <span class="math inline">\(\beta_5\)</span> measures the differential effect education may have on wages depending on the sex of the worker. To see this note that:</p>
+<p><span class="math display">\[\frac{\partial Y_i}{\partial X_{1i}}= \beta_1 + \beta_5 Male_i\]</span></p>
+<p>As a result, for male workers, the effect of education on wages is <span class="math inline">\(\beta_1 + \beta_5\)</span> whereas for female workers this effect is <span class="math inline">\(\beta_1\)</span>. Table <a href="functional-form-and-dummy-variables.html#tab:ch5table3">5.3</a> provides the estimation results for this model. Note that the estimated coefficient of the interaction between Male and education is positive but statistically insignificant. Hence, in our sample, there is no evidence that sex of workers interacts with their education.</p>
+</div>
+<table style="border: solid 2px;">
+<tr>
+<th style="font-weight: bold; border-top: solid 2px; text-align:left; ">
+ 
+</th>
+<th colspan="4" style="font-weight: bold; border-top: solid 2px;">
+Dependent variable: Natural logs of wages
+</th>
+</tr>
+<tr>
+<td style="border: solid 1px; font-weight:bold; border-top: solid 2px; text-align:left; ">
+Explanatory Variables
+</td>
+<td style="border: solid 1px; font-weight:bold; border-top: solid 2px; text-align: center;">
+b
+</td>
+<td style="border: solid 1px; font-weight:bold; border-top: solid 2px; text-align:center;">
+s.e.(b)
+</td>
+<td style="border: solid 1px; font-weight:bold; border-top: solid 2px; text-align: center;">
+t-ratio
+</td>
+<td style="border: solid 1px; font-weight:bold; border-top: solid 2px; text-align: center;">
+p-value
+</td>
+</tr>
+<tr>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+Intercept
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align: center;">
+8.162
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align:center;">
+0.229
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align: center;">
+35.649
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align: center;">
+<strong>&lt;0.001</strong>
+</td>
+</tr>
+<tr>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+Education
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align: center;">
+0.121
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align:center;">
+0.014
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align: center;">
+8.798
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align: center;">
+<strong>&lt;0.001</strong>
+</td>
+</tr>
+<tr>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+Experience
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align: center;">
+0.060
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align:center;">
+0.007
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align: center;">
+8.839
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align: center;">
+<strong>&lt;0.001</strong>
+</td>
+</tr>
+<tr>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+Experience-squared
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align: center;">
+-0.001
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align:center;">
+0.000
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align: center;">
+-7.251
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align: center;">
+<strong>&lt;0.001</strong>
+</td>
+</tr>
+<tr>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+Male
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align: center;">
+0.230
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align:center;">
+0.266
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align: center;">
+0.863
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align: center;">
+0.389
+</td>
+</tr>
+<tr>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+Male*Education
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align: center;">
+0.005
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align:center;">
+0.018
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align: center;">
+0.291
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  text-align: center;">
+0.771
+</td>
+</tr>
+<tr>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm; border-top:2px solid;">
+Observations
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:center; border-top:2px solid;" colspan="4">
+1000
+</td>
+</tr>
+<tr>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
+R<sup>2</sup> / R<sup>2</sup> adjusted
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:center;" colspan="4">
+0.233 / 0.229
+</td>
+</tr>
+<tr>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
+log-Likelihood
+</td>
+<td style="border: solid 1px; padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:center;" colspan="4">
+-1060.507
+</td>
+</tr>
+</table>
+<caption>
+<span id="tab:ch5table3">Table 5.3: </span> Earnings Equation with intercept and slope dummy variables
+</caption>
+</div>
+<div id="problems-4" class="section level2 unnumbered hasAnchor">
+<h2>Problems<a href="functional-form-and-dummy-variables.html#problems-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="solutions-4" class="section level2 unnumbered hasAnchor">
+<h2>Solutions<a href="functional-form-and-dummy-variables.html#solutions-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="multiple-regression-model.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="classical-assumptions-and-ols-estimator.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -100,7 +100,7 @@ The use of the squared experience term is motivated by the empirical literature 
 
 library(ipumsr)
 
-ddi = read_ipums_ddi("C:/Users/bhattvx/Dropbox/Ebooks/Econ-385-Notes-master/Econ-385-Notes/datafiles/cps_00010.xml")
+ddi = read_ipums_ddi("C:/Users/bhattvx/Dropbox/Ebooks/Econ-385-Notes/datafiles/cps_00010.xml")
 data =read_ipums_micro(ddi, verbose=F)
 
 ##### drop missing  work hours
@@ -169,7 +169,7 @@ tab_model(fit1,fit2, digits=3, CSS = list(css.table='border: solid 2px;', css.td
 
 library(ipumsr)
 
-ddi = read_ipums_ddi("C:/Users/bhattvx//Dropbox/Ebooks/Econ-385-Notes-master/Econ-385-Notes/datafiles/cps_00010.xml")
+ddi = read_ipums_ddi("C:/Users/bhattvx//Dropbox/Ebooks/Econ-385-Notes/datafiles/cps_00010.xml")
 data =read_ipums_micro(ddi, verbose=F)
 
 ##### drop missing  work hours
@@ -289,7 +289,7 @@ Consquently, adding an intercept dummy simply changes the intercept of the regre
 
 library(ipumsr)
 
-ddi = read_ipums_ddi("C:/Users/bhattvx/Dropbox/Ebooks/Econ-385-Notes-master/Econ-385-Notes/datafiles/cps_00010.xml")
+ddi = read_ipums_ddi("C:/Users/bhattvx/Dropbox/Ebooks/Econ-385-Notes/datafiles/cps_00010.xml")
 data =read_ipums_micro(ddi, verbose=F)
 
 ##### drop missing  work hours
@@ -358,7 +358,7 @@ tab_model(fit, digits=3, CSS = list(css.table='border: solid 2px;', css.td='bord
 
 library(ipumsr)
 
-ddi = read_ipums_ddi("C:/Users/bhattvx/Dropbox/Ebooks/Econ-385-Notes-master/Econ-385-Notes/datafiles/cps_00010.xml")
+ddi = read_ipums_ddi("C:/Users/bhattvx/Dropbox/Ebooks/Econ-385-Notes/datafiles/cps_00010.xml")
 data =read_ipums_micro(ddi, verbose=F)
 
 ##### drop missing  work hours
@@ -441,7 +441,7 @@ As a result, for male workers, the effect of education on wages is $\beta_1 + \b
 
 library(ipumsr)
 
-ddi = read_ipums_ddi("C:/Users/bhattvx/Dropbox/Ebooks/Econ-385-Notes-master/Econ-385-Notes/datafiles/cps_00010.xml")
+ddi = read_ipums_ddi("C:/Users/bhattvx/Dropbox/Ebooks/Econ-385-Notes/datafiles/cps_00010.xml")
 data =read_ipums_micro(ddi, verbose=F)
 
 ##### drop missing  work hours
@@ -513,7 +513,7 @@ tab_model(fit, digits=3, CSS = list(css.table='border: solid 2px;', css.td='bord
 
 library(ipumsr)
 
-ddi = read_ipums_ddi("C:/Users/bhattvx/Dropbox/Ebooks/Econ-385-Notes-master/Econ-385-Notes/datafiles/cps_00010.xml")
+ddi = read_ipums_ddi("C:/Users/bhattvx/Dropbox/Ebooks/Econ-385-Notes/datafiles/cps_00010.xml")
 data =read_ipums_micro(ddi, verbose=F)
 
 ##### drop missing  work hours
