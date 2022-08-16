@@ -327,7 +327,7 @@ where $Wage_i$ is the annual wages and salaries of individual $i$ in dollars. $E
 ```{r, eval=knitr::is_html_output(), message=FALSE, warning=FALSE, echo=FALSE}
 library(ipumsr)
 
-ddi = read_ipums_ddi("~/Dropbox/Ebooks/Econ-385-Notes-master/Econ-385-Notes/datafiles/cps_00010.xml")
+ddi = read_ipums_ddi("C:/Users/bhattvx/Dropbox/Ebooks/Econ-385-Notes-master/Econ-385-Notes/datafiles/cps_00010.xml")
 data =read_ipums_micro(ddi, verbose=F)
 
 ##### drop missing  work hours
@@ -395,7 +395,7 @@ tab_model(fit,digits=3,  CSS = list(css.table='border: solid 2px;', css.td='bord
 ```{r, eval=knitr::is_latex_output(), message=FALSE, warning=FALSE, echo=FALSE, results='asis'}
 library(ipumsr)
 
-ddi = read_ipums_ddi("~/Dropbox/Ebooks/Econ-385-Notes-master/Econ-385-Notes/datafiles/cps_00010.xml")
+ddi = read_ipums_ddi("C:/Users/bhattvx/Dropbox/Ebooks/Econ-385-Notes-master/Econ-385-Notes/datafiles/cps_00010.xml")
 data =read_ipums_micro(ddi, verbose=F)
 
 ##### drop missing  work hours

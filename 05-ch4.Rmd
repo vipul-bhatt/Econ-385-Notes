@@ -61,7 +61,7 @@ Table \@ref(tab:ch4table1) below presents the estimation results for the extende
 
 library(ipumsr)
 
-ddi = read_ipums_ddi("~/Dropbox/Ebooks/Econ-385-Notes-master/Econ-385-Notes/datafiles/cps_00010.xml")
+ddi = read_ipums_ddi("C:/Users/bhattvx/Dropbox/Ebooks/Econ-385-Notes-master/Econ-385-Notes/datafiles/cps_00010.xml")
 data =read_ipums_micro(ddi, verbose=F)
 
 ##### drop missing  work hours
@@ -128,7 +128,7 @@ tab_model(fit1,fit2, digits=3, CSS = list(css.table='border: solid 2px;', css.td
 
 library(ipumsr)
 
-ddi = read_ipums_ddi("~/Dropbox/Ebooks/Econ-385-Notes-master/Econ-385-Notes/datafiles/cps_00010.xml")
+ddi = read_ipums_ddi("C:/Users/bhattvx/Dropbox/Ebooks/Econ-385-Notes-master/Econ-385-Notes/datafiles/cps_00010.xml")
 data =read_ipums_micro(ddi, verbose=F)
 
 ##### drop missing  work hours
