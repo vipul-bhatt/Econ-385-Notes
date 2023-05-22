@@ -53,7 +53,7 @@ Suppose we are interested in finding out what labor market characteristics affec
 where $Wage_i$ is the annual wages and salaries of individual $i$ in dollars. $Education_i$ denotes years of education of individual $i$. Finally, $Experience_i$ denotes years of experience.
 
 
-Table \@ref(tab:ch4table1) below presents the estimation results for the extended wage regression. Note that now the interpretation of the coefficient of education is as follows: holding the level of experience constant at its mean, raising education by 1 year will increase wages by 11.3\%.  Also notice that the coefficient of experience is positive indicating that more experienced workers earn higher wage on average.
+Table \@ref(tab:ch4table1) below presents the estimation results for the extended wage regression. Note that now the interpretation of the coefficient of education is as follows: holding the level of experience constant at its mean, raising education by 1 year will increase wages by 11.8\%.  Also notice that the coefficient of experience is positive indicating that more experienced workers earn higher wage on average.
 ```
 
 
@@ -236,7 +236,7 @@ This shows that a Cobb-Douglas production function can be approximated by a rela
 
 We can estimate the production function either by using a cross-sectional data on firms at a point in time, or use data of one firm over time. In this example, we will use a cross-section of 50 firms to estimate the production function.
 
-Table  \@ref(tab:ch4table2) provides the results of the estimation of the above model. From the p-values for each slope coefficient, we can infer that each effect is statistically significant at the 5\% level of significance. In terms of economic significance, we find that 1\% increase in capital increases output by 0.34\%, holding constant labor and material inputs at their mean. In contrast, a 1\% increase in labor increases output by 0.51\%, holding constal capital and labor at their means. Finally, holding labor and capital constant, a 1\% increase in material input raises output by 0.25\%. Based on this we can argue that labor input has most economic significance. We also find that our model can explain 71.9\% of the total variation in output observed in our sample as indicated by $R^2$ value. Next, we will conduct two types of hypotheses which are only possible in a multiple regression case.
+Table  \@ref(tab:ch4table2) provides the results of the estimation of the above model. From the p-values for each slope coefficient, we can infer that each effect is statistically significant at the 5\% level of significance. In terms of economic significance, we find that 1\% increase in capital increases output by 0.293\%, holding constant labor and material inputs at their mean. In contrast, a 1\% increase in labor increases output by 0.534\%, holding constal capital and labor at their means. Finally, holding labor and capital constant, a 1\% increase in material input raises output by 0.264\%. Based on this we can argue that labor input has most economic significance. We also find that our model can explain 80\% of the total variation in output observed in our sample as indicated by $R^2$ value. Next, we will conduct two types of hypotheses which are only possible in a multiple regression case.
 
 ```
 
@@ -333,7 +333,7 @@ where $J$ denotes the number of restrictions we impose in our null hypothesis an
 
 In our example, $R^2_U=0.719$. Also note that in this case, $R^2_R=0$. Hence, the F statistic value is:
 
-\[F=\frac{(0.719-0)/3}{(1-0.719)/(50-3-1)}=39.32\]
+\[F=\frac{(0.80-0)/3}{(1-0.80)/(50-3-1)}=61.33\]
 
 The critical value at 5\% level of significance can be obtained from the F-distribution table using $df_1=J=3$ and  $df_2=N-K-1=46$. In our case this value is 2.81. Because the F statistic is greater than the critical value, we reject the null hypothesis and conclude that our model is able to explain a statistically significant amount of variation in output.
 
@@ -348,9 +348,9 @@ Our restricted model, if the statement in the $H_0$ is true is given by:
 
 \[ln(Y_i) = \beta_0 + \beta_2 ln (L_i) +\epsilon_i\]
 
-Note that if we estimate the above restricted model, we will obtain an $R^2$ value which will be non-zero but lower than the original model with capital and material inputs added. We can test whether the reduction in $R^2$ is significant or not. Table \@ref(tab:ch4table3) below presents the results of for the restricted model. For convenience, I also add the original unrestricted model  results from Table \@ref(tab:ch4table2) as well. We note that $R^2_U=0.719$ and  $R^2_R=0.414$. We can compute the F statistic as follows:
+Note that if we estimate the above restricted model, we will obtain an $R^2$ value which will be non-zero but lower than the original model with capital and material inputs added. We can test whether the reduction in $R^2$ is significant or not. Table \@ref(tab:ch4table3) below presents the results of for the restricted model. For convenience, I also add the original unrestricted model  results from Table \@ref(tab:ch4table2) as well. We note that $R^2_U=0.80$ and  $R^2_R=0.510$. We can compute the F statistic as follows:
 
-\[F=\frac{(0.719-0.414)/2}{(1-0.719)/(50-3-1)}=24.96\]
+\[F=\frac{(0.80-0.510)/2}{(1-0.80)/(50-3-1)}=33.35\]
 
 ```{block2, type="rmdCaution"}
 Note how in this example, we use $J=2$ and $K=3$ in the F statistic formula. This is because we are now dropping two variables from our orignal model implying that we are imposing two restrictions and hence $J=2$.}
@@ -457,12 +457,12 @@ Note that Table \@ref(tab:ch4table2) gives us the three estimated regression coe
 The covariance matrix for 3 regression coefficients is presented in Table \@ref(tab:ch4table4). The diagonal elements of this matrix gives us the variance of each coefficient whereas the off diagonal elements gives us the covariance between a pair of the coefficients. We can use that information and compute the standard error as follows:
 
 
-\[s.e.(\hat{\beta_1}+\hat{\beta_2} +\hat{\beta_3})= \sqrt{0.0041+0.0039+0.0031+2\times (-0.0004)+ 2 \times (-0.002) + 2 \times 0.0006 }=0.105\]
+\[s.e.(\hat{\beta_1}+\hat{\beta_2} +\hat{\beta_3})= \sqrt{0.0026+0.0026+0.0024+2\times (-0.0001)+ 2 \times (-0.002) + 2 \times 0.000 }=0.0584\]
 
 
 Then, the t-statistic is given by:
 
-\[t= \frac{(0.343+0.514+0.246)-1}{0.105}=0.981\]
+\[t= \frac{(0.293+0.534+0.264)-1}{0.0584}=1.56\]
 
 Under the null hypothesis, our test statistic follows t-distribution with $N-K-1=46$ degrees of freedom. The critical value at 5\% level of significance for a two-sided alternative is 2.009. Because |t| is less than the critical value, we do not reject the null hypothesis. Hence, in our sample we do not find evidence against the constant returns to scale assumption.
 
