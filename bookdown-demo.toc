@@ -1,83 +1,100 @@
-\contentsline {chapter}{Preface}{5}{chapter*.2}%
-\contentsline {chapter}{Introduction}{7}{chapter*.3}%
-\contentsline {chapter}{\numberline {1}Review of Differential Calculus and Optimization}{11}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Derivative of a single variable function}{11}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1}Rules of Differentiation}{12}{subsection.1.1.1}%
-\contentsline {section}{\numberline {1.2}Second derivative and non-linearity}{13}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Partial derivatives: Multi-variable functions}{14}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Optimization}{16}{section.1.4}%
-\contentsline {section}{Problems}{20}{section*.4}%
-\contentsline {section}{Solutions}{20}{section*.5}%
-\contentsline {chapter}{\numberline {2}Review of Probability and Statistics}{23}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Probability}{23}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Random Variable}{25}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Probability distribution}{25}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Probability distribution of a discrete random variable}{25}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Probability distribution of a continuous random variable}{28}{subsection.2.3.2}%
-\contentsline {section}{\numberline {2.4}Moments of a probability distribution function}{28}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}First moment of a probability distribution: Expected value}{30}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Second moment of the distribution.}{31}{subsection.2.4.2}%
-\contentsline {subsection}{\numberline {2.4.3}Third and Fourth Moments: Skewness and Kurtosis}{32}{subsection.2.4.3}%
-\contentsline {section}{\numberline {2.5}Useful probability distributions}{36}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Joint Probability Distribution}{40}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Measures of statistical association}{43}{section.2.7}%
-\contentsline {subsection}{\numberline {2.7.1}Rules of expectation and variances}{43}{subsection.2.7.1}%
-\contentsline {section}{\numberline {2.8}Sampling and Estimation}{44}{section.2.8}%
-\contentsline {section}{\numberline {2.9}Hypothesis testing}{47}{section.2.9}%
-\contentsline {subsection}{\numberline {2.9.1}Testing a restriction on a single population parameter}{48}{subsection.2.9.1}%
-\contentsline {subsection}{\numberline {2.9.2}Testing a restriction on multiple population parameter}{51}{subsection.2.9.2}%
-\contentsline {subsection}{\numberline {2.9.3}Confidence interval and Hypothesis testing}{52}{subsection.2.9.3}%
-\contentsline {section}{Problems}{53}{section*.6}%
-\contentsline {section}{Solutions}{54}{section*.7}%
-\contentsline {chapter}{\numberline {3}Simple Regression Model}{59}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Statistical foundation of the simple regression model}{59}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Ordinary Least Squares (OLS)}{61}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Goodness of fit}{65}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Applications of the simple regression model}{66}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Aggregate consumption function}{66}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Returns to education}{68}{subsection.3.4.2}%
-\contentsline {section}{\numberline {3.5}Use of natural logs and interpretation of the slope coefficients}{70}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Hypothesis testing and confidence interval estimation}{72}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}Confidence interval for regression coefficients}{74}{subsection.3.6.1}%
-\contentsline {section}{Problems}{74}{section*.8}%
-\contentsline {section}{Solutions}{76}{section*.9}%
-\contentsline {chapter}{\numberline {4}Multiple regression model}{79}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Multiple Regression Model}{80}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Goodness of fit redux}{82}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Hypothesis testing in a multiple regression model}{83}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Test of statistical significance of the entire model}{84}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Testing whether one or more of the variables can be eliminated from the model}{86}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Testing a linear restriction on slope coefficients}{87}{subsection.4.3.3}%
-\contentsline {section}{Problems}{90}{section*.10}%
-\contentsline {section}{Solutions}{90}{section*.11}%
-\contentsline {chapter}{\numberline {5}Functional form and dummy variables}{93}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Polynomials in the regression model}{93}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Obtaining optimal polynomial order using goodness of fit}{94}{subsection.5.1.1}%
-\contentsline {section}{\numberline {5.2}Step functions: Dummy variables in the regression model}{96}{section.5.2}%
-\contentsline {section}{Problems}{102}{section*.12}%
-\contentsline {section}{Solutions}{102}{section*.13}%
-\contentsline {chapter}{\numberline {6}Classical assumptions and OLS estimator}{103}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Classical Assumptions}{103}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Heteroscedasticity}{105}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}Consequences of Heteroscedasticity for the OLS estimator}{106}{subsection.6.2.1}%
-\contentsline {section}{\numberline {6.3}Testing for Hetroscedasticity in data}{107}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}LM test for linear heteroscedasticity: BP test}{107}{subsection.6.3.1}%
-\contentsline {subsection}{\numberline {6.3.2}LM test for linear heteroscedasticity: White's test}{108}{subsection.6.3.2}%
-\contentsline {section}{\numberline {6.4}Heteroscedasticity robust standard errors}{110}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Serial correlation}{112}{section.6.5}%
-\contentsline {subsection}{\numberline {6.5.1}Consequences of Serial Correlation for the OLS estimator}{114}{subsection.6.5.1}%
-\contentsline {section}{\numberline {6.6}Testing for Serial Correlation in data}{114}{section.6.6}%
-\contentsline {subsection}{\numberline {6.6.1}Durbin-Watson test for first order serial correlation}{114}{subsection.6.6.1}%
-\contentsline {subsection}{\numberline {6.6.2}Breusch-Godfrey (BG) test for serial correlation}{115}{subsection.6.6.2}%
-\contentsline {section}{\numberline {6.7}Serial correlation robust standard errors}{117}{section.6.7}%
-\contentsline {section}{\numberline {6.8}Omitted variable bias}{118}{section.6.8}%
-\contentsline {subsection}{\numberline {6.8.1}Consequence of omitted variable on OLS estimator}{119}{subsection.6.8.1}%
-\contentsline {section}{Problems}{119}{section*.14}%
-\contentsline {section}{Solutions}{119}{section*.15}%
-\contentsline {chapter}{\numberline {A}Statistical Tables}{121}{appendix.A}%
-\contentsline {section}{Table A: Critical Values for the t-distribution}{121}{section*.16}%
-\contentsline {section}{Table B: Critical Values for the Chi-square distribution}{122}{section*.17}%
-\contentsline {section}{Table C: 1\% Critical Values for the F distribution}{123}{section*.18}%
-\contentsline {section}{Table D: 5\% Critical Values for the F distribution}{125}{section*.19}%
-\contentsline {section}{Table E: 10\% Critical Values for the F distribution}{127}{section*.20}%
-\contentsline {section}{Table F: 5\% One-sided Critical Values for the Durbin-Watson Distribution}{131}{section*.21}%
+\contentsline {chapter}{Preface}{7}{chapter*.2}%
+\contentsline {chapter}{Introduction}{9}{chapter*.3}%
+\contentsline {chapter}{\numberline {1}Simple Regression Model}{13}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Statistical foundation of the simple regression model}{13}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Ordinary Least Squares (OLS)}{15}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Goodness of fit}{19}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Applications of the simple regression model}{20}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Aggregate consumption function}{20}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}Returns to education}{23}{subsection.1.4.2}%
+\contentsline {section}{\numberline {1.5}Use of natural logs and interpretation of the slope coefficients}{25}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Hypothesis testing and confidence interval estimation}{27}{section.1.6}%
+\contentsline {subsection}{\numberline {1.6.1}Confidence interval for regression coefficients}{29}{subsection.1.6.1}%
+\contentsline {section}{Problems}{29}{section*.4}%
+\contentsline {section}{Solutions}{31}{section*.5}%
+\contentsline {chapter}{\numberline {2}Multiple regression model}{33}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Multiple Regression Model}{34}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Goodness of fit redux}{36}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Hypothesis testing in a multiple regression model}{37}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Test of statistical significance of the entire model}{38}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Testing whether one or more of the variables can be eliminated from the model}{40}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Testing a linear restriction on slope coefficients}{41}{subsection.2.3.3}%
+\contentsline {section}{Problems}{44}{section*.6}%
+\contentsline {section}{Solutions}{46}{section*.7}%
+\contentsline {chapter}{\numberline {3}Functional form and dummy variables}{47}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Polynomials in the regression model}{47}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Obtaining optimal polynomial order using goodness of fit}{48}{subsection.3.1.1}%
+\contentsline {section}{\numberline {3.2}Step functions: Dummy variables in the regression model}{52}{section.3.2}%
+\contentsline {section}{Problems}{55}{section*.8}%
+\contentsline {section}{Solutions}{55}{section*.9}%
+\contentsline {chapter}{\numberline {4}Classical assumptions and OLS estimator}{57}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Classical Assumptions}{57}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Heteroscedasticity}{59}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Consequences of Heteroscedasticity for the OLS estimator}{61}{subsection.4.2.1}%
+\contentsline {section}{\numberline {4.3}Testing for Hetroscedasticity in data}{61}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}LM test for linear heteroscedasticity: BP test}{61}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}LM test for linear heteroscedasticity: White's test}{62}{subsection.4.3.2}%
+\contentsline {section}{\numberline {4.4}Heteroscedasticity robust standard errors}{65}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Serial correlation}{66}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Consequences of Serial Correlation for the OLS estimator}{69}{subsection.4.5.1}%
+\contentsline {section}{\numberline {4.6}Testing for Serial Correlation in data}{69}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Durbin-Watson test for first order serial correlation}{69}{subsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.6.2}Breusch-Godfrey (BG) test for serial correlation}{70}{subsection.4.6.2}%
+\contentsline {section}{\numberline {4.7}Serial correlation robust standard errors}{73}{section.4.7}%
+\contentsline {section}{Problems}{73}{section*.10}%
+\contentsline {section}{Solutions}{73}{section*.11}%
+\contentsline {chapter}{\numberline {5}Instrumental Variable Estimation}{75}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Endogeneity Problem}{75}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Omitted variable bias}{76}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Consequence of omitted variable on OLS estimator}{77}{subsection.5.2.1}%
+\contentsline {section}{\numberline {5.3}IV estimation}{78}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Case I: One endogenous regressor and one instrument}{78}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Example 1: Return to Schooling}{79}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Example 2: Estimating Demand for Butter}{79}{subsection.5.4.2}%
+\contentsline {section}{\numberline {5.5}Case II: One endogenous regressor with many available instruments}{80}{section.5.5}%
+\contentsline {section}{\numberline {5.6}IV estimation in a multiple regression framework}{81}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Strength and Exogneity of the Instrument}{82}{section.5.7}%
+\contentsline {subsection}{\numberline {5.7.1}Weak Instruments}{82}{subsection.5.7.1}%
+\contentsline {subsection}{\numberline {5.7.2}Exogeneity of Instruments}{82}{subsection.5.7.2}%
+\contentsline {section}{Problems}{83}{section*.12}%
+\contentsline {section}{Solutions}{83}{section*.13}%
+\contentsline {chapter}{\numberline {6}Discrete Choice Model}{85}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Binary Dependent Variable}{85}{section.6.1}%
+\contentsline {section}{Problems}{86}{section*.14}%
+\contentsline {section}{Solutions}{86}{section*.15}%
+\contentsline {chapter}{\numberline {A}Review of Differential Calculus and Optimization}{87}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Derivative of a single variable function}{87}{section.A.1}%
+\contentsline {subsection}{\numberline {A.1.1}Rules of Differentiation}{88}{subsection.A.1.1}%
+\contentsline {section}{\numberline {A.2}Second derivative and non-linearity}{89}{section.A.2}%
+\contentsline {section}{\numberline {A.3}Partial derivatives: Multi-variable functions}{91}{section.A.3}%
+\contentsline {section}{\numberline {A.4}Optimization}{92}{section.A.4}%
+\contentsline {section}{Problems}{96}{section*.16}%
+\contentsline {section}{Solutions}{97}{section*.17}%
+\contentsline {chapter}{\numberline {B}Review of Probability and Statistics}{101}{appendix.B}%
+\contentsline {section}{\numberline {B.1}Probability}{101}{section.B.1}%
+\contentsline {section}{\numberline {B.2}Random Variable}{103}{section.B.2}%
+\contentsline {section}{\numberline {B.3}Probability distribution}{103}{section.B.3}%
+\contentsline {subsection}{\numberline {B.3.1}Probability distribution of a discrete random variable}{103}{subsection.B.3.1}%
+\contentsline {subsection}{\numberline {B.3.2}Probability distribution of a continuous random variable}{106}{subsection.B.3.2}%
+\contentsline {section}{\numberline {B.4}Moments of a probability distribution function}{108}{section.B.4}%
+\contentsline {subsection}{\numberline {B.4.1}First moment of a probability distribution: Expected value}{108}{subsection.B.4.1}%
+\contentsline {subsection}{\numberline {B.4.2}Second moment of the distribution.}{109}{subsection.B.4.2}%
+\contentsline {subsection}{\numberline {B.4.3}Third and Fourth Moments: Skewness and Kurtosis}{111}{subsection.B.4.3}%
+\contentsline {section}{\numberline {B.5}Useful probability distributions}{112}{section.B.5}%
+\contentsline {section}{\numberline {B.6}Joint Probability Distribution}{118}{section.B.6}%
+\contentsline {section}{\numberline {B.7}Measures of statistical association}{121}{section.B.7}%
+\contentsline {subsection}{\numberline {B.7.1}Rules of expectation and variances}{122}{subsection.B.7.1}%
+\contentsline {section}{\numberline {B.8}Sampling and Estimation}{122}{section.B.8}%
+\contentsline {section}{\numberline {B.9}Hypothesis testing}{125}{section.B.9}%
+\contentsline {subsection}{\numberline {B.9.1}Testing a restriction on a single population parameter}{127}{subsection.B.9.1}%
+\contentsline {subsection}{\numberline {B.9.2}Testing a restriction on multiple population parameter}{129}{subsection.B.9.2}%
+\contentsline {subsection}{\numberline {B.9.3}Confidence interval and Hypothesis testing}{131}{subsection.B.9.3}%
+\contentsline {section}{Problems}{132}{section*.18}%
+\contentsline {section}{Solutions}{133}{section*.19}%
+\contentsline {chapter}{\numberline {C}Statistical Tables}{137}{appendix.C}%
+\contentsline {section}{Table A: Critical Values for the t-distribution}{137}{section*.20}%
+\contentsline {section}{Table B: Critical Values for the Chi-square distribution}{138}{section*.21}%
+\contentsline {section}{Table C: 1\% Critical Values for the F distribution}{139}{section*.22}%
+\contentsline {section}{Table D: 5\% Critical Values for the F distribution}{141}{section*.23}%
+\contentsline {section}{Table E: 10\% Critical Values for the F distribution}{144}{section*.24}%
+\contentsline {section}{Table F: 5\% One-sided Critical Values for the Durbin-Watson Distribution}{147}{section*.25}%

@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 3 Simple Regression Model | Introduction to Econometrics</title>
+  <title>Chapter 1 Simple Regression Model | Introduction to Econometrics</title>
   <meta name="description" content="Lecture notes for Introduction to Econometrics" />
-  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 3 Simple Regression Model | Introduction to Econometrics" />
+  <meta property="og:title" content="Chapter 1 Simple Regression Model | Introduction to Econometrics" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Lecture notes for Introduction to Econometrics" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Simple Regression Model | Introduction to Econometrics" />
+  <meta name="twitter:title" content="Chapter 1 Simple Regression Model | Introduction to Econometrics" />
   
   <meta name="twitter:description" content="Lecture notes for Introduction to Econometrics" />
   
@@ -23,14 +23,14 @@
 <meta name="author" content="Vipul Bhatt" />
 
 
-<meta name="date" content="2023-05-22" />
+<meta name="date" content="2023-08-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="review-of-probability-and-statistics.html"/>
+<link rel="prev" href="intro.html"/>
 <link rel="next" href="multiple-regression-model.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -55,6 +55,10 @@
 
 
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -74,122 +78,147 @@
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
 <li class="chapter" data-level="" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="1" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html"><i class="fa fa-check"></i><b>1</b> Review of Differential Calculus and Optimization</a>
+<li class="chapter" data-level="1" data-path="simple-regression-model.html"><a href="simple-regression-model.html"><i class="fa fa-check"></i><b>1</b> Simple Regression Model</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#derivative-of-a-single-variable-function"><i class="fa fa-check"></i><b>1.1</b> Derivative of a single variable function</a>
+<li class="chapter" data-level="1.1" data-path="simple-regression-model.html"><a href="simple-regression-model.html#statistical-foundation-of-the-simple-regression-model"><i class="fa fa-check"></i><b>1.1</b> Statistical foundation of the simple regression model</a></li>
+<li class="chapter" data-level="1.2" data-path="simple-regression-model.html"><a href="simple-regression-model.html#ordinary-least-squares-ols"><i class="fa fa-check"></i><b>1.2</b> Ordinary Least Squares (OLS)</a></li>
+<li class="chapter" data-level="1.3" data-path="simple-regression-model.html"><a href="simple-regression-model.html#goodness-of-fit"><i class="fa fa-check"></i><b>1.3</b> Goodness of fit</a></li>
+<li class="chapter" data-level="1.4" data-path="simple-regression-model.html"><a href="simple-regression-model.html#applications-of-the-simple-regression-model"><i class="fa fa-check"></i><b>1.4</b> Applications of the simple regression model</a>
 <ul>
-<li class="chapter" data-level="1.1.1" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#rules-of-differentiation"><i class="fa fa-check"></i><b>1.1.1</b> Rules of Differentiation</a></li>
+<li class="chapter" data-level="1.4.1" data-path="simple-regression-model.html"><a href="simple-regression-model.html#aggregate-consumption-function"><i class="fa fa-check"></i><b>1.4.1</b> Aggregate consumption function</a></li>
+<li class="chapter" data-level="1.4.2" data-path="simple-regression-model.html"><a href="simple-regression-model.html#returns-to-education"><i class="fa fa-check"></i><b>1.4.2</b> Returns to education</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#second-derivative-and-non-linearity"><i class="fa fa-check"></i><b>1.2</b> Second derivative and non-linearity</a></li>
-<li class="chapter" data-level="1.3" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#partial-derivatives-multi-variable-functions"><i class="fa fa-check"></i><b>1.3</b> Partial derivatives: Multi-variable functions</a></li>
-<li class="chapter" data-level="1.4" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#optimization"><i class="fa fa-check"></i><b>1.4</b> Optimization</a></li>
-<li class="chapter" data-level="" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#problems"><i class="fa fa-check"></i>Problems</a></li>
-<li class="chapter" data-level="" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#solutions"><i class="fa fa-check"></i>Solutions</a></li>
-</ul></li>
-<li class="chapter" data-level="2" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html"><i class="fa fa-check"></i><b>2</b> Review of Probability and Statistics</a>
+<li class="chapter" data-level="1.5" data-path="simple-regression-model.html"><a href="simple-regression-model.html#use-of-natural-logs-and-interpretation-of-the-slope-coefficients"><i class="fa fa-check"></i><b>1.5</b> Use of natural logs and interpretation of the slope coefficients</a></li>
+<li class="chapter" data-level="1.6" data-path="simple-regression-model.html"><a href="simple-regression-model.html#hypothesis-testing-and-confidence-interval-estimation"><i class="fa fa-check"></i><b>1.6</b> Hypothesis testing and confidence interval estimation</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#probability"><i class="fa fa-check"></i><b>2.1</b> Probability</a></li>
-<li class="chapter" data-level="2.2" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#random-variable"><i class="fa fa-check"></i><b>2.2</b> Random Variable</a></li>
-<li class="chapter" data-level="2.3" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#probability-distribution"><i class="fa fa-check"></i><b>2.3</b> Probability distribution</a>
-<ul>
-<li class="chapter" data-level="2.3.1" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#probability-distribution-of-a-discrete-random-variable"><i class="fa fa-check"></i><b>2.3.1</b> Probability distribution of a discrete random variable</a></li>
-<li class="chapter" data-level="2.3.2" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#probability-distribution-of-a-continuous-random-variable"><i class="fa fa-check"></i><b>2.3.2</b> Probability distribution of a continuous random variable</a></li>
+<li class="chapter" data-level="1.6.1" data-path="simple-regression-model.html"><a href="simple-regression-model.html#confidence-interval-for-regression-coefficients"><i class="fa fa-check"></i><b>1.6.1</b> Confidence interval for regression coefficients</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#moments-of-a-probability-distribution-function"><i class="fa fa-check"></i><b>2.4</b> Moments of a probability distribution function</a>
-<ul>
-<li class="chapter" data-level="2.4.1" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#first-moment-of-a-probability-distribution-expected-value"><i class="fa fa-check"></i><b>2.4.1</b> First moment of a probability distribution: Expected value</a></li>
-<li class="chapter" data-level="2.4.2" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#second-moment-of-the-distribution."><i class="fa fa-check"></i><b>2.4.2</b> Second moment of the distribution.</a></li>
-<li class="chapter" data-level="2.4.3" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#third-and-fourth-moments-skewness-and-kurtosis"><i class="fa fa-check"></i><b>2.4.3</b> Third and Fourth Moments: Skewness and Kurtosis</a></li>
+<li class="chapter" data-level="" data-path="simple-regression-model.html"><a href="simple-regression-model.html#problems"><i class="fa fa-check"></i>Problems</a></li>
+<li class="chapter" data-level="" data-path="simple-regression-model.html"><a href="simple-regression-model.html#solutions"><i class="fa fa-check"></i>Solutions</a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#useful-probability-distributions"><i class="fa fa-check"></i><b>2.5</b> Useful probability distributions</a></li>
-<li class="chapter" data-level="2.6" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#joint-probability-distribution"><i class="fa fa-check"></i><b>2.6</b> Joint Probability Distribution</a></li>
-<li class="chapter" data-level="2.7" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#measures-of-statistical-association"><i class="fa fa-check"></i><b>2.7</b> Measures of statistical association</a>
+<li class="chapter" data-level="2" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html"><i class="fa fa-check"></i><b>2</b> Multiple regression model</a>
 <ul>
-<li class="chapter" data-level="2.7.1" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#rules-of-expectation-and-variances"><i class="fa fa-check"></i><b>2.7.1</b> Rules of expectation and variances</a></li>
-</ul></li>
-<li class="chapter" data-level="2.8" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#sampling-and-estimation"><i class="fa fa-check"></i><b>2.8</b> Sampling and Estimation</a></li>
-<li class="chapter" data-level="2.9" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#hypothesis-testing"><i class="fa fa-check"></i><b>2.9</b> Hypothesis testing</a>
+<li class="chapter" data-level="2.1" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#multiple-regression-model-1"><i class="fa fa-check"></i><b>2.1</b> Multiple Regression Model</a></li>
+<li class="chapter" data-level="2.2" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#goodness-of-fit-redux"><i class="fa fa-check"></i><b>2.2</b> Goodness of fit redux</a></li>
+<li class="chapter" data-level="2.3" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#hypothesis-testing-in-a-multiple-regression-model"><i class="fa fa-check"></i><b>2.3</b> Hypothesis testing in a multiple regression model</a>
 <ul>
-<li class="chapter" data-level="2.9.1" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#testing-a-restriction-on-a-single-population-parameter"><i class="fa fa-check"></i><b>2.9.1</b> Testing a restriction on a single population parameter</a></li>
-<li class="chapter" data-level="2.9.2" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#testing-a-restriction-on-multiple-population-parameter"><i class="fa fa-check"></i><b>2.9.2</b> Testing a restriction on multiple population parameter</a></li>
-<li class="chapter" data-level="2.9.3" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#confidence-interval-and-hypothesis-testing"><i class="fa fa-check"></i><b>2.9.3</b> Confidence interval and Hypothesis testing</a></li>
+<li class="chapter" data-level="2.3.1" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#test-of-statistical-significance-of-the-entire-model"><i class="fa fa-check"></i><b>2.3.1</b> Test of statistical significance of the entire model</a></li>
+<li class="chapter" data-level="2.3.2" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#testing-whether-one-or-more-of-the-variables-can-be-eliminated-from-the-model"><i class="fa fa-check"></i><b>2.3.2</b> Testing whether one or more of the variables can be eliminated from the model</a></li>
+<li class="chapter" data-level="2.3.3" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#testing-a-linear-restriction-on-slope-coefficients"><i class="fa fa-check"></i><b>2.3.3</b> Testing a linear restriction on slope coefficients</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#problems-1"><i class="fa fa-check"></i>Problems</a></li>
-<li class="chapter" data-level="" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#solutions-1"><i class="fa fa-check"></i>Solutions</a></li>
+<li class="chapter" data-level="" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#problems-1"><i class="fa fa-check"></i>Problems</a></li>
+<li class="chapter" data-level="" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#solutions-1"><i class="fa fa-check"></i>Solutions</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="simple-regression-model.html"><a href="simple-regression-model.html"><i class="fa fa-check"></i><b>3</b> Simple Regression Model</a>
+<li class="chapter" data-level="3" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html"><i class="fa fa-check"></i><b>3</b> Functional form and dummy variables</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="simple-regression-model.html"><a href="simple-regression-model.html#statistical-foundation-of-the-simple-regression-model"><i class="fa fa-check"></i><b>3.1</b> Statistical foundation of the simple regression model</a></li>
-<li class="chapter" data-level="3.2" data-path="simple-regression-model.html"><a href="simple-regression-model.html#ordinary-least-squares-ols"><i class="fa fa-check"></i><b>3.2</b> Ordinary Least Squares (OLS)</a></li>
-<li class="chapter" data-level="3.3" data-path="simple-regression-model.html"><a href="simple-regression-model.html#goodness-of-fit"><i class="fa fa-check"></i><b>3.3</b> Goodness of fit</a></li>
-<li class="chapter" data-level="3.4" data-path="simple-regression-model.html"><a href="simple-regression-model.html#applications-of-the-simple-regression-model"><i class="fa fa-check"></i><b>3.4</b> Applications of the simple regression model</a>
+<li class="chapter" data-level="3.1" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html#polynomials-in-the-regression-model"><i class="fa fa-check"></i><b>3.1</b> Polynomials in the regression model</a>
 <ul>
-<li class="chapter" data-level="3.4.1" data-path="simple-regression-model.html"><a href="simple-regression-model.html#aggregate-consumption-function"><i class="fa fa-check"></i><b>3.4.1</b> Aggregate consumption function</a></li>
-<li class="chapter" data-level="3.4.2" data-path="simple-regression-model.html"><a href="simple-regression-model.html#returns-to-education"><i class="fa fa-check"></i><b>3.4.2</b> Returns to education</a></li>
+<li class="chapter" data-level="3.1.1" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html#obtaining-optimal-polynomial-order-using-goodness-of-fit"><i class="fa fa-check"></i><b>3.1.1</b> Obtaining optimal polynomial order using goodness of fit</a></li>
 </ul></li>
-<li class="chapter" data-level="3.5" data-path="simple-regression-model.html"><a href="simple-regression-model.html#use-of-natural-logs-and-interpretation-of-the-slope-coefficients"><i class="fa fa-check"></i><b>3.5</b> Use of natural logs and interpretation of the slope coefficients</a></li>
-<li class="chapter" data-level="3.6" data-path="simple-regression-model.html"><a href="simple-regression-model.html#hypothesis-testing-and-confidence-interval-estimation"><i class="fa fa-check"></i><b>3.6</b> Hypothesis testing and confidence interval estimation</a>
+<li class="chapter" data-level="3.2" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html#step-functions-dummy-variables-in-the-regression-model"><i class="fa fa-check"></i><b>3.2</b> Step functions: Dummy variables in the regression model</a></li>
+<li class="chapter" data-level="" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html#problems-2"><i class="fa fa-check"></i>Problems</a></li>
+<li class="chapter" data-level="" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html#solutions-2"><i class="fa fa-check"></i>Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html"><i class="fa fa-check"></i><b>4</b> Classical assumptions and OLS estimator</a>
 <ul>
-<li class="chapter" data-level="3.6.1" data-path="simple-regression-model.html"><a href="simple-regression-model.html#confidence-interval-for-regression-coefficients"><i class="fa fa-check"></i><b>3.6.1</b> Confidence interval for regression coefficients</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="simple-regression-model.html"><a href="simple-regression-model.html#problems-2"><i class="fa fa-check"></i>Problems</a></li>
-<li class="chapter" data-level="" data-path="simple-regression-model.html"><a href="simple-regression-model.html#solutions-2"><i class="fa fa-check"></i>Solutions</a></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html"><i class="fa fa-check"></i><b>4</b> Multiple regression model</a>
+<li class="chapter" data-level="4.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#classical-assumptions"><i class="fa fa-check"></i><b>4.1</b> Classical Assumptions</a></li>
+<li class="chapter" data-level="4.2" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#heteroscedasticity"><i class="fa fa-check"></i><b>4.2</b> Heteroscedasticity</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#multiple-regression-model-1"><i class="fa fa-check"></i><b>4.1</b> Multiple Regression Model</a></li>
-<li class="chapter" data-level="4.2" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#goodness-of-fit-redux"><i class="fa fa-check"></i><b>4.2</b> Goodness of fit redux</a></li>
-<li class="chapter" data-level="4.3" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#hypothesis-testing-in-a-multiple-regression-model"><i class="fa fa-check"></i><b>4.3</b> Hypothesis testing in a multiple regression model</a>
-<ul>
-<li class="chapter" data-level="4.3.1" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#test-of-statistical-significance-of-the-entire-model"><i class="fa fa-check"></i><b>4.3.1</b> Test of statistical significance of the entire model</a></li>
-<li class="chapter" data-level="4.3.2" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#testing-whether-one-or-more-of-the-variables-can-be-eliminated-from-the-model"><i class="fa fa-check"></i><b>4.3.2</b> Testing whether one or more of the variables can be eliminated from the model</a></li>
-<li class="chapter" data-level="4.3.3" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#testing-a-linear-restriction-on-slope-coefficients"><i class="fa fa-check"></i><b>4.3.3</b> Testing a linear restriction on slope coefficients</a></li>
+<li class="chapter" data-level="4.2.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#consequences-of-heteroscedasticity-for-the-ols-estimator"><i class="fa fa-check"></i><b>4.2.1</b> Consequences of Heteroscedasticity for the OLS estimator</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#problems-3"><i class="fa fa-check"></i>Problems</a></li>
-<li class="chapter" data-level="" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#solutions-3"><i class="fa fa-check"></i>Solutions</a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html"><i class="fa fa-check"></i><b>5</b> Functional form and dummy variables</a>
+<li class="chapter" data-level="4.3" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#testing-for-hetroscedasticity-in-data"><i class="fa fa-check"></i><b>4.3</b> Testing for Hetroscedasticity in data</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html#polynomials-in-the-regression-model"><i class="fa fa-check"></i><b>5.1</b> Polynomials in the regression model</a>
-<ul>
-<li class="chapter" data-level="5.1.1" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html#obtaining-optimal-polynomial-order-using-goodness-of-fit"><i class="fa fa-check"></i><b>5.1.1</b> Obtaining optimal polynomial order using goodness of fit</a></li>
+<li class="chapter" data-level="4.3.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#lm-test-for-linear-heteroscedasticity-bp-test"><i class="fa fa-check"></i><b>4.3.1</b> LM test for linear heteroscedasticity: BP test</a></li>
+<li class="chapter" data-level="4.3.2" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#lm-test-for-linear-heteroscedasticity-whites-test"><i class="fa fa-check"></i><b>4.3.2</b> LM test for linear heteroscedasticity: White’s test</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html#step-functions-dummy-variables-in-the-regression-model"><i class="fa fa-check"></i><b>5.2</b> Step functions: Dummy variables in the regression model</a></li>
-<li class="chapter" data-level="" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html#problems-4"><i class="fa fa-check"></i>Problems</a></li>
-<li class="chapter" data-level="" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html#solutions-4"><i class="fa fa-check"></i>Solutions</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html"><i class="fa fa-check"></i><b>6</b> Classical assumptions and OLS estimator</a>
+<li class="chapter" data-level="4.4" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#heteroscedasticity-robust-standard-errors"><i class="fa fa-check"></i><b>4.4</b> Heteroscedasticity robust standard errors</a></li>
+<li class="chapter" data-level="4.5" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#serial-correlation"><i class="fa fa-check"></i><b>4.5</b> Serial correlation</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#classical-assumptions"><i class="fa fa-check"></i><b>6.1</b> Classical Assumptions</a></li>
-<li class="chapter" data-level="6.2" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#heteroscedasticity"><i class="fa fa-check"></i><b>6.2</b> Heteroscedasticity</a>
-<ul>
-<li class="chapter" data-level="6.2.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#consequences-of-heteroscedasticity-for-the-ols-estimator"><i class="fa fa-check"></i><b>6.2.1</b> Consequences of Heteroscedasticity for the OLS estimator</a></li>
+<li class="chapter" data-level="4.5.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#consequences-of-serial-correlation-for-the-ols-estimator"><i class="fa fa-check"></i><b>4.5.1</b> Consequences of Serial Correlation for the OLS estimator</a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#testing-for-hetroscedasticity-in-data"><i class="fa fa-check"></i><b>6.3</b> Testing for Hetroscedasticity in data</a>
+<li class="chapter" data-level="4.6" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#testing-for-serial-correlation-in-data"><i class="fa fa-check"></i><b>4.6</b> Testing for Serial Correlation in data</a>
 <ul>
-<li class="chapter" data-level="6.3.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#lm-test-for-linear-heteroscedasticity-bp-test"><i class="fa fa-check"></i><b>6.3.1</b> LM test for linear heteroscedasticity: BP test</a></li>
-<li class="chapter" data-level="6.3.2" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#lm-test-for-linear-heteroscedasticity-whites-test"><i class="fa fa-check"></i><b>6.3.2</b> LM test for linear heteroscedasticity: White’s test</a></li>
+<li class="chapter" data-level="4.6.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#durbin-watson-test-for-first-order-serial-correlation"><i class="fa fa-check"></i><b>4.6.1</b> Durbin-Watson test for first order serial correlation</a></li>
+<li class="chapter" data-level="4.6.2" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#breusch-godfrey-bg-test-for-serial-correlation"><i class="fa fa-check"></i><b>4.6.2</b> Breusch-Godfrey (BG) test for serial correlation</a></li>
 </ul></li>
-<li class="chapter" data-level="6.4" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#heteroscedasticity-robust-standard-errors"><i class="fa fa-check"></i><b>6.4</b> Heteroscedasticity robust standard errors</a></li>
-<li class="chapter" data-level="6.5" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#serial-correlation"><i class="fa fa-check"></i><b>6.5</b> Serial correlation</a>
+<li class="chapter" data-level="4.7" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#serial-correlation-robust-standard-errors"><i class="fa fa-check"></i><b>4.7</b> Serial correlation robust standard errors</a></li>
+<li class="chapter" data-level="" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#problems-3"><i class="fa fa-check"></i>Problems</a></li>
+<li class="chapter" data-level="" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#solutions-3"><i class="fa fa-check"></i>Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html"><i class="fa fa-check"></i><b>5</b> Instrumental Variable Estimation</a>
 <ul>
-<li class="chapter" data-level="6.5.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#consequences-of-serial-correlation-for-the-ols-estimator"><i class="fa fa-check"></i><b>6.5.1</b> Consequences of Serial Correlation for the OLS estimator</a></li>
-</ul></li>
-<li class="chapter" data-level="6.6" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#testing-for-serial-correlation-in-data"><i class="fa fa-check"></i><b>6.6</b> Testing for Serial Correlation in data</a>
+<li class="chapter" data-level="5.1" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#endogeneity-problem"><i class="fa fa-check"></i><b>5.1</b> Endogeneity Problem</a></li>
+<li class="chapter" data-level="5.2" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#omitted-variable-bias"><i class="fa fa-check"></i><b>5.2</b> Omitted variable bias</a>
 <ul>
-<li class="chapter" data-level="6.6.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#durbin-watson-test-for-first-order-serial-correlation"><i class="fa fa-check"></i><b>6.6.1</b> Durbin-Watson test for first order serial correlation</a></li>
-<li class="chapter" data-level="6.6.2" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#breusch-godfrey-bg-test-for-serial-correlation"><i class="fa fa-check"></i><b>6.6.2</b> Breusch-Godfrey (BG) test for serial correlation</a></li>
+<li class="chapter" data-level="5.2.1" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#consequence-of-omitted-variable-on-ols-estimator"><i class="fa fa-check"></i><b>5.2.1</b> Consequence of omitted variable on OLS estimator</a></li>
 </ul></li>
-<li class="chapter" data-level="6.7" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#serial-correlation-robust-standard-errors"><i class="fa fa-check"></i><b>6.7</b> Serial correlation robust standard errors</a></li>
-<li class="chapter" data-level="6.8" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#omitted-variable-bias"><i class="fa fa-check"></i><b>6.8</b> Omitted variable bias</a>
+<li class="chapter" data-level="5.3" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#iv-estimation"><i class="fa fa-check"></i><b>5.3</b> IV estimation</a></li>
+<li class="chapter" data-level="5.4" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#case-i-one-endogenous-regressor-and-one-instrument"><i class="fa fa-check"></i><b>5.4</b> Case I: One endogenous regressor and one instrument</a>
 <ul>
-<li class="chapter" data-level="6.8.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#consequence-of-omitted-variable-on-ols-estimator"><i class="fa fa-check"></i><b>6.8.1</b> Consequence of omitted variable on OLS estimator</a></li>
+<li class="chapter" data-level="5.4.1" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#example-1-return-to-schooling"><i class="fa fa-check"></i><b>5.4.1</b> Example 1: Return to Schooling</a></li>
+<li class="chapter" data-level="5.4.2" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#example-2-estimating-demand-for-butter"><i class="fa fa-check"></i><b>5.4.2</b> Example 2: Estimating Demand for Butter</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#problems-5"><i class="fa fa-check"></i>Problems</a></li>
-<li class="chapter" data-level="" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#solutions-5"><i class="fa fa-check"></i>Solutions</a></li>
+<li class="chapter" data-level="5.5" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#case-ii-one-endogenous-regressor-with-many-available-instruments"><i class="fa fa-check"></i><b>5.5</b> Case II: One endogenous regressor with many available instruments</a></li>
+<li class="chapter" data-level="5.6" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#iv-estimation-in-a-multiple-regression-framework"><i class="fa fa-check"></i><b>5.6</b> IV estimation in a multiple regression framework</a></li>
+<li class="chapter" data-level="5.7" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#strength-and-exogneity-of-the-instrument"><i class="fa fa-check"></i><b>5.7</b> Strength and Exogneity of the Instrument</a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#weak-instruments"><i class="fa fa-check"></i><b>5.7.1</b> Weak Instruments</a></li>
+<li class="chapter" data-level="5.7.2" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#exogeneity-of-instruments"><i class="fa fa-check"></i><b>5.7.2</b> Exogeneity of Instruments</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#problems-4"><i class="fa fa-check"></i>Problems</a></li>
+<li class="chapter" data-level="" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#solutions-4"><i class="fa fa-check"></i>Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="discrete-choice-model.html"><a href="discrete-choice-model.html"><i class="fa fa-check"></i><b>6</b> Discrete Choice Model</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="discrete-choice-model.html"><a href="discrete-choice-model.html#binary-dependent-variable"><i class="fa fa-check"></i><b>6.1</b> Binary Dependent Variable</a></li>
+<li class="chapter" data-level="" data-path="discrete-choice-model.html"><a href="discrete-choice-model.html#problems-5"><i class="fa fa-check"></i>Problems</a></li>
+<li class="chapter" data-level="" data-path="discrete-choice-model.html"><a href="discrete-choice-model.html#solutions-5"><i class="fa fa-check"></i>Solutions</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
-<li class="chapter" data-level="A" data-path="statistical-tables.html"><a href="statistical-tables.html"><i class="fa fa-check"></i><b>A</b> Statistical Tables</a>
+<li class="chapter" data-level="A" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html"><i class="fa fa-check"></i><b>A</b> Review of Differential Calculus and Optimization</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#derivative-of-a-single-variable-function"><i class="fa fa-check"></i><b>A.1</b> Derivative of a single variable function</a>
+<ul>
+<li class="chapter" data-level="A.1.1" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#rules-of-differentiation"><i class="fa fa-check"></i><b>A.1.1</b> Rules of Differentiation</a></li>
+</ul></li>
+<li class="chapter" data-level="A.2" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#second-derivative-and-non-linearity"><i class="fa fa-check"></i><b>A.2</b> Second derivative and non-linearity</a></li>
+<li class="chapter" data-level="A.3" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#partial-derivatives-multi-variable-functions"><i class="fa fa-check"></i><b>A.3</b> Partial derivatives: Multi-variable functions</a></li>
+<li class="chapter" data-level="A.4" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#optimization"><i class="fa fa-check"></i><b>A.4</b> Optimization</a></li>
+<li class="chapter" data-level="" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#problems-6"><i class="fa fa-check"></i>Problems</a></li>
+<li class="chapter" data-level="" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#solutions-6"><i class="fa fa-check"></i>Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html"><i class="fa fa-check"></i><b>B</b> Review of Probability and Statistics</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#probability"><i class="fa fa-check"></i><b>B.1</b> Probability</a></li>
+<li class="chapter" data-level="B.2" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#random-variable"><i class="fa fa-check"></i><b>B.2</b> Random Variable</a></li>
+<li class="chapter" data-level="B.3" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#probability-distribution"><i class="fa fa-check"></i><b>B.3</b> Probability distribution</a>
+<ul>
+<li class="chapter" data-level="B.3.1" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#probability-distribution-of-a-discrete-random-variable"><i class="fa fa-check"></i><b>B.3.1</b> Probability distribution of a discrete random variable</a></li>
+<li class="chapter" data-level="B.3.2" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#probability-distribution-of-a-continuous-random-variable"><i class="fa fa-check"></i><b>B.3.2</b> Probability distribution of a continuous random variable</a></li>
+</ul></li>
+<li class="chapter" data-level="B.4" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#moments-of-a-probability-distribution-function"><i class="fa fa-check"></i><b>B.4</b> Moments of a probability distribution function</a>
+<ul>
+<li class="chapter" data-level="B.4.1" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#first-moment-of-a-probability-distribution-expected-value"><i class="fa fa-check"></i><b>B.4.1</b> First moment of a probability distribution: Expected value</a></li>
+<li class="chapter" data-level="B.4.2" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#second-moment-of-the-distribution."><i class="fa fa-check"></i><b>B.4.2</b> Second moment of the distribution.</a></li>
+<li class="chapter" data-level="B.4.3" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#third-and-fourth-moments-skewness-and-kurtosis"><i class="fa fa-check"></i><b>B.4.3</b> Third and Fourth Moments: Skewness and Kurtosis</a></li>
+</ul></li>
+<li class="chapter" data-level="B.5" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#useful-probability-distributions"><i class="fa fa-check"></i><b>B.5</b> Useful probability distributions</a></li>
+<li class="chapter" data-level="B.6" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#joint-probability-distribution"><i class="fa fa-check"></i><b>B.6</b> Joint Probability Distribution</a></li>
+<li class="chapter" data-level="B.7" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#measures-of-statistical-association"><i class="fa fa-check"></i><b>B.7</b> Measures of statistical association</a>
+<ul>
+<li class="chapter" data-level="B.7.1" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#rules-of-expectation-and-variances"><i class="fa fa-check"></i><b>B.7.1</b> Rules of expectation and variances</a></li>
+</ul></li>
+<li class="chapter" data-level="B.8" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#sampling-and-estimation"><i class="fa fa-check"></i><b>B.8</b> Sampling and Estimation</a></li>
+<li class="chapter" data-level="B.9" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#hypothesis-testing"><i class="fa fa-check"></i><b>B.9</b> Hypothesis testing</a>
+<ul>
+<li class="chapter" data-level="B.9.1" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#testing-a-restriction-on-a-single-population-parameter"><i class="fa fa-check"></i><b>B.9.1</b> Testing a restriction on a single population parameter</a></li>
+<li class="chapter" data-level="B.9.2" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#testing-a-restriction-on-multiple-population-parameter"><i class="fa fa-check"></i><b>B.9.2</b> Testing a restriction on multiple population parameter</a></li>
+<li class="chapter" data-level="B.9.3" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#confidence-interval-and-hypothesis-testing"><i class="fa fa-check"></i><b>B.9.3</b> Confidence interval and Hypothesis testing</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#problems-7"><i class="fa fa-check"></i>Problems</a></li>
+<li class="chapter" data-level="" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#solutions-7"><i class="fa fa-check"></i>Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="statistical-tables.html"><a href="statistical-tables.html"><i class="fa fa-check"></i><b>C</b> Statistical Tables</a>
 <ul>
 <li class="chapter" data-level="" data-path="statistical-tables.html"><a href="statistical-tables.html#table-a-critical-values-for-the-t-distribution"><i class="fa fa-check"></i>Table A: Critical Values for the t-distribution</a></li>
 <li class="chapter" data-level="" data-path="statistical-tables.html"><a href="statistical-tables.html#table-b-critical-values-for-the-chi-square-distribution"><i class="fa fa-check"></i>Table B: Critical Values for the Chi-square distribution</a></li>
@@ -218,11 +247,11 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="simple-regression-model" class="section level1 hasAnchor" number="3">
-<h1><span class="header-section-number">Chapter 3</span> Simple Regression Model<a href="simple-regression-model.html#simple-regression-model" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="simple-regression-model" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Chapter 1</span> Simple Regression Model<a href="simple-regression-model.html#simple-regression-model" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>In this chapter we consider the simple case of establishing an empirical relationship between two variables. For simplicity, we will denote the outcome variable (or dependent variable) by <span class="math inline">\(Y\)</span> and the explanatory variable (or independent variable) by <span class="math inline">\(X\)</span>. Throughout this chapter we will ignore the limitations of this model and assume that all the assumptions needed for this kind of model are met in our data. In subsequent chapters we will learn how this model can be extended to incorporate real world issues we face when conducting quantitative economic analysis.</p>
-<div id="statistical-foundation-of-the-simple-regression-model" class="section level2 hasAnchor" number="3.1">
-<h2><span class="header-section-number">3.1</span> Statistical foundation of the simple regression model<a href="simple-regression-model.html#statistical-foundation-of-the-simple-regression-model" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="statistical-foundation-of-the-simple-regression-model" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Statistical foundation of the simple regression model<a href="simple-regression-model.html#statistical-foundation-of-the-simple-regression-model" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A simple economic relationship often requires us to specify the population of interest and variables from this population that we wish to empirically examine. For example, we may be interested in finding out how college major choice affects starting salary of graduates. Here, the population of interest is college graduates and the variables representing this population are starting salary and college major. In this example, the outcome variable is starting salary (denoted by Y) and the explanatory variable is college major choice (X). A simple regression model addresses the following question: how does changes in <span class="math inline">\(X\)</span> affect <span class="math inline">\(Y\)</span>? In our example, how does differences in college majors between individuals relate to differences in their starting salaries. This is the conditional expected value of Y given X, denoted by <span class="math inline">\(E(Y_i|X_i)\)</span> and is known as the <strong>population regression function (PRF)</strong>. Because we usually work with a sample, the population regression function is unknown to us and our goal is to estimate this conditional mean using a sample data on Y and X.</p>
 <p>Before attempting to estimate the PRF, we have to first make an assumption about the functional form for this function. For example, we can assume that:</p>
 <p><span class="math display">\[E(Y_i|X_i)=\beta_0 + \beta_1 X_i\]</span></p>
@@ -238,14 +267,14 @@
 <p>By substituting our assumed functional form for <span class="math inline">\(E(Y_i|X_i)\)</span> in the above equation we obtain the simple regression model. For example, if we assume that <span class="math inline">\(E(Y_i|X_i)=\beta_0 + \beta_1 X_i\)</span>, then the corresponding regression model is given by:</p>
 <p><span class="math display" id="eq:simple" id="eq:simple">\[\begin{equation}
 Y_i=\beta_0 + \beta_1 X_i + \epsilon_i
-\tag{3.1}
+\tag{1.1}
 \end{equation}\]</span></p>
-<p>The specification in \tag{3.1} is the simple regression model with parameter <span class="math inline">\(\beta_1\)</span> capturing the effect of changes in X on Y:</p>
+<p>The specification in \tag{1.1} is the simple regression model with parameter <span class="math inline">\(\beta_1\)</span> capturing the effect of changes in X on Y:</p>
 <p><span class="math display">\[\beta_1= \frac{dY_i}{dX_i}\]</span></p>
 <p>So if X changes by 1 unit, then Y changes by <span class="math inline">\(\beta_1\)</span> units. Under certain assumptions that we will discuss later in the course, <span class="math inline">\(\beta_1\)</span> is also the causal effect of X on Y.</p>
 </div>
-<div id="ordinary-least-squares-ols" class="section level2 hasAnchor" number="3.2">
-<h2><span class="header-section-number">3.2</span> Ordinary Least Squares (OLS)<a href="simple-regression-model.html#ordinary-least-squares-ols" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="ordinary-least-squares-ols" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Ordinary Least Squares (OLS)<a href="simple-regression-model.html#ordinary-least-squares-ols" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The goal of any empirical analysis is to find a <strong>functional</strong> relationship between the outcome (or dependent variable) and the explanatory (or control variable). As discussed in the previous section, the PRF is one such function. Once we have estimated this function it can be used for either explaining variations in outcome caused by variations in control or to predict the outcome given data on control. For example, economic theory tells us that consumption and income are positively related implying there must be a numerical mapping between these two variables. For example, assuming a linear relationship between consumption (Y) and income (X) we get the following PRF:</p>
 <p><span class="math display">\[E(Y_i|X_i)=\beta_0 +\beta_1 X_i\]</span></p>
 <p>As discussed earlier, this relationship will not be perfect in data. This could be due to other factors affecting consumption such as gifts, inheritances, wealth etc. The regression error term captures all such influences on consumption that stem from non-income sources. This error can be negative or positive and is captured in the following regression model:</p>
@@ -256,14 +285,14 @@ Y_i=\beta_0 + \beta_1 X_i + \epsilon_i
 <p><span class="math display">\[\hat{Y_i}=\hat{\beta_0} + \hat{\beta_1} X_i \]</span></p>
 <p>The predicted value of consumption is also the sample estimator of <span class="math inline">\(E(Y_i|X_i)\)</span>. Now, the residuals are defined as the difference between actual consumption and consumption predicted from our model:</p>
 <p><span class="math display">\[e_i=Y_i -\hat{Y_i}= Y_i- \hat{\beta_0} - \hat{\beta_1} X_i\]</span></p>
-<p>Given data on consumption and income, we can now choose values of <span class="math inline">\(\hat{\beta_0}\)</span> and <span class="math inline">\(\hat{\beta_1}\)</span> that will minimize our residuals in some sense. This is displayed below in Figure <a href="simple-regression-model.html#fig:ch3fig1">3.1</a> below:</p>
+<p>Given data on consumption and income, we can now choose values of <span class="math inline">\(\hat{\beta_0}\)</span> and <span class="math inline">\(\hat{\beta_1}\)</span> that will minimize our residuals in some sense. This is displayed below in Figure <a href="simple-regression-model.html#fig:ch3fig1">1.1</a> below:</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:ch3fig1"></span>
 <img src="bookdown-demo_files/figure-html/ch3fig1-1.png" alt="Line of best-fit" width="672" />
 <p class="caption">
-Figure 3.1: Line of best-fit
+Figure 1.1: Line of best-fit
 </p>
 </div>
-<p>In Figure <a href="simple-regression-model.html#fig:ch3fig1">3.1</a>, each red dot denote the level of income and corresponding level of consumption for that particular observation. The blue solid line is our estimated regression line or <span class="math inline">\(\hat{Y_i}\)</span>. The gap between the red dot and the regression line is the residual for that observation. In this graph we hope that the regression line passes through our data as closely as possible. In other words, we would like our residuals to be as small as possible.</p>
+<p>In Figure <a href="simple-regression-model.html#fig:ch3fig1">1.1</a>, each red dot denote the level of income and corresponding level of consumption for that particular observation. The blue solid line is our estimated regression line or <span class="math inline">\(\hat{Y_i}\)</span>. The gap between the red dot and the regression line is the residual for that observation. In this graph we hope that the regression line passes through our data as closely as possible. In other words, we would like our residuals to be as small as possible.</p>
 <p>The canonical estimation method used in Econometrics for finding the line of best fit is called the <strong>Ordinary Least Squares (OLS)</strong>. Here, the values of <span class="math inline">\(\hat{\beta_0}\)</span> and <span class="math inline">\(\hat{\beta_1}\)</span> are chosen such that the sum of squared residuals is minimized. Let RSS denotes sum of squared residuals which is given by:</p>
 <p><span class="math display">\[RSS=\sum_{i=1}^{N} e_i^2=\sum_{i=1}^{N}(Y_i- \hat{\beta_0} - \hat{\beta_1} X_i)^2\]</span></p>
 <p>Mathematically, OLS solves the following optimization problem:</p>
@@ -278,9 +307,9 @@ Figure 3.1: Line of best-fit
 <li><p>Residuals and the explanatory variables are uncorrelated, i.e, <span class="math inline">\(\sum_{i=1}^N e_iX_i=0\)</span>.</p></li>
 </ol>
 <div class="example">
-<p><span id="exm:unnamed-chunk-59" class="example"><strong>Example 3.1  </strong></span>Suppose you have the following data:</p>
+<p><span id="exm:unnamed-chunk-2" class="example"><strong>Example 1.1  </strong></span>Suppose you have the following data:</p>
 <caption>
-<span id="tab:ch3table1">Table 3.1: </span> OLS Estimation Example
+<span id="tab:ch3table1">Table 1.1: </span> OLS Estimation Example
 </caption>
 <table>
 <thead>
@@ -317,7 +346,7 @@ Figure 3.1: Line of best-fit
 <p><span class="math display">\[Y_i=\beta_0 + \beta_1 X_i + \epsilon_i\]</span></p>
 <p>We can now use the data given to us and compute the OLS estimators for two regression parameters. First, note that the sample means are given by: <span class="math inline">\(\overline{Y}=11\)</span> and <span class="math inline">\(\overline{X}=5\)</span>. Second, we compute the slope cofficient by utilizing the information provided in the table below:</p>
 <caption>
-<span id="tab:ch3table2">Table 3.2: </span> OLS Estimation Example contd..
+<span id="tab:ch3table2">Table 1.2: </span> OLS Estimation Example contd..
 </caption>
 <table>
 <colgroup>
@@ -395,7 +424,7 @@ Figure 3.1: Line of best-fit
 <p><span class="math display">\[\hat{Y_i} = 9.33 + 0.33 \times X_i \]</span></p>
 <p>Using the above equation we can easily find what our model predicts about the dependent variable given data on X. Note that we can compute this predicted value for observations for which we have data on X and compare it with the actual data on <span class="math inline">\(Y\)</span>. The difference between the two gives us the regression residuals. This is provided in the table below:</p>
 <caption>
-<span id="tab:ch3table3">Table 3.3: </span> OLS Estimation Example contd..
+<span id="tab:ch3table3">Table 1.3: </span> OLS Estimation Example contd..
 </caption>
 <table>
 <thead>
@@ -443,8 +472,8 @@ Figure 3.1: Line of best-fit
 <p>This is one of the primary uses of a regression model, namely, the ability to predict the value of the outcome variable, given information on the value of the control variable. Another objective of estimating a regression model is to explain how <span class="math inline">\(X\)</span> affects <span class="math inline">\(Y\)</span>. In our example, a 1 unit change in <span class="math inline">\(X\)</span> will change <span class="math inline">\(Y\)</span> by 0.33 units. Under some assumptions, this denotes the causal effect of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>. The sign and the size of this effect provides meaningful information on the nature of the relationship between the outcome and the control variables.</p>
 </div>
 </div>
-<div id="goodness-of-fit" class="section level2 hasAnchor" number="3.3">
-<h2><span class="header-section-number">3.3</span> Goodness of fit<a href="simple-regression-model.html#goodness-of-fit" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="goodness-of-fit" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Goodness of fit<a href="simple-regression-model.html#goodness-of-fit" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>After estimating a regression model using OLS a natural question to ask is how good is our estimated model in fitting data on the outcome variable. One measure of this is the <strong>goodness of fit</strong> which is based on the proportion of total variation in the dependent variable that can be explained by our model. A better fit would imply greater amount of variation being explained.</p>
 <p>Essentially, our goal is to decompose the total variation in the dependent variable into two components, nameley, <strong>explained variation</strong> and <strong>residual variation</strong>. Formally,<br />
 rewriting the definition of residuals to get the following relationship:</p>
@@ -459,10 +488,10 @@ rewriting the definition of residuals to get the following relationship:</p>
 <p><span class="math display">\[1-R^2= \frac{RSS}{TSS}\]</span></p>
 <p>As a result, <span class="math inline">\(1-R^2\)</span> gives us the unexplained variation. For example, a value of 0.4 will imply 40% of the variation in <span class="math inline">\(Y_i\)</span> is explained by our model or 60% of the variation is not explained.</p>
 </div>
-<div id="applications-of-the-simple-regression-model" class="section level2 hasAnchor" number="3.4">
-<h2><span class="header-section-number">3.4</span> Applications of the simple regression model<a href="simple-regression-model.html#applications-of-the-simple-regression-model" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="aggregate-consumption-function" class="section level3 hasAnchor" number="3.4.1">
-<h3><span class="header-section-number">3.4.1</span> Aggregate consumption function<a href="simple-regression-model.html#aggregate-consumption-function" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="applications-of-the-simple-regression-model" class="section level2 hasAnchor" number="1.4">
+<h2><span class="header-section-number">1.4</span> Applications of the simple regression model<a href="simple-regression-model.html#applications-of-the-simple-regression-model" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="aggregate-consumption-function" class="section level3 hasAnchor" number="1.4.1">
+<h3><span class="header-section-number">1.4.1</span> Aggregate consumption function<a href="simple-regression-model.html#aggregate-consumption-function" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Suppose you are interested in finding out the relationship between consumption and income at the national level. The first step in any empirical anaylsis is to determine the empirical measures of the variables of interest, consumption and disposable income here. We will use real personal consumption expenditure as a measure of <span class="math inline">\(C\)</span> and real personal disposable income as a measure of <span class="math inline">\(Y^D\)</span>. Both of these data are available at the monthly frequency from the FRED Stat database and can be downloaded from the following links:</p>
 <ol style="list-style-type: lower-roman">
 <li><p><a href="https://fred.stlouisfed.org/series/PCEC96" class="uri">https://fred.stlouisfed.org/series/PCEC96</a></p></li>
@@ -478,9 +507,9 @@ rewriting the definition of residuals to get the following relationship:</p>
 <p>The implied regression model is given by:</p>
 <p><span class="math display">\[Consumption_i  = \beta_0 + \beta_1 Income_i + \epsilon_i\]</span></p>
 <p>Our parameter of interest is <span class="math inline">\(\beta_1\)</span> which maps to the marginal propensity of consume in the original regression model.
-Table <a href="simple-regression-model.html#tab:ch3table4">3.4</a> below presents a summary of the OLS estimation results for the above model. A coefficient of 0.82 for income implies that for every dollar increase in disposable income, consumption increases by 82 cents. Under certain assumptions which will be discussed in Chapter 5, this is the <strong>causal</strong> effect of change in income on consumption at the aggregate level. Note that this relationship is estimated using time series data and does not tell us anything about how changes in income across individuals affect their consumption spending. We also note that the R-squared is 0.986 which means that roughly 98 percent of variation in the aggregate consumption expenditure from one month to another can be explained by personal disposable income.</p>
+Table <a href="simple-regression-model.html#tab:ch3table4">1.4</a> below presents a summary of the OLS estimation results for the above model. A coefficient of 0.82 for income implies that for every dollar increase in disposable income, consumption increases by 82 cents. Under certain assumptions which will be discussed in Chapter 5, this is the <strong>causal</strong> effect of change in income on consumption at the aggregate level. Note that this relationship is estimated using time series data and does not tell us anything about how changes in income across individuals affect their consumption spending. We also note that the R-squared is 0.986 which means that roughly 98 percent of variation in the aggregate consumption expenditure from one month to another can be explained by personal disposable income.</p>
 <caption>
-<span id="tab:ch3table4">Table 3.4: </span> OLS Estimation of Keynesian Consumption Function
+<span id="tab:ch3table4">Table 1.4: </span> OLS Estimation of Keynesian Consumption Function
 </caption>
 <table style="border: solid 2px;">
 <tr>
@@ -576,9 +605,9 @@ log-Likelihood
 </table>
 <p>Note that we can use our estimated regression model to predict future aggregate consumption expenditure. Our regression used data from Jan 2002 through June 2019. Suppose, we believe that in Jan 2020, the real personable disposable income will be 1% higher than the June 2019 level of $15007.5 Billion. Then, using our estimated model, the real personal consumption expenditure will be:</p>
 <p><span class="math display">\[Consumption_{Jan, 2020} = 1037.389+ 0.82*(15007.5 \times 1.01)=\$13475.29 \ Billion\]</span></p>
-<p>Note that instead of assuming a single value for the future income, we can consider a range of scenarios and compute the predicted consumption expenditure for each scenario. These scenarios are based on our understanding of the state of the economy and policy environment. For example, what if there is a tax cut that increases disposable income? Or what if there is a crash in the housing market leading to a large drop in disposable income for many households? This type of exercise is known as <strong>scenario-based</strong> forecasting. Table <a href="simple-regression-model.html#tab:ch3table5">3.5</a> below provides future consumption expenditure for these 3 scenarios.</p>
+<p>Note that instead of assuming a single value for the future income, we can consider a range of scenarios and compute the predicted consumption expenditure for each scenario. These scenarios are based on our understanding of the state of the economy and policy environment. For example, what if there is a tax cut that increases disposable income? Or what if there is a crash in the housing market leading to a large drop in disposable income for many households? This type of exercise is known as <strong>scenario-based</strong> forecasting. Table <a href="simple-regression-model.html#tab:ch3table5">1.5</a> below provides future consumption expenditure for these 3 scenarios.</p>
 <caption>
-<span id="tab:ch3table5">Table 3.5: </span> OLS Estimation of Keynesian Consumption Function
+<span id="tab:ch3table5">Table 1.5: </span> OLS Estimation of Keynesian Consumption Function
 </caption>
 <table>
 <colgroup>
@@ -612,8 +641,8 @@ log-Likelihood
 </tbody>
 </table>
 </div>
-<div id="returns-to-education" class="section level3 hasAnchor" number="3.4.2">
-<h3><span class="header-section-number">3.4.2</span> Returns to education<a href="simple-regression-model.html#returns-to-education" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="returns-to-education" class="section level3 hasAnchor" number="1.4.2">
+<h3><span class="header-section-number">1.4.2</span> Returns to education<a href="simple-regression-model.html#returns-to-education" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>An important research question in labor economics is how education affects labor income. Economic theory suggests that education makes a worker more productive through acquisition of skills that are rewarded in the labor market as higher wages. To test this in data, we would need to collect information on education and wages for a sample of workers. Often such an exercise is conducted using a cross-sectional data at a point in time. One such source is the Annual Social and Economic Supplement (ASEC) of the Current population survey (CPS) which is a monthly survey of households in the U.S. conducted by the Bureau of Labor Statistics (BLS). The data is publicly available in a user-friendly format at:</p>
 <p><a href="https://cps.ipums.org/cps/" class="uri">https://cps.ipums.org/cps/</a></p>
 <p>We will use a sample of 1000 observations from the ASEC 2018 in this exercise. Suppose, our theoretical model for the average relationship between income and education is log-linear:</p>
@@ -624,9 +653,9 @@ The above formulation is a simplified version of the specification that has been
 </div>
 <p>The implied regression model is given by:</p>
 <p><span class="math display">\[ln(Wage_i)= \beta_0 +\beta_1 Education_i + \epsilon_i\]</span></p>
-<p>where <span class="math inline">\(Wage_i\)</span> is the annual wages and salaries of individual <span class="math inline">\(i\)</span> in dollars. <span class="math inline">\(Education_i\)</span> denotes years of education of individual <span class="math inline">\(i\)</span>. Table <a href="simple-regression-model.html#tab:ch3table6">3.6</a> below presents the estimation results. A coefficient of 0.106 for education implies that for every additional year of schooling, annual wages increase by 10.6%. Again, only under certain assumption this captures causal effect of education on wages. We also note that the R-squared is 0.122 which means that roughly 12 percent of the variation in wages across individuals can be explained by differences in their education levels.</p>
+<p>where <span class="math inline">\(Wage_i\)</span> is the annual wages and salaries of individual <span class="math inline">\(i\)</span> in dollars. <span class="math inline">\(Education_i\)</span> denotes years of education of individual <span class="math inline">\(i\)</span>. Table <a href="simple-regression-model.html#tab:ch3table6">1.6</a> below presents the estimation results. A coefficient of 0.106 for education implies that for every additional year of schooling, annual wages increase by 10.6%. Again, only under certain assumption this captures causal effect of education on wages. We also note that the R-squared is 0.122 which means that roughly 12 percent of the variation in wages across individuals can be explained by differences in their education levels.</p>
 <caption>
-<span id="tab:ch3table6">Table 3.6: </span> OLS Estimation of Earnings Function
+<span id="tab:ch3table6">Table 1.6: </span> OLS Estimation of Earnings Function
 </caption>
 <table style="border: solid 2px;">
 <tr>
@@ -726,8 +755,8 @@ log-Likelihood
 </div>
 </div>
 </div>
-<div id="use-of-natural-logs-and-interpretation-of-the-slope-coefficients" class="section level2 hasAnchor" number="3.5">
-<h2><span class="header-section-number">3.5</span> Use of natural logs and interpretation of the slope coefficients<a href="simple-regression-model.html#use-of-natural-logs-and-interpretation-of-the-slope-coefficients" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="use-of-natural-logs-and-interpretation-of-the-slope-coefficients" class="section level2 hasAnchor" number="1.5">
+<h2><span class="header-section-number">1.5</span> Use of natural logs and interpretation of the slope coefficients<a href="simple-regression-model.html#use-of-natural-logs-and-interpretation-of-the-slope-coefficients" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Suppose we have data on two variables: Y and X. Consider the following regression model:</p>
 <p><span class="math display">\[Y_i = \beta_0 + \beta_1 X_i + \epsilon_i\]</span></p>
 <p>There are two things to remember when use a model like above:</p>
@@ -791,8 +820,8 @@ For example, natural log of 10 is 2.302585 because <span class="math inline">\(e
 If we want to compare goodness of fit of two different models, then the units of the dependent variable must be the same. In the above example, we can compare the <span class="math inline">\(R^2\)</span> of the log-log and log-linear models as they both have natural log of Y as the dependent variable. However, neither can be compared with linear-log model. This is because a linear-log model explains observed variation in the orginal units of Y. In contrast the other two models explain variations in natural logs of Y.
 </div>
 </div>
-<div id="hypothesis-testing-and-confidence-interval-estimation" class="section level2 hasAnchor" number="3.6">
-<h2><span class="header-section-number">3.6</span> Hypothesis testing and confidence interval estimation<a href="simple-regression-model.html#hypothesis-testing-and-confidence-interval-estimation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="hypothesis-testing-and-confidence-interval-estimation" class="section level2 hasAnchor" number="1.6">
+<h2><span class="header-section-number">1.6</span> Hypothesis testing and confidence interval estimation<a href="simple-regression-model.html#hypothesis-testing-and-confidence-interval-estimation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We can use the sampling distribution of the OLS estimator to carry out hypotheses about the true population parameter for interest. For example, suppose we have the following regression model:</p>
 <p><span class="math display">\[Y_i =\beta_0 + \beta_1 X_i + \epsilon_i\]</span></p>
 <p>Using the OLS we can obtain <span class="math inline">\(\hat{\beta_0}\)</span> and <span class="math inline">\(\hat{\beta_1}\)</span>, both of which are computed for a given random sample. As we change our sample, we get a different set of values for <span class="math inline">\(\hat{\beta_0}\)</span> and <span class="math inline">\(\hat{\beta_1}\)</span>. Hence, we should think of these OLS estimators as random variables. In principle, we can collect large number of samples and compute <span class="math inline">\(\hat{\beta_0}\)</span> and <span class="math inline">\(\hat{\beta_1}\)</span> for each sample, giving us a sampling distribution of these estimators. Let us focus on the slope parameter’s OLS estimator, namely, <span class="math inline">\(\hat{\beta_1}\)</span>. Using repeated samples for Y and X, we can obtain a distribution of values for <span class="math inline">\(\hat{\beta_1}\)</span> with a mean of <span class="math inline">\(E(\hat{\beta_1})\)</span> and a variance of <span class="math inline">\(Var(\hat{\beta_1})\)</span>. Under some conditions, we can show that <span class="math inline">\(E(\hat{\beta_1})=\beta_1\)</span> and</p>
@@ -823,27 +852,27 @@ If we want to compare goodness of fit of two different models, then the units of
 <p>If the null hypothesis is true, then there is no statistically significant effect of X on Y. Most statistical softwares provide the t-ratio and the associated p-values for this test by default. Note that the results of this test cannot be used for inferring the economic significane of the effect of X on Y. For that the magnitude of <span class="math inline">\(\hat{\beta_1}\)</span> is more informative.</p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-70" class="example"><strong>Example 3.2  (Test of Statistical Significance) </strong></span>Let us go back to our example of returns to education and the estimation results provided in Table <a href="simple-regression-model.html#tab:ch3table6">3.6</a>. The hypotheses for statistical significance of the effect of education on wages is given by:</p>
+<p><span id="exm:unnamed-chunk-13" class="example"><strong>Example 1.2  (Test of Statistical Significance) </strong></span>Let us go back to our example of returns to education and the estimation results provided in Table <a href="simple-regression-model.html#tab:ch3table6">1.6</a>. The hypotheses for statistical significance of the effect of education on wages is given by:</p>
 <p><span class="math display">\[H_0: \beta_1= 0\]</span>
 <span class="math display">\[H_0: \beta_1\neq 0\]</span></p>
 <p>From the estimation results, we notice that the t-ratio for the coefficient of years of schooling is 11.785. Note that the p-value is less than 0.05. Hence, using the p-value rule we will reject the null hypothesis and conclude that the effect of education on wages is <strong>statistically significant</strong>. You can also look at the critical value from the t-distribution at 5% level of significance, two-sided, and with <span class="math inline">\(N-2=998\)</span> degrees of freedom. The corresponding value is 1.96 which is less than the absolute value of the t-ratio, leading us to reject the null hypothesis as well.</p>
 </div>
-<div id="confidence-interval-for-regression-coefficients" class="section level3 hasAnchor" number="3.6.1">
-<h3><span class="header-section-number">3.6.1</span> Confidence interval for regression coefficients<a href="simple-regression-model.html#confidence-interval-for-regression-coefficients" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="confidence-interval-for-regression-coefficients" class="section level3 hasAnchor" number="1.6.1">
+<h3><span class="header-section-number">1.6.1</span> Confidence interval for regression coefficients<a href="simple-regression-model.html#confidence-interval-for-regression-coefficients" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Note that for every regression coefficient in our model, we can compute the 95% confidence interval. For example, for the slope coefficient estimate, the 95% confidence interval is given by:</p>
 <p><span class="math display">\[C.I.(\hat{\beta_1}) =   \left[\hat{\beta_1}-t_{c,2-sided} \times s.e.(\hat{\beta_1}),\hat{\beta_1}+t_{c,2-sided} \times s.e.(\hat{\beta_1}) \right]\]</span></p>
 <p>where where <span class="math inline">\(t_{c,2-sided}\)</span> is the critical value that can be obtained from the t-distribution table for a given level of significance (usually 5%) and degrees of freedom.</p>
 <div class="example">
-<p><span id="exm:unnamed-chunk-71" class="example"><strong>Example 3.3  (Confidence interval) </strong></span>Again, using the returns to education example and results from Table <a href="simple-regression-model.html#tab:ch3table6">3.6</a>, the 95% confidence interval is given by:</p>
+<p><span id="exm:unnamed-chunk-14" class="example"><strong>Example 1.3  (Confidence interval) </strong></span>Again, using the returns to education example and results from Table <a href="simple-regression-model.html#tab:ch3table6">1.6</a>, the 95% confidence interval is given by:</p>
 <p><span class="math display">\[[0.106-1.96\times 0.009, 0.106+1.96\times 0.009]=[0.088,0.124]\]</span></p>
 <p>Notice that becuase, <span class="math inline">\(0\)</span> is not part of the confidence interval, we can infer that the effect of education on wage is statistically significant.</p>
 </div>
 </div>
 </div>
-<div id="problems-2" class="section level2 unnumbered hasAnchor">
-<h2>Problems<a href="simple-regression-model.html#problems-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="problems" class="section level2 unnumbered hasAnchor">
+<h2>Problems<a href="simple-regression-model.html#problems" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-72" class="exercise"><strong>Exercise 3.1  </strong></span>Consider the following regression model:<span class="math display">\[Y_i= \beta_0 + \beta_1 X_i^3 + \epsilon_i\]</span></p>
+<p><span id="exr:unnamed-chunk-15" class="exercise"><strong>Exercise 1.1  </strong></span>Consider the following regression model:<span class="math display">\[Y_i= \beta_0 + \beta_1 X_i^3 + \epsilon_i\]</span></p>
 <ol style="list-style-type: lower-alpha">
 <li><p>Is this model considered a <strong>linear regression</strong> in parameters?</p></li>
 <li><p>Write down the equation for the population regression function.</p></li>
@@ -851,7 +880,7 @@ If we want to compare goodness of fit of two different models, then the units of
 </ol>
 </div>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-73" class="exercise"><strong>Exercise 3.2  </strong></span>Suppose you have the following data on two variables:</p>
+<p><span id="exr:unnamed-chunk-16" class="exercise"><strong>Exercise 1.2  </strong></span>Suppose you have the following data on two variables:</p>
 <table>
 <thead>
 <tr class="header">
@@ -893,7 +922,7 @@ If we want to compare goodness of fit of two different models, then the units of
 </ol>
 </div>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-74" class="exercise"><strong>Exercise 3.3  </strong></span>Suppose you have the following data on sales (Y) and advertising expenditure (X):</p>
+<p><span id="exr:unnamed-chunk-17" class="exercise"><strong>Exercise 1.3  </strong></span>Suppose you have the following data on sales (Y) and advertising expenditure (X):</p>
 <table>
 <thead>
 <tr class="header">
@@ -934,7 +963,7 @@ If we want to compare goodness of fit of two different models, then the units of
 </ol>
 </div>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-75" class="exercise"><strong>Exercise 3.4  </strong></span>Suppose you have the following regression model:</p>
+<p><span id="exr:unnamed-chunk-18" class="exercise"><strong>Exercise 1.4  </strong></span>Suppose you have the following regression model:</p>
 <p><span class="math display">\[Y_i=\beta_0 + \beta_1 ln(X_i) +\epsilon_i\]</span></p>
 <p>After estimating this model in R, you obtain the following output:</p>
 <table>
@@ -973,8 +1002,8 @@ If we want to compare goodness of fit of two different models, then the units of
 </ol>
 </div>
 </div>
-<div id="solutions-2" class="section level2 unnumbered hasAnchor">
-<h2>Solutions<a href="simple-regression-model.html#solutions-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="solutions" class="section level2 unnumbered hasAnchor">
+<h2>Solutions<a href="simple-regression-model.html#solutions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>Exercise 3.1:</strong></p>
 <ol style="list-style-type: lower-alpha">
 <li><p>Yes, because both <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span> enter linearly in the model.</p></li>
@@ -1086,7 +1115,7 @@ If we want to compare goodness of fit of two different models, then the units of
           </div>
         </div>
       </div>
-<a href="review-of-probability-and-statistics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="multiple-regression-model.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>

@@ -1,0 +1,15 @@
+dplyr
+ggplot2
+zoo
+xts
+TTR
+quantmod
+sjPlot
+sjmisc
+sjlabelled
+ipumsr
+knitr
+glue
+readr
+lmtest
+sandwich

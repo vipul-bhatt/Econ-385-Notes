@@ -1,0 +1,236 @@
+
+# Instrumental Variable Estimation
+
+## Endogeneity Problem
+
+
+Suppose we have the following regression model:
+
+\[Y_i = \beta_0 + \beta_1  X_i+ \epsilon_i\]
+
+In the above model, a crucial assumption for obtaining a causal effect of $X$ on $Y$ is that of **no endogeneity**, that is, the $X$ variable is uncorrelated with the regression error ($\epsilon$) and in that sense is **exogenous**. Figure 5.1. below shows the causal pathway between X and Y when X is exogenous.
+
+```{tikz, tikz-ex, fig.cap = "Exogenous X", fig.ext = 'png', cache=TRUE, echo=F, out.width="30%",fig.align='center'}
+\usetikzlibrary{arrows}
+\begin{tikzpicture}[node distance=2cm, auto,>=latex', thick, scale = 0.5]
+\node (X) {$X$};
+\node (Y) [right of=X] {$Y$};
+\node (E) [below of=X] {$\epsilon$};
+\draw[->] (X) to node {$\beta_1$} (Y);
+\draw[->] (E) to node {} (Y);
+\end{tikzpicture}
+```
+
+
+
+However, in many real world applications that use a non-randomized research design this assumption is too strong and unlikely to be satisfied. here are three main sources of endogeneity (or $Cor(X_i,\epsilon_i) \neq 0$):
+
+1. Omitted variable problem: a relevant X- variable is excluded from the regression model
+    
+2. Simultaneity problem or Reverse causality: theoretically it maybe possible to argue that X causes Y and Y causes X!
+    
+3. Measurement error in X variable: the data on X variable included in the model is noisy and we do not have a perfect measure of X
+    
+In each of the above cases, $Cor(X_i,\epsilon_i) \neq 0$ and hence $X_i$ will be **endogenous**. Figure 5.2 below provides a graphical description of the breakdown of the causal link between X and Y when X is endogenous.
+
+```{tikz, tikz-ex2, fig.cap = "Endogenous X", fig.ext = 'png', cache=TRUE, echo=F, out.width="30%",fig.align='center'}
+\usetikzlibrary{arrows}
+\begin{tikzpicture}[node distance=2cm, auto,>=latex', thick, scale = 0.5]
+\node (X) {$X$};
+\node (Y) [right of=X] {$Y$};
+\node (E) [below of=X] {$\epsilon$};
+\draw[->] (X) to node {} (Y);
+\draw[->] (E) to node {} (Y);
+\draw[->,red](E) to node {} (X);
+\end{tikzpicture}
+```
+
+As a consequence we no longer obtain an unbiased estimator of $\beta_1$ using OLS:
+
+\[E(\hat{\beta_1)} \neq \beta_1\]
+
+In otherwords, when there is an endogenous regressor in the our model, using OLS would result in either an overestimation ($E(\hat{\beta_1)}> \beta_1$) or an underestimation ($E(\hat{\beta_1)}> \beta_1$). 
+
+
+## Omitted variable bias
+
+Although there are many reasons why we may face an endoegneous regressor, the most common source is an omitted variable where we exclude a relevant variable from our regression model. An omitted variable is a variable that should have been included in our regression model but is excluded either because of our ignorance or more likely due to a lack of measurement for such a variable. For example, consider the following simple model of wages:
+
+
+\[Y_i = \beta_0 + \beta_1 X_{1i} + \beta_2X_{2i}+\epsilon_i\]
+
+where $Y_i$ is the log of wages, $X_{1i}$ is years of education and $X_{2i}$ denotes a person's innate ability. However, it is very difficult to measure person's innate ability. Consequently, in practice our estimated regression model for wages excludes $X_3$ and is given by:
+
+
+\[Y_i = \beta_0 + \beta_1 X_{1i} + \epsilon_i^*\]
+
+Here, $\epsilon_i^*=\beta_2 X_{2i}+\epsilon_i$. There are two conditions for $X_{2i}$ to be an **omitted variable**:
+
+1. It is a relevant variable, i.e, there is a non-zero effect of $X_3$ on $Y$ (implied by $\beta_3\neq 0$)
+
+2. It is correlated with at least one of the included $X$ variables in the model. This will lead to correlation between the included $X$ variables and the error term with the omitted variable.
+
+In our example, it is reasonable to argue that a person with greater innate ability will be more likely to get more education, i.e,$Cor(X_{1i},X_{2i})>0$. Further, a person's innate ability should also positively affect her wage, i.e., $\beta_2>0$. As a result, both of the above conditions are satisfied implying innate ability indeed is an omitted variable in our estimated model.
+
+### Consequence of omitted variable on OLS estimator
+
+The main consequence of an omitted variable is that the included X variables are no longer exogenous and are correlated with the error term. In our example this means that $Cor(X_{1i},\epsilon^*_i)\neq 0$. As a result the OLS estimator of education is no longer unbiased:
+
+\[E(\widehat{\beta_1}) \neq \beta_1\]
+
+Although,   we cannot estimate the magnitude of the bias but in some cases it may be possible to guess the sign of the bias. In our example, the sign of this bias will depend on the signs of $\beta_2$ and $Cor(X_{1i},X_{2i})$. Specifically, in the case where only 1 variable is omitted and only 1 variable is included in the model (like our example) we get the following 4 possibilities:
+
+|             |                $Cor(X_1,X_2)>0$               |                $Cor(X_1,X_2)<0$               |
+|-------------|:---------------------------------------------:|:---------------------------------------------:|
+| $\beta_2>0$ | $E(\widehat{\beta_1})>\beta_1$ (positive bias) | $E(\widehat{\beta_1})<\beta_1$ (positive bias) |
+| $\beta_2<0$ | $E(\widehat{\beta_1})<\beta_1$ (positive bias) | $E(\widehat{\beta_1})>\beta_1$ (negative bias) |
+
+
+
+In our case, higher innate ability should increase wages ($\beta_2>0$) and people with greater innate ability also have higher levels of education ($Cor(X_1,X_2)>0$). Hence, the OLS estimator of education's effect on wages will be positively biased--part of the effect is due to innate ability which is omitted from the model. In order to resolve this problem we will need to use Intstrumental variable (IV) estimator which attempts to exploit exogenous variation in the endogenous independent variable. We will cover this method in advanced econometrics course.
+
+
+## IV estimation
+
+One way to deal with  endogeneity is to **instrument** for the endogenous X-variable: **Instrumental Variable (IV)** estimation. An instrumental variable (denoted by $Z$) has the property that that changes in Z are associated with changes in X but only affect Y indirectly through X. Figure 5.3 below describes how using an instrument identifies causal effect of an endogenous regressor (X) on Y.
+
+
+```{tikz, tikz-ex3, fig.cap = "Using Z as an instrument for endogenous X", fig.ext = 'png', cache=TRUE, echo=F, out.width="30%",fig.align='center'}
+\usetikzlibrary{arrows}
+\begin{tikzpicture}[node distance=2cm, auto,>=latex', thick, scale = 0.5]
+\node (X) {$X$};
+\node (Y) [right of=X] {$Y$};
+\node (Z) [left of=X] {$Z$};
+\node (E) [below of=X] {$\epsilon$};
+\draw[green,->] (X) to node {} (Y);
+\draw[green,->] (Z) to node {} (X);
+\draw[->] (E) to node {} (Y);
+\draw[->,red](E) to node {} (X);
+\end{tikzpicture}
+```
+
+
+
+An instrument $Z$ is a valid instrument if it meets the following two conditions:
+
+    1. It is **relevant** in the sense that it is related to endogenous X variable, i.e., $Cor(Z_i,X_i) \neq 0$
+    
+    2. It is **exogenous** in the sense that is uncorrelated with the error term, i.e., $Cor(Z_i,\epsilon_i) =0$
+    
+## Case I: One endogenous regressor and one instrument
+
+In this section we consider a simple case of only one endogenous regressor that has exactly one available instrument. Consider the following regression model:
+
+\[Y_i=\beta_0+\beta_1\cdot X_i +\epsilon_i\]
+
+Suppose we know that $X$ is endogenous, i.e., $Cor(X_i,\epsilon_i)\neq 0$. Further assume that we are able to find a valid instrument denoted by $Z_i$. In this case our regression model is **just-identified** because the number of instruments equals number of endogenous variables. One way to derive an instrumental variable (IV)  estimator is two-stage least squares (2SLS). This procedure isolates the exogenous variation in $X$ which is then used to estimate $\beta_1$. There are two stages to 2SLS:
+
+1. First-stage regression: Here we regress $X$ on $Z$ and obtain the predicted value of $X$ using OLS. This first-stage regression is given by:
+\[X_i=\pi_0+\pi_1 \cdot Z_i+u_i\]
+
+The predicted value from this regression is given by:
+\[\widehat{X_i}=\widehat{\pi_o}+\widehat{\pi_1}\cdot Z_i\]
+
+
+Note that by construction, $\widehat{X_i}$ is that part of $X_i$ that is exogenous, assuming our instrument is valid.
+
+2. Second-stage regression: Here we replace $X_i$ in our original regression with $\widehat{X_i}$ and estimate the model with OLS:
+
+\[Y_i=\beta_0+\beta_1\cdot \widehat{X_i} +\epsilon_i\]
+
+The above regression yields $\widehat{\beta}_{1}^{2SLS}$ or $\widehat{\beta}_{1}^{IV}$ which will be unbiased if our instrument is both relevant and exogenous.
+
+### Example 1: Return to Schooling
+
+Suppose we are interesting in estimating the causal effect of years of education ($X$) on wages ($Y$). As discussed earlier, due to missing information on innate ability, we have an endgoeneity problem. We need to find an instrument $Z$ that is correlated with schooling, uncorrelated with ability. One such candidate used in the literature is distance from school or college. The idea being proximity to an educational institution can positively affect schooling (relevance of $Z$) but in theory should not correlate with a person's innate ability (exogeneity of $Z$). 
+
+### Example 2: Estimating Demand for Butter
+
+One of the first applications of IV estimation was to the elasticity of demand for butter (and other agricultural products). Consider the following regression model:
+
+\[ln(Q_i)=\beta_0+\beta_1 \cdot ln(P_i)+\epsilon_i\]
+
+Here, $Q$ denotes quantity demanded of butter and $P$ denotes price of butter. $\beta_1$ is the percent change in quantity demanded caused by 1\% change in its price, i.e., elasticity of demand for butter. One issue with estimating the above model using OLS is that of reverse causality. Economic theory suggests that any pair of price and quantity observed in the market is an equlibrium point where demand intersects supply. As a result, both quantity and price are simultaneously determined leading to reverse causality where price causes quantity and quantity causes price. To break this endogeneity we need to find an instrument for endogenous price. One such instrument is a supply shifter that only affects the supply curve. e.g. rainfall in regions that produce dairy products. It is plausibly relevant (affects price by reducing quantity of butter supplied due to insufficient rain) and exogenous (should not directly affect demand). Formally,
+
+Stage 1: Regress price on rainfall
+\[ln(Pi)=\pi_0+\pi_1\cdot Z_i+\epsilon_i\]
+
+Stage 2: Replace price with predicted price from the first-stage regression:
+
+\[ln(Qi)=\beta_0+\beta_1\cdot \widehat{ln(P_i)}+\epsilon_i\]
+
+The estimated slope coefficient from the second-stage regression is our IV estimator of elasticitty of demand for butter that is unbiased/causal.
+
+
+
+## Case II: One endogenous regressor with many available instruments
+
+Often times we are faced with a situation where we have many candidate instruments for an endogenous regressor. Lets go back to our example of demand for butter. As we discussed earlier, one candidate instrument is rainfall as it affects supply which in turn affects oprice. But there are many other variables that can affect price through their effect on supply. For example, use of high-yield cows can affect supply of milk which in turns affects supply of butter and hence its price. In this case we have two instruments $Z_1$ (rainfall) and $Z_2$ (high-yield cows) for the endogenous price. In otherwords our model is **overidentified**. How does this impact our IV estimator?
+
+Stage 1: The first-stage regression now utilizes both instruments:
+
+\[ln(Pi)=\pi_0+\pi_1\cdot Z_{1i}+\pi_2\cdot Z_{2i}+\epsilon_i\]
+
+Stage 2: The second-stage regression stays the same:
+
+\[ln(Qi)=\beta_0+\beta_1\cdot \widehat{ln(P_i)}+\epsilon_i\]
+
+## IV estimation in a multiple regression framework
+
+Our discussion so far has focused on a simple regression with only one X variable that could be endogenous. However, in many applications we may have other X-variables in the model. There are two interesting scenarios to consider in the multiple regression setting:
+
+1. Only one endogenous regressor so that all other X variables included in the model are exogenous. Here we need at least one instrument to estimate the causal effect of the endogenous regressor. 
+
+2. Multiple endogenous regressors in the model. Here we need at least as many instruments as the number of endogenous regressors in the model.
+
+Let us reconsider the return to schooling example. Consider the following multiple regression model:
+
+\[ln(wages_i)=\beta_0+\beta_1\cdot educ_i +\beta_2 ln(exper_i)+\epsilon_i\]
+
+Here it is reasonable to argue that the omitted variable (innate ability) affects education but may have negligible impact on years of experience. In this case, education is the endogenous regressor that needs an instrument whereas experience is exogenous and hence does not require an instrument. Let $Z$ denotes proximity to educational institution, an instrument for years of education. Then the 2SLS is given by:
+
+Stage 1: In the first stage we regresss education on the instrument and experience:
+
+\[educ_i=\pi_0+\pi_1\cdot Z_i +\gamma_1\cdot ln(exper_i)+u_i\]
+
+Stage 2: In the second stage we replace education with the predicted value from the first stage:
+
+\[ln(wages_i)=\beta_0+\beta_1\cdot \widehat{educ_i} +\beta_2 ln(exper_i)+\epsilon_i\]
+
+```{block1, type = "rmdNote"}
+Key thing to note here is that the first stage regression must include all the instruments and all exogenous X-variables.
+```
+
+The most general case includes multiple endogenous regressors and many exogneous regressors. This case will not be covered in this chapter but is quite easy to follow from the previous discussion.
+
+## Strength and Exogneity of the Instrument
+
+How do we know whether the instrument we have chosen is a good instrument? There are two related issues here:
+
+1. Weak instrument problem: happens when our instrument(s) are only weakly associated with the endogenous regressor. This implies our instrument does not satisfy the relevancy condition.
+
+2. Endogenous instrument problem: occurs when our instrument(s) are not exogenous and in that sense fail to isolate exogenous variation in the endogenous X variable.
+
+### Weak Instruments
+
+If our chosen set of instruments are weak, then the first-stage regression can be used to statistically test for such a scenario. Consider the following example:
+
+\[Y_i=\beta_0+\beta_1\cdot X_{1i}+\beta_2 \cdot X_{2i}+\epsilon_i \]
+
+Suppose we know only $X_1$ is endogenous and we propose three possible instruments $Z_1$, $Z_2$, and $Z_3$ for it. The first-stage regression is given by:
+\[X_{1i}=\pi_0+\pi_1\cdot Z_{1i}+\pi_2 \cdot Z_{2i} + \pi_3 \cdot Z_{3i} +\gamma_1 \cdot X_{2i}+u_i\]
+
+Then, the test of weak instruments is given by:
+\[H_0: \pi_1=\pi_2=\pi_3=0 \rightarrow \text{instruments weak}\]
+\[H_A: \text{Not} \ H_0\]
+
+The F-statistic for the above hypothesis is called the **first-stage F stat.** and larger value is desirable as it would increase the likelihood of rejecting the null hypothesis of weak instrunents. It is common to report the value of this test statistic when presenting the results of the IV estimation. For the single endogenous regressor case Stock and Yogo (2005) show that values of the first-stage stat. greater than 10 can serve as a reliable rule-of-thumb in assessing strength of the instruments.
+
+### Exogeneity of Instruments
+
+When we have more than one instrument for the same endogneous regressor, we can exploit the overid.
+
+
+## Problems{-}
+
+## Solutions{-}

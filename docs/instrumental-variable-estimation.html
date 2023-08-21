@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 5 Instrumental Variable Estimation | Introduction to Econometrics</title>
+  <meta name="description" content="Lecture notes for Introduction to Econometrics" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 5 Instrumental Variable Estimation | Introduction to Econometrics" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Lecture notes for Introduction to Econometrics" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 Instrumental Variable Estimation | Introduction to Econometrics" />
+  
+  <meta name="twitter:description" content="Lecture notes for Introduction to Econometrics" />
+  
+
+<meta name="author" content="Vipul Bhatt" />
+
+
+<meta name="date" content="2023-08-21" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="classical-assumptions-and-ols-estimator.html"/>
+<link rel="next" href="discrete-choice-model.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Introduction to Econometrics</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="1" data-path="simple-regression-model.html"><a href="simple-regression-model.html"><i class="fa fa-check"></i><b>1</b> Simple Regression Model</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="simple-regression-model.html"><a href="simple-regression-model.html#statistical-foundation-of-the-simple-regression-model"><i class="fa fa-check"></i><b>1.1</b> Statistical foundation of the simple regression model</a></li>
+<li class="chapter" data-level="1.2" data-path="simple-regression-model.html"><a href="simple-regression-model.html#ordinary-least-squares-ols"><i class="fa fa-check"></i><b>1.2</b> Ordinary Least Squares (OLS)</a></li>
+<li class="chapter" data-level="1.3" data-path="simple-regression-model.html"><a href="simple-regression-model.html#goodness-of-fit"><i class="fa fa-check"></i><b>1.3</b> Goodness of fit</a></li>
+<li class="chapter" data-level="1.4" data-path="simple-regression-model.html"><a href="simple-regression-model.html#applications-of-the-simple-regression-model"><i class="fa fa-check"></i><b>1.4</b> Applications of the simple regression model</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="simple-regression-model.html"><a href="simple-regression-model.html#aggregate-consumption-function"><i class="fa fa-check"></i><b>1.4.1</b> Aggregate consumption function</a></li>
+<li class="chapter" data-level="1.4.2" data-path="simple-regression-model.html"><a href="simple-regression-model.html#returns-to-education"><i class="fa fa-check"></i><b>1.4.2</b> Returns to education</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="simple-regression-model.html"><a href="simple-regression-model.html#use-of-natural-logs-and-interpretation-of-the-slope-coefficients"><i class="fa fa-check"></i><b>1.5</b> Use of natural logs and interpretation of the slope coefficients</a></li>
+<li class="chapter" data-level="1.6" data-path="simple-regression-model.html"><a href="simple-regression-model.html#hypothesis-testing-and-confidence-interval-estimation"><i class="fa fa-check"></i><b>1.6</b> Hypothesis testing and confidence interval estimation</a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path="simple-regression-model.html"><a href="simple-regression-model.html#confidence-interval-for-regression-coefficients"><i class="fa fa-check"></i><b>1.6.1</b> Confidence interval for regression coefficients</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="simple-regression-model.html"><a href="simple-regression-model.html#problems"><i class="fa fa-check"></i>Problems</a></li>
+<li class="chapter" data-level="" data-path="simple-regression-model.html"><a href="simple-regression-model.html#solutions"><i class="fa fa-check"></i>Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html"><i class="fa fa-check"></i><b>2</b> Multiple regression model</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#multiple-regression-model-1"><i class="fa fa-check"></i><b>2.1</b> Multiple Regression Model</a></li>
+<li class="chapter" data-level="2.2" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#goodness-of-fit-redux"><i class="fa fa-check"></i><b>2.2</b> Goodness of fit redux</a></li>
+<li class="chapter" data-level="2.3" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#hypothesis-testing-in-a-multiple-regression-model"><i class="fa fa-check"></i><b>2.3</b> Hypothesis testing in a multiple regression model</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#test-of-statistical-significance-of-the-entire-model"><i class="fa fa-check"></i><b>2.3.1</b> Test of statistical significance of the entire model</a></li>
+<li class="chapter" data-level="2.3.2" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#testing-whether-one-or-more-of-the-variables-can-be-eliminated-from-the-model"><i class="fa fa-check"></i><b>2.3.2</b> Testing whether one or more of the variables can be eliminated from the model</a></li>
+<li class="chapter" data-level="2.3.3" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#testing-a-linear-restriction-on-slope-coefficients"><i class="fa fa-check"></i><b>2.3.3</b> Testing a linear restriction on slope coefficients</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#problems-1"><i class="fa fa-check"></i>Problems</a></li>
+<li class="chapter" data-level="" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#solutions-1"><i class="fa fa-check"></i>Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html"><i class="fa fa-check"></i><b>3</b> Functional form and dummy variables</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html#polynomials-in-the-regression-model"><i class="fa fa-check"></i><b>3.1</b> Polynomials in the regression model</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html#obtaining-optimal-polynomial-order-using-goodness-of-fit"><i class="fa fa-check"></i><b>3.1.1</b> Obtaining optimal polynomial order using goodness of fit</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html#step-functions-dummy-variables-in-the-regression-model"><i class="fa fa-check"></i><b>3.2</b> Step functions: Dummy variables in the regression model</a></li>
+<li class="chapter" data-level="" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html#problems-2"><i class="fa fa-check"></i>Problems</a></li>
+<li class="chapter" data-level="" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html#solutions-2"><i class="fa fa-check"></i>Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html"><i class="fa fa-check"></i><b>4</b> Classical assumptions and OLS estimator</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#classical-assumptions"><i class="fa fa-check"></i><b>4.1</b> Classical Assumptions</a></li>
+<li class="chapter" data-level="4.2" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#heteroscedasticity"><i class="fa fa-check"></i><b>4.2</b> Heteroscedasticity</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#consequences-of-heteroscedasticity-for-the-ols-estimator"><i class="fa fa-check"></i><b>4.2.1</b> Consequences of Heteroscedasticity for the OLS estimator</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#testing-for-hetroscedasticity-in-data"><i class="fa fa-check"></i><b>4.3</b> Testing for Hetroscedasticity in data</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#lm-test-for-linear-heteroscedasticity-bp-test"><i class="fa fa-check"></i><b>4.3.1</b> LM test for linear heteroscedasticity: BP test</a></li>
+<li class="chapter" data-level="4.3.2" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#lm-test-for-linear-heteroscedasticity-whites-test"><i class="fa fa-check"></i><b>4.3.2</b> LM test for linear heteroscedasticity: White’s test</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#heteroscedasticity-robust-standard-errors"><i class="fa fa-check"></i><b>4.4</b> Heteroscedasticity robust standard errors</a></li>
+<li class="chapter" data-level="4.5" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#serial-correlation"><i class="fa fa-check"></i><b>4.5</b> Serial correlation</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#consequences-of-serial-correlation-for-the-ols-estimator"><i class="fa fa-check"></i><b>4.5.1</b> Consequences of Serial Correlation for the OLS estimator</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#testing-for-serial-correlation-in-data"><i class="fa fa-check"></i><b>4.6</b> Testing for Serial Correlation in data</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#durbin-watson-test-for-first-order-serial-correlation"><i class="fa fa-check"></i><b>4.6.1</b> Durbin-Watson test for first order serial correlation</a></li>
+<li class="chapter" data-level="4.6.2" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#breusch-godfrey-bg-test-for-serial-correlation"><i class="fa fa-check"></i><b>4.6.2</b> Breusch-Godfrey (BG) test for serial correlation</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#serial-correlation-robust-standard-errors"><i class="fa fa-check"></i><b>4.7</b> Serial correlation robust standard errors</a></li>
+<li class="chapter" data-level="" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#problems-3"><i class="fa fa-check"></i>Problems</a></li>
+<li class="chapter" data-level="" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#solutions-3"><i class="fa fa-check"></i>Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html"><i class="fa fa-check"></i><b>5</b> Instrumental Variable Estimation</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#endogeneity-problem"><i class="fa fa-check"></i><b>5.1</b> Endogeneity Problem</a></li>
+<li class="chapter" data-level="5.2" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#omitted-variable-bias"><i class="fa fa-check"></i><b>5.2</b> Omitted variable bias</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#consequence-of-omitted-variable-on-ols-estimator"><i class="fa fa-check"></i><b>5.2.1</b> Consequence of omitted variable on OLS estimator</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#iv-estimation"><i class="fa fa-check"></i><b>5.3</b> IV estimation</a></li>
+<li class="chapter" data-level="5.4" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#case-i-one-endogenous-regressor-and-one-instrument"><i class="fa fa-check"></i><b>5.4</b> Case I: One endogenous regressor and one instrument</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#example-1-return-to-schooling"><i class="fa fa-check"></i><b>5.4.1</b> Example 1: Return to Schooling</a></li>
+<li class="chapter" data-level="5.4.2" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#example-2-estimating-demand-for-butter"><i class="fa fa-check"></i><b>5.4.2</b> Example 2: Estimating Demand for Butter</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#case-ii-one-endogenous-regressor-with-many-available-instruments"><i class="fa fa-check"></i><b>5.5</b> Case II: One endogenous regressor with many available instruments</a></li>
+<li class="chapter" data-level="5.6" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#iv-estimation-in-a-multiple-regression-framework"><i class="fa fa-check"></i><b>5.6</b> IV estimation in a multiple regression framework</a></li>
+<li class="chapter" data-level="5.7" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#strength-and-exogneity-of-the-instrument"><i class="fa fa-check"></i><b>5.7</b> Strength and Exogneity of the Instrument</a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#weak-instruments"><i class="fa fa-check"></i><b>5.7.1</b> Weak Instruments</a></li>
+<li class="chapter" data-level="5.7.2" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#exogeneity-of-instruments"><i class="fa fa-check"></i><b>5.7.2</b> Exogeneity of Instruments</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#problems-4"><i class="fa fa-check"></i>Problems</a></li>
+<li class="chapter" data-level="" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#solutions-4"><i class="fa fa-check"></i>Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="discrete-choice-model.html"><a href="discrete-choice-model.html"><i class="fa fa-check"></i><b>6</b> Discrete Choice Model</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="discrete-choice-model.html"><a href="discrete-choice-model.html#binary-dependent-variable"><i class="fa fa-check"></i><b>6.1</b> Binary Dependent Variable</a></li>
+<li class="chapter" data-level="" data-path="discrete-choice-model.html"><a href="discrete-choice-model.html#problems-5"><i class="fa fa-check"></i>Problems</a></li>
+<li class="chapter" data-level="" data-path="discrete-choice-model.html"><a href="discrete-choice-model.html#solutions-5"><i class="fa fa-check"></i>Solutions</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html"><i class="fa fa-check"></i><b>A</b> Review of Differential Calculus and Optimization</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#derivative-of-a-single-variable-function"><i class="fa fa-check"></i><b>A.1</b> Derivative of a single variable function</a>
+<ul>
+<li class="chapter" data-level="A.1.1" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#rules-of-differentiation"><i class="fa fa-check"></i><b>A.1.1</b> Rules of Differentiation</a></li>
+</ul></li>
+<li class="chapter" data-level="A.2" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#second-derivative-and-non-linearity"><i class="fa fa-check"></i><b>A.2</b> Second derivative and non-linearity</a></li>
+<li class="chapter" data-level="A.3" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#partial-derivatives-multi-variable-functions"><i class="fa fa-check"></i><b>A.3</b> Partial derivatives: Multi-variable functions</a></li>
+<li class="chapter" data-level="A.4" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#optimization"><i class="fa fa-check"></i><b>A.4</b> Optimization</a></li>
+<li class="chapter" data-level="" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#problems-6"><i class="fa fa-check"></i>Problems</a></li>
+<li class="chapter" data-level="" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#solutions-6"><i class="fa fa-check"></i>Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html"><i class="fa fa-check"></i><b>B</b> Review of Probability and Statistics</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#probability"><i class="fa fa-check"></i><b>B.1</b> Probability</a></li>
+<li class="chapter" data-level="B.2" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#random-variable"><i class="fa fa-check"></i><b>B.2</b> Random Variable</a></li>
+<li class="chapter" data-level="B.3" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#probability-distribution"><i class="fa fa-check"></i><b>B.3</b> Probability distribution</a>
+<ul>
+<li class="chapter" data-level="B.3.1" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#probability-distribution-of-a-discrete-random-variable"><i class="fa fa-check"></i><b>B.3.1</b> Probability distribution of a discrete random variable</a></li>
+<li class="chapter" data-level="B.3.2" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#probability-distribution-of-a-continuous-random-variable"><i class="fa fa-check"></i><b>B.3.2</b> Probability distribution of a continuous random variable</a></li>
+</ul></li>
+<li class="chapter" data-level="B.4" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#moments-of-a-probability-distribution-function"><i class="fa fa-check"></i><b>B.4</b> Moments of a probability distribution function</a>
+<ul>
+<li class="chapter" data-level="B.4.1" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#first-moment-of-a-probability-distribution-expected-value"><i class="fa fa-check"></i><b>B.4.1</b> First moment of a probability distribution: Expected value</a></li>
+<li class="chapter" data-level="B.4.2" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#second-moment-of-the-distribution."><i class="fa fa-check"></i><b>B.4.2</b> Second moment of the distribution.</a></li>
+<li class="chapter" data-level="B.4.3" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#third-and-fourth-moments-skewness-and-kurtosis"><i class="fa fa-check"></i><b>B.4.3</b> Third and Fourth Moments: Skewness and Kurtosis</a></li>
+</ul></li>
+<li class="chapter" data-level="B.5" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#useful-probability-distributions"><i class="fa fa-check"></i><b>B.5</b> Useful probability distributions</a></li>
+<li class="chapter" data-level="B.6" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#joint-probability-distribution"><i class="fa fa-check"></i><b>B.6</b> Joint Probability Distribution</a></li>
+<li class="chapter" data-level="B.7" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#measures-of-statistical-association"><i class="fa fa-check"></i><b>B.7</b> Measures of statistical association</a>
+<ul>
+<li class="chapter" data-level="B.7.1" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#rules-of-expectation-and-variances"><i class="fa fa-check"></i><b>B.7.1</b> Rules of expectation and variances</a></li>
+</ul></li>
+<li class="chapter" data-level="B.8" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#sampling-and-estimation"><i class="fa fa-check"></i><b>B.8</b> Sampling and Estimation</a></li>
+<li class="chapter" data-level="B.9" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#hypothesis-testing"><i class="fa fa-check"></i><b>B.9</b> Hypothesis testing</a>
+<ul>
+<li class="chapter" data-level="B.9.1" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#testing-a-restriction-on-a-single-population-parameter"><i class="fa fa-check"></i><b>B.9.1</b> Testing a restriction on a single population parameter</a></li>
+<li class="chapter" data-level="B.9.2" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#testing-a-restriction-on-multiple-population-parameter"><i class="fa fa-check"></i><b>B.9.2</b> Testing a restriction on multiple population parameter</a></li>
+<li class="chapter" data-level="B.9.3" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#confidence-interval-and-hypothesis-testing"><i class="fa fa-check"></i><b>B.9.3</b> Confidence interval and Hypothesis testing</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#problems-7"><i class="fa fa-check"></i>Problems</a></li>
+<li class="chapter" data-level="" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#solutions-7"><i class="fa fa-check"></i>Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="statistical-tables.html"><a href="statistical-tables.html"><i class="fa fa-check"></i><b>C</b> Statistical Tables</a>
+<ul>
+<li class="chapter" data-level="" data-path="statistical-tables.html"><a href="statistical-tables.html#table-a-critical-values-for-the-t-distribution"><i class="fa fa-check"></i>Table A: Critical Values for the t-distribution</a></li>
+<li class="chapter" data-level="" data-path="statistical-tables.html"><a href="statistical-tables.html#table-b-critical-values-for-the-chi-square-distribution"><i class="fa fa-check"></i>Table B: Critical Values for the Chi-square distribution</a></li>
+<li class="chapter" data-level="" data-path="statistical-tables.html"><a href="statistical-tables.html#table-c-1-critical-values-for-the-f-distribution"><i class="fa fa-check"></i>Table C: 1% Critical Values for the F distribution</a></li>
+<li class="chapter" data-level="" data-path="statistical-tables.html"><a href="statistical-tables.html#table-d-5-critical-values-for-the-f-distribution"><i class="fa fa-check"></i>Table D: 5% Critical Values for the F distribution</a></li>
+<li class="chapter" data-level="" data-path="statistical-tables.html"><a href="statistical-tables.html#table-e-10-critical-values-for-the-f-distribution"><i class="fa fa-check"></i>Table E: 10% Critical Values for the F distribution</a></li>
+<li class="chapter" data-level="" data-path="statistical-tables.html"><a href="statistical-tables.html#table-f-5-one-sided-critical-values-for-the-durbin-watson-distribution"><i class="fa fa-check"></i>Table F: 5% One-sided Critical Values for the Durbin-Watson Distribution</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://vipul-bhatt.github.io/Econ-385-Notes/" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introduction to Econometrics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="instrumental-variable-estimation" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Instrumental Variable Estimation<a href="instrumental-variable-estimation.html#instrumental-variable-estimation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="endogeneity-problem" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Endogeneity Problem<a href="instrumental-variable-estimation.html#endogeneity-problem" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Suppose we have the following regression model:</p>
+<p><span class="math display">\[Y_i = \beta_0 + \beta_1  X_i+ \epsilon_i\]</span></p>
+<p>In the above model, a crucial assumption for obtaining a causal effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span> is that of <strong>no endogeneity</strong>, that is, the <span class="math inline">\(X\)</span> variable is uncorrelated with the regression error (<span class="math inline">\(\epsilon\)</span>) and in that sense is <strong>exogenous</strong>. Figure 5.1. below shows the causal pathway between X and Y when X is exogenous.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:tikz-ex"></span>
+<img src="bookdown-demo_files/figure-html/tikz-ex-1.png" alt="Exogenous X" width="30%" />
+<p class="caption">
+Figure 5.1: Exogenous X
+</p>
+</div>
+<p>However, in many real world applications that use a non-randomized research design this assumption is too strong and unlikely to be satisfied. here are three main sources of endogeneity (or <span class="math inline">\(Cor(X_i,\epsilon_i) \neq 0\)</span>):</p>
+<ol style="list-style-type: decimal">
+<li><p>Omitted variable problem: a relevant X- variable is excluded from the regression model</p></li>
+<li><p>Simultaneity problem or Reverse causality: theoretically it maybe possible to argue that X causes Y and Y causes X!</p></li>
+<li><p>Measurement error in X variable: the data on X variable included in the model is noisy and we do not have a perfect measure of X</p></li>
+</ol>
+<p>In each of the above cases, <span class="math inline">\(Cor(X_i,\epsilon_i) \neq 0\)</span> and hence <span class="math inline">\(X_i\)</span> will be <strong>endogenous</strong>. Figure 5.2 below provides a graphical description of the breakdown of the causal link between X and Y when X is endogenous.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:tikz-ex2"></span>
+<img src="bookdown-demo_files/figure-html/tikz-ex2-1.png" alt="Endogenous X" width="30%" />
+<p class="caption">
+Figure 5.2: Endogenous X
+</p>
+</div>
+<p>As a consequence we no longer obtain an unbiased estimator of <span class="math inline">\(\beta_1\)</span> using OLS:</p>
+<p><span class="math display">\[E(\hat{\beta_1)} \neq \beta_1\]</span></p>
+<p>In otherwords, when there is an endogenous regressor in the our model, using OLS would result in either an overestimation (<span class="math inline">\(E(\hat{\beta_1)}&gt; \beta_1\)</span>) or an underestimation (<span class="math inline">\(E(\hat{\beta_1)}&gt; \beta_1\)</span>).</p>
+</div>
+<div id="omitted-variable-bias" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Omitted variable bias<a href="instrumental-variable-estimation.html#omitted-variable-bias" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Although there are many reasons why we may face an endoegneous regressor, the most common source is an omitted variable where we exclude a relevant variable from our regression model. An omitted variable is a variable that should have been included in our regression model but is excluded either because of our ignorance or more likely due to a lack of measurement for such a variable. For example, consider the following simple model of wages:</p>
+<p><span class="math display">\[Y_i = \beta_0 + \beta_1 X_{1i} + \beta_2X_{2i}+\epsilon_i\]</span></p>
+<p>where <span class="math inline">\(Y_i\)</span> is the log of wages, <span class="math inline">\(X_{1i}\)</span> is years of education and <span class="math inline">\(X_{2i}\)</span> denotes a person’s innate ability. However, it is very difficult to measure person’s innate ability. Consequently, in practice our estimated regression model for wages excludes <span class="math inline">\(X_3\)</span> and is given by:</p>
+<p><span class="math display">\[Y_i = \beta_0 + \beta_1 X_{1i} + \epsilon_i^*\]</span></p>
+<p>Here, <span class="math inline">\(\epsilon_i^*=\beta_2 X_{2i}+\epsilon_i\)</span>. There are two conditions for <span class="math inline">\(X_{2i}\)</span> to be an <strong>omitted variable</strong>:</p>
+<ol style="list-style-type: decimal">
+<li><p>It is a relevant variable, i.e, there is a non-zero effect of <span class="math inline">\(X_3\)</span> on <span class="math inline">\(Y\)</span> (implied by <span class="math inline">\(\beta_3\neq 0\)</span>)</p></li>
+<li><p>It is correlated with at least one of the included <span class="math inline">\(X\)</span> variables in the model. This will lead to correlation between the included <span class="math inline">\(X\)</span> variables and the error term with the omitted variable.</p></li>
+</ol>
+<p>In our example, it is reasonable to argue that a person with greater innate ability will be more likely to get more education, i.e,<span class="math inline">\(Cor(X_{1i},X_{2i})&gt;0\)</span>. Further, a person’s innate ability should also positively affect her wage, i.e., <span class="math inline">\(\beta_2&gt;0\)</span>. As a result, both of the above conditions are satisfied implying innate ability indeed is an omitted variable in our estimated model.</p>
+<div id="consequence-of-omitted-variable-on-ols-estimator" class="section level3 hasAnchor" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> Consequence of omitted variable on OLS estimator<a href="instrumental-variable-estimation.html#consequence-of-omitted-variable-on-ols-estimator" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The main consequence of an omitted variable is that the included X variables are no longer exogenous and are correlated with the error term. In our example this means that <span class="math inline">\(Cor(X_{1i},\epsilon^*_i)\neq 0\)</span>. As a result the OLS estimator of education is no longer unbiased:</p>
+<p><span class="math display">\[E(\widehat{\beta_1}) \neq \beta_1\]</span></p>
+<p>Although, we cannot estimate the magnitude of the bias but in some cases it may be possible to guess the sign of the bias. In our example, the sign of this bias will depend on the signs of <span class="math inline">\(\beta_2\)</span> and <span class="math inline">\(Cor(X_{1i},X_{2i})\)</span>. Specifically, in the case where only 1 variable is omitted and only 1 variable is included in the model (like our example) we get the following 4 possibilities:</p>
+<table>
+<colgroup>
+<col width="12%" />
+<col width="43%" />
+<col width="43%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center"><span class="math inline">\(Cor(X_1,X_2)&gt;0\)</span></th>
+<th align="center"><span class="math inline">\(Cor(X_1,X_2)&lt;0\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\beta_2&gt;0\)</span></td>
+<td align="center"><span class="math inline">\(E(\widehat{\beta_1})&gt;\beta_1\)</span> (positive bias)</td>
+<td align="center"><span class="math inline">\(E(\widehat{\beta_1})&lt;\beta_1\)</span> (positive bias)</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\beta_2&lt;0\)</span></td>
+<td align="center"><span class="math inline">\(E(\widehat{\beta_1})&lt;\beta_1\)</span> (positive bias)</td>
+<td align="center"><span class="math inline">\(E(\widehat{\beta_1})&gt;\beta_1\)</span> (negative bias)</td>
+</tr>
+</tbody>
+</table>
+<p>In our case, higher innate ability should increase wages (<span class="math inline">\(\beta_2&gt;0\)</span>) and people with greater innate ability also have higher levels of education (<span class="math inline">\(Cor(X_1,X_2)&gt;0\)</span>). Hence, the OLS estimator of education’s effect on wages will be positively biased–part of the effect is due to innate ability which is omitted from the model. In order to resolve this problem we will need to use Intstrumental variable (IV) estimator which attempts to exploit exogenous variation in the endogenous independent variable. We will cover this method in advanced econometrics course.</p>
+</div>
+</div>
+<div id="iv-estimation" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> IV estimation<a href="instrumental-variable-estimation.html#iv-estimation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>One way to deal with endogeneity is to <strong>instrument</strong> for the endogenous X-variable: <strong>Instrumental Variable (IV)</strong> estimation. An instrumental variable (denoted by <span class="math inline">\(Z\)</span>) has the property that that changes in Z are associated with changes in X but only affect Y indirectly through X. Figure 5.3 below describes how using an instrument identifies causal effect of an endogenous regressor (X) on Y.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:tikz-ex3"></span>
+<img src="bookdown-demo_files/figure-html/tikz-ex3-1.png" alt="Using Z as an instrument for endogenous X" width="30%" />
+<p class="caption">
+Figure 5.3: Using Z as an instrument for endogenous X
+</p>
+</div>
+<p>An instrument <span class="math inline">\(Z\)</span> is a valid instrument if it meets the following two conditions:</p>
+<pre><code>1. It is **relevant** in the sense that it is related to endogenous X variable, i.e., $Cor(Z_i,X_i) \neq 0$
+
+2. It is **exogenous** in the sense that is uncorrelated with the error term, i.e., $Cor(Z_i,\epsilon_i) =0$</code></pre>
+</div>
+<div id="case-i-one-endogenous-regressor-and-one-instrument" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> Case I: One endogenous regressor and one instrument<a href="instrumental-variable-estimation.html#case-i-one-endogenous-regressor-and-one-instrument" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In this section we consider a simple case of only one endogenous regressor that has exactly one available instrument. Consider the following regression model:</p>
+<p><span class="math display">\[Y_i=\beta_0+\beta_1\cdot X_i +\epsilon_i\]</span></p>
+<p>Suppose we know that <span class="math inline">\(X\)</span> is endogenous, i.e., <span class="math inline">\(Cor(X_i,\epsilon_i)\neq 0\)</span>. Further assume that we are able to find a valid instrument denoted by <span class="math inline">\(Z_i\)</span>. In this case our regression model is <strong>just-identified</strong> because the number of instruments equals number of endogenous variables. One way to derive an instrumental variable (IV) estimator is two-stage least squares (2SLS). This procedure isolates the exogenous variation in <span class="math inline">\(X\)</span> which is then used to estimate <span class="math inline">\(\beta_1\)</span>. There are two stages to 2SLS:</p>
+<ol style="list-style-type: decimal">
+<li>First-stage regression: Here we regress <span class="math inline">\(X\)</span> on <span class="math inline">\(Z\)</span> and obtain the predicted value of <span class="math inline">\(X\)</span> using OLS. This first-stage regression is given by:
+<span class="math display">\[X_i=\pi_0+\pi_1 \cdot Z_i+u_i\]</span></li>
+</ol>
+<p>The predicted value from this regression is given by:
+<span class="math display">\[\widehat{X_i}=\widehat{\pi_o}+\widehat{\pi_1}\cdot Z_i\]</span></p>
+<p>Note that by construction, <span class="math inline">\(\widehat{X_i}\)</span> is that part of <span class="math inline">\(X_i\)</span> that is exogenous, assuming our instrument is valid.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Second-stage regression: Here we replace <span class="math inline">\(X_i\)</span> in our original regression with <span class="math inline">\(\widehat{X_i}\)</span> and estimate the model with OLS:</li>
+</ol>
+<p><span class="math display">\[Y_i=\beta_0+\beta_1\cdot \widehat{X_i} +\epsilon_i\]</span></p>
+<p>The above regression yields <span class="math inline">\(\widehat{\beta}_{1}^{2SLS}\)</span> or <span class="math inline">\(\widehat{\beta}_{1}^{IV}\)</span> which will be unbiased if our instrument is both relevant and exogenous.</p>
+<div id="example-1-return-to-schooling" class="section level3 hasAnchor" number="5.4.1">
+<h3><span class="header-section-number">5.4.1</span> Example 1: Return to Schooling<a href="instrumental-variable-estimation.html#example-1-return-to-schooling" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Suppose we are interesting in estimating the causal effect of years of education (<span class="math inline">\(X\)</span>) on wages (<span class="math inline">\(Y\)</span>). As discussed earlier, due to missing information on innate ability, we have an endgoeneity problem. We need to find an instrument <span class="math inline">\(Z\)</span> that is correlated with schooling, uncorrelated with ability. One such candidate used in the literature is distance from school or college. The idea being proximity to an educational institution can positively affect schooling (relevance of <span class="math inline">\(Z\)</span>) but in theory should not correlate with a person’s innate ability (exogeneity of <span class="math inline">\(Z\)</span>).</p>
+</div>
+<div id="example-2-estimating-demand-for-butter" class="section level3 hasAnchor" number="5.4.2">
+<h3><span class="header-section-number">5.4.2</span> Example 2: Estimating Demand for Butter<a href="instrumental-variable-estimation.html#example-2-estimating-demand-for-butter" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>One of the first applications of IV estimation was to the elasticity of demand for butter (and other agricultural products). Consider the following regression model:</p>
+<p><span class="math display">\[ln(Q_i)=\beta_0+\beta_1 \cdot ln(P_i)+\epsilon_i\]</span></p>
+<p>Here, <span class="math inline">\(Q\)</span> denotes quantity demanded of butter and <span class="math inline">\(P\)</span> denotes price of butter. <span class="math inline">\(\beta_1\)</span> is the percent change in quantity demanded caused by 1% change in its price, i.e., elasticity of demand for butter. One issue with estimating the above model using OLS is that of reverse causality. Economic theory suggests that any pair of price and quantity observed in the market is an equlibrium point where demand intersects supply. As a result, both quantity and price are simultaneously determined leading to reverse causality where price causes quantity and quantity causes price. To break this endogeneity we need to find an instrument for endogenous price. One such instrument is a supply shifter that only affects the supply curve. e.g. rainfall in regions that produce dairy products. It is plausibly relevant (affects price by reducing quantity of butter supplied due to insufficient rain) and exogenous (should not directly affect demand). Formally,</p>
+<p>Stage 1: Regress price on rainfall
+<span class="math display">\[ln(Pi)=\pi_0+\pi_1\cdot Z_i+\epsilon_i\]</span></p>
+<p>Stage 2: Replace price with predicted price from the first-stage regression:</p>
+<p><span class="math display">\[ln(Qi)=\beta_0+\beta_1\cdot \widehat{ln(P_i)}+\epsilon_i\]</span></p>
+<p>The estimated slope coefficient from the second-stage regression is our IV estimator of elasticitty of demand for butter that is unbiased/causal.</p>
+</div>
+</div>
+<div id="case-ii-one-endogenous-regressor-with-many-available-instruments" class="section level2 hasAnchor" number="5.5">
+<h2><span class="header-section-number">5.5</span> Case II: One endogenous regressor with many available instruments<a href="instrumental-variable-estimation.html#case-ii-one-endogenous-regressor-with-many-available-instruments" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Often times we are faced with a situation where we have many candidate instruments for an endogenous regressor. Lets go back to our example of demand for butter. As we discussed earlier, one candidate instrument is rainfall as it affects supply which in turn affects oprice. But there are many other variables that can affect price through their effect on supply. For example, use of high-yield cows can affect supply of milk which in turns affects supply of butter and hence its price. In this case we have two instruments <span class="math inline">\(Z_1\)</span> (rainfall) and <span class="math inline">\(Z_2\)</span> (high-yield cows) for the endogenous price. In otherwords our model is <strong>overidentified</strong>. How does this impact our IV estimator?</p>
+<p>Stage 1: The first-stage regression now utilizes both instruments:</p>
+<p><span class="math display">\[ln(Pi)=\pi_0+\pi_1\cdot Z_{1i}+\pi_2\cdot Z_{2i}+\epsilon_i\]</span></p>
+<p>Stage 2: The second-stage regression stays the same:</p>
+<p><span class="math display">\[ln(Qi)=\beta_0+\beta_1\cdot \widehat{ln(P_i)}+\epsilon_i\]</span></p>
+</div>
+<div id="iv-estimation-in-a-multiple-regression-framework" class="section level2 hasAnchor" number="5.6">
+<h2><span class="header-section-number">5.6</span> IV estimation in a multiple regression framework<a href="instrumental-variable-estimation.html#iv-estimation-in-a-multiple-regression-framework" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Our discussion so far has focused on a simple regression with only one X variable that could be endogenous. However, in many applications we may have other X-variables in the model. There are two interesting scenarios to consider in the multiple regression setting:</p>
+<ol style="list-style-type: decimal">
+<li><p>Only one endogenous regressor so that all other X variables included in the model are exogenous. Here we need at least one instrument to estimate the causal effect of the endogenous regressor.</p></li>
+<li><p>Multiple endogenous regressors in the model. Here we need at least as many instruments as the number of endogenous regressors in the model.</p></li>
+</ol>
+<p>Let us reconsider the return to schooling example. Consider the following multiple regression model:</p>
+<p><span class="math display">\[ln(wages_i)=\beta_0+\beta_1\cdot educ_i +\beta_2 ln(exper_i)+\epsilon_i\]</span></p>
+<p>Here it is reasonable to argue that the omitted variable (innate ability) affects education but may have negligible impact on years of experience. In this case, education is the endogenous regressor that needs an instrument whereas experience is exogenous and hence does not require an instrument. Let <span class="math inline">\(Z\)</span> denotes proximity to educational institution, an instrument for years of education. Then the 2SLS is given by:</p>
+<p>Stage 1: In the first stage we regresss education on the instrument and experience:</p>
+<p><span class="math display">\[educ_i=\pi_0+\pi_1\cdot Z_i +\gamma_1\cdot ln(exper_i)+u_i\]</span></p>
+<p>Stage 2: In the second stage we replace education with the predicted value from the first stage:</p>
+<p><span class="math display">\[ln(wages_i)=\beta_0+\beta_1\cdot \widehat{educ_i} +\beta_2 ln(exper_i)+\epsilon_i\]</span></p>
+<pre class="block1"><code>Key thing to note here is that the first stage regression must include all the instruments and all exogenous X-variables.</code></pre>
+<p>The most general case includes multiple endogenous regressors and many exogneous regressors. This case will not be covered in this chapter but is quite easy to follow from the previous discussion.</p>
+</div>
+<div id="strength-and-exogneity-of-the-instrument" class="section level2 hasAnchor" number="5.7">
+<h2><span class="header-section-number">5.7</span> Strength and Exogneity of the Instrument<a href="instrumental-variable-estimation.html#strength-and-exogneity-of-the-instrument" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>How do we know whether the instrument we have chosen is a good instrument? There are two related issues here:</p>
+<ol style="list-style-type: decimal">
+<li><p>Weak instrument problem: happens when our instrument(s) are only weakly associated with the endogenous regressor. This implies our instrument does not satisfy the relevancy condition.</p></li>
+<li><p>Endogenous instrument problem: occurs when our instrument(s) are not exogenous and in that sense fail to isolate exogenous variation in the endogenous X variable.</p></li>
+</ol>
+<div id="weak-instruments" class="section level3 hasAnchor" number="5.7.1">
+<h3><span class="header-section-number">5.7.1</span> Weak Instruments<a href="instrumental-variable-estimation.html#weak-instruments" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>If our chosen set of instruments are weak, then the first-stage regression can be used to statistically test for such a scenario. Consider the following example:</p>
+<p><span class="math display">\[Y_i=\beta_0+\beta_1\cdot X_{1i}+\beta_2 \cdot X_{2i}+\epsilon_i \]</span></p>
+<p>Suppose we know only <span class="math inline">\(X_1\)</span> is endogenous and we propose three possible instruments <span class="math inline">\(Z_1\)</span>, <span class="math inline">\(Z_2\)</span>, and <span class="math inline">\(Z_3\)</span> for it. The first-stage regression is given by:
+<span class="math display">\[X_{1i}=\pi_0+\pi_1\cdot Z_{1i}+\pi_2 \cdot Z_{2i} + \pi_3 \cdot Z_{3i} +\gamma_1 \cdot X_{2i}+u_i\]</span></p>
+<p>Then, the test of weak instruments is given by:
+<span class="math display">\[H_0: \pi_1=\pi_2=\pi_3=0 \rightarrow \text{instruments weak}\]</span>
+<span class="math display">\[H_A: \text{Not} \ H_0\]</span></p>
+<p>The F-statistic for the above hypothesis is called the <strong>first-stage F stat.</strong> and larger value is desirable as it would increase the likelihood of rejecting the null hypothesis of weak instrunents. It is common to report the value of this test statistic when presenting the results of the IV estimation. For the single endogenous regressor case Stock and Yogo (2005) show that values of the first-stage stat. greater than 10 can serve as a reliable rule-of-thumb in assessing strength of the instruments.</p>
+</div>
+<div id="exogeneity-of-instruments" class="section level3 hasAnchor" number="5.7.2">
+<h3><span class="header-section-number">5.7.2</span> Exogeneity of Instruments<a href="instrumental-variable-estimation.html#exogeneity-of-instruments" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>When we have more than one instrument for the same endogneous regressor, we can exploit the overid.</p>
+</div>
+</div>
+<div id="problems-4" class="section level2 unnumbered hasAnchor">
+<h2>Problems<a href="instrumental-variable-estimation.html#problems-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="solutions-4" class="section level2 unnumbered hasAnchor">
+<h2>Solutions<a href="instrumental-variable-estimation.html#solutions-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="classical-assumptions-and-ols-estimator.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="discrete-choice-model.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

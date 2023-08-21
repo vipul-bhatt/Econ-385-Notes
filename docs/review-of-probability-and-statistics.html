@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 Review of Probability and Statistics | Introduction to Econometrics</title>
+  <title>B Review of Probability and Statistics | Introduction to Econometrics</title>
   <meta name="description" content="Lecture notes for Introduction to Econometrics" />
-  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 Review of Probability and Statistics | Introduction to Econometrics" />
+  <meta property="og:title" content="B Review of Probability and Statistics | Introduction to Econometrics" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Lecture notes for Introduction to Econometrics" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Review of Probability and Statistics | Introduction to Econometrics" />
+  <meta name="twitter:title" content="B Review of Probability and Statistics | Introduction to Econometrics" />
   
   <meta name="twitter:description" content="Lecture notes for Introduction to Econometrics" />
   
@@ -23,7 +23,7 @@
 <meta name="author" content="Vipul Bhatt" />
 
 
-<meta name="date" content="2023-05-22" />
+<meta name="date" content="2023-08-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="review-of-differential-calculus-and-optimization.html"/>
-<link rel="next" href="simple-regression-model.html"/>
+<link rel="next" href="statistical-tables.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -55,6 +55,10 @@
 
 
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -74,122 +78,147 @@
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
 <li class="chapter" data-level="" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="1" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html"><i class="fa fa-check"></i><b>1</b> Review of Differential Calculus and Optimization</a>
+<li class="chapter" data-level="1" data-path="simple-regression-model.html"><a href="simple-regression-model.html"><i class="fa fa-check"></i><b>1</b> Simple Regression Model</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#derivative-of-a-single-variable-function"><i class="fa fa-check"></i><b>1.1</b> Derivative of a single variable function</a>
+<li class="chapter" data-level="1.1" data-path="simple-regression-model.html"><a href="simple-regression-model.html#statistical-foundation-of-the-simple-regression-model"><i class="fa fa-check"></i><b>1.1</b> Statistical foundation of the simple regression model</a></li>
+<li class="chapter" data-level="1.2" data-path="simple-regression-model.html"><a href="simple-regression-model.html#ordinary-least-squares-ols"><i class="fa fa-check"></i><b>1.2</b> Ordinary Least Squares (OLS)</a></li>
+<li class="chapter" data-level="1.3" data-path="simple-regression-model.html"><a href="simple-regression-model.html#goodness-of-fit"><i class="fa fa-check"></i><b>1.3</b> Goodness of fit</a></li>
+<li class="chapter" data-level="1.4" data-path="simple-regression-model.html"><a href="simple-regression-model.html#applications-of-the-simple-regression-model"><i class="fa fa-check"></i><b>1.4</b> Applications of the simple regression model</a>
 <ul>
-<li class="chapter" data-level="1.1.1" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#rules-of-differentiation"><i class="fa fa-check"></i><b>1.1.1</b> Rules of Differentiation</a></li>
+<li class="chapter" data-level="1.4.1" data-path="simple-regression-model.html"><a href="simple-regression-model.html#aggregate-consumption-function"><i class="fa fa-check"></i><b>1.4.1</b> Aggregate consumption function</a></li>
+<li class="chapter" data-level="1.4.2" data-path="simple-regression-model.html"><a href="simple-regression-model.html#returns-to-education"><i class="fa fa-check"></i><b>1.4.2</b> Returns to education</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#second-derivative-and-non-linearity"><i class="fa fa-check"></i><b>1.2</b> Second derivative and non-linearity</a></li>
-<li class="chapter" data-level="1.3" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#partial-derivatives-multi-variable-functions"><i class="fa fa-check"></i><b>1.3</b> Partial derivatives: Multi-variable functions</a></li>
-<li class="chapter" data-level="1.4" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#optimization"><i class="fa fa-check"></i><b>1.4</b> Optimization</a></li>
-<li class="chapter" data-level="" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#problems"><i class="fa fa-check"></i>Problems</a></li>
-<li class="chapter" data-level="" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#solutions"><i class="fa fa-check"></i>Solutions</a></li>
-</ul></li>
-<li class="chapter" data-level="2" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html"><i class="fa fa-check"></i><b>2</b> Review of Probability and Statistics</a>
+<li class="chapter" data-level="1.5" data-path="simple-regression-model.html"><a href="simple-regression-model.html#use-of-natural-logs-and-interpretation-of-the-slope-coefficients"><i class="fa fa-check"></i><b>1.5</b> Use of natural logs and interpretation of the slope coefficients</a></li>
+<li class="chapter" data-level="1.6" data-path="simple-regression-model.html"><a href="simple-regression-model.html#hypothesis-testing-and-confidence-interval-estimation"><i class="fa fa-check"></i><b>1.6</b> Hypothesis testing and confidence interval estimation</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#probability"><i class="fa fa-check"></i><b>2.1</b> Probability</a></li>
-<li class="chapter" data-level="2.2" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#random-variable"><i class="fa fa-check"></i><b>2.2</b> Random Variable</a></li>
-<li class="chapter" data-level="2.3" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#probability-distribution"><i class="fa fa-check"></i><b>2.3</b> Probability distribution</a>
-<ul>
-<li class="chapter" data-level="2.3.1" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#probability-distribution-of-a-discrete-random-variable"><i class="fa fa-check"></i><b>2.3.1</b> Probability distribution of a discrete random variable</a></li>
-<li class="chapter" data-level="2.3.2" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#probability-distribution-of-a-continuous-random-variable"><i class="fa fa-check"></i><b>2.3.2</b> Probability distribution of a continuous random variable</a></li>
+<li class="chapter" data-level="1.6.1" data-path="simple-regression-model.html"><a href="simple-regression-model.html#confidence-interval-for-regression-coefficients"><i class="fa fa-check"></i><b>1.6.1</b> Confidence interval for regression coefficients</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#moments-of-a-probability-distribution-function"><i class="fa fa-check"></i><b>2.4</b> Moments of a probability distribution function</a>
-<ul>
-<li class="chapter" data-level="2.4.1" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#first-moment-of-a-probability-distribution-expected-value"><i class="fa fa-check"></i><b>2.4.1</b> First moment of a probability distribution: Expected value</a></li>
-<li class="chapter" data-level="2.4.2" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#second-moment-of-the-distribution."><i class="fa fa-check"></i><b>2.4.2</b> Second moment of the distribution.</a></li>
-<li class="chapter" data-level="2.4.3" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#third-and-fourth-moments-skewness-and-kurtosis"><i class="fa fa-check"></i><b>2.4.3</b> Third and Fourth Moments: Skewness and Kurtosis</a></li>
+<li class="chapter" data-level="" data-path="simple-regression-model.html"><a href="simple-regression-model.html#problems"><i class="fa fa-check"></i>Problems</a></li>
+<li class="chapter" data-level="" data-path="simple-regression-model.html"><a href="simple-regression-model.html#solutions"><i class="fa fa-check"></i>Solutions</a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#useful-probability-distributions"><i class="fa fa-check"></i><b>2.5</b> Useful probability distributions</a></li>
-<li class="chapter" data-level="2.6" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#joint-probability-distribution"><i class="fa fa-check"></i><b>2.6</b> Joint Probability Distribution</a></li>
-<li class="chapter" data-level="2.7" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#measures-of-statistical-association"><i class="fa fa-check"></i><b>2.7</b> Measures of statistical association</a>
+<li class="chapter" data-level="2" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html"><i class="fa fa-check"></i><b>2</b> Multiple regression model</a>
 <ul>
-<li class="chapter" data-level="2.7.1" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#rules-of-expectation-and-variances"><i class="fa fa-check"></i><b>2.7.1</b> Rules of expectation and variances</a></li>
-</ul></li>
-<li class="chapter" data-level="2.8" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#sampling-and-estimation"><i class="fa fa-check"></i><b>2.8</b> Sampling and Estimation</a></li>
-<li class="chapter" data-level="2.9" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#hypothesis-testing"><i class="fa fa-check"></i><b>2.9</b> Hypothesis testing</a>
+<li class="chapter" data-level="2.1" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#multiple-regression-model-1"><i class="fa fa-check"></i><b>2.1</b> Multiple Regression Model</a></li>
+<li class="chapter" data-level="2.2" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#goodness-of-fit-redux"><i class="fa fa-check"></i><b>2.2</b> Goodness of fit redux</a></li>
+<li class="chapter" data-level="2.3" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#hypothesis-testing-in-a-multiple-regression-model"><i class="fa fa-check"></i><b>2.3</b> Hypothesis testing in a multiple regression model</a>
 <ul>
-<li class="chapter" data-level="2.9.1" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#testing-a-restriction-on-a-single-population-parameter"><i class="fa fa-check"></i><b>2.9.1</b> Testing a restriction on a single population parameter</a></li>
-<li class="chapter" data-level="2.9.2" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#testing-a-restriction-on-multiple-population-parameter"><i class="fa fa-check"></i><b>2.9.2</b> Testing a restriction on multiple population parameter</a></li>
-<li class="chapter" data-level="2.9.3" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#confidence-interval-and-hypothesis-testing"><i class="fa fa-check"></i><b>2.9.3</b> Confidence interval and Hypothesis testing</a></li>
+<li class="chapter" data-level="2.3.1" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#test-of-statistical-significance-of-the-entire-model"><i class="fa fa-check"></i><b>2.3.1</b> Test of statistical significance of the entire model</a></li>
+<li class="chapter" data-level="2.3.2" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#testing-whether-one-or-more-of-the-variables-can-be-eliminated-from-the-model"><i class="fa fa-check"></i><b>2.3.2</b> Testing whether one or more of the variables can be eliminated from the model</a></li>
+<li class="chapter" data-level="2.3.3" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#testing-a-linear-restriction-on-slope-coefficients"><i class="fa fa-check"></i><b>2.3.3</b> Testing a linear restriction on slope coefficients</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#problems-1"><i class="fa fa-check"></i>Problems</a></li>
-<li class="chapter" data-level="" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#solutions-1"><i class="fa fa-check"></i>Solutions</a></li>
+<li class="chapter" data-level="" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#problems-1"><i class="fa fa-check"></i>Problems</a></li>
+<li class="chapter" data-level="" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#solutions-1"><i class="fa fa-check"></i>Solutions</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="simple-regression-model.html"><a href="simple-regression-model.html"><i class="fa fa-check"></i><b>3</b> Simple Regression Model</a>
+<li class="chapter" data-level="3" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html"><i class="fa fa-check"></i><b>3</b> Functional form and dummy variables</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="simple-regression-model.html"><a href="simple-regression-model.html#statistical-foundation-of-the-simple-regression-model"><i class="fa fa-check"></i><b>3.1</b> Statistical foundation of the simple regression model</a></li>
-<li class="chapter" data-level="3.2" data-path="simple-regression-model.html"><a href="simple-regression-model.html#ordinary-least-squares-ols"><i class="fa fa-check"></i><b>3.2</b> Ordinary Least Squares (OLS)</a></li>
-<li class="chapter" data-level="3.3" data-path="simple-regression-model.html"><a href="simple-regression-model.html#goodness-of-fit"><i class="fa fa-check"></i><b>3.3</b> Goodness of fit</a></li>
-<li class="chapter" data-level="3.4" data-path="simple-regression-model.html"><a href="simple-regression-model.html#applications-of-the-simple-regression-model"><i class="fa fa-check"></i><b>3.4</b> Applications of the simple regression model</a>
+<li class="chapter" data-level="3.1" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html#polynomials-in-the-regression-model"><i class="fa fa-check"></i><b>3.1</b> Polynomials in the regression model</a>
 <ul>
-<li class="chapter" data-level="3.4.1" data-path="simple-regression-model.html"><a href="simple-regression-model.html#aggregate-consumption-function"><i class="fa fa-check"></i><b>3.4.1</b> Aggregate consumption function</a></li>
-<li class="chapter" data-level="3.4.2" data-path="simple-regression-model.html"><a href="simple-regression-model.html#returns-to-education"><i class="fa fa-check"></i><b>3.4.2</b> Returns to education</a></li>
+<li class="chapter" data-level="3.1.1" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html#obtaining-optimal-polynomial-order-using-goodness-of-fit"><i class="fa fa-check"></i><b>3.1.1</b> Obtaining optimal polynomial order using goodness of fit</a></li>
 </ul></li>
-<li class="chapter" data-level="3.5" data-path="simple-regression-model.html"><a href="simple-regression-model.html#use-of-natural-logs-and-interpretation-of-the-slope-coefficients"><i class="fa fa-check"></i><b>3.5</b> Use of natural logs and interpretation of the slope coefficients</a></li>
-<li class="chapter" data-level="3.6" data-path="simple-regression-model.html"><a href="simple-regression-model.html#hypothesis-testing-and-confidence-interval-estimation"><i class="fa fa-check"></i><b>3.6</b> Hypothesis testing and confidence interval estimation</a>
+<li class="chapter" data-level="3.2" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html#step-functions-dummy-variables-in-the-regression-model"><i class="fa fa-check"></i><b>3.2</b> Step functions: Dummy variables in the regression model</a></li>
+<li class="chapter" data-level="" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html#problems-2"><i class="fa fa-check"></i>Problems</a></li>
+<li class="chapter" data-level="" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html#solutions-2"><i class="fa fa-check"></i>Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html"><i class="fa fa-check"></i><b>4</b> Classical assumptions and OLS estimator</a>
 <ul>
-<li class="chapter" data-level="3.6.1" data-path="simple-regression-model.html"><a href="simple-regression-model.html#confidence-interval-for-regression-coefficients"><i class="fa fa-check"></i><b>3.6.1</b> Confidence interval for regression coefficients</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="simple-regression-model.html"><a href="simple-regression-model.html#problems-2"><i class="fa fa-check"></i>Problems</a></li>
-<li class="chapter" data-level="" data-path="simple-regression-model.html"><a href="simple-regression-model.html#solutions-2"><i class="fa fa-check"></i>Solutions</a></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html"><i class="fa fa-check"></i><b>4</b> Multiple regression model</a>
+<li class="chapter" data-level="4.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#classical-assumptions"><i class="fa fa-check"></i><b>4.1</b> Classical Assumptions</a></li>
+<li class="chapter" data-level="4.2" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#heteroscedasticity"><i class="fa fa-check"></i><b>4.2</b> Heteroscedasticity</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#multiple-regression-model-1"><i class="fa fa-check"></i><b>4.1</b> Multiple Regression Model</a></li>
-<li class="chapter" data-level="4.2" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#goodness-of-fit-redux"><i class="fa fa-check"></i><b>4.2</b> Goodness of fit redux</a></li>
-<li class="chapter" data-level="4.3" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#hypothesis-testing-in-a-multiple-regression-model"><i class="fa fa-check"></i><b>4.3</b> Hypothesis testing in a multiple regression model</a>
-<ul>
-<li class="chapter" data-level="4.3.1" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#test-of-statistical-significance-of-the-entire-model"><i class="fa fa-check"></i><b>4.3.1</b> Test of statistical significance of the entire model</a></li>
-<li class="chapter" data-level="4.3.2" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#testing-whether-one-or-more-of-the-variables-can-be-eliminated-from-the-model"><i class="fa fa-check"></i><b>4.3.2</b> Testing whether one or more of the variables can be eliminated from the model</a></li>
-<li class="chapter" data-level="4.3.3" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#testing-a-linear-restriction-on-slope-coefficients"><i class="fa fa-check"></i><b>4.3.3</b> Testing a linear restriction on slope coefficients</a></li>
+<li class="chapter" data-level="4.2.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#consequences-of-heteroscedasticity-for-the-ols-estimator"><i class="fa fa-check"></i><b>4.2.1</b> Consequences of Heteroscedasticity for the OLS estimator</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#problems-3"><i class="fa fa-check"></i>Problems</a></li>
-<li class="chapter" data-level="" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#solutions-3"><i class="fa fa-check"></i>Solutions</a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html"><i class="fa fa-check"></i><b>5</b> Functional form and dummy variables</a>
+<li class="chapter" data-level="4.3" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#testing-for-hetroscedasticity-in-data"><i class="fa fa-check"></i><b>4.3</b> Testing for Hetroscedasticity in data</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html#polynomials-in-the-regression-model"><i class="fa fa-check"></i><b>5.1</b> Polynomials in the regression model</a>
-<ul>
-<li class="chapter" data-level="5.1.1" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html#obtaining-optimal-polynomial-order-using-goodness-of-fit"><i class="fa fa-check"></i><b>5.1.1</b> Obtaining optimal polynomial order using goodness of fit</a></li>
+<li class="chapter" data-level="4.3.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#lm-test-for-linear-heteroscedasticity-bp-test"><i class="fa fa-check"></i><b>4.3.1</b> LM test for linear heteroscedasticity: BP test</a></li>
+<li class="chapter" data-level="4.3.2" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#lm-test-for-linear-heteroscedasticity-whites-test"><i class="fa fa-check"></i><b>4.3.2</b> LM test for linear heteroscedasticity: White’s test</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html#step-functions-dummy-variables-in-the-regression-model"><i class="fa fa-check"></i><b>5.2</b> Step functions: Dummy variables in the regression model</a></li>
-<li class="chapter" data-level="" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html#problems-4"><i class="fa fa-check"></i>Problems</a></li>
-<li class="chapter" data-level="" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html#solutions-4"><i class="fa fa-check"></i>Solutions</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html"><i class="fa fa-check"></i><b>6</b> Classical assumptions and OLS estimator</a>
+<li class="chapter" data-level="4.4" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#heteroscedasticity-robust-standard-errors"><i class="fa fa-check"></i><b>4.4</b> Heteroscedasticity robust standard errors</a></li>
+<li class="chapter" data-level="4.5" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#serial-correlation"><i class="fa fa-check"></i><b>4.5</b> Serial correlation</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#classical-assumptions"><i class="fa fa-check"></i><b>6.1</b> Classical Assumptions</a></li>
-<li class="chapter" data-level="6.2" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#heteroscedasticity"><i class="fa fa-check"></i><b>6.2</b> Heteroscedasticity</a>
-<ul>
-<li class="chapter" data-level="6.2.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#consequences-of-heteroscedasticity-for-the-ols-estimator"><i class="fa fa-check"></i><b>6.2.1</b> Consequences of Heteroscedasticity for the OLS estimator</a></li>
+<li class="chapter" data-level="4.5.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#consequences-of-serial-correlation-for-the-ols-estimator"><i class="fa fa-check"></i><b>4.5.1</b> Consequences of Serial Correlation for the OLS estimator</a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#testing-for-hetroscedasticity-in-data"><i class="fa fa-check"></i><b>6.3</b> Testing for Hetroscedasticity in data</a>
+<li class="chapter" data-level="4.6" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#testing-for-serial-correlation-in-data"><i class="fa fa-check"></i><b>4.6</b> Testing for Serial Correlation in data</a>
 <ul>
-<li class="chapter" data-level="6.3.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#lm-test-for-linear-heteroscedasticity-bp-test"><i class="fa fa-check"></i><b>6.3.1</b> LM test for linear heteroscedasticity: BP test</a></li>
-<li class="chapter" data-level="6.3.2" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#lm-test-for-linear-heteroscedasticity-whites-test"><i class="fa fa-check"></i><b>6.3.2</b> LM test for linear heteroscedasticity: White’s test</a></li>
+<li class="chapter" data-level="4.6.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#durbin-watson-test-for-first-order-serial-correlation"><i class="fa fa-check"></i><b>4.6.1</b> Durbin-Watson test for first order serial correlation</a></li>
+<li class="chapter" data-level="4.6.2" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#breusch-godfrey-bg-test-for-serial-correlation"><i class="fa fa-check"></i><b>4.6.2</b> Breusch-Godfrey (BG) test for serial correlation</a></li>
 </ul></li>
-<li class="chapter" data-level="6.4" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#heteroscedasticity-robust-standard-errors"><i class="fa fa-check"></i><b>6.4</b> Heteroscedasticity robust standard errors</a></li>
-<li class="chapter" data-level="6.5" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#serial-correlation"><i class="fa fa-check"></i><b>6.5</b> Serial correlation</a>
+<li class="chapter" data-level="4.7" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#serial-correlation-robust-standard-errors"><i class="fa fa-check"></i><b>4.7</b> Serial correlation robust standard errors</a></li>
+<li class="chapter" data-level="" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#problems-3"><i class="fa fa-check"></i>Problems</a></li>
+<li class="chapter" data-level="" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#solutions-3"><i class="fa fa-check"></i>Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html"><i class="fa fa-check"></i><b>5</b> Instrumental Variable Estimation</a>
 <ul>
-<li class="chapter" data-level="6.5.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#consequences-of-serial-correlation-for-the-ols-estimator"><i class="fa fa-check"></i><b>6.5.1</b> Consequences of Serial Correlation for the OLS estimator</a></li>
-</ul></li>
-<li class="chapter" data-level="6.6" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#testing-for-serial-correlation-in-data"><i class="fa fa-check"></i><b>6.6</b> Testing for Serial Correlation in data</a>
+<li class="chapter" data-level="5.1" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#endogeneity-problem"><i class="fa fa-check"></i><b>5.1</b> Endogeneity Problem</a></li>
+<li class="chapter" data-level="5.2" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#omitted-variable-bias"><i class="fa fa-check"></i><b>5.2</b> Omitted variable bias</a>
 <ul>
-<li class="chapter" data-level="6.6.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#durbin-watson-test-for-first-order-serial-correlation"><i class="fa fa-check"></i><b>6.6.1</b> Durbin-Watson test for first order serial correlation</a></li>
-<li class="chapter" data-level="6.6.2" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#breusch-godfrey-bg-test-for-serial-correlation"><i class="fa fa-check"></i><b>6.6.2</b> Breusch-Godfrey (BG) test for serial correlation</a></li>
+<li class="chapter" data-level="5.2.1" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#consequence-of-omitted-variable-on-ols-estimator"><i class="fa fa-check"></i><b>5.2.1</b> Consequence of omitted variable on OLS estimator</a></li>
 </ul></li>
-<li class="chapter" data-level="6.7" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#serial-correlation-robust-standard-errors"><i class="fa fa-check"></i><b>6.7</b> Serial correlation robust standard errors</a></li>
-<li class="chapter" data-level="6.8" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#omitted-variable-bias"><i class="fa fa-check"></i><b>6.8</b> Omitted variable bias</a>
+<li class="chapter" data-level="5.3" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#iv-estimation"><i class="fa fa-check"></i><b>5.3</b> IV estimation</a></li>
+<li class="chapter" data-level="5.4" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#case-i-one-endogenous-regressor-and-one-instrument"><i class="fa fa-check"></i><b>5.4</b> Case I: One endogenous regressor and one instrument</a>
 <ul>
-<li class="chapter" data-level="6.8.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#consequence-of-omitted-variable-on-ols-estimator"><i class="fa fa-check"></i><b>6.8.1</b> Consequence of omitted variable on OLS estimator</a></li>
+<li class="chapter" data-level="5.4.1" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#example-1-return-to-schooling"><i class="fa fa-check"></i><b>5.4.1</b> Example 1: Return to Schooling</a></li>
+<li class="chapter" data-level="5.4.2" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#example-2-estimating-demand-for-butter"><i class="fa fa-check"></i><b>5.4.2</b> Example 2: Estimating Demand for Butter</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#problems-5"><i class="fa fa-check"></i>Problems</a></li>
-<li class="chapter" data-level="" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#solutions-5"><i class="fa fa-check"></i>Solutions</a></li>
+<li class="chapter" data-level="5.5" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#case-ii-one-endogenous-regressor-with-many-available-instruments"><i class="fa fa-check"></i><b>5.5</b> Case II: One endogenous regressor with many available instruments</a></li>
+<li class="chapter" data-level="5.6" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#iv-estimation-in-a-multiple-regression-framework"><i class="fa fa-check"></i><b>5.6</b> IV estimation in a multiple regression framework</a></li>
+<li class="chapter" data-level="5.7" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#strength-and-exogneity-of-the-instrument"><i class="fa fa-check"></i><b>5.7</b> Strength and Exogneity of the Instrument</a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#weak-instruments"><i class="fa fa-check"></i><b>5.7.1</b> Weak Instruments</a></li>
+<li class="chapter" data-level="5.7.2" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#exogeneity-of-instruments"><i class="fa fa-check"></i><b>5.7.2</b> Exogeneity of Instruments</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#problems-4"><i class="fa fa-check"></i>Problems</a></li>
+<li class="chapter" data-level="" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#solutions-4"><i class="fa fa-check"></i>Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="discrete-choice-model.html"><a href="discrete-choice-model.html"><i class="fa fa-check"></i><b>6</b> Discrete Choice Model</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="discrete-choice-model.html"><a href="discrete-choice-model.html#binary-dependent-variable"><i class="fa fa-check"></i><b>6.1</b> Binary Dependent Variable</a></li>
+<li class="chapter" data-level="" data-path="discrete-choice-model.html"><a href="discrete-choice-model.html#problems-5"><i class="fa fa-check"></i>Problems</a></li>
+<li class="chapter" data-level="" data-path="discrete-choice-model.html"><a href="discrete-choice-model.html#solutions-5"><i class="fa fa-check"></i>Solutions</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
-<li class="chapter" data-level="A" data-path="statistical-tables.html"><a href="statistical-tables.html"><i class="fa fa-check"></i><b>A</b> Statistical Tables</a>
+<li class="chapter" data-level="A" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html"><i class="fa fa-check"></i><b>A</b> Review of Differential Calculus and Optimization</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#derivative-of-a-single-variable-function"><i class="fa fa-check"></i><b>A.1</b> Derivative of a single variable function</a>
+<ul>
+<li class="chapter" data-level="A.1.1" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#rules-of-differentiation"><i class="fa fa-check"></i><b>A.1.1</b> Rules of Differentiation</a></li>
+</ul></li>
+<li class="chapter" data-level="A.2" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#second-derivative-and-non-linearity"><i class="fa fa-check"></i><b>A.2</b> Second derivative and non-linearity</a></li>
+<li class="chapter" data-level="A.3" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#partial-derivatives-multi-variable-functions"><i class="fa fa-check"></i><b>A.3</b> Partial derivatives: Multi-variable functions</a></li>
+<li class="chapter" data-level="A.4" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#optimization"><i class="fa fa-check"></i><b>A.4</b> Optimization</a></li>
+<li class="chapter" data-level="" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#problems-6"><i class="fa fa-check"></i>Problems</a></li>
+<li class="chapter" data-level="" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#solutions-6"><i class="fa fa-check"></i>Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html"><i class="fa fa-check"></i><b>B</b> Review of Probability and Statistics</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#probability"><i class="fa fa-check"></i><b>B.1</b> Probability</a></li>
+<li class="chapter" data-level="B.2" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#random-variable"><i class="fa fa-check"></i><b>B.2</b> Random Variable</a></li>
+<li class="chapter" data-level="B.3" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#probability-distribution"><i class="fa fa-check"></i><b>B.3</b> Probability distribution</a>
+<ul>
+<li class="chapter" data-level="B.3.1" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#probability-distribution-of-a-discrete-random-variable"><i class="fa fa-check"></i><b>B.3.1</b> Probability distribution of a discrete random variable</a></li>
+<li class="chapter" data-level="B.3.2" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#probability-distribution-of-a-continuous-random-variable"><i class="fa fa-check"></i><b>B.3.2</b> Probability distribution of a continuous random variable</a></li>
+</ul></li>
+<li class="chapter" data-level="B.4" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#moments-of-a-probability-distribution-function"><i class="fa fa-check"></i><b>B.4</b> Moments of a probability distribution function</a>
+<ul>
+<li class="chapter" data-level="B.4.1" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#first-moment-of-a-probability-distribution-expected-value"><i class="fa fa-check"></i><b>B.4.1</b> First moment of a probability distribution: Expected value</a></li>
+<li class="chapter" data-level="B.4.2" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#second-moment-of-the-distribution."><i class="fa fa-check"></i><b>B.4.2</b> Second moment of the distribution.</a></li>
+<li class="chapter" data-level="B.4.3" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#third-and-fourth-moments-skewness-and-kurtosis"><i class="fa fa-check"></i><b>B.4.3</b> Third and Fourth Moments: Skewness and Kurtosis</a></li>
+</ul></li>
+<li class="chapter" data-level="B.5" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#useful-probability-distributions"><i class="fa fa-check"></i><b>B.5</b> Useful probability distributions</a></li>
+<li class="chapter" data-level="B.6" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#joint-probability-distribution"><i class="fa fa-check"></i><b>B.6</b> Joint Probability Distribution</a></li>
+<li class="chapter" data-level="B.7" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#measures-of-statistical-association"><i class="fa fa-check"></i><b>B.7</b> Measures of statistical association</a>
+<ul>
+<li class="chapter" data-level="B.7.1" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#rules-of-expectation-and-variances"><i class="fa fa-check"></i><b>B.7.1</b> Rules of expectation and variances</a></li>
+</ul></li>
+<li class="chapter" data-level="B.8" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#sampling-and-estimation"><i class="fa fa-check"></i><b>B.8</b> Sampling and Estimation</a></li>
+<li class="chapter" data-level="B.9" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#hypothesis-testing"><i class="fa fa-check"></i><b>B.9</b> Hypothesis testing</a>
+<ul>
+<li class="chapter" data-level="B.9.1" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#testing-a-restriction-on-a-single-population-parameter"><i class="fa fa-check"></i><b>B.9.1</b> Testing a restriction on a single population parameter</a></li>
+<li class="chapter" data-level="B.9.2" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#testing-a-restriction-on-multiple-population-parameter"><i class="fa fa-check"></i><b>B.9.2</b> Testing a restriction on multiple population parameter</a></li>
+<li class="chapter" data-level="B.9.3" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#confidence-interval-and-hypothesis-testing"><i class="fa fa-check"></i><b>B.9.3</b> Confidence interval and Hypothesis testing</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#problems-7"><i class="fa fa-check"></i>Problems</a></li>
+<li class="chapter" data-level="" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#solutions-7"><i class="fa fa-check"></i>Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="statistical-tables.html"><a href="statistical-tables.html"><i class="fa fa-check"></i><b>C</b> Statistical Tables</a>
 <ul>
 <li class="chapter" data-level="" data-path="statistical-tables.html"><a href="statistical-tables.html#table-a-critical-values-for-the-t-distribution"><i class="fa fa-check"></i>Table A: Critical Values for the t-distribution</a></li>
 <li class="chapter" data-level="" data-path="statistical-tables.html"><a href="statistical-tables.html#table-b-critical-values-for-the-chi-square-distribution"><i class="fa fa-check"></i>Table B: Critical Values for the Chi-square distribution</a></li>
@@ -218,24 +247,24 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="review-of-probability-and-statistics" class="section level1 hasAnchor" number="2">
-<h1><span class="header-section-number">Chapter 2</span> Review of Probability and Statistics<a href="review-of-probability-and-statistics.html#review-of-probability-and-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="review-of-probability-and-statistics" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">B</span> Review of Probability and Statistics<a href="review-of-probability-and-statistics.html#review-of-probability-and-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Given that all students must have taken a course in statistics before enrolling for this class, it is assumed that everyone in the class is comfortable with concepts such probability, expected value, measures of central tendency, hypothesis testing etc. In this chapter, I will provide a brief review of some concepts that are most pertinent for Econometrics. I strongly encourage that you read your lecture notes for Statistics if you find it difficult to follow the material presented in this chapter.</p>
-<div id="probability" class="section level2 hasAnchor" number="2.1">
-<h2><span class="header-section-number">2.1</span> Probability<a href="review-of-probability-and-statistics.html#probability" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="probability" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">B.1</span> Probability<a href="review-of-probability-and-statistics.html#probability" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We begin with a brief review of probability theory. To define probability we first need to develop an understanding of what we mean by <em>experiment</em>, <em>sample space</em>, and <em>event</em> in statistics.</p>
 <div class="definition">
-<p><span id="def:unnamed-chunk-21" class="definition"><strong>Definition 2.1  (Experiment) </strong></span>An experiment is a process with an uncertain observable outcome. e.g. Toss of a coin can have two possible outcomes, heads or tails.</p>
+<p><span id="def:unnamed-chunk-66" class="definition"><strong>Definition B.1  (Experiment) </strong></span>An experiment is a process with an uncertain observable outcome. e.g. Toss of a coin can have two possible outcomes, heads or tails.</p>
 </div>
 <div class="definition">
-<p><span id="def:unnamed-chunk-22" class="definition"><strong>Definition 2.2  (Sample Space) </strong></span>The sample space is the set of all possible outcomes of an experiment. I will denote it by <span class="math inline">\(S\)</span>. If we toss a coin then <span class="math inline">\(S=\{Heads,Tails\}\)</span>.</p>
+<p><span id="def:unnamed-chunk-67" class="definition"><strong>Definition B.2  (Sample Space) </strong></span>The sample space is the set of all possible outcomes of an experiment. I will denote it by <span class="math inline">\(S\)</span>. If we toss a coin then <span class="math inline">\(S=\{Heads,Tails\}\)</span>.</p>
 </div>
 <div class="definition">
-<p><span id="def:unnamed-chunk-23" class="definition"><strong>Definition 2.3  (Event) </strong></span>An event is a subset of the sample space. I will denote it by <span class="math inline">\(E\)</span>. If we toss a coin and Heads shows up then <span class="math inline">\(E={Heads}\)</span>.</p>
+<p><span id="def:unnamed-chunk-68" class="definition"><strong>Definition B.3  (Event) </strong></span>An event is a subset of the sample space. I will denote it by <span class="math inline">\(E\)</span>. If we toss a coin and Heads shows up then <span class="math inline">\(E={Heads}\)</span>.</p>
 </div>
 <p>Now, we can define probability, which is a function that assigns a numerical value to the chance of an event occurring among all possible events in the sample space.</p>
 <div class="definition">
-<p><span id="def:unnamed-chunk-24" class="definition"><strong>Definition 2.4  (Probability) </strong></span>A function <span class="math inline">\(P\)</span> is called a probability function if:</p>
+<p><span id="def:unnamed-chunk-69" class="definition"><strong>Definition B.4  (Probability) </strong></span>A function <span class="math inline">\(P\)</span> is called a probability function if:</p>
 <ol style="list-style-type: decimal">
 <li>For any given event, <span class="math inline">\(E\)</span>, <span class="math inline">\(0 \leq P(E)&lt; \leq 1\)</span>.</li>
 <li>Suppose there are N possible events in S, i.e., <span class="math inline">\(S=\{E_1, E_2, E_3,..,E_N\}\)</span>. Then,
@@ -266,17 +295,17 @@
 P(E) = \frac{\text{Number of  outcomes  in  E}}{\text{Number  of  outcomes  in  S}}
 \end{align}\]</span></p>
 <div class="example">
-<p><span id="exm:unnamed-chunk-25" class="example"><strong>Example 2.1  </strong></span>Consider a fair six-sided dice. The probability of obtaining an odd number if this dice is rolled once is given by 0.5. To see this, note that the event here is obtaining an odd number when a dice is rolled. Hence, <span class="math inline">\(E=\{1,3,5\}\)</span>. Also, <span class="math inline">\(S=\{1,2,3,4,5,6\}\)</span>. Using this, we get:
+<p><span id="exm:unnamed-chunk-70" class="example"><strong>Example B.1  </strong></span>Consider a fair six-sided dice. The probability of obtaining an odd number if this dice is rolled once is given by 0.5. To see this, note that the event here is obtaining an odd number when a dice is rolled. Hence, <span class="math inline">\(E=\{1,3,5\}\)</span>. Also, <span class="math inline">\(S=\{1,2,3,4,5,6\}\)</span>. Using this, we get:
 <span class="math display">\[\begin{equation}
 P(E)=\frac{3}{6}=0.5
 \end{equation}\]</span></p>
 </div>
 </div>
-<div id="random-variable" class="section level2 hasAnchor" number="2.2">
-<h2><span class="header-section-number">2.2</span> Random Variable<a href="review-of-probability-and-statistics.html#random-variable" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="random-variable" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">B.2</span> Random Variable<a href="review-of-probability-and-statistics.html#random-variable" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>One of the most important applications of statistics is to resolve the randomness that is inherent in most economic choices. For example, the outcome of your college major is a random variable with many possible values. Most economic variables can be thought of as <strong>random variables</strong> that have many possible values which are unknown until they are realized. We will begin by formally defining a random variable.</p>
 <div class="definition">
-<p><span id="def:unnamed-chunk-26" class="definition"><strong>Definition 2.5  (Random Variable) </strong></span>A random variable is a numerical representation of outcomes of an experiment. For example, in the example of a toss of a coin, suppose you win $10 if heads shows and you lose $5 if tails shows. In this case, tossing the coin was the experiment, and winnings from this game is the random variable with two possible values: $10 and -$5.</p>
+<p><span id="def:unnamed-chunk-71" class="definition"><strong>Definition B.5  (Random Variable) </strong></span>A random variable is a numerical representation of outcomes of an experiment. For example, in the example of a toss of a coin, suppose you win $10 if heads shows and you lose $5 if tails shows. In this case, tossing the coin was the experiment, and winnings from this game is the random variable with two possible values: $10 and -$5.</p>
 </div>
 <p>There are two types of random variables.</p>
 <ol style="list-style-type: decimal">
@@ -284,11 +313,11 @@ P(E)=\frac{3}{6}=0.5
 <li><p>Continuous random variable: can take any value on the number line. e.g. GDP in the last quarter of 2019.</p></li>
 </ol>
 </div>
-<div id="probability-distribution" class="section level2 hasAnchor" number="2.3">
-<h2><span class="header-section-number">2.3</span> Probability distribution<a href="review-of-probability-and-statistics.html#probability-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="probability-distribution" class="section level2 hasAnchor" number="8.3">
+<h2><span class="header-section-number">B.3</span> Probability distribution<a href="review-of-probability-and-statistics.html#probability-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>By definition a random variable can take many <em>possible values</em>. In statistics a function that provides the probabilities of different realizations of a random variable is called its <strong>probability distribution</strong>.</p>
-<div id="probability-distribution-of-a-discrete-random-variable" class="section level3 hasAnchor" number="2.3.1">
-<h3><span class="header-section-number">2.3.1</span> Probability distribution of a discrete random variable<a href="review-of-probability-and-statistics.html#probability-distribution-of-a-discrete-random-variable" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="probability-distribution-of-a-discrete-random-variable" class="section level3 hasAnchor" number="8.3.1">
+<h3><span class="header-section-number">B.3.1</span> Probability distribution of a discrete random variable<a href="review-of-probability-and-statistics.html#probability-distribution-of-a-discrete-random-variable" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>For a discrete random variable the probability distribution is simply the list of all possible values this variable can and their corresponding probabilities. Let <span class="math inline">\(X\)</span> be a discrete random variable with <span class="math inline">\(n\)</span> possible values give by <span class="math inline">\(\{x_1,x_2,x_3,..,x_n\}\)</span>. Let <span class="math inline">\(p_i\)</span> denotes that probability that <span class="math inline">\(X=x_i\)</span>. Then, the probability distribution function of this random variable is given by:</p>
 <table>
 <thead>
@@ -321,7 +350,7 @@ P(E)=\frac{3}{6}=0.5
 </tbody>
 </table>
 <div class="example">
-<p><span id="exm:unnamed-chunk-27" class="example"><strong>Example 2.2  (Grade Distribution) </strong></span>A typical grade distribution is an example of a discrete random variable. Consider the following grade distribution:</p>
+<p><span id="exm:unnamed-chunk-72" class="example"><strong>Example B.2  (Grade Distribution) </strong></span>A typical grade distribution is an example of a discrete random variable. Consider the following grade distribution:</p>
 <table>
 <thead>
 <tr class="header">
@@ -354,10 +383,10 @@ P(E)=\frac{3}{6}=0.5
 </table>
 </div>
 <p>Note that every GPA point corresponds to a letter grade. From the perspective of the student, <span class="math inline">\(X\)</span> is the random variable that is his letter grade, and the above distribution gives the probability of obtaining a particular letter grade. We can plot this simple probability distribution as follows:</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-28"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-28-1.png" alt="Probability Distribution of Letter Grades" width="672" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-73"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-73-1.png" alt="Probability Distribution of Letter Grades" width="672" />
 <p class="caption">
-Figure 2.1: Probability Distribution of Letter Grades
+Figure B.1: Probability Distribution of Letter Grades
 </p>
 </div>
 <p>We can use the probability distribution of a discrete random variable in two different ways.</p>
@@ -409,7 +438,7 @@ Figure 2.1: Probability Distribution of Letter Grades
 </table>
 <p>So for example, we can infer that the probability of obtaining the letter grade of C or lower i.e, <span class="math inline">\(P(X\leq 2)\)</span> is 0.7 or 70% which is obtained by adding the probabilities of obtaining letter grades of C, D, and F, respectively.</p>
 <div class="example">
-<p><span id="exm:unnamed-chunk-29" class="example"><strong>Example 2.3  (Bernoulli Random Variable) </strong></span>When a random variable is binary then we call it a <strong>Bernoulli</strong> random variable and its probability distrubition is called <strong>Bernoulli</strong> distribution. Consider a random variable that can only take two values, say, <span class="math inline">\(0\)</span> or <span class="math inline">\(1\)</span>. It is common to think of these two values as coding a set criterion with <span class="math inline">\(1\)</span> typically assigned if the criterion is met and <span class="math inline">\(0\)</span> is assigned for failing to meet the criterion. For example, <span class="math inline">\(X\)</span> could be whether you will get a job right after graduation. If you do then <span class="math inline">\(X=1\)</span> and if you do not then <span class="math inline">\(X=0\)</span>. Let <span class="math inline">\(p\)</span> denotes the probability that you will get a job. Then, the <span class="math inline">\(p.m.f.\)</span> of the Bernoulli distribution is given by:</p>
+<p><span id="exm:unnamed-chunk-74" class="example"><strong>Example B.3  (Bernoulli Random Variable) </strong></span>When a random variable is binary then we call it a <strong>Bernoulli</strong> random variable and its probability distrubition is called <strong>Bernoulli</strong> distribution. Consider a random variable that can only take two values, say, <span class="math inline">\(0\)</span> or <span class="math inline">\(1\)</span>. It is common to think of these two values as coding a set criterion with <span class="math inline">\(1\)</span> typically assigned if the criterion is met and <span class="math inline">\(0\)</span> is assigned for failing to meet the criterion. For example, <span class="math inline">\(X\)</span> could be whether you will get a job right after graduation. If you do then <span class="math inline">\(X=1\)</span> and if you do not then <span class="math inline">\(X=0\)</span>. Let <span class="math inline">\(p\)</span> denotes the probability that you will get a job. Then, the <span class="math inline">\(p.m.f.\)</span> of the Bernoulli distribution is given by:</p>
 <p><span class="math display">\[f(x)=\begin{cases}
     p &amp; if \ X=1\\
     1-p &amp; if \ X=0
@@ -422,8 +451,8 @@ Figure 2.1: Probability Distribution of Letter Grades
      \end{cases}\]</span></p>
 </div>
 </div>
-<div id="probability-distribution-of-a-continuous-random-variable" class="section level3 hasAnchor" number="2.3.2">
-<h3><span class="header-section-number">2.3.2</span> Probability distribution of a continuous random variable<a href="review-of-probability-and-statistics.html#probability-distribution-of-a-continuous-random-variable" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="probability-distribution-of-a-continuous-random-variable" class="section level3 hasAnchor" number="8.3.2">
+<h3><span class="header-section-number">B.3.2</span> Probability distribution of a continuous random variable<a href="review-of-probability-and-statistics.html#probability-distribution-of-a-continuous-random-variable" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In economics a large majority of variables of interest in theory are continuous random variables. For example, the change in the price of Apple stock between two time periods is the return on Apple stock. If you are a trader in the NYSE then the stock return on Apple is a continuous random variable that can take any value on an interval. In such a case we cannot obtain the probability of the random variable taking an exact value. But we can only compute the probability that this random variable will fall in a given interval. So at best we can determine the probability that GDP growth for the US next quarter will be between say 1/% and 2%. This probability is obtained by computing the area under the <strong>probability density function (p.d.f)</strong>. Let <span class="math inline">\(X\)</span> denote a continuous random variable and <span class="math inline">\(f(x)\)</span> denotes the p.d.f. Then,</p>
 <ol style="list-style-type: decimal">
 <li>The probability that <span class="math inline">\(X\)</span> takes value over the interval <span class="math inline">\(\{a,b\}\)</span> is given by:</li>
@@ -434,34 +463,34 @@ Figure 2.1: Probability Distribution of Letter Grades
 </ol>
 <p><span class="math display">\[F(x)=P(X\leq x)=\int_{-\infty}^xf(x) \ dx\]</span></p>
 <p>Below I plot the empirical c.d.f for Apple’s stock return. Let <span class="math inline">\(X\)</span> denotes this stock return. From Fig 3.2 we can infer that <span class="math inline">\(P(X\leq 0)=0.47\)</span> and <span class="math inline">\(P(X\leq 3)=0.95\)</span>.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-30"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-30-1.png" alt="Empirical c.d.f of daily Apple Stock Return (2007-2019)" width="672" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-75"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-75-1.png" alt="Empirical c.d.f of daily Apple Stock Return (2007-2019)" width="672" />
 <p class="caption">
-Figure 2.2: Empirical c.d.f of daily Apple Stock Return (2007-2019)
+Figure B.2: Empirical c.d.f of daily Apple Stock Return (2007-2019)
 </p>
 </div>
 <p>Figure 3.3 below presents the <em>p.d.f</em> of the daily stock return that corresponds to the <em>c.d.f</em> plotted in Figure 3.2. Using this we can work the probability of stock returns falling in any given interval. For instance, the probability that Apple stock return will fall between 0 and 3% is the area under the p.d.f. between these two values. Figure 3.3 highlights this area and we can see that this probability is equal to 0.47.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-31"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-31-1.png" alt="Empirical p.d.f of daily Apple Stock Return (2007-2019)" width="672" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-76"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-76-1.png" alt="Empirical p.d.f of daily Apple Stock Return (2007-2019)" width="672" />
 <p class="caption">
-Figure 2.3: Empirical p.d.f of daily Apple Stock Return (2007-2019)
+Figure B.3: Empirical p.d.f of daily Apple Stock Return (2007-2019)
 </p>
 </div>
 </div>
 </div>
-<div id="moments-of-a-probability-distribution-function" class="section level2 hasAnchor" number="2.4">
-<h2><span class="header-section-number">2.4</span> Moments of a probability distribution function<a href="review-of-probability-and-statistics.html#moments-of-a-probability-distribution-function" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="moments-of-a-probability-distribution-function" class="section level2 hasAnchor" number="8.4">
+<h2><span class="header-section-number">B.4</span> Moments of a probability distribution function<a href="review-of-probability-and-statistics.html#moments-of-a-probability-distribution-function" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The information contained in a probability distribution can be meaningfully summarized into measures that are called <strong>moments</strong> of that distribution. There are three moments we often use in economics:</p>
 <ol style="list-style-type: decimal">
 <li><p>Center of the distribution: this is first moment of a given probability distribution and it gives us the most likely value of the random variable. It can be measured by mean, median or mode. We will use mean as a measure of the center of the distribution.</p></li>
 <li><p>Width of the distribution: this is the second moment and it measures the average distance from mean under a given probability distribution. We will use standard deviation as a measure of the width of the distribution.</p></li>
 <li><p>Shape of the distribution: this feature relates to role played by <strong>tail events</strong> , i.e., events that have very low probability of happening under a given probability distribution. Two relevant measures are Skewness and Kurtosis</p></li>
 </ol>
-<div id="first-moment-of-a-probability-distribution-expected-value" class="section level3 hasAnchor" number="2.4.1">
-<h3><span class="header-section-number">2.4.1</span> First moment of a probability distribution: Expected value<a href="review-of-probability-and-statistics.html#first-moment-of-a-probability-distribution-expected-value" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="first-moment-of-a-probability-distribution-expected-value" class="section level3 hasAnchor" number="8.4.1">
+<h3><span class="header-section-number">B.4.1</span> First moment of a probability distribution: Expected value<a href="review-of-probability-and-statistics.html#first-moment-of-a-probability-distribution-expected-value" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>What is the most likely value of a random variable? To answer that we often compute <strong>expected value</strong> of the random variable which gives us the center (or peak) of the underlying probability distribution. We will use <strong>E</strong> to denote expected value. So <span class="math inline">\(E(X)\)</span> is the expected value of a random variable and we will use <span class="math inline">\(\mu_X\)</span> to denote the mean or average value of <span class="math inline">\(X\)</span>.</p>
 <div class="definition">
-<p><span id="def:unnamed-chunk-32" class="definition"><strong>Definition 2.6  (Expected Value) </strong></span>Consider a discrete random variable <span class="math inline">\(X\)</span> that can take <span class="math inline">\(n\)</span> possible values and has the following probabilty distrubution:</p>
+<p><span id="def:unnamed-chunk-77" class="definition"><strong>Definition B.6  (Expected Value) </strong></span>Consider a discrete random variable <span class="math inline">\(X\)</span> that can take <span class="math inline">\(n\)</span> possible values and has the following probabilty distrubution:</p>
 <table>
 <thead>
 <tr class="header">
@@ -496,7 +525,7 @@ Figure 2.3: Empirical p.d.f of daily Apple Stock Return (2007-2019)
 <p><span class="math display">\[E(X)= x_1 p_1 + x_2 p_2+...+ x_n p_n = \sum_{i=1}^n x_ip_i\]</span></p>
 </div>
 <p>Hence, expected value is a probability-weighted average of all possible values of a random variable.
-::: {.example #unnamed-chunk-33}
+::: {.example #unnamed-chunk-78}
 Suppose you toss a fair coin and receive $10 if tails shows and receive 0 if heads shows. What is the expected value of the winnings from a single toss of this coin?
 :::</p>
 <div class="solution">
@@ -504,7 +533,7 @@ Suppose you toss a fair coin and receive $10 if tails shows and receive 0 if hea
 <p><span class="math display">\[E(X) = x_1 p_1+x_2 p_2=10\times 0.5 + 0\times 0.5=\$5\]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-35" class="example"><strong>Example 2.4  </strong></span>Suppose you can invest $10,000 in a mutual fund after 1 year can earn a return of 10%
+<p><span id="exm:unnamed-chunk-80" class="example"><strong>Example B.4  </strong></span>Suppose you can invest $10,000 in a mutual fund after 1 year can earn a return of 10%
 with a probability of 0.1 or a return of 2% with a probability of 0.5 or a loss of 4% with a probability of 0.4. What is the expected return of investing $10,000 in this mutual fund?</p>
 </div>
 <div class="solution">
@@ -513,25 +542,25 @@ with a probability of 0.1 or a return of 2% with a probability of 0.5 or a loss 
 </div>
 <p>As mentioned earlier, the first moment of the probability distribution (i.e., the expected value) gives us the most likely value of the random variable. How useful is this knowledge will depend on how far any realization of the random variable can be from its expected value. The average distance from the average measures the width of the distribution. Wider the distribution, less useful is the knowledge of the expected value.</p>
 </div>
-<div id="second-moment-of-the-distribution." class="section level3 hasAnchor" number="2.4.2">
-<h3><span class="header-section-number">2.4.2</span> Second moment of the distribution.<a href="review-of-probability-and-statistics.html#second-moment-of-the-distribution." class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="second-moment-of-the-distribution." class="section level3 hasAnchor" number="8.4.2">
+<h3><span class="header-section-number">B.4.2</span> Second moment of the distribution.<a href="review-of-probability-and-statistics.html#second-moment-of-the-distribution." class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To determine the width or <em>dispersion</em> of a probability distribution we use <strong>variance</strong> or <strong>standard deviation</strong>. The variance is the expected value of the squared deviation of each realization of the random variable from its average. We will denote the variance by <span class="math inline">\(Var(X)\)</span> or <span class="math inline">\(\sigma^2_X\)</span>:</p>
 <p><span class="math display">\[Var(x)= \sigma^2_X=E[(X-\mu_x)^2]= (x_1-\mu_X)^2 \times p_1+(x_2-\mu_X)^2 \times p_2+...+ (x_n-\mu_X)^2 \times p_n\]</span></p>
 <p>Or using the summation sign,</p>
 <p><span class="math display">\[Var(x)=\sum_{i=1}^n (x_i-\mu_x)^2p_i\]</span></p>
 <p>The standard deviation is simply the square root of the variance and is in the same units as the random variable. This allows easy comparison of the width and the center of the distribution. We will denote standard deviation by <span class="math inline">\(\sigma_X\)</span>.</p>
 <div class="example">
-<p><span id="exm:unnamed-chunk-37" class="example"><strong>Example 2.5  </strong></span>Using the mutual fund example, the variance will measure <strong>riskiness</strong> of the investment. It is given by:</p>
+<p><span id="exm:unnamed-chunk-82" class="example"><strong>Example B.5  </strong></span>Using the mutual fund example, the variance will measure <strong>riskiness</strong> of the investment. It is given by:</p>
 <p><span class="math display">\[Var(X)=(1000-40)^2\times 0.1 + (200-40)^2 \times 0.5 + (-400-40)^2 \times 0.4=182400\]</span></p>
 <p>Because variance is in square units and hence hard to interpret, we can easily compute the standard deviation as the square root of the variance:</p>
 <p><span class="math display">\[\sigma_X=\sqrt{182400}=\$427.08\]</span></p>
 <p>Hence, even though the average return from this investment is $40, you can be $427 above or below this average.</p>
 </div>
 <p>How much can we say about a random variable if we only know its mean and the standard deviation? That depends on the type of distribution the random variable follows. One of the most commonly used distribution in statistic is the <strong>Normal Distribution</strong> or the <strong>Gaussian Distribution</strong>. A random variable that follows normal distribution has a bell-shaped probability distribution with a given mean and standard deviation. One of the most useful features of such a distribution is that knowledge of the first two moments alone is sufficient to characterize the entire probability distribution. Figure 3.4 below shows a normal distribution with a mean of 5 and a standard deviation of 2.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-38"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-38-1.png" alt="Normal distribution with mean=5 and s.d.=2" width="672" />
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-83"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-83-1.png" alt="Normal distribution with mean=5 and s.d.=2" width="672" />
 <p class="caption">
-Figure 2.4: Normal distribution with mean=5 and s.d.=2
+Figure B.4: Normal distribution with mean=5 and s.d.=2
 </p>
 </div>
 <p>Key features of the normal distribution that are very useful for us:</p>
@@ -544,8 +573,8 @@ Figure 2.4: Normal distribution with mean=5 and s.d.=2
 <li><p>Central limit theorem: The distribution of sample means calculated from repeated random sampling from a given population approaches a normal distribution as the sample size approaches <span class="math inline">\(\infty\)</span>.</p></li>
 </ol>
 </div>
-<div id="third-and-fourth-moments-skewness-and-kurtosis" class="section level3 hasAnchor" number="2.4.3">
-<h3><span class="header-section-number">2.4.3</span> Third and Fourth Moments: Skewness and Kurtosis<a href="review-of-probability-and-statistics.html#third-and-fourth-moments-skewness-and-kurtosis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="third-and-fourth-moments-skewness-and-kurtosis" class="section level3 hasAnchor" number="8.4.3">
+<h3><span class="header-section-number">B.4.3</span> Third and Fourth Moments: Skewness and Kurtosis<a href="review-of-probability-and-statistics.html#third-and-fourth-moments-skewness-and-kurtosis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In many cases, the distribution of a random variable is not normal and in such cases higher moments provide useful information about the shape of such probability distribution. The shape of the probability distribution plays an important role in many economic and financial applications. There are two measures of shape that are of interest:</p>
 <ol style="list-style-type: decimal">
 <li><strong>Skewness</strong>: this is the third moment of the distribution and it measures how skewed a distribution is. The formula for skewness is given by:</li>
@@ -557,10 +586,10 @@ Figure 2.4: Normal distribution with mean=5 and s.d.=2
 <li><p>A negatively skewed distribution will have a long left tail implying lower probability of very small values relative to the mean.</p></li>
 </ol>
 <p>Figure 3.5 shows three probability distributions. For the left-skewed distribution, a longer left tail indicates low probability of obtaining values below the mean. Similarly, for the right-skewed distribution, a longer right tail indicates low probability of obtaining a value above the mean. For a normal distribution, the probability of obtaining a value above the mean is the same as the probability of obtaining a value below the mean.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-39"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-39-1.png" alt="Skewness of a Probablity distribution" width="384" />
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-84"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-84-1.png" alt="Skewness of a Probablity distribution" width="384" />
 <p class="caption">
-Figure 2.5: Skewness of a Probablity distribution
+Figure B.5: Skewness of a Probablity distribution
 </p>
 </div>
 <ol start="2" style="list-style-type: decimal">
@@ -572,17 +601,17 @@ Figure 2.5: Skewness of a Probablity distribution
 <li><p>Leptokurtic distribution: has a Kurtosis value greater than three. Such a distribution will have fat tails compared to a normal distribution indicating greater area under the tails.</p></li>
 <li><p>Platykurtic distribution: has a Kurtosis value less than 3. Such a distribution will have thin tails compared to a normal distribution.</p></li>
 </ol>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-40"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-40-1.png" alt="Kurtosis of a Probablity distribution" width="672" />
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-85"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-85-1.png" alt="Kurtosis of a Probablity distribution" width="672" />
 <p class="caption">
-Figure 2.6: Kurtosis of a Probablity distribution
+Figure B.6: Kurtosis of a Probablity distribution
 </p>
 </div>
 <p>Fig 3.6 shows three types of distribution based on their Kurtosis. The leptokurtic distribution has a Kurtosis value of greater than 3 and is more <strong>heavy-tailed</strong> or <strong>peaked</strong> than a normal distribution.</p>
 </div>
 </div>
-<div id="useful-probability-distributions" class="section level2 hasAnchor" number="2.5">
-<h2><span class="header-section-number">2.5</span> Useful probability distributions<a href="review-of-probability-and-statistics.html#useful-probability-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="useful-probability-distributions" class="section level2 hasAnchor" number="8.5">
+<h2><span class="header-section-number">B.5</span> Useful probability distributions<a href="review-of-probability-and-statistics.html#useful-probability-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Using the normal distribution we can derive a few useful probability distributions that are utilized in hypothesis testing.</p>
 <ol style="list-style-type: decimal">
 <li><p>Standard Normal Distribution: A random variable that follows normal distribution with a mean of 0 and standard deviation of 1.</p></li>
@@ -590,19 +619,19 @@ Figure 2.6: Kurtosis of a Probablity distribution
 <li><p>F-distribution: is obtained by taking a ratio of two chi-square distribution. For example, if <span class="math inline">\(X\)</span> is Chi-square with <span class="math inline">\(v_1\)</span> degrees of freedom and <span class="math inline">\(Y\)</span> is a Chi-square with <span class="math inline">\(v_2\)</span> degrees of freedom, then <span class="math inline">\(\displaystyle{Z=\frac{X}{Y}}\)</span> follows F-distribution with <span class="math inline">\(v_1\)</span> and <span class="math inline">\(v_2\)</span> degrees of freedom.</p></li>
 <li><p>t-distribution: Student’s t-distribution is obtained by taking a ratio of a standard normal and the square root of a Chi-square random variable. For example, if <span class="math inline">\(X\)</span> is a standard normal and <span class="math inline">\(Y\)</span> is a Chi-square with <span class="math inline">\(m\)</span> degrees of freedom, then <span class="math inline">\(Z=\displaystyle\frac{X}{\sqrt{Y/m}}\)</span> follows t-distribution with <span class="math inline">\(m\)</span> degrees of freedom. t-distribution has fatter tails when compared to normal.</p></li>
 </ol>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-41-1.png" width="480" style="display: block; margin: auto;" />
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-42-1.png" width="480" style="display: block; margin: auto;" /></p>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-43-1.png" width="480" style="display: block; margin: auto;" /></p>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-44-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-86-1.png" width="480" style="display: block; margin: auto;" />
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-87-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-88-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-89-1.png" width="480" style="display: block; margin: auto;" /></p>
 </div>
-<div id="joint-probability-distribution" class="section level2 hasAnchor" number="2.6">
-<h2><span class="header-section-number">2.6</span> Joint Probability Distribution<a href="review-of-probability-and-statistics.html#joint-probability-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="joint-probability-distribution" class="section level2 hasAnchor" number="8.6">
+<h2><span class="header-section-number">B.6</span> Joint Probability Distribution<a href="review-of-probability-and-statistics.html#joint-probability-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In economics, often we are interested in the relationship between a pair of variables. For example, how does interest rate affects consumption spending? Or how does education affect wages? In order to statistically answer such questions, we need to understand the meaning of statistical relationship between two or more variables. One way to move forward is to assume that both variables jointly follow some given probability distribution which can be used to infer their relationship with one another.</p>
 <p>For simplicity, I will use the discrete random variables case but the concepts covered can be easily extended for the continuous random variables case.</p>
 <p>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> denote two random variables of interest, both from a common probability distribution denoted by <span class="math inline">\(F(x,y)\)</span>. This function gives us the probability that <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> simultaneously take on certain values:</p>
 <p><span class="math display">\[F(x,y)=P(X=x, Y=y)\]</span></p>
 <div class="example">
-<p><span id="exm:unnamed-chunk-45" class="example"><strong>Example 2.6  </strong></span>Suppose you are an investment banker and you are considering investment into two assets: a stock listed in NYSE (<span class="math inline">\(X\)</span>) and a cotton futures (<span class="math inline">\(Y\)</span>) listed in Chicago Mercantile Exchange. Suppose <span class="math inline">\(X\)</span> can take three possible values: 2/%, 3/%, or 4/%. Similarly <span class="math inline">\(Y\)</span> can take three possible values given by 6/%,4/%, or 1/%. The value will depend on the state of the economy. Suppose there are three possiblities for the economy next year: boom, expansion, and status quo. The joint probability distribution for <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> is given by:</p>
+<p><span id="exm:unnamed-chunk-90" class="example"><strong>Example B.6  </strong></span>Suppose you are an investment banker and you are considering investment into two assets: a stock listed in NYSE (<span class="math inline">\(X\)</span>) and a cotton futures (<span class="math inline">\(Y\)</span>) listed in Chicago Mercantile Exchange. Suppose <span class="math inline">\(X\)</span> can take three possible values: 2/%, 3/%, or 4/%. Similarly <span class="math inline">\(Y\)</span> can take three possible values given by 6/%,4/%, or 1/%. The value will depend on the state of the economy. Suppose there are three possiblities for the economy next year: boom, expansion, and status quo. The joint probability distribution for <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> is given by:</p>
 <table>
 <thead>
 <tr class="header">
@@ -682,8 +711,8 @@ Var(Y|X) = (y_1 -E(Y|X))^2 \times P(Y=y_1|X=x) + (y_2 -E(Y|X))^2\times P(Y=y_2|X
 + (y_n -E(Y|X))^2 \times P(Y=y_n|X=x)
 \end{align}\]</span></p>
 </div>
-<div id="measures-of-statistical-association" class="section level2 hasAnchor" number="2.7">
-<h2><span class="header-section-number">2.7</span> Measures of statistical association<a href="review-of-probability-and-statistics.html#measures-of-statistical-association" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="measures-of-statistical-association" class="section level2 hasAnchor" number="8.7">
+<h2><span class="header-section-number">B.7</span> Measures of statistical association<a href="review-of-probability-and-statistics.html#measures-of-statistical-association" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We can now define two measures of statistical relationship. The first one is called <strong>Covariance</strong> and the second is <strong>Correlation</strong>.</p>
 <ol style="list-style-type: decimal">
 <li>Covariance is a measure of association that captures how deviations from mean of one random variable are related to deviations of another random variable to its respective mean. For example, if your hours of study are above average, then what is your test score relative to average? Formally,</li>
@@ -696,8 +725,8 @@ Var(Y|X) = (y_1 -E(Y|X))^2 \times P(Y=y_1|X=x) + (y_2 -E(Y|X))^2\times P(Y=y_2|X
 </ol>
 <p><span class="math display">\[Cor(X,Y) = \frac{Cov(X,Y)}{\sigma_X \times \sigma_Y }\]</span></p>
 <p>This number is unit free and falls between <span class="math inline">\(-1\)</span> and <span class="math inline">\(1\)</span>. The sign of the correlation tell us about the direction of the relationship whereas the value of the correlation gives information about the strength of the relationship. A higher absolute value indicates stronger statistical relationship between two variables.</p>
-<div id="rules-of-expectation-and-variances" class="section level3 hasAnchor" number="2.7.1">
-<h3><span class="header-section-number">2.7.1</span> Rules of expectation and variances<a href="review-of-probability-and-statistics.html#rules-of-expectation-and-variances" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="rules-of-expectation-and-variances" class="section level3 hasAnchor" number="8.7.1">
+<h3><span class="header-section-number">B.7.1</span> Rules of expectation and variances<a href="review-of-probability-and-statistics.html#rules-of-expectation-and-variances" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Here are some useful rules that are useful for our purpose:</p>
 <ol style="list-style-type: decimal">
 <li><p><span class="math inline">\(E(\beta)=\beta\)</span> and <span class="math inline">\(Var(\beta)=0\)</span> where <span class="math inline">\(\beta\)</span> denotes a constant.</p></li>
@@ -710,8 +739,8 @@ Var(Y|X) = (y_1 -E(Y|X))^2 \times P(Y=y_1|X=x) + (y_2 -E(Y|X))^2\times P(Y=y_2|X
 </ol>
 </div>
 </div>
-<div id="sampling-and-estimation" class="section level2 hasAnchor" number="2.8">
-<h2><span class="header-section-number">2.8</span> Sampling and Estimation<a href="review-of-probability-and-statistics.html#sampling-and-estimation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="sampling-and-estimation" class="section level2 hasAnchor" number="8.8">
+<h2><span class="header-section-number">B.8</span> Sampling and Estimation<a href="review-of-probability-and-statistics.html#sampling-and-estimation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>An important distinction in statistics is between the population of interest and a sample of this population that we usually work with. Due to feasibility of data collection and cost both in terms of time and money, most real world analysis is based on a sample that is a subset of the population of interest. For example, to study how business major affects starting salary, the relevant population is all business majors from a graduating class in the U.S. in a given year. In practice however, we will most likely use a sample of this population, for example all business majors from JMU. How useful an analysis based on a sample is depends on how representative the chosen sample is of the entire population.</p>
 <p>For our purpose, lack of data on population means that the true probability distribution of a random variable is unknown and hence the true values of mean, variance, Covariance etc are also unknown to us. Statistics provides a way of using samples to <strong>estimate</strong> relevant moments of the probability distribution. The approach we take is as follows:</p>
 <ol style="list-style-type: decimal">
@@ -747,7 +776,7 @@ Var(Y|X) = (y_1 -E(Y|X))^2 \times P(Y=y_1|X=x) + (y_2 -E(Y|X))^2\times P(Y=y_2|X
 <li>Efficiency: Unbiasedness ensure that the average of sample estimator is equal to the true population parameter. But if the standard deviation of the sample estimator is too high, then knowing that the average is close to the true value is not very useful. In statistics, we call such an estimator unbiased but <strong>imprecise or inefficient</strong>. To be efficient the standard deviation (or variance) of the sample estimator should be as small as possible. Between two unbiased estimators, a more efficient estimator will have a lower variance.</li>
 </ol>
 <div class="example">
-<p><span id="exm:unnamed-chunk-46" class="example"><strong>Example 2.7  </strong></span>Suppose we have a random sample with <span class="math inline">\(n\)</span> observations: <span class="math inline">\(\{x_1,x_2,...,x_n\}\)</span> drawn from a population with a mean of <span class="math inline">\(\mu_x\)</span>. Sample mean is defined as:</p>
+<p><span id="exm:unnamed-chunk-91" class="example"><strong>Example B.7  </strong></span>Suppose we have a random sample with <span class="math inline">\(n\)</span> observations: <span class="math inline">\(\{x_1,x_2,...,x_n\}\)</span> drawn from a population with a mean of <span class="math inline">\(\mu_x\)</span>. Sample mean is defined as:</p>
 <p><span class="math display">\[\overline{X}=\frac{\sum_{i=1}^N x_i}{N}\]</span></p>
 <p>The expected value of the sample mean is given by:</p>
 <p><span class="math display">\[E(\overline{X})=E\left(\frac{\sum_{i=1}^N x_i}{N}\right)\]</span></p>
@@ -758,15 +787,15 @@ Var(Y|X) = (y_1 -E(Y|X))^2 \times P(Y=y_1|X=x) + (y_2 -E(Y|X))^2\times P(Y=y_2|X
 <p>As a result the sample mean is an unbiased estimator of the population mean. However, there are many other possible unbiased estimators of the population mean. We can show that among all other unbiased estimator of the population mean, sample mean has the lowest variance and hence is most efficient estimator as well.</p>
 </div>
 <div class="definition">
-<p><span id="def:unnamed-chunk-47" class="definition"><strong>Definition 2.7  (Best Unbiased Estimator (BUE)) </strong></span>Let <span class="math inline">\(\theta\)</span> denote a population parameter of interest. Then, an sample estimator denoted by <span class="math inline">\(\hat{\theta}\)</span> is the of <span class="math inline">\(\theta\)</span> if the following two conditions are satisfied:</p>
+<p><span id="def:unnamed-chunk-92" class="definition"><strong>Definition B.7  (Best Unbiased Estimator (BUE)) </strong></span>Let <span class="math inline">\(\theta\)</span> denote a population parameter of interest. Then, an sample estimator denoted by <span class="math inline">\(\hat{\theta}\)</span> is the of <span class="math inline">\(\theta\)</span> if the following two conditions are satisfied:</p>
 <ol style="list-style-type: decimal">
 <li><p><span class="math inline">\(\hat{theta}\)</span> is an unbiased estimator, i.e., <span class="math inline">\(E(\hat{\theta})=\theta\)</span>. In this case the sampling distribution is centered at the true value of the parameter.</p></li>
 <li><p><span class="math inline">\(\hat{\theta}\)</span> is an efficient estimator, i.e., <span class="math inline">\(Var(\hat{\theta})&lt; Var(\hat{\theta_A})\)</span> for any other unbiased estimator denoted by <span class="math inline">\(\hat{\theta_A}\)</span>. In this case the width of the sampling distribution around the mean is smallest possible.</p></li>
 </ol>
 </div>
 </div>
-<div id="hypothesis-testing" class="section level2 hasAnchor" number="2.9">
-<h2><span class="header-section-number">2.9</span> Hypothesis testing<a href="review-of-probability-and-statistics.html#hypothesis-testing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="hypothesis-testing" class="section level2 hasAnchor" number="8.9">
+<h2><span class="header-section-number">B.9</span> Hypothesis testing<a href="review-of-probability-and-statistics.html#hypothesis-testing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>An important part of any statistical analysis is testing various hypotheses about population parameters of interest. This is known as and here we use the sampling distribution of the estimator to formally test whether the corresponding population of interest takes a certain value or not. This is important because even with an unbiased and efficent estimator we do not know the true value of the population parameter of interest. In this section we will look at two types of hypotheses testing procedures that are most relevant for Econometrics. The procedure for any statistical test more or less consists of the following steps:</p>
 <ol style="list-style-type: decimal">
 <li><p>Formulate a hypothesis of interest. This typically manifest as a restriction on the value of a population parameter (or a combination of multiple parameters). The goal is to test whether there is support for this restriction in our sample or not. There are two types of hypotheses that we must formulate:</p>
@@ -790,11 +819,11 @@ Var(Y|X) = (y_1 -E(Y|X))^2 \times P(Y=y_1|X=x) + (y_2 -E(Y|X))^2\times P(Y=y_2|X
 </ol>
 <p>Ideally we would like to minimize the probability of both types of errors but we cannot do that because reducing one error comes at the cost of increasing the other. As a result, we first specify an <strong>acceptable</strong> level of significance (type one error probability) and then try to minimize the probability of type two error (or maximize the power of the test). It is common to assume a level of significance of 5% or <span class="math inline">\(\alpha=0.05\)</span>. So here we are willing to tolerate a 5% chance of falsely rejecting the null hypothesis.</p>
 <p>Once we have fixed the level of significance, we can use the distribution table of the test-statistic to obtain the corresponding critical value(s).</p>
-<div id="testing-a-restriction-on-a-single-population-parameter" class="section level3 hasAnchor" number="2.9.1">
-<h3><span class="header-section-number">2.9.1</span> Testing a restriction on a single population parameter<a href="review-of-probability-and-statistics.html#testing-a-restriction-on-a-single-population-parameter" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="testing-a-restriction-on-a-single-population-parameter" class="section level3 hasAnchor" number="8.9.1">
+<h3><span class="header-section-number">B.9.1</span> Testing a restriction on a single population parameter<a href="review-of-probability-and-statistics.html#testing-a-restriction-on-a-single-population-parameter" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Here our goal is to develop tests for testing statements about a single population parameter of interest. So for example, we can either test a statement about a population mean or a population variance.</p>
 <div class="example">
-<p><span id="exm:unnamed-chunk-48" class="example"><strong>Example 2.8  (t-test for population mean) </strong></span>Suppose you are interested in measuring mean hourly wage of males aged 25-35. Accordingly, we collect a sample of 100 workers from the population of male in this age group with a mean of <span class="math inline">\(\mu_X\)</span> and a standard deviation of <span class="math inline">\(\sigma_X\)</span>. The sample mean is <span class="math inline">\(\hat{\mu}_X=\$25\)</span> and the sample standard deviation is <span class="math inline">\(\hat{\sigma}_X=\$7\)</span>. Now, suppose we want to test the following hypothesis:</p>
+<p><span id="exm:unnamed-chunk-93" class="example"><strong>Example B.8  (t-test for population mean) </strong></span>Suppose you are interested in measuring mean hourly wage of males aged 25-35. Accordingly, we collect a sample of 100 workers from the population of male in this age group with a mean of <span class="math inline">\(\mu_X\)</span> and a standard deviation of <span class="math inline">\(\sigma_X\)</span>. The sample mean is <span class="math inline">\(\hat{\mu}_X=\$25\)</span> and the sample standard deviation is <span class="math inline">\(\hat{\sigma}_X=\$7\)</span>. Now, suppose we want to test the following hypothesis:</p>
 <p><span class="math display">\[H_0: \mu_X=27\]</span></p>
 <p><span class="math display">\[H_0: \mu_X \neq 27\]</span></p>
 <p>The test statistic is given by the <em>t-statistic</em> where:</p>
@@ -811,7 +840,7 @@ Var(Y|X) = (y_1 -E(Y|X))^2 \times P(Y=y_1|X=x) + (y_2 -E(Y|X))^2\times P(Y=y_2|X
 <p>In our case, the p-value is 0.0053. Because we chose <span class="math inline">\(\alpha=0.05\)</span>, according to the p-value rule we will reject the null hypothesis.</p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-49" class="example"><strong>Example 2.9  (Chi-square test for population variance) </strong></span>Using the same example, we also test a statement about the population variance. Suppose we want to test whether the variance of the hourly wage is 52.</p>
+<p><span id="exm:unnamed-chunk-94" class="example"><strong>Example B.9  (Chi-square test for population variance) </strong></span>Using the same example, we also test a statement about the population variance. Suppose we want to test whether the variance of the hourly wage is 52.</p>
 <p><span class="math display">\[H_0: \sigma^2_X=52\]</span></p>
 <p><span class="math display">\[H_0: \sigma^2_X &gt;52 \]</span></p>
 <p>The test statistic is given by the <em>V-statistic</em> where:
@@ -824,11 +853,11 @@ Var(Y|X) = (y_1 -E(Y|X))^2 \times P(Y=y_1|X=x) + (y_2 -E(Y|X))^2\times P(Y=y_2|X
 <p>The degrees of freedom is <span class="math inline">\(N-1=99\)</span> and at 5% level of significance the critical value from the Chi-square distribution table is <span class="math inline">\(V_c=124.34\)</span>. Because <span class="math inline">\(V\)</span> is smaller than the critical value, we do not reject the null hypothesis. Hence, we find no sample Bevidence against the statement that the variance of the hourly wage of male workers is 52.</p>
 </div>
 </div>
-<div id="testing-a-restriction-on-multiple-population-parameter" class="section level3 hasAnchor" number="2.9.2">
-<h3><span class="header-section-number">2.9.2</span> Testing a restriction on multiple population parameter<a href="review-of-probability-and-statistics.html#testing-a-restriction-on-multiple-population-parameter" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="testing-a-restriction-on-multiple-population-parameter" class="section level3 hasAnchor" number="8.9.2">
+<h3><span class="header-section-number">B.9.2</span> Testing a restriction on multiple population parameter<a href="review-of-probability-and-statistics.html#testing-a-restriction-on-multiple-population-parameter" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Often we are interested in testing a restriction that is a linear combination of two or more population means. Similarly, we maybe interested in comparing the variance of two different populations. In such cases we need to develop statistical tests that allow for comparison between parameters of different populations with given means and variances.</p>
 <div class="example">
-<p><span id="exm:unnamed-chunk-50" class="example"><strong>Example 2.10  (t-test for comparing population mean of two populations) </strong></span>Suppose you are interested in comparing mean weekly hours studied by Econ majors (X) and non-Econ majors in the college of business. For this purpose, you collect a sample of 25 econ majors and a sample of 30 non-econ majors. The sample mean of weekly hours studied by econ majors is 10 hours with a standard deviation of 4 hours. The sample mean of weekly hours studied by non-econ majors is 8 hours with a standard deviation of 2 hours. Test whether mean weekly hours studied by econ majors is more than the mean weekly hours studied by non-Econ majors.</p>
+<p><span id="exm:unnamed-chunk-95" class="example"><strong>Example B.10  (t-test for comparing population mean of two populations) </strong></span>Suppose you are interested in comparing mean weekly hours studied by Econ majors (X) and non-Econ majors in the college of business. For this purpose, you collect a sample of 25 econ majors and a sample of 30 non-econ majors. The sample mean of weekly hours studied by econ majors is 10 hours with a standard deviation of 4 hours. The sample mean of weekly hours studied by non-econ majors is 8 hours with a standard deviation of 2 hours. Test whether mean weekly hours studied by econ majors is more than the mean weekly hours studied by non-Econ majors.</p>
 <p>Let <span class="math inline">\(X\)</span> denote hours studied, <span class="math inline">\(N_X\)</span> denotes sample size, <span class="math inline">\(\hat{\mu}_X\)</span>, and <span class="math inline">\(\hat{\sigma}_X\)</span> denote sample mean and standard deviation, respectively for econ majors. Similarly, let <span class="math inline">\(Y\)</span> denote hours studied, <span class="math inline">\(N_Y\)</span> denotes sample size, <span class="math inline">\(\hat{\mu}_Y\)</span>, and <span class="math inline">\(\hat{\sigma}_Y\)</span> denote sample mean and standard deviation, respectively for non-econ majors.</p>
 <p>The first step, as usual, is to formulate the null and the alternative hypotheses:</p>
 <p><span class="math display">\[H_0= \mu_X - \mu_Y = 0\]</span>
@@ -843,7 +872,7 @@ Var(Y|X) = (y_1 -E(Y|X))^2 \times P(Y=y_1|X=x) + (y_2 -E(Y|X))^2\times P(Y=y_2|X
 <p>The sample size here is <span class="math inline">\(N_X+N_Y=55\)</span>. Using 5% level of significance and degrees of freedom of 53, the critical value from the t-distribution table for the one-sided alternative is 1.67. Because the |t| is more than 1.67, we reject the null hypothesis. We find evidence for econ majors studying more on average than non-econ majors in our sample.</p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-51" class="example"><strong>Example 2.11  (F-test for comparing population variance of two populations) </strong></span>Often we may be interested in comparing the variability between two populations. Using our previous example, we may want to test whether variability in hours studied is bigger for econ majors versus non-econ majors. This can be tested by comparing the ratio of two variances against the value of 1. As before, we start by formulating the null and the alternative hypotheses:</p>
+<p><span id="exm:unnamed-chunk-96" class="example"><strong>Example B.11  (F-test for comparing population variance of two populations) </strong></span>Often we may be interested in comparing the variability between two populations. Using our previous example, we may want to test whether variability in hours studied is bigger for econ majors versus non-econ majors. This can be tested by comparing the ratio of two variances against the value of 1. As before, we start by formulating the null and the alternative hypotheses:</p>
 <p><span class="math display">\[H_0: \sigma^2_X/\sigma^2_Y = 1\]</span>
 <span class="math display">\[H_0: \sigma^2_X/\sigma^2_Y &gt; 1\]</span></p>
 <p>The corresponding test statistic is the F-ratio:</p>
@@ -851,16 +880,16 @@ Var(Y|X) = (y_1 -E(Y|X))^2 \times P(Y=y_1|X=x) + (y_2 -E(Y|X))^2\times P(Y=y_2|X
 <p>If the null hypothesis is true, the above test statistic follows F-distribution with <span class="math inline">\(N_x-1\)</span> degrees of freedom for the numerator and <span class="math inline">\(N_y-1\)</span> degrees of freedom for the denominator. At 5% level of significance, the critical value for <span class="math inline">\(\nu_1=24\)</span> and <span class="math inline">\(\nu_2=29\)</span> from the F-distribution table is 3. Because the computed F-ratio exceeds the critical value we reject the null hypothesis.</p>
 </div>
 </div>
-<div id="confidence-interval-and-hypothesis-testing" class="section level3 hasAnchor" number="2.9.3">
-<h3><span class="header-section-number">2.9.3</span> Confidence interval and Hypothesis testing<a href="review-of-probability-and-statistics.html#confidence-interval-and-hypothesis-testing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="confidence-interval-and-hypothesis-testing" class="section level3 hasAnchor" number="8.9.3">
+<h3><span class="header-section-number">B.9.3</span> Confidence interval and Hypothesis testing<a href="review-of-probability-and-statistics.html#confidence-interval-and-hypothesis-testing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>One issue with using a sample to estimate population parameters is that by definition a sample estimator will be different for different samples. Thus, sample mean provides no information about how close this estimator is to the true population mean. This uncertainty in estimation can be summarized by computing the standard deviation, with higher value of standard deviation indicating greater uncertainty about the true population parameter. A better measure of this uncertainty is the <strong>confidence interval</strong>.</p>
 <div class="definition">
-<p><span id="def:unnamed-chunk-52" class="definition"><strong>Definition 2.8  (Confidence Interval) </strong></span>Suppose we draw a random sample <span class="math inline">\(\{x_1, x_2,...,x_N\}\)</span> from a normally distributed population with mean of <span class="math inline">\(\mu_X\)</span> and a standard deviation of <span class="math inline">\(\sigma_X\)</span>. Let <span class="math inline">\(\hat{\mu_X}\)</span> denotes the sample mean and <span class="math inline">\(\hat{\sigma_X}\)</span> denotes sample standard deviation. Then, the 95% confidence interval for <span class="math inline">\(\hat{\mu_X}\)</span> is given by:</p>
+<p><span id="def:unnamed-chunk-97" class="definition"><strong>Definition B.8  (Confidence Interval) </strong></span>Suppose we draw a random sample <span class="math inline">\(\{x_1, x_2,...,x_N\}\)</span> from a normally distributed population with mean of <span class="math inline">\(\mu_X\)</span> and a standard deviation of <span class="math inline">\(\sigma_X\)</span>. Let <span class="math inline">\(\hat{\mu_X}\)</span> denotes the sample mean and <span class="math inline">\(\hat{\sigma_X}\)</span> denotes sample standard deviation. Then, the 95% confidence interval for <span class="math inline">\(\hat{\mu_X}\)</span> is given by:</p>
 <p><span class="math display">\[\left[\hat{\mu_X}-t_{c,2-sided} \times \frac{\hat{\sigma_X}}{\sqrt{N}},\hat{\mu_X}+t_{c,2-sided} \times \frac{\hat{\sigma_X}}{\sqrt{N}} \right]\]</span></p>
 <p>where <span class="math inline">\(t_{c,2-sided}\)</span> is the critical value that can be obtained from the t-distribution table for a given level of signicance and degrees of freedom. For example, for a 95% confidence interval we will use 5% level of significance.</p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-53" class="example"><strong>Example 2.12  </strong></span>Suppose N=20, <span class="math inline">\(\hat{\mu_X}=5\)</span>, and <span class="math inline">\(\hat{\sigma_X}=2\)</span>. Then, the 95% confidence interval for <span class="math inline">\(\hat{\mu_X}\)</span> is given by:</p>
+<p><span id="exm:unnamed-chunk-98" class="example"><strong>Example B.12  </strong></span>Suppose N=20, <span class="math inline">\(\hat{\mu_X}=5\)</span>, and <span class="math inline">\(\hat{\sigma_X}=2\)</span>. Then, the 95% confidence interval for <span class="math inline">\(\hat{\mu_X}\)</span> is given by:</p>
 <p><span class="math display">\[\left[5-2.093 \times \frac{2}{\sqrt{20}}, 5+2.093 \times \frac{2}{\sqrt{20}} \right]=[4.06,5.94]\]</span></p>
 <p>Hence, before we drew our sample from the population, there is a 95% chance that the true population parameter (<span class="math inline">\(\mu_X\)</span>) will fall between 4.12 and 5.94. Note that:</p>
 <ol style="list-style-type: decimal">
@@ -873,17 +902,17 @@ Var(Y|X) = (y_1 -E(Y|X))^2 \times P(Y=y_1|X=x) + (y_2 -E(Y|X))^2\times P(Y=y_2|X
 </div>
 </div>
 </div>
-<div id="problems-1" class="section level2 unnumbered hasAnchor">
-<h2>Problems<a href="review-of-probability-and-statistics.html#problems-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="problems-7" class="section level2 unnumbered hasAnchor">
+<h2>Problems<a href="review-of-probability-and-statistics.html#problems-7" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-54" class="exercise"><strong>Exercise 2.1  </strong></span>Suppose you roll a 6-sided fair dice. If an odd number shows you win $10. If either 2 or 4 shows you lose $5. If 6 shows, you neither gain nor lose anything.</p>
+<p><span id="exr:unnamed-chunk-99" class="exercise"><strong>Exercise B.1  </strong></span>Suppose you roll a 6-sided fair dice. If an odd number shows you win $10. If either 2 or 4 shows you lose $5. If 6 shows, you neither gain nor lose anything.</p>
 <ol style="list-style-type: lower-alpha">
 <li><p>Denote the winnings from this game as <span class="math inline">\(X\)</span>. Tabulate the probability distribiution of the random variable <span class="math inline">\(X\)</span>.</p></li>
 <li><p>Compute the expected value and the standard deviation for <span class="math inline">\(X\)</span>.</p></li>
 </ol>
 </div>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-55" class="exercise"><strong>Exercise 2.2  </strong></span>Consider a population with a mean of <span class="math inline">\(\mu\)</span> and variance of <span class="math inline">\(\sigma^2\)</span>. Suppose you draw a random sample <span class="math inline">\(X_1, X_2,..,X_N\)</span>.</p>
+<p><span id="exr:unnamed-chunk-100" class="exercise"><strong>Exercise B.2  </strong></span>Consider a population with a mean of <span class="math inline">\(\mu\)</span> and variance of <span class="math inline">\(\sigma^2\)</span>. Suppose you draw a random sample <span class="math inline">\(X_1, X_2,..,X_N\)</span>.</p>
 <ol style="list-style-type: lower-alpha">
 <li><p>Show that <span class="math inline">\(\widehat{\mu_A}=0.25\times X_1 +0.25\times X_3+ 0.25 \times X_8 + 0.25 X_{20}\)</span> is an unbiased estimator of <span class="math inline">\(\mu\)</span>.</p></li>
 <li><p>Show that <span class="math inline">\(\widehat{\mu_B}=0.1\times X_1 +0.1\times X_3+ 0.5 \times X_8+0.3 \times X_{11}\)</span> is an unbiased estimator of <span class="math inline">\(\mu\)</span>.</p></li>
@@ -891,14 +920,14 @@ Var(Y|X) = (y_1 -E(Y|X))^2 \times P(Y=y_1|X=x) + (y_2 -E(Y|X))^2\times P(Y=y_2|X
 </ol>
 </div>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-56" class="exercise"><strong>Exercise 2.3  </strong></span>Suppose you collect a random sample of 100 observations and find that sample mean is -25 and sample variance is 350.</p>
+<p><span id="exr:unnamed-chunk-101" class="exercise"><strong>Exercise B.3  </strong></span>Suppose you collect a random sample of 100 observations and find that sample mean is -25 and sample variance is 350.</p>
 <ol style="list-style-type: lower-alpha">
 <li><p>Test whether the population mean is -22.</p></li>
 <li><p>Test whether the population variance is 400.</p></li>
 </ol>
 </div>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-57" class="exercise"><strong>Exercise 2.4  </strong></span>Suppose you are interested in comparing performance of two different mutual funds, <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>. Let <span class="math inline">\(\mu_X\)</span> and <span class="math inline">\(\mu_Y\)</span> denote unknown population mean returns on investment in <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, respectively. Suppose you collect past 20 months data for both mutual funds and find that sample mean for fund <span class="math inline">\(X\)</span> is 2% with a standard deviation of 0.5%. In contrast, the sample mean for fund <span class="math inline">\(Y\)</span> is 5% with a standard deviation of 2%.</p>
+<p><span id="exr:unnamed-chunk-102" class="exercise"><strong>Exercise B.4  </strong></span>Suppose you are interested in comparing performance of two different mutual funds, <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>. Let <span class="math inline">\(\mu_X\)</span> and <span class="math inline">\(\mu_Y\)</span> denote unknown population mean returns on investment in <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, respectively. Suppose you collect past 20 months data for both mutual funds and find that sample mean for fund <span class="math inline">\(X\)</span> is 2% with a standard deviation of 0.5%. In contrast, the sample mean for fund <span class="math inline">\(Y\)</span> is 5% with a standard deviation of 2%.</p>
 <ol style="list-style-type: lower-alpha">
 <li><p>Test whether mean return on <span class="math inline">\(Y\)</span> is greater than that on <span class="math inline">\(X\)</span>.</p></li>
 <li><p>Test whether variance of <span class="math inline">\(Y\)</span> is greater than that of <span class="math inline">\(X\)</span>.</p></li>
@@ -906,8 +935,8 @@ Var(Y|X) = (y_1 -E(Y|X))^2 \times P(Y=y_1|X=x) + (y_2 -E(Y|X))^2\times P(Y=y_2|X
 </ol>
 </div>
 </div>
-<div id="solutions-1" class="section level2 unnumbered hasAnchor">
-<h2>Solutions<a href="review-of-probability-and-statistics.html#solutions-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="solutions-7" class="section level2 unnumbered hasAnchor">
+<h2>Solutions<a href="review-of-probability-and-statistics.html#solutions-7" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>Exercise 2.1:</strong></p>
 <ol style="list-style-type: lower-alpha">
 <li>The probability distribution is given by:</li>
@@ -1003,7 +1032,6 @@ Var(Y|X) = (y_1 -E(Y|X))^2 \times P(Y=y_1|X=x) + (y_2 -E(Y|X))^2\times P(Y=y_2|X
 <p>In macroeconomics, the above relationship is known as the <strong>Keynesian</strong> consumption function. John Maynard Keynes proposed that at the aggregate level, consumption changes in proportion to changes in disposable income:</p>
 <span class="math display">\[C = a + b \ Y^D\]</span> Here <span class="math inline">\(C\)</span> denotes private consumption expenditure and <span class="math inline">\(Y^D\)</span> denotes post-tax or disposable income. <span class="math inline">\(a\)</span> is the intercept and captures the part of consumption that is indpenedent of income. <span class="math inline">\(b\)</span> is the slope and measures the unit change in consumption caused by a unit change in disposable income. <span class="math inline">\(b\)</span> measures the marginal propensity to consume and is a parameter of interest we would like to estimate using data.
 </div>
-
 </div>
 </div>
             </section>
@@ -1012,7 +1040,7 @@ Var(Y|X) = (y_1 -E(Y|X))^2 \times P(Y=y_1|X=x) + (y_2 -E(Y|X))^2\times P(Y=y_2|X
         </div>
       </div>
 <a href="review-of-differential-calculus-and-optimization.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="simple-regression-model.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="statistical-tables.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

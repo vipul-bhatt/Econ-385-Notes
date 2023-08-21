@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 6 Classical assumptions and OLS estimator | Introduction to Econometrics</title>
+  <title>Chapter 4 Classical assumptions and OLS estimator | Introduction to Econometrics</title>
   <meta name="description" content="Lecture notes for Introduction to Econometrics" />
-  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 6 Classical assumptions and OLS estimator | Introduction to Econometrics" />
+  <meta property="og:title" content="Chapter 4 Classical assumptions and OLS estimator | Introduction to Econometrics" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Lecture notes for Introduction to Econometrics" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 6 Classical assumptions and OLS estimator | Introduction to Econometrics" />
+  <meta name="twitter:title" content="Chapter 4 Classical assumptions and OLS estimator | Introduction to Econometrics" />
   
   <meta name="twitter:description" content="Lecture notes for Introduction to Econometrics" />
   
@@ -23,7 +23,7 @@
 <meta name="author" content="Vipul Bhatt" />
 
 
-<meta name="date" content="2023-05-22" />
+<meta name="date" content="2023-08-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="functional-form-and-dummy-variables.html"/>
-<link rel="next" href="statistical-tables.html"/>
+<link rel="next" href="instrumental-variable-estimation.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -55,6 +55,10 @@
 
 
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -74,122 +78,147 @@
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
 <li class="chapter" data-level="" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="1" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html"><i class="fa fa-check"></i><b>1</b> Review of Differential Calculus and Optimization</a>
+<li class="chapter" data-level="1" data-path="simple-regression-model.html"><a href="simple-regression-model.html"><i class="fa fa-check"></i><b>1</b> Simple Regression Model</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#derivative-of-a-single-variable-function"><i class="fa fa-check"></i><b>1.1</b> Derivative of a single variable function</a>
+<li class="chapter" data-level="1.1" data-path="simple-regression-model.html"><a href="simple-regression-model.html#statistical-foundation-of-the-simple-regression-model"><i class="fa fa-check"></i><b>1.1</b> Statistical foundation of the simple regression model</a></li>
+<li class="chapter" data-level="1.2" data-path="simple-regression-model.html"><a href="simple-regression-model.html#ordinary-least-squares-ols"><i class="fa fa-check"></i><b>1.2</b> Ordinary Least Squares (OLS)</a></li>
+<li class="chapter" data-level="1.3" data-path="simple-regression-model.html"><a href="simple-regression-model.html#goodness-of-fit"><i class="fa fa-check"></i><b>1.3</b> Goodness of fit</a></li>
+<li class="chapter" data-level="1.4" data-path="simple-regression-model.html"><a href="simple-regression-model.html#applications-of-the-simple-regression-model"><i class="fa fa-check"></i><b>1.4</b> Applications of the simple regression model</a>
 <ul>
-<li class="chapter" data-level="1.1.1" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#rules-of-differentiation"><i class="fa fa-check"></i><b>1.1.1</b> Rules of Differentiation</a></li>
+<li class="chapter" data-level="1.4.1" data-path="simple-regression-model.html"><a href="simple-regression-model.html#aggregate-consumption-function"><i class="fa fa-check"></i><b>1.4.1</b> Aggregate consumption function</a></li>
+<li class="chapter" data-level="1.4.2" data-path="simple-regression-model.html"><a href="simple-regression-model.html#returns-to-education"><i class="fa fa-check"></i><b>1.4.2</b> Returns to education</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#second-derivative-and-non-linearity"><i class="fa fa-check"></i><b>1.2</b> Second derivative and non-linearity</a></li>
-<li class="chapter" data-level="1.3" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#partial-derivatives-multi-variable-functions"><i class="fa fa-check"></i><b>1.3</b> Partial derivatives: Multi-variable functions</a></li>
-<li class="chapter" data-level="1.4" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#optimization"><i class="fa fa-check"></i><b>1.4</b> Optimization</a></li>
-<li class="chapter" data-level="" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#problems"><i class="fa fa-check"></i>Problems</a></li>
-<li class="chapter" data-level="" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#solutions"><i class="fa fa-check"></i>Solutions</a></li>
-</ul></li>
-<li class="chapter" data-level="2" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html"><i class="fa fa-check"></i><b>2</b> Review of Probability and Statistics</a>
+<li class="chapter" data-level="1.5" data-path="simple-regression-model.html"><a href="simple-regression-model.html#use-of-natural-logs-and-interpretation-of-the-slope-coefficients"><i class="fa fa-check"></i><b>1.5</b> Use of natural logs and interpretation of the slope coefficients</a></li>
+<li class="chapter" data-level="1.6" data-path="simple-regression-model.html"><a href="simple-regression-model.html#hypothesis-testing-and-confidence-interval-estimation"><i class="fa fa-check"></i><b>1.6</b> Hypothesis testing and confidence interval estimation</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#probability"><i class="fa fa-check"></i><b>2.1</b> Probability</a></li>
-<li class="chapter" data-level="2.2" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#random-variable"><i class="fa fa-check"></i><b>2.2</b> Random Variable</a></li>
-<li class="chapter" data-level="2.3" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#probability-distribution"><i class="fa fa-check"></i><b>2.3</b> Probability distribution</a>
-<ul>
-<li class="chapter" data-level="2.3.1" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#probability-distribution-of-a-discrete-random-variable"><i class="fa fa-check"></i><b>2.3.1</b> Probability distribution of a discrete random variable</a></li>
-<li class="chapter" data-level="2.3.2" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#probability-distribution-of-a-continuous-random-variable"><i class="fa fa-check"></i><b>2.3.2</b> Probability distribution of a continuous random variable</a></li>
+<li class="chapter" data-level="1.6.1" data-path="simple-regression-model.html"><a href="simple-regression-model.html#confidence-interval-for-regression-coefficients"><i class="fa fa-check"></i><b>1.6.1</b> Confidence interval for regression coefficients</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#moments-of-a-probability-distribution-function"><i class="fa fa-check"></i><b>2.4</b> Moments of a probability distribution function</a>
-<ul>
-<li class="chapter" data-level="2.4.1" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#first-moment-of-a-probability-distribution-expected-value"><i class="fa fa-check"></i><b>2.4.1</b> First moment of a probability distribution: Expected value</a></li>
-<li class="chapter" data-level="2.4.2" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#second-moment-of-the-distribution."><i class="fa fa-check"></i><b>2.4.2</b> Second moment of the distribution.</a></li>
-<li class="chapter" data-level="2.4.3" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#third-and-fourth-moments-skewness-and-kurtosis"><i class="fa fa-check"></i><b>2.4.3</b> Third and Fourth Moments: Skewness and Kurtosis</a></li>
+<li class="chapter" data-level="" data-path="simple-regression-model.html"><a href="simple-regression-model.html#problems"><i class="fa fa-check"></i>Problems</a></li>
+<li class="chapter" data-level="" data-path="simple-regression-model.html"><a href="simple-regression-model.html#solutions"><i class="fa fa-check"></i>Solutions</a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#useful-probability-distributions"><i class="fa fa-check"></i><b>2.5</b> Useful probability distributions</a></li>
-<li class="chapter" data-level="2.6" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#joint-probability-distribution"><i class="fa fa-check"></i><b>2.6</b> Joint Probability Distribution</a></li>
-<li class="chapter" data-level="2.7" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#measures-of-statistical-association"><i class="fa fa-check"></i><b>2.7</b> Measures of statistical association</a>
+<li class="chapter" data-level="2" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html"><i class="fa fa-check"></i><b>2</b> Multiple regression model</a>
 <ul>
-<li class="chapter" data-level="2.7.1" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#rules-of-expectation-and-variances"><i class="fa fa-check"></i><b>2.7.1</b> Rules of expectation and variances</a></li>
-</ul></li>
-<li class="chapter" data-level="2.8" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#sampling-and-estimation"><i class="fa fa-check"></i><b>2.8</b> Sampling and Estimation</a></li>
-<li class="chapter" data-level="2.9" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#hypothesis-testing"><i class="fa fa-check"></i><b>2.9</b> Hypothesis testing</a>
+<li class="chapter" data-level="2.1" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#multiple-regression-model-1"><i class="fa fa-check"></i><b>2.1</b> Multiple Regression Model</a></li>
+<li class="chapter" data-level="2.2" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#goodness-of-fit-redux"><i class="fa fa-check"></i><b>2.2</b> Goodness of fit redux</a></li>
+<li class="chapter" data-level="2.3" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#hypothesis-testing-in-a-multiple-regression-model"><i class="fa fa-check"></i><b>2.3</b> Hypothesis testing in a multiple regression model</a>
 <ul>
-<li class="chapter" data-level="2.9.1" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#testing-a-restriction-on-a-single-population-parameter"><i class="fa fa-check"></i><b>2.9.1</b> Testing a restriction on a single population parameter</a></li>
-<li class="chapter" data-level="2.9.2" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#testing-a-restriction-on-multiple-population-parameter"><i class="fa fa-check"></i><b>2.9.2</b> Testing a restriction on multiple population parameter</a></li>
-<li class="chapter" data-level="2.9.3" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#confidence-interval-and-hypothesis-testing"><i class="fa fa-check"></i><b>2.9.3</b> Confidence interval and Hypothesis testing</a></li>
+<li class="chapter" data-level="2.3.1" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#test-of-statistical-significance-of-the-entire-model"><i class="fa fa-check"></i><b>2.3.1</b> Test of statistical significance of the entire model</a></li>
+<li class="chapter" data-level="2.3.2" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#testing-whether-one-or-more-of-the-variables-can-be-eliminated-from-the-model"><i class="fa fa-check"></i><b>2.3.2</b> Testing whether one or more of the variables can be eliminated from the model</a></li>
+<li class="chapter" data-level="2.3.3" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#testing-a-linear-restriction-on-slope-coefficients"><i class="fa fa-check"></i><b>2.3.3</b> Testing a linear restriction on slope coefficients</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#problems-1"><i class="fa fa-check"></i>Problems</a></li>
-<li class="chapter" data-level="" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#solutions-1"><i class="fa fa-check"></i>Solutions</a></li>
+<li class="chapter" data-level="" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#problems-1"><i class="fa fa-check"></i>Problems</a></li>
+<li class="chapter" data-level="" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#solutions-1"><i class="fa fa-check"></i>Solutions</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="simple-regression-model.html"><a href="simple-regression-model.html"><i class="fa fa-check"></i><b>3</b> Simple Regression Model</a>
+<li class="chapter" data-level="3" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html"><i class="fa fa-check"></i><b>3</b> Functional form and dummy variables</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="simple-regression-model.html"><a href="simple-regression-model.html#statistical-foundation-of-the-simple-regression-model"><i class="fa fa-check"></i><b>3.1</b> Statistical foundation of the simple regression model</a></li>
-<li class="chapter" data-level="3.2" data-path="simple-regression-model.html"><a href="simple-regression-model.html#ordinary-least-squares-ols"><i class="fa fa-check"></i><b>3.2</b> Ordinary Least Squares (OLS)</a></li>
-<li class="chapter" data-level="3.3" data-path="simple-regression-model.html"><a href="simple-regression-model.html#goodness-of-fit"><i class="fa fa-check"></i><b>3.3</b> Goodness of fit</a></li>
-<li class="chapter" data-level="3.4" data-path="simple-regression-model.html"><a href="simple-regression-model.html#applications-of-the-simple-regression-model"><i class="fa fa-check"></i><b>3.4</b> Applications of the simple regression model</a>
+<li class="chapter" data-level="3.1" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html#polynomials-in-the-regression-model"><i class="fa fa-check"></i><b>3.1</b> Polynomials in the regression model</a>
 <ul>
-<li class="chapter" data-level="3.4.1" data-path="simple-regression-model.html"><a href="simple-regression-model.html#aggregate-consumption-function"><i class="fa fa-check"></i><b>3.4.1</b> Aggregate consumption function</a></li>
-<li class="chapter" data-level="3.4.2" data-path="simple-regression-model.html"><a href="simple-regression-model.html#returns-to-education"><i class="fa fa-check"></i><b>3.4.2</b> Returns to education</a></li>
+<li class="chapter" data-level="3.1.1" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html#obtaining-optimal-polynomial-order-using-goodness-of-fit"><i class="fa fa-check"></i><b>3.1.1</b> Obtaining optimal polynomial order using goodness of fit</a></li>
 </ul></li>
-<li class="chapter" data-level="3.5" data-path="simple-regression-model.html"><a href="simple-regression-model.html#use-of-natural-logs-and-interpretation-of-the-slope-coefficients"><i class="fa fa-check"></i><b>3.5</b> Use of natural logs and interpretation of the slope coefficients</a></li>
-<li class="chapter" data-level="3.6" data-path="simple-regression-model.html"><a href="simple-regression-model.html#hypothesis-testing-and-confidence-interval-estimation"><i class="fa fa-check"></i><b>3.6</b> Hypothesis testing and confidence interval estimation</a>
+<li class="chapter" data-level="3.2" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html#step-functions-dummy-variables-in-the-regression-model"><i class="fa fa-check"></i><b>3.2</b> Step functions: Dummy variables in the regression model</a></li>
+<li class="chapter" data-level="" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html#problems-2"><i class="fa fa-check"></i>Problems</a></li>
+<li class="chapter" data-level="" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html#solutions-2"><i class="fa fa-check"></i>Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html"><i class="fa fa-check"></i><b>4</b> Classical assumptions and OLS estimator</a>
 <ul>
-<li class="chapter" data-level="3.6.1" data-path="simple-regression-model.html"><a href="simple-regression-model.html#confidence-interval-for-regression-coefficients"><i class="fa fa-check"></i><b>3.6.1</b> Confidence interval for regression coefficients</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="simple-regression-model.html"><a href="simple-regression-model.html#problems-2"><i class="fa fa-check"></i>Problems</a></li>
-<li class="chapter" data-level="" data-path="simple-regression-model.html"><a href="simple-regression-model.html#solutions-2"><i class="fa fa-check"></i>Solutions</a></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html"><i class="fa fa-check"></i><b>4</b> Multiple regression model</a>
+<li class="chapter" data-level="4.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#classical-assumptions"><i class="fa fa-check"></i><b>4.1</b> Classical Assumptions</a></li>
+<li class="chapter" data-level="4.2" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#heteroscedasticity"><i class="fa fa-check"></i><b>4.2</b> Heteroscedasticity</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#multiple-regression-model-1"><i class="fa fa-check"></i><b>4.1</b> Multiple Regression Model</a></li>
-<li class="chapter" data-level="4.2" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#goodness-of-fit-redux"><i class="fa fa-check"></i><b>4.2</b> Goodness of fit redux</a></li>
-<li class="chapter" data-level="4.3" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#hypothesis-testing-in-a-multiple-regression-model"><i class="fa fa-check"></i><b>4.3</b> Hypothesis testing in a multiple regression model</a>
-<ul>
-<li class="chapter" data-level="4.3.1" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#test-of-statistical-significance-of-the-entire-model"><i class="fa fa-check"></i><b>4.3.1</b> Test of statistical significance of the entire model</a></li>
-<li class="chapter" data-level="4.3.2" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#testing-whether-one-or-more-of-the-variables-can-be-eliminated-from-the-model"><i class="fa fa-check"></i><b>4.3.2</b> Testing whether one or more of the variables can be eliminated from the model</a></li>
-<li class="chapter" data-level="4.3.3" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#testing-a-linear-restriction-on-slope-coefficients"><i class="fa fa-check"></i><b>4.3.3</b> Testing a linear restriction on slope coefficients</a></li>
+<li class="chapter" data-level="4.2.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#consequences-of-heteroscedasticity-for-the-ols-estimator"><i class="fa fa-check"></i><b>4.2.1</b> Consequences of Heteroscedasticity for the OLS estimator</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#problems-3"><i class="fa fa-check"></i>Problems</a></li>
-<li class="chapter" data-level="" data-path="multiple-regression-model.html"><a href="multiple-regression-model.html#solutions-3"><i class="fa fa-check"></i>Solutions</a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html"><i class="fa fa-check"></i><b>5</b> Functional form and dummy variables</a>
+<li class="chapter" data-level="4.3" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#testing-for-hetroscedasticity-in-data"><i class="fa fa-check"></i><b>4.3</b> Testing for Hetroscedasticity in data</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html#polynomials-in-the-regression-model"><i class="fa fa-check"></i><b>5.1</b> Polynomials in the regression model</a>
-<ul>
-<li class="chapter" data-level="5.1.1" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html#obtaining-optimal-polynomial-order-using-goodness-of-fit"><i class="fa fa-check"></i><b>5.1.1</b> Obtaining optimal polynomial order using goodness of fit</a></li>
+<li class="chapter" data-level="4.3.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#lm-test-for-linear-heteroscedasticity-bp-test"><i class="fa fa-check"></i><b>4.3.1</b> LM test for linear heteroscedasticity: BP test</a></li>
+<li class="chapter" data-level="4.3.2" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#lm-test-for-linear-heteroscedasticity-whites-test"><i class="fa fa-check"></i><b>4.3.2</b> LM test for linear heteroscedasticity: White’s test</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html#step-functions-dummy-variables-in-the-regression-model"><i class="fa fa-check"></i><b>5.2</b> Step functions: Dummy variables in the regression model</a></li>
-<li class="chapter" data-level="" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html#problems-4"><i class="fa fa-check"></i>Problems</a></li>
-<li class="chapter" data-level="" data-path="functional-form-and-dummy-variables.html"><a href="functional-form-and-dummy-variables.html#solutions-4"><i class="fa fa-check"></i>Solutions</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html"><i class="fa fa-check"></i><b>6</b> Classical assumptions and OLS estimator</a>
+<li class="chapter" data-level="4.4" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#heteroscedasticity-robust-standard-errors"><i class="fa fa-check"></i><b>4.4</b> Heteroscedasticity robust standard errors</a></li>
+<li class="chapter" data-level="4.5" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#serial-correlation"><i class="fa fa-check"></i><b>4.5</b> Serial correlation</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#classical-assumptions"><i class="fa fa-check"></i><b>6.1</b> Classical Assumptions</a></li>
-<li class="chapter" data-level="6.2" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#heteroscedasticity"><i class="fa fa-check"></i><b>6.2</b> Heteroscedasticity</a>
-<ul>
-<li class="chapter" data-level="6.2.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#consequences-of-heteroscedasticity-for-the-ols-estimator"><i class="fa fa-check"></i><b>6.2.1</b> Consequences of Heteroscedasticity for the OLS estimator</a></li>
+<li class="chapter" data-level="4.5.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#consequences-of-serial-correlation-for-the-ols-estimator"><i class="fa fa-check"></i><b>4.5.1</b> Consequences of Serial Correlation for the OLS estimator</a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#testing-for-hetroscedasticity-in-data"><i class="fa fa-check"></i><b>6.3</b> Testing for Hetroscedasticity in data</a>
+<li class="chapter" data-level="4.6" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#testing-for-serial-correlation-in-data"><i class="fa fa-check"></i><b>4.6</b> Testing for Serial Correlation in data</a>
 <ul>
-<li class="chapter" data-level="6.3.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#lm-test-for-linear-heteroscedasticity-bp-test"><i class="fa fa-check"></i><b>6.3.1</b> LM test for linear heteroscedasticity: BP test</a></li>
-<li class="chapter" data-level="6.3.2" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#lm-test-for-linear-heteroscedasticity-whites-test"><i class="fa fa-check"></i><b>6.3.2</b> LM test for linear heteroscedasticity: White’s test</a></li>
+<li class="chapter" data-level="4.6.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#durbin-watson-test-for-first-order-serial-correlation"><i class="fa fa-check"></i><b>4.6.1</b> Durbin-Watson test for first order serial correlation</a></li>
+<li class="chapter" data-level="4.6.2" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#breusch-godfrey-bg-test-for-serial-correlation"><i class="fa fa-check"></i><b>4.6.2</b> Breusch-Godfrey (BG) test for serial correlation</a></li>
 </ul></li>
-<li class="chapter" data-level="6.4" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#heteroscedasticity-robust-standard-errors"><i class="fa fa-check"></i><b>6.4</b> Heteroscedasticity robust standard errors</a></li>
-<li class="chapter" data-level="6.5" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#serial-correlation"><i class="fa fa-check"></i><b>6.5</b> Serial correlation</a>
+<li class="chapter" data-level="4.7" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#serial-correlation-robust-standard-errors"><i class="fa fa-check"></i><b>4.7</b> Serial correlation robust standard errors</a></li>
+<li class="chapter" data-level="" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#problems-3"><i class="fa fa-check"></i>Problems</a></li>
+<li class="chapter" data-level="" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#solutions-3"><i class="fa fa-check"></i>Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html"><i class="fa fa-check"></i><b>5</b> Instrumental Variable Estimation</a>
 <ul>
-<li class="chapter" data-level="6.5.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#consequences-of-serial-correlation-for-the-ols-estimator"><i class="fa fa-check"></i><b>6.5.1</b> Consequences of Serial Correlation for the OLS estimator</a></li>
-</ul></li>
-<li class="chapter" data-level="6.6" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#testing-for-serial-correlation-in-data"><i class="fa fa-check"></i><b>6.6</b> Testing for Serial Correlation in data</a>
+<li class="chapter" data-level="5.1" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#endogeneity-problem"><i class="fa fa-check"></i><b>5.1</b> Endogeneity Problem</a></li>
+<li class="chapter" data-level="5.2" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#omitted-variable-bias"><i class="fa fa-check"></i><b>5.2</b> Omitted variable bias</a>
 <ul>
-<li class="chapter" data-level="6.6.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#durbin-watson-test-for-first-order-serial-correlation"><i class="fa fa-check"></i><b>6.6.1</b> Durbin-Watson test for first order serial correlation</a></li>
-<li class="chapter" data-level="6.6.2" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#breusch-godfrey-bg-test-for-serial-correlation"><i class="fa fa-check"></i><b>6.6.2</b> Breusch-Godfrey (BG) test for serial correlation</a></li>
+<li class="chapter" data-level="5.2.1" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#consequence-of-omitted-variable-on-ols-estimator"><i class="fa fa-check"></i><b>5.2.1</b> Consequence of omitted variable on OLS estimator</a></li>
 </ul></li>
-<li class="chapter" data-level="6.7" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#serial-correlation-robust-standard-errors"><i class="fa fa-check"></i><b>6.7</b> Serial correlation robust standard errors</a></li>
-<li class="chapter" data-level="6.8" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#omitted-variable-bias"><i class="fa fa-check"></i><b>6.8</b> Omitted variable bias</a>
+<li class="chapter" data-level="5.3" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#iv-estimation"><i class="fa fa-check"></i><b>5.3</b> IV estimation</a></li>
+<li class="chapter" data-level="5.4" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#case-i-one-endogenous-regressor-and-one-instrument"><i class="fa fa-check"></i><b>5.4</b> Case I: One endogenous regressor and one instrument</a>
 <ul>
-<li class="chapter" data-level="6.8.1" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#consequence-of-omitted-variable-on-ols-estimator"><i class="fa fa-check"></i><b>6.8.1</b> Consequence of omitted variable on OLS estimator</a></li>
+<li class="chapter" data-level="5.4.1" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#example-1-return-to-schooling"><i class="fa fa-check"></i><b>5.4.1</b> Example 1: Return to Schooling</a></li>
+<li class="chapter" data-level="5.4.2" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#example-2-estimating-demand-for-butter"><i class="fa fa-check"></i><b>5.4.2</b> Example 2: Estimating Demand for Butter</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#problems-5"><i class="fa fa-check"></i>Problems</a></li>
-<li class="chapter" data-level="" data-path="classical-assumptions-and-ols-estimator.html"><a href="classical-assumptions-and-ols-estimator.html#solutions-5"><i class="fa fa-check"></i>Solutions</a></li>
+<li class="chapter" data-level="5.5" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#case-ii-one-endogenous-regressor-with-many-available-instruments"><i class="fa fa-check"></i><b>5.5</b> Case II: One endogenous regressor with many available instruments</a></li>
+<li class="chapter" data-level="5.6" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#iv-estimation-in-a-multiple-regression-framework"><i class="fa fa-check"></i><b>5.6</b> IV estimation in a multiple regression framework</a></li>
+<li class="chapter" data-level="5.7" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#strength-and-exogneity-of-the-instrument"><i class="fa fa-check"></i><b>5.7</b> Strength and Exogneity of the Instrument</a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#weak-instruments"><i class="fa fa-check"></i><b>5.7.1</b> Weak Instruments</a></li>
+<li class="chapter" data-level="5.7.2" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#exogeneity-of-instruments"><i class="fa fa-check"></i><b>5.7.2</b> Exogeneity of Instruments</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#problems-4"><i class="fa fa-check"></i>Problems</a></li>
+<li class="chapter" data-level="" data-path="instrumental-variable-estimation.html"><a href="instrumental-variable-estimation.html#solutions-4"><i class="fa fa-check"></i>Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="discrete-choice-model.html"><a href="discrete-choice-model.html"><i class="fa fa-check"></i><b>6</b> Discrete Choice Model</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="discrete-choice-model.html"><a href="discrete-choice-model.html#binary-dependent-variable"><i class="fa fa-check"></i><b>6.1</b> Binary Dependent Variable</a></li>
+<li class="chapter" data-level="" data-path="discrete-choice-model.html"><a href="discrete-choice-model.html#problems-5"><i class="fa fa-check"></i>Problems</a></li>
+<li class="chapter" data-level="" data-path="discrete-choice-model.html"><a href="discrete-choice-model.html#solutions-5"><i class="fa fa-check"></i>Solutions</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
-<li class="chapter" data-level="A" data-path="statistical-tables.html"><a href="statistical-tables.html"><i class="fa fa-check"></i><b>A</b> Statistical Tables</a>
+<li class="chapter" data-level="A" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html"><i class="fa fa-check"></i><b>A</b> Review of Differential Calculus and Optimization</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#derivative-of-a-single-variable-function"><i class="fa fa-check"></i><b>A.1</b> Derivative of a single variable function</a>
+<ul>
+<li class="chapter" data-level="A.1.1" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#rules-of-differentiation"><i class="fa fa-check"></i><b>A.1.1</b> Rules of Differentiation</a></li>
+</ul></li>
+<li class="chapter" data-level="A.2" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#second-derivative-and-non-linearity"><i class="fa fa-check"></i><b>A.2</b> Second derivative and non-linearity</a></li>
+<li class="chapter" data-level="A.3" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#partial-derivatives-multi-variable-functions"><i class="fa fa-check"></i><b>A.3</b> Partial derivatives: Multi-variable functions</a></li>
+<li class="chapter" data-level="A.4" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#optimization"><i class="fa fa-check"></i><b>A.4</b> Optimization</a></li>
+<li class="chapter" data-level="" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#problems-6"><i class="fa fa-check"></i>Problems</a></li>
+<li class="chapter" data-level="" data-path="review-of-differential-calculus-and-optimization.html"><a href="review-of-differential-calculus-and-optimization.html#solutions-6"><i class="fa fa-check"></i>Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html"><i class="fa fa-check"></i><b>B</b> Review of Probability and Statistics</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#probability"><i class="fa fa-check"></i><b>B.1</b> Probability</a></li>
+<li class="chapter" data-level="B.2" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#random-variable"><i class="fa fa-check"></i><b>B.2</b> Random Variable</a></li>
+<li class="chapter" data-level="B.3" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#probability-distribution"><i class="fa fa-check"></i><b>B.3</b> Probability distribution</a>
+<ul>
+<li class="chapter" data-level="B.3.1" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#probability-distribution-of-a-discrete-random-variable"><i class="fa fa-check"></i><b>B.3.1</b> Probability distribution of a discrete random variable</a></li>
+<li class="chapter" data-level="B.3.2" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#probability-distribution-of-a-continuous-random-variable"><i class="fa fa-check"></i><b>B.3.2</b> Probability distribution of a continuous random variable</a></li>
+</ul></li>
+<li class="chapter" data-level="B.4" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#moments-of-a-probability-distribution-function"><i class="fa fa-check"></i><b>B.4</b> Moments of a probability distribution function</a>
+<ul>
+<li class="chapter" data-level="B.4.1" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#first-moment-of-a-probability-distribution-expected-value"><i class="fa fa-check"></i><b>B.4.1</b> First moment of a probability distribution: Expected value</a></li>
+<li class="chapter" data-level="B.4.2" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#second-moment-of-the-distribution."><i class="fa fa-check"></i><b>B.4.2</b> Second moment of the distribution.</a></li>
+<li class="chapter" data-level="B.4.3" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#third-and-fourth-moments-skewness-and-kurtosis"><i class="fa fa-check"></i><b>B.4.3</b> Third and Fourth Moments: Skewness and Kurtosis</a></li>
+</ul></li>
+<li class="chapter" data-level="B.5" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#useful-probability-distributions"><i class="fa fa-check"></i><b>B.5</b> Useful probability distributions</a></li>
+<li class="chapter" data-level="B.6" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#joint-probability-distribution"><i class="fa fa-check"></i><b>B.6</b> Joint Probability Distribution</a></li>
+<li class="chapter" data-level="B.7" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#measures-of-statistical-association"><i class="fa fa-check"></i><b>B.7</b> Measures of statistical association</a>
+<ul>
+<li class="chapter" data-level="B.7.1" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#rules-of-expectation-and-variances"><i class="fa fa-check"></i><b>B.7.1</b> Rules of expectation and variances</a></li>
+</ul></li>
+<li class="chapter" data-level="B.8" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#sampling-and-estimation"><i class="fa fa-check"></i><b>B.8</b> Sampling and Estimation</a></li>
+<li class="chapter" data-level="B.9" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#hypothesis-testing"><i class="fa fa-check"></i><b>B.9</b> Hypothesis testing</a>
+<ul>
+<li class="chapter" data-level="B.9.1" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#testing-a-restriction-on-a-single-population-parameter"><i class="fa fa-check"></i><b>B.9.1</b> Testing a restriction on a single population parameter</a></li>
+<li class="chapter" data-level="B.9.2" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#testing-a-restriction-on-multiple-population-parameter"><i class="fa fa-check"></i><b>B.9.2</b> Testing a restriction on multiple population parameter</a></li>
+<li class="chapter" data-level="B.9.3" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#confidence-interval-and-hypothesis-testing"><i class="fa fa-check"></i><b>B.9.3</b> Confidence interval and Hypothesis testing</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#problems-7"><i class="fa fa-check"></i>Problems</a></li>
+<li class="chapter" data-level="" data-path="review-of-probability-and-statistics.html"><a href="review-of-probability-and-statistics.html#solutions-7"><i class="fa fa-check"></i>Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="statistical-tables.html"><a href="statistical-tables.html"><i class="fa fa-check"></i><b>C</b> Statistical Tables</a>
 <ul>
 <li class="chapter" data-level="" data-path="statistical-tables.html"><a href="statistical-tables.html#table-a-critical-values-for-the-t-distribution"><i class="fa fa-check"></i>Table A: Critical Values for the t-distribution</a></li>
 <li class="chapter" data-level="" data-path="statistical-tables.html"><a href="statistical-tables.html#table-b-critical-values-for-the-chi-square-distribution"><i class="fa fa-check"></i>Table B: Critical Values for the Chi-square distribution</a></li>
@@ -218,10 +247,10 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="classical-assumptions-and-ols-estimator" class="section level1 hasAnchor" number="6">
-<h1><span class="header-section-number">Chapter 6</span> Classical assumptions and OLS estimator<a href="classical-assumptions-and-ols-estimator.html#classical-assumptions-and-ols-estimator" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="classical-assumptions" class="section level2 hasAnchor" number="6.1">
-<h2><span class="header-section-number">6.1</span> Classical Assumptions<a href="classical-assumptions-and-ols-estimator.html#classical-assumptions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="classical-assumptions-and-ols-estimator" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Classical assumptions and OLS estimator<a href="classical-assumptions-and-ols-estimator.html#classical-assumptions-and-ols-estimator" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="classical-assumptions" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Classical Assumptions<a href="classical-assumptions-and-ols-estimator.html#classical-assumptions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Similar to our discussion in chapter 2, a desirable sample estimator must be unbiased and efficient. The discussion so far has focused on estimating regression parameters using sample data on the dependent and the independent variables. We will now focus on the conditions under which the OLS estimator of regression parameters are <strong>unbiased</strong> and <strong>efficient</strong>.</p>
 <p>Suppose we have the following regression model:</p>
 <p><span class="math display">\[Y_i = \beta_0 + \beta_1  X_i+ \epsilon_i\]</span></p>
@@ -236,7 +265,7 @@
 <p><span class="math display">\[Var(\hat{\beta_0}) \ \text{and} \ Var(\hat{\beta_1}) \ \text{are smallest possible.} \]</span></p>
 <p>In order for the OLS estimators to be unbiased and efficient, we need a set of assumptions to be satisfied. These assumptions are known as <strong>classical assumptions</strong> and the result is formally known as the <strong>Gauss-Markov</strong> theorem named after two mathematicians, namely, Carl Gauss and Andrey Markov.</p>
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-90" class="theorem"><strong>Theorem 6.1  (Gauss-Markov theorem) </strong></span>The OLS estimator is the best linear and unbiased estimator (BLUE) if and only if the following six classical assumptions are satisfied:</p>
+<p><span id="thm:unnamed-chunk-33" class="theorem"><strong>Theorem 4.1  (Gauss-Markov theorem) </strong></span>The OLS estimator is the best linear and unbiased estimator (BLUE) if and only if the following six classical assumptions are satisfied:</p>
 <ol style="list-style-type: decimal">
 <li><p>The regression model is linear in parameters.</p></li>
 <li><p>There is no linear relationship between included independent variables in the regression model or there is <strong>no perfect multicollinearity</strong>.</p></li>
@@ -261,27 +290,27 @@ Note that for cross-sectional data correlation in error terms across observation
 <p><span class="math display">\[Cor(X_{ki}, \epsilon_i) = 0 \ \text{for} k=1,2,3, .., K\ \]</span></p>
 <p>Of these 6 assumptions, in practice, we often take assumptions 1 through 3 for granted and do not consider violations of these assumptions in our data. However, assumptions 3 to 6 are often not met in data and are investigated much more rigorously. Accordingly, in this chapter we will focus on heteroscedasticity, serial correlation, and no endogeneity.</p>
 </div>
-<div id="heteroscedasticity" class="section level2 hasAnchor" number="6.2">
-<h2><span class="header-section-number">6.2</span> Heteroscedasticity<a href="classical-assumptions-and-ols-estimator.html#heteroscedasticity" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="heteroscedasticity" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Heteroscedasticity<a href="classical-assumptions-and-ols-estimator.html#heteroscedasticity" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>One of the main assumptions that affect the efficiency of the OLS estimator is the assumption of no heteroscedasticity which forces a constant variance for the error term in our regression model. Consider the following simple regression model that explains food expenditure (<span class="math inline">\(Y\)</span>) based on a person’s disposable income (<span class="math inline">\(X\)</span>):</p>
 <p><span class="math display">\[Y_i=\beta_0 + \beta_1 X_i + \epsilon_i\]</span></p>
 <p>The classical assumption of no heteroscedasticity (or Homoscedasticity) implies that <span class="math inline">\(Var(\epsilon_i)=\sigma^2_\epsilon\)</span>. In the context of our example, this assumption can be interpreted as follows. The information a person’s income has for his food expenditure does not vary by the any characteristic of this person (say income). As a result the range of errors we can make in predicting someone’s food expenditure based on their income stays constant. Graphically, if error term are homoscedastic then there is no relationship between the range of errors we can make and a person’s income. Graphically, Figure 6.1 below shows this pattern–whether we look at observations with low income or those with high income, the range of errors we make is more or less constant.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-92"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-92-1.png" alt="Homoscedastic Errors" width="672" />
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-35"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-35-1.png" alt="Homoscedastic Errors" width="672" />
 <p class="caption">
-Figure 6.1: Homoscedastic Errors
+Figure 4.1: Homoscedastic Errors
 </p>
 </div>
 <p>However, it is reasonable to argue that the value of information differ across observations in the following sense. Some observations have a greater role in reducing error variance than others. In our example, one can argue that food expenditure forms a bigger percent of a person with lower income than one with higher income who may use his income for non-food expenditure activities. In this case we would expect that the variance of errors will increase as income increases. This particular pattern of heteroscedastic errors is shown in Figure 6.2 below.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-93"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-93-1.png" alt="Heteroscedastic Errors" width="672" />
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-36"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-36-1.png" alt="Heteroscedastic Errors" width="672" />
 <p class="caption">
-Figure 6.2: Heteroscedastic Errors
+Figure 4.2: Heteroscedastic Errors
 </p>
 </div>
 <p>In general the exact form of heteroscedasticity will depend on the nature of the problem at hand. However, whether or not heteroscedasticity is present in our data is an empirical question.</p>
-<div id="consequences-of-heteroscedasticity-for-the-ols-estimator" class="section level3 hasAnchor" number="6.2.1">
-<h3><span class="header-section-number">6.2.1</span> Consequences of Heteroscedasticity for the OLS estimator<a href="classical-assumptions-and-ols-estimator.html#consequences-of-heteroscedasticity-for-the-ols-estimator" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="consequences-of-heteroscedasticity-for-the-ols-estimator" class="section level3 hasAnchor" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> Consequences of Heteroscedasticity for the OLS estimator<a href="classical-assumptions-and-ols-estimator.html#consequences-of-heteroscedasticity-for-the-ols-estimator" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Presence of heteroscedasticity is a violation of the classical assumption and accordingly will affect the properties of the OLS estimator. In general, if there is heteroscedasticity in data then:</p>
 <ol style="list-style-type: decimal">
 <li><p>The OLS estimator of each <span class="math inline">\(\beta\)</span> coefficient is still unbiased.</p></li>
@@ -289,13 +318,13 @@ Figure 6.2: Heteroscedastic Errors
 </ol>
 </div>
 </div>
-<div id="testing-for-hetroscedasticity-in-data" class="section level2 hasAnchor" number="6.3">
-<h2><span class="header-section-number">6.3</span> Testing for Hetroscedasticity in data<a href="classical-assumptions-and-ols-estimator.html#testing-for-hetroscedasticity-in-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="testing-for-hetroscedasticity-in-data" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Testing for Hetroscedasticity in data<a href="classical-assumptions-and-ols-estimator.html#testing-for-hetroscedasticity-in-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The first step for incorporating heteroscedasticity in our estimation is to test for its presence in our sample data. This test is based on OLS residuals of the original regression model and accounts for both linear and non-linear forms of heteroscedasticity. Consider the following regression model with two independent variables:</p>
 <p><span class="math display">\[Y_i=\beta_0 + \beta_1 X_{1i} + \beta_2 X_{2i} + \epsilon_i\]</span></p>
 <p>Using OLS we can obtain the residuals from this model, denoted by <span class="math inline">\(e_i\)</span>. Next, we will use this residual data to test for the presence of heteroscedasticity.</p>
-<div id="lm-test-for-linear-heteroscedasticity-bp-test" class="section level3 hasAnchor" number="6.3.1">
-<h3><span class="header-section-number">6.3.1</span> LM test for linear heteroscedasticity: BP test<a href="classical-assumptions-and-ols-estimator.html#lm-test-for-linear-heteroscedasticity-bp-test" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="lm-test-for-linear-heteroscedasticity-bp-test" class="section level3 hasAnchor" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> LM test for linear heteroscedasticity: BP test<a href="classical-assumptions-and-ols-estimator.html#lm-test-for-linear-heteroscedasticity-bp-test" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The first test of heteroscedasticity is the Breusch-Pagan (BP) test of linear heteroscedasticity. The procedure for implementing this test is detailed below:</p>
 <p>Step 1. Estimate the regression model using OLS and obtain residuals: <span class="math inline">\(e_i\)</span></p>
 <p>Step 2: Estimate the BP regression model where the dependent variable is squared residuals and all independent variables are included on the right hand side:</p>
@@ -308,8 +337,8 @@ Figure 6.2: Heteroscedastic Errors
 <p><span class="math display">\[LM=R^2_{BP} \times N\]</span></p>
 <p>where <span class="math inline">\(N\)</span> denotes sample size. Under the null hypothesis this test statistic follows Chi-square distribution with <span class="math inline">\(J\)</span> degrees of freedom, where <span class="math inline">\(J\)</span> denotes number of independent variables in the BPG regression of Step 2. If the LM test statistic is greater than the critical value from the Chi-square distribution, we reject the null hypothesis and conclude that there is sample evidence for linear heteroscedasticity.</p>
 </div>
-<div id="lm-test-for-linear-heteroscedasticity-whites-test" class="section level3 hasAnchor" number="6.3.2">
-<h3><span class="header-section-number">6.3.2</span> LM test for linear heteroscedasticity: White’s test<a href="classical-assumptions-and-ols-estimator.html#lm-test-for-linear-heteroscedasticity-whites-test" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="lm-test-for-linear-heteroscedasticity-whites-test" class="section level3 hasAnchor" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> LM test for linear heteroscedasticity: White’s test<a href="classical-assumptions-and-ols-estimator.html#lm-test-for-linear-heteroscedasticity-whites-test" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We can also test for the presence of non-linear heteroscedasticity using White’s test. The procedure for implementing this test is detailed below:</p>
 <p>Step 1. Estimate the regression model using OLS and obtain residuals: <span class="math inline">\(e_i\)</span></p>
 <p>Step 2: Estimate the BPG regression model where the dependent variable is squared residuals. Now, independent variables include all independent variables, squared of all independent variables, and their product. So for example with 2 independent variables <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> we get the following White regression:</p>
@@ -322,7 +351,7 @@ Figure 6.2: Heteroscedastic Errors
 <p><span class="math display">\[LM=R^2_{White} \times N\]</span></p>
 <p>where <span class="math inline">\(N\)</span> denotes sample size. Under the null hypothesis this test statistic follows Chi-square distribution with <span class="math inline">\(J\)</span> degrees of freedom, where <span class="math inline">\(J\)</span> denotes number of independent variables in the White regression of Step 2. If the LM test statistic is greater than the critical value from the Chi-square distribution, we reject the null hypothesis and conclude that there is sample evidence for heteroscedasticity.</p>
 <div class="example">
-<p><span id="exm:unnamed-chunk-94" class="example"><strong>Example 6.1  (Testing for Hetroscedasticity) </strong></span>One of the most important models in finance is the Fama-French 3-factor model of risk premium of a stock. As per this model, the expected return on an asset over and above a risk free rate depends on depends on three factors:</p>
+<p><span id="exm:unnamed-chunk-37" class="example"><strong>Example 4.1  (Testing for Hetroscedasticity) </strong></span>One of the most important models in finance is the Fama-French 3-factor model of risk premium of a stock. As per this model, the expected return on an asset over and above a risk free rate depends on depends on three factors:</p>
 <ol style="list-style-type: lower-alpha">
 <li><p>Market risk: Market return minus risk free rate</p></li>
 <li><p>Size premium: small market captilization stocks tend to out perform large market capitalization stocks. This variable captures this permium.</p></li>
@@ -332,7 +361,7 @@ Figure 6.2: Heteroscedastic Errors
 <p><span class="math display">\[y_t= \beta_0 + \beta_1 X_{1t} + \beta_2X_{2t} + \beta_3 X_{3t} + \epsilon_t\]</span></p>
 <p>Here, <span class="math inline">\(y_t\)</span> is the return on a stock minus the risk free rate. In this example we will use IBM stock and proxy risk free rate by using return on 1 month TB. <span class="math inline">\(X_{1t}\)</span> denotes market risk, <span class="math inline">\(X_{2t}\)</span> denotes size premium, and <span class="math inline">\(X_{3t}\)</span> denotes value risk. The data for these three factors is downloaded from the following website:</p>
 <p><a href="https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html" class="uri">https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html</a></p>
-<p>In this application we use monthly data from Jan-2007 through June 2019. Table <a href="classical-assumptions-and-ols-estimator.html#tab:ch6table1">6.1</a> provides the estimation of this model using OLS.</p>
+<p>In this application we use monthly data from Jan-2007 through June 2019. Table <a href="classical-assumptions-and-ols-estimator.html#tab:ch6table1">4.1</a> provides the estimation of this model using OLS.</p>
 </div>
 <table style="border: solid 2px;">
 <tr>
@@ -461,14 +490,14 @@ log-Likelihood
 </ul>
 </table>
 <caption>
-<span id="tab:ch6table1">Table 6.1: </span> OLS Estimation of Fama-French 3-factor model
+<span id="tab:ch6table1">Table 4.1: </span> OLS Estimation of Fama-French 3-factor model
 </caption>
 <p>In order to use the OLS estimator for hypothesis testing, we need to confirm whether there is heteroscedasticity in our data. For this example the BP test regression is given by:</p>
 <p><span class="math display">\[e^2_i=\alpha_0 + \alpha_1 f_{1i} + \alpha_2 f_{2i} +\alpha_3 f_{3i} + \epsilon_i\]</span></p>
 <p>The null hypothesis for no heteroscedasticity requires <span class="math inline">\(\alpha_1=\alpha_2=\alpha_3=0\)</span>.</p>
 <p>The White test regression is given by:</p>
 <p><span class="math display">\[e^2_i=\alpha_0 + \alpha_1 f_{1i} + \alpha_2 f_{2i} +\alpha_3 f_{3i} + \alpha_4 f^2_{1i} +\alpha_5 f^2_{2i} + \alpha_{6}f^2_{3i} + \alpha_7 (f_{1i} \times f_{2i})+ \alpha_8 (f_{1i} \times f_{3i})+ \alpha_9 (f_{2i} \times f_{3i})+\epsilon_i\]</span></p>
-<p>The null hypothesis for no heteroscedasticity requires <span class="math inline">\(\alpha_1=\alpha_2=\alpha_3=\alpha_4=\alpha_5=\alpha_6=\alpha_7=\alpha_8=\alpha_9=0\)</span>. We conduct both BP and White’s test in R and present the results in Table <a href="classical-assumptions-and-ols-estimator.html#tab:ch6table2">6.2</a>. We find that there is evidence of heteroscedasticity according to both tests, as we reject the null hypothesis for BP test at 5% level of significance and we reject the null hypothesis for White’s test at 10% level of significance.</p>
+<p>The null hypothesis for no heteroscedasticity requires <span class="math inline">\(\alpha_1=\alpha_2=\alpha_3=\alpha_4=\alpha_5=\alpha_6=\alpha_7=\alpha_8=\alpha_9=0\)</span>. We conduct both BP and White’s test in R and present the results in Table <a href="classical-assumptions-and-ols-estimator.html#tab:ch6table2">4.2</a>. We find that there is evidence of heteroscedasticity according to both tests, as we reject the null hypothesis for BP test at 5% level of significance and we reject the null hypothesis for White’s test at 10% level of significance.</p>
 <table>
 <thead>
 <tr class="header">
@@ -491,12 +520,12 @@ log-Likelihood
 </tbody>
 </table>
 <caption>
-<span id="tab:ch6table2">Table 6.2: </span> Two tests of heteroscedasticity
+<span id="tab:ch6table2">Table 4.2: </span> Two tests of heteroscedasticity
 </caption>
 </div>
 </div>
-<div id="heteroscedasticity-robust-standard-errors" class="section level2 hasAnchor" number="6.4">
-<h2><span class="header-section-number">6.4</span> Heteroscedasticity robust standard errors<a href="classical-assumptions-and-ols-estimator.html#heteroscedasticity-robust-standard-errors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="heteroscedasticity-robust-standard-errors" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Heteroscedasticity robust standard errors<a href="classical-assumptions-and-ols-estimator.html#heteroscedasticity-robust-standard-errors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In case we find heteroscedasticity in our data using OLS would lead to unbiased but inefficient estimators. The main consequence of heteroscedasticity, as discussed above, is that the OLS standard errors for each <span class="math inline">\(\beta\)</span> coefficient in our regression model are incorrect. To see understand this issue consider the following simple regression model:</p>
 <p><span class="math display">\[Y_i=\beta_0 + \beta_1 X_i + \epsilon_i\]</span></p>
 <p>Using OLS we obtain the following formula for the slope estimator:</p>
@@ -506,18 +535,18 @@ log-Likelihood
 <p>Now, by definition, <span class="math inline">\(Var(\widehat{\beta_1})=E(\widehat{\beta_1}-\beta_1)^2\)</span>. Hence, using above equation we get the formula for the variance of <span class="math inline">\(Var(\widehat{\beta_1})\)</span>. Below we first compute this formula without making an assumption of no heteroscedasticity:</p>
 <p><span class="math display" id="eq:one">\[\begin{equation}
 Var(\widehat{\beta_1})=\frac{\sum_{i=1}(X_i-\overline{X})^2E(\epsilon_i^2)}{\sum_{i=1}^N ((X_i-\overline{X})^2)^2}
-\tag{6.1}
+\tag{4.1}
 \end{equation}\]</span></p>
-<p>Note that in the above variance formula, <span class="math inline">\(E(\epsilon_i^2)=Var(\epsilon_i)\)</span>. Equation <a href="classical-assumptions-and-ols-estimator.html#eq:one">(6.1)</a> is the correct formula for computing the variance (and hence the correct standard error for <span class="math inline">\(\widehat{\beta_1}\)</span>) when there is heteroscedasticity in data.</p>
+<p>Note that in the above variance formula, <span class="math inline">\(E(\epsilon_i^2)=Var(\epsilon_i)\)</span>. Equation <a href="classical-assumptions-and-ols-estimator.html#eq:one">(4.1)</a> is the correct formula for computing the variance (and hence the correct standard error for <span class="math inline">\(\widehat{\beta_1}\)</span>) when there is heteroscedasticity in data.</p>
 <p>In contrast, OLS assumes homoscedasticity, implying <span class="math inline">\(E(\epsilon_i^2)=Var(\epsilon_i)=\sigma^2_\epsilon\)</span> (a constant). As a result the OLS estimator for the variance of <span class="math inline">\(Var(\widehat{\beta_1})\)</span> is given by:</p>
 <p><span class="math display" id="eq:two">\[\begin{equation}
 Var(\widehat{\beta_1})=\frac{\sum_{i=1}(X_i-\overline{X})^2\sigma^2_\epsilon}{\sum_{i=1}^N (X_i-\overline{X})^2}=\frac{\sigma^2_\epsilon}{\sum_{i=1}^N (X_i-\overline{X})^2}
-\tag{6.2}
+\tag{4.2}
 \end{equation}\]</span></p>
-<p>Note that the OLS variance formula in is different from the formula for variance in equation <a href="classical-assumptions-and-ols-estimator.html#eq:one">(6.1)</a>.</p>
-<p>In applied economic analysis it is common to replace the incorrect OLS standard errors (square root of equation <a href="classical-assumptions-and-ols-estimator.html#eq:two">(6.2)</a>) with the <strong>hetroscedasticity robust standard errors</strong> (square root of equation <a href="classical-assumptions-and-ols-estimator.html#eq:one">(6.1)</a>). But for that we need to estimate <span class="math inline">\(E(\epsilon_i^2)\)</span> using our sample data. One of the most commonly used correction was proposed by the economist Hal White in 1980. He suggested replacing <span class="math inline">\(E(\epsilon_i^2)\)</span> in equation (1) with <span class="math inline">\(e_i^2\)</span> where <span class="math inline">\(e_i\)</span> is the OLS residual. Hence, the formula for White’s corrected standard error is given by:</p>
+<p>Note that the OLS variance formula in is different from the formula for variance in equation <a href="classical-assumptions-and-ols-estimator.html#eq:one">(4.1)</a>.</p>
+<p>In applied economic analysis it is common to replace the incorrect OLS standard errors (square root of equation <a href="classical-assumptions-and-ols-estimator.html#eq:two">(4.2)</a>) with the <strong>hetroscedasticity robust standard errors</strong> (square root of equation <a href="classical-assumptions-and-ols-estimator.html#eq:one">(4.1)</a>). But for that we need to estimate <span class="math inline">\(E(\epsilon_i^2)\)</span> using our sample data. One of the most commonly used correction was proposed by the economist Hal White in 1980. He suggested replacing <span class="math inline">\(E(\epsilon_i^2)\)</span> in equation (1) with <span class="math inline">\(e_i^2\)</span> where <span class="math inline">\(e_i\)</span> is the OLS residual. Hence, the formula for White’s corrected standard error is given by:</p>
 <p><span class="math display">\[Var(\widehat{\beta_1})=\frac{\sum_{i=1}(X_i-\overline{X})^2e_i^2}{\sum_{i=1}^N ((X_i-\overline{X})^2))^2}\]</span></p>
-<p>Table <a href="classical-assumptions-and-ols-estimator.html#tab:ch6table3">6.3</a> reports the White’s standard errors for the regression model presented in Table <a href="classical-assumptions-and-ols-estimator.html#tab:ch6table2">6.2</a>. You can see minor differences in the standard errors for each <span class="math inline">\(\beta\)</span> coefficient after correcting for heteroscedasticity.</p>
+<p>Table <a href="classical-assumptions-and-ols-estimator.html#tab:ch6table3">4.3</a> reports the White’s standard errors for the regression model presented in Table <a href="classical-assumptions-and-ols-estimator.html#tab:ch6table2">4.2</a>. You can see minor differences in the standard errors for each <span class="math inline">\(\beta\)</span> coefficient after correcting for heteroscedasticity.</p>
 <table>
 <thead>
 <tr class="header">
@@ -545,15 +574,15 @@ Var(\widehat{\beta_1})=\frac{\sum_{i=1}(X_i-\overline{X})^2\sigma^2_\epsilon}{\s
 </tbody>
 </table>
 <caption>
-<span id="tab:ch6table3">Table 6.3: </span> White’s Standard Errors
+<span id="tab:ch6table3">Table 4.3: </span> White’s Standard Errors
 </caption>
 
 <div class="rmdCaution">
 <p>Note that use of robust standard errors may mask a more serious issue with your regression model. For example, there may be important differences between subgroups of observation in your sample. Similarly, the true relationship may not be linear. Such misspecification issues can manifest themselves as heteroscedasticity. If the robust standard errors using White’s method are very different from the OLS standard errors then one may have to worry about the misspecification issues and simply using robust standard errors is not a good idea.</p>
 </div>
 </div>
-<div id="serial-correlation" class="section level2 hasAnchor" number="6.5">
-<h2><span class="header-section-number">6.5</span> Serial correlation<a href="classical-assumptions-and-ols-estimator.html#serial-correlation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="serial-correlation" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> Serial correlation<a href="classical-assumptions-and-ols-estimator.html#serial-correlation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In time series data it is common to observe correlation across observations over time. Indeed many relationships in economics are dynamic in nature. For example, consumption habits indicate past consumption has an effect on current consumption. Similarly, production activities typically stretch over multiple periods and output in one period is often affect by the level produced in the previous period. As these examples indicate it is reasonable to argue that time series economic data may exhibit some kind of serial correlation.</p>
 <p>The correlation between observations of a time series variable is captured by the autocorrelation function (ACF) which is given by:</p>
 <p><span class="math display">\[ACF(s)=\frac{Cov(y_t, y_{t-s})}{\sigma_{y_t} \times \sigma_{y_{t-s}}}\]</span></p>
@@ -563,16 +592,16 @@ Var(\widehat{\beta_1})=\frac{\sum_{i=1}(X_i-\overline{X})^2\sigma^2_\epsilon}{\s
 <p>The classical assumption of no serial correlation implies that <span class="math inline">\(Cor(\epsilon_t,\epsilon_{t-s})=0\)</span>, where <span class="math inline">\(t\)</span> indexes current time period and <span class="math inline">\(s\)</span> is an integer.</p>
 <p>However, it is quite possible that the regression errors are actually correlated over time. For simplicity, lets assume that the error term in our model has first order serial correlation of the following form:</p>
 <p><span class="math display">\[\epsilon_t = \rho \epsilon_{t-1} + u_t\]</span></p>
-<p>Here <span class="math inline">\(\rho\)</span> captures the first order serial correlation and is the slope parameter. <span class="math inline">\(u_t\)</span> is a classical error term that satisfies all classical assumptions and hence is serially uncorrelated by definition. Now, depending on the sign of <span class="math inline">\(\rho\)</span> the serial correlation can be positive or negative. In economics it is most common to observe positive serial correlation where the persistence in data ensures that a positive (negative) value of the regression error in one period is likely to be followed by another positive (negative) value. In contrast for negative serial correlation a positive error in one period is more likely to be followed by a positive error next period, and vice-versa. Figure <a href="classical-assumptions-and-ols-estimator.html#fig:fig1">6.3</a> below shows the pattern of residuals for the two cases of positive and negative serial correlation in the regression error terms.</p>
+<p>Here <span class="math inline">\(\rho\)</span> captures the first order serial correlation and is the slope parameter. <span class="math inline">\(u_t\)</span> is a classical error term that satisfies all classical assumptions and hence is serially uncorrelated by definition. Now, depending on the sign of <span class="math inline">\(\rho\)</span> the serial correlation can be positive or negative. In economics it is most common to observe positive serial correlation where the persistence in data ensures that a positive (negative) value of the regression error in one period is likely to be followed by another positive (negative) value. In contrast for negative serial correlation a positive error in one period is more likely to be followed by a positive error next period, and vice-versa. Figure <a href="classical-assumptions-and-ols-estimator.html#fig:fig1">4.3</a> below shows the pattern of residuals for the two cases of positive and negative serial correlation in the regression error terms.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig1"></span>
 <img src="bookdown-demo_files/figure-html/fig1-1.png" alt="Serially correlated Errors" width="1152" />
 <p class="caption">
-Figure 6.3: Serially correlated Errors
+Figure 4.3: Serially correlated Errors
 </p>
 </div>
 <p>In general we can have higher order serial correlation in data and whether or not there is such correlation in our data is an empirical question.</p>
-<div id="consequences-of-serial-correlation-for-the-ols-estimator" class="section level3 hasAnchor" number="6.5.1">
-<h3><span class="header-section-number">6.5.1</span> Consequences of Serial Correlation for the OLS estimator<a href="classical-assumptions-and-ols-estimator.html#consequences-of-serial-correlation-for-the-ols-estimator" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="consequences-of-serial-correlation-for-the-ols-estimator" class="section level3 hasAnchor" number="4.5.1">
+<h3><span class="header-section-number">4.5.1</span> Consequences of Serial Correlation for the OLS estimator<a href="classical-assumptions-and-ols-estimator.html#consequences-of-serial-correlation-for-the-ols-estimator" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Presence of serial correlation is a violation of the classical assumption and accordingly will affect the properties of the OLS estimator. In general, if there is serial correlation:</p>
 <ol style="list-style-type: decimal">
 <li><p>The OLS estimator of each <span class="math inline">\(\beta\)</span> coefficient is still unbiased.</p></li>
@@ -580,11 +609,11 @@ Figure 6.3: Serially correlated Errors
 </ol>
 </div>
 </div>
-<div id="testing-for-serial-correlation-in-data" class="section level2 hasAnchor" number="6.6">
-<h2><span class="header-section-number">6.6</span> Testing for Serial Correlation in data<a href="classical-assumptions-and-ols-estimator.html#testing-for-serial-correlation-in-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="testing-for-serial-correlation-in-data" class="section level2 hasAnchor" number="4.6">
+<h2><span class="header-section-number">4.6</span> Testing for Serial Correlation in data<a href="classical-assumptions-and-ols-estimator.html#testing-for-serial-correlation-in-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>There are two tests for serial correlation that we will cover. The first one is only for testing the first order serial correlation. The second test is more general and can be used to test both the first order and higher order serial correlation.</p>
-<div id="durbin-watson-test-for-first-order-serial-correlation" class="section level3 hasAnchor" number="6.6.1">
-<h3><span class="header-section-number">6.6.1</span> Durbin-Watson test for first order serial correlation<a href="classical-assumptions-and-ols-estimator.html#durbin-watson-test-for-first-order-serial-correlation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="durbin-watson-test-for-first-order-serial-correlation" class="section level3 hasAnchor" number="4.6.1">
+<h3><span class="header-section-number">4.6.1</span> Durbin-Watson test for first order serial correlation<a href="classical-assumptions-and-ols-estimator.html#durbin-watson-test-for-first-order-serial-correlation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>One of the first tests for serial correlation is Durbin-Watson test. Note that this test can only be used to detect first order serial correlation. Consider the following regression model:</p>
 <p><span class="math display">\[Y_t = \beta_0 + \beta_1 X_{1t} + \beta_2 X_{2t} + \epsilon_t\]</span></p>
 <p>Suppose we want to test whether the regression error term can be modeled as the first order serial correlation given by:</p>
@@ -605,22 +634,22 @@ Figure 6.3: Serially correlated Errors
 4 &amp; if \ \widehat{\rho}=-1 \ \text{(perfect negative serial correlation)}
 \end{cases}\]</span></p>
 <p>Consequently, <span class="math inline">\(d\)</span> is bounded between 0 and 4, and for positive serial correlation we expect <span class="math inline">\(d\)</span> to take values sufficiently close to <span class="math inline">\(0\)</span> whereas for negative serial correlation we expect <span class="math inline">\(d\)</span> to take values sufficiently close to <span class="math inline">\(4\)</span>. Finally, a value of <span class="math inline">\(d\)</span> close enough to <span class="math inline">\(2\)</span> is indicative of no serial correlation.</p>
-<p>In order to implement this test, we compare the estimated test statistic with 2 critical values: the lower limit denoted by <span class="math inline">\(dL\)</span> and the upper limit denoted by <span class="math inline">\(dU\)</span>. These values can be obtained from the Durbin-Watson distribution table using the information on the sample size and the number of independent variables in our regression model. The decision rules for the positive serial correlation as well as negative serial correlation tests are presented in Figure <a href="classical-assumptions-and-ols-estimator.html#fig:fig2">6.4</a> and Figure <a href="classical-assumptions-and-ols-estimator.html#fig:fig3">6.5</a>.</p>
+<p>In order to implement this test, we compare the estimated test statistic with 2 critical values: the lower limit denoted by <span class="math inline">\(dL\)</span> and the upper limit denoted by <span class="math inline">\(dU\)</span>. These values can be obtained from the Durbin-Watson distribution table using the information on the sample size and the number of independent variables in our regression model. The decision rules for the positive serial correlation as well as negative serial correlation tests are presented in Figure <a href="classical-assumptions-and-ols-estimator.html#fig:fig2">4.4</a> and Figure <a href="classical-assumptions-and-ols-estimator.html#fig:fig3">4.5</a>.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig2"></span>
 <img src="bookdown-demo_files/figure-html/fig2-1.png" alt="Decision-rule for Durbin-Watson Test of Positive Serial Correlation" width="672" />
 <p class="caption">
-Figure 6.4: Decision-rule for Durbin-Watson Test of Positive Serial Correlation
+Figure 4.4: Decision-rule for Durbin-Watson Test of Positive Serial Correlation
 </p>
 </div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig3"></span>
 <img src="bookdown-demo_files/figure-html/fig3-1.png" alt="Decision-rule for Durbin-Watson Test of Negative Serial Correlation" width="672" />
 <p class="caption">
-Figure 6.5: Decision-rule for Durbin-Watson Test of Negative Serial Correlation
+Figure 4.5: Decision-rule for Durbin-Watson Test of Negative Serial Correlation
 </p>
 </div>
 </div>
-<div id="breusch-godfrey-bg-test-for-serial-correlation" class="section level3 hasAnchor" number="6.6.2">
-<h3><span class="header-section-number">6.6.2</span> Breusch-Godfrey (BG) test for serial correlation<a href="classical-assumptions-and-ols-estimator.html#breusch-godfrey-bg-test-for-serial-correlation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="breusch-godfrey-bg-test-for-serial-correlation" class="section level3 hasAnchor" number="4.6.2">
+<h3><span class="header-section-number">4.6.2</span> Breusch-Godfrey (BG) test for serial correlation<a href="classical-assumptions-and-ols-estimator.html#breusch-godfrey-bg-test-for-serial-correlation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In order to test for higher order serial correlations we can use the BG test which uses the OLS residuals to test for evidence of serial correlation. The procedure for this test is described below:</p>
 <p>Step 1. Estimate the regression model using OLS and obtain residuals: <span class="math inline">\(e_t\)</span></p>
 <p>Step 2: Estimate the BG regression model where the dependent variable is the residuals and independent variables are lagged values of this residual. The number of lagged residuals capture the order of serial correlation. In general for testing serial correlation up to order of <span class="math inline">\(p\)</span>, we will estimate the following regression:</p>
@@ -633,8 +662,8 @@ Figure 6.5: Decision-rule for Durbin-Watson Test of Negative Serial Correlation
 <p><span class="math display">\[LM=N\times R^2_{BG}\]</span></p>
 <p>Under the null hypothesis, this test statistic follows Chi-square distribution with <span class="math inline">\(p\)</span> degrees of freedom. If LM statistic is bigger than the critical value, we reject the null and conclude that there is serial correlation.</p>
 <div class="example">
-<p><span id="exm:unnamed-chunk-100" class="example"><strong>Example 6.2  (Testing for serial correlation) </strong></span>Let us use the same example as the one we used for testing hetroscedasticity. We estimated a three factor model for the stock return of Apple using use monthly data from Jan-2007 through June 2019 (see Table <a href="classical-assumptions-and-ols-estimator.html#tab:ch6table1">6.1</a> for OLS estimation results of this model).</p>
-<p>We can implement both tests for serial correlation in R using the <em>lmtest</em> package. Table <a href="classical-assumptions-and-ols-estimator.html#tab:ch6table4">6.4</a> below presents the results test-statistic for both serial correlation tests. For comparison, I am testing for first order serial correlation. the BG test clearly indicates presence of serial correlation as indicated by a p-value which is less than 0.05. For Durbin-Watson test, sample size is 150 and K=3. Using the Durbin-Watson table we get dL=1.584 and dU=1.665. Because d=0.75 is less than dL, we reject the null hypothesis of no serial correlation and conclude there is evidence for positive first order serial correlation.</p>
+<p><span id="exm:unnamed-chunk-43" class="example"><strong>Example 4.2  (Testing for serial correlation) </strong></span>Let us use the same example as the one we used for testing hetroscedasticity. We estimated a three factor model for the stock return of Apple using use monthly data from Jan-2007 through June 2019 (see Table <a href="classical-assumptions-and-ols-estimator.html#tab:ch6table1">4.1</a> for OLS estimation results of this model).</p>
+<p>We can implement both tests for serial correlation in R using the <em>lmtest</em> package. Table <a href="classical-assumptions-and-ols-estimator.html#tab:ch6table4">4.4</a> below presents the results test-statistic for both serial correlation tests. For comparison, I am testing for first order serial correlation. the BG test clearly indicates presence of serial correlation as indicated by a p-value which is less than 0.05. For Durbin-Watson test, sample size is 150 and K=3. Using the Durbin-Watson table we get dL=1.584 and dU=1.665. Because d=0.75 is less than dL, we reject the null hypothesis of no serial correlation and conclude there is evidence for positive first order serial correlation.</p>
 </div>
 <table>
 <thead>
@@ -658,13 +687,13 @@ Figure 6.5: Decision-rule for Durbin-Watson Test of Negative Serial Correlation
 </tbody>
 </table>
 <caption>
-<span id="tab:ch6table4">Table 6.4: </span> Two tests of Serial Correlation
+<span id="tab:ch6table4">Table 4.4: </span> Two tests of Serial Correlation
 </caption>
 </div>
 </div>
-<div id="serial-correlation-robust-standard-errors" class="section level2 hasAnchor" number="6.7">
-<h2><span class="header-section-number">6.7</span> Serial correlation robust standard errors<a href="classical-assumptions-and-ols-estimator.html#serial-correlation-robust-standard-errors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In case we find serial correlation in our data using OLS would lead to unbiased but inefficient estimators. The main consequence of serial correlation, as discussed above, is that the OLS standard errors for each <span class="math inline">\(\beta\)</span> coefficient in our regression model are incorrect. In applied economic analysis it is common to replace the incorrect OLS standard errors with the <strong>serial-correlation robust standard errors</strong>. Table <a href="#tab:ch6table5"><strong>??</strong></a> reports the serial correlation robust standard errors for the regression model presented in Table <a href="classical-assumptions-and-ols-estimator.html#tab:ch6table1">6.1</a>. You can see minor differences in the standard errors for each <span class="math inline">\(\beta\)</span> coefficient after correcting for serial correlation suggested by Newey-West (1994).</p>
+<div id="serial-correlation-robust-standard-errors" class="section level2 hasAnchor" number="4.7">
+<h2><span class="header-section-number">4.7</span> Serial correlation robust standard errors<a href="classical-assumptions-and-ols-estimator.html#serial-correlation-robust-standard-errors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In case we find serial correlation in our data using OLS would lead to unbiased but inefficient estimators. The main consequence of serial correlation, as discussed above, is that the OLS standard errors for each <span class="math inline">\(\beta\)</span> coefficient in our regression model are incorrect. In applied economic analysis it is common to replace the incorrect OLS standard errors with the <strong>serial-correlation robust standard errors</strong>. Table <a href="#tab:ch6table5"><strong>??</strong></a> reports the serial correlation robust standard errors for the regression model presented in Table <a href="classical-assumptions-and-ols-estimator.html#tab:ch6table1">4.1</a>. You can see minor differences in the standard errors for each <span class="math inline">\(\beta\)</span> coefficient after correcting for serial correlation suggested by Newey-West (1994).</p>
 <table>
 <thead>
 <tr class="header">
@@ -692,70 +721,21 @@ Figure 6.5: Decision-rule for Durbin-Watson Test of Negative Serial Correlation
 </tbody>
 </table>
 </div>
-<div id="omitted-variable-bias" class="section level2 hasAnchor" number="6.8">
-<h2><span class="header-section-number">6.8</span> Omitted variable bias<a href="classical-assumptions-and-ols-estimator.html#omitted-variable-bias" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>An important assumption that guarantees unbiasedness of the OLS estimator and allows us to afford causal interpretation for the estimated <span class="math inline">\(\beta\)</span> coefficient in a regression model is that of **no endogeneous regressor*. This assumption, simply stated, means that there is no correlation between included independent variables in a regression model and the error term. For example, consider the following simple model of wages:</p>
-<p><span class="math display">\[Y_i = \beta_0 + \beta_1 X_{1i} + \beta_2X_{2i}+\epsilon_i\]</span></p>
-<p>where <span class="math inline">\(Y_i\)</span> is the log of wages, <span class="math inline">\(X_{1i}\)</span> is years of education and <span class="math inline">\(X_{2i}\)</span> denotes a person’s innate ability. However, it is very difficult to measure person’s innate ability. Consequently, in practice our estimated regression model for wages excludes <span class="math inline">\(X_3\)</span> and is given by:</p>
-<p><span class="math display">\[Y_i = \beta_0 + \beta_1 X_{1i} + \epsilon_i^*\]</span></p>
-<p>Here, <span class="math inline">\(\epsilon_i^*=\beta_2 X_{2i}+\epsilon_i\)</span>. There are two conditions for <span class="math inline">\(X_{2i}\)</span> to be an <strong>omitted variable</strong>:</p>
-<ol style="list-style-type: decimal">
-<li><p>It is a relevant variable, i.e, there is a non-zero effect of <span class="math inline">\(X_3\)</span> on <span class="math inline">\(Y\)</span> (implied by <span class="math inline">\(\beta_3\neq 0\)</span>)</p></li>
-<li><p>It is correlated with at least one of the included <span class="math inline">\(X\)</span> variables in the model. This will lead to correlation between the included <span class="math inline">\(X\)</span> variables and the error term with the omitted variable.</p></li>
-</ol>
-<p>In our example, it is reasonable to argue that a person with greater innate ability will be more likely to get more education, i.e,<span class="math inline">\(Cor(X_{1i},X_{2i})&gt;0\)</span>. Further, a person’s innate ability should also positively affect her wage, i.e., <span class="math inline">\(\beta_2&gt;0\)</span>. As a result, both of the above conditions are satisfied implying innate ability indeed is an omitted variable in our estimated model.</p>
-<div id="consequence-of-omitted-variable-on-ols-estimator" class="section level3 hasAnchor" number="6.8.1">
-<h3><span class="header-section-number">6.8.1</span> Consequence of omitted variable on OLS estimator<a href="classical-assumptions-and-ols-estimator.html#consequence-of-omitted-variable-on-ols-estimator" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The main consequence of an omitted variable is that the included X variables are no longer exogenous and are correlated with the error term. In our example this means that <span class="math inline">\(Cor(X_{1i},\epsilon^*_i)\neq 0\)</span>. As a result the OLS estimator of education is no longer unbiased:</p>
-<p><span class="math display">\[E(\widehat{\beta_1}) \neq \beta_1\]</span></p>
-<p>Although, we cannot estimate the magnitude of the bias but in some cases it may be possible to guess the sign of the bias. In our example, the sign of this bias will depend on the signs of <span class="math inline">\(\beta_2\)</span> and <span class="math inline">\(Cor(X_{1i},X_{2i})\)</span>. Specifically, in the case where only 1 variable is omitted and only 1 variable is included in the model (like our example) we get the following 4 possibilities:</p>
-<table>
-<colgroup>
-<col width="12%" />
-<col width="43%" />
-<col width="43%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th></th>
-<th align="center"><span class="math inline">\(Cor(X_1,X_2)&gt;0\)</span></th>
-<th align="center"><span class="math inline">\(Cor(X_1,X_2)&lt;0\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><span class="math inline">\(\beta_2&gt;0\)</span></td>
-<td align="center"><span class="math inline">\(E(\widehat{\beta_1})&gt;\beta_1\)</span> (positive bias)</td>
-<td align="center"><span class="math inline">\(E(\widehat{\beta_1})&lt;\beta_1\)</span> (positive bias)</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(\beta_2&lt;0\)</span></td>
-<td align="center"><span class="math inline">\(E(\widehat{\beta_1})&lt;\beta_1\)</span> (positive bias)</td>
-<td align="center"><span class="math inline">\(E(\widehat{\beta_1})&gt;\beta_1\)</span> (negative bias)</td>
-</tr>
-</tbody>
-</table>
-<p>In our case, higher innate ability should increase wages (<span class="math inline">\(\beta_2&gt;0\)</span>) and people with greater innate ability also have higher levels of education (<span class="math inline">\(Cor(X_1,X_2)&gt;0\)</span>). Hence, the OLS estimator of education’s effect on wages will be positively biased–part of the effect is due to innate ability which is omitted from the model. In order to resolve this problem we will need to use Intstrumental variable (IV) estimator which attempts to exploit exogenous variation in the endogenous independent variable. We will cover this method in advanced econometrics course.</p>
+<div id="problems-3" class="section level2 unnumbered hasAnchor">
+<h2>Problems<a href="classical-assumptions-and-ols-estimator.html#problems-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
-</div>
-<div id="problems-5" class="section level2 unnumbered hasAnchor">
-<h2>Problems<a href="classical-assumptions-and-ols-estimator.html#problems-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-</div>
-<div id="solutions-5" class="section level2 unnumbered hasAnchor">
-<h2>Solutions<a href="classical-assumptions-and-ols-estimator.html#solutions-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="solutions-3" class="section level2 unnumbered hasAnchor">
+<h2>Solutions<a href="classical-assumptions-and-ols-estimator.html#solutions-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 
 </div>
 </div>
-
-
-
             </section>
 
           </div>
         </div>
       </div>
 <a href="functional-form-and-dummy-variables.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="statistical-tables.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="instrumental-variable-estimation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

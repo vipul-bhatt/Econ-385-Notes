@@ -1,250 +1,347 @@
----
-output:
-  pdf_document: default
-  html_document: default
----
+# Functional form and dummy variables
 
-# Simple Regression Model
+Suppose we are interested in estimating a relationship between $Y$ and $X$. In general the population regression function is an unknown function of $X$, that is:
 
-In this chapter we consider the simple case of establishing an empirical relationship between two variables. For simplicity, we will denote the outcome variable (or dependent variable) by $Y$ and the explanatory variable (or independent variable) by $X$. Throughout this chapter we will ignore the limitations of this model and assume that all the assumptions needed for this kind of model are met in our data. In subsequent chapters we will learn how this model can be extended to incorporate real world issues we face when conducting quantitative economic analysis.
+\[E(Y_i|X_i) = f(X_i)\]
 
-## Statistical foundation of the simple regression model
+Our discussion on regression model thus far has mostly focused on the linear relationship between $Y$ and $X$ variable, with the exception of using natural log transformations. In this chapter we will look at two alternative ways of capturing non-linearity in economic relationships. Our objective is to find specifications for $f(X_i)$ that allow for non-linear terms in $X$. 
 
-A simple economic relationship often requires us to specify the population of interest and variables from this population that we wish to empirically examine. For example, we may be interested in finding out how college major choice affects starting salary of graduates. Here, the population of interest is college graduates and the variables representing this population are starting salary  and college major. In this example, the outcome variable is starting salary (denoted by Y) and the explanatory variable is college major choice (X). A simple regression model addresses the following question: how does changes in $X$ affect $Y$? In our example, how does differences in college majors between individuals relate to differences in their starting salaries.  This is the conditional expected value of Y given X, denoted by $E(Y_i|X_i)$ and is known as the **population regression function (PRF)**. Because we usually work with a sample, the population regression function is unknown to us and our goal is to estimate this conditional mean using a sample data on Y and X. 
+## Polynomials in the regression model
 
-Before attempting to estimate the PRF, we have to first make an assumption about the functional form for this function. For example, we can assume that:
+One way to capture non-linear relationship between the dependent variable, $Y$, and the independent variable, $X$ is to use polynomials in $X$. For example, consider the following polyonomial of order 2 (quadratic):
 
-\[E(Y_i|X_i)=\beta_0 + \beta_1 X_i\]
+\[Y_i=\beta_0 +\beta_1 X_i + \beta_2 X_i^2+\epsilon_i\]
 
+In the above model, the first and second derivatives of $Y$ with respect to $X$ allow us to capture the non-linear relationship between these two variables. The first derivative of $Y$ with respect to $X$ gives us:
 
-In this case we are assuming that changes in $X$ affects expected value of $Y$ in a linear fashion (constant slope, given by $\beta_1$). Note that we can accommodate any kind of functional relationship between $Y$ and $X$ by simply changing the functional form. For example, a quadratic specification is given by:
+\[\frac{dY_i}{dX_i}=\beta_1 + 2 \beta_2 X_i\]
 
-\[E(Y_i|X_i)=\beta_0 + \beta_1 X_i^2\]
+Note that:
 
-Here, we assume that changes in X affect Y in a non-linear fashion. In this sense, the simple linear regression model is flexible enough to capture the relationship between X and Y. However, this also means that getting the functional form wrong will introduce a **specification error** in our estimation. Depending on whether we want **explain** Y using data on X or **predict** Y using data on X, the consequences of the specification error could be less or more severe. Here it is also important to emphasize the difference between **linear in parameters** vs **linear in variables**. Both of the assumed functional forms are linear in parameters $\beta_0$ and $\beta_1$. However, the first specification is linear in X whereas the second specification is non-linear in X. In this course, we will only focus on specifications that are linear in parameters.
+1. The effect of $X$ on $Y$ now depends on the level of $X$.
 
+2. We cannot interepret $\beta_1$ as the effect of $X_i$ on $Y$, holding $X_i^2$ constant. This is because when $X_i$ changes, $X_i^2$ changes as well. Hence, best way is to simply plot the non-linear relationship and/or compute the effect on predicted value of $Y$ due to change in $X$.
 
-Once we have assumed a functional form for the PRF, the next step is to estimate the model parameters of interest: intercept ($\beta_0$) and slope ($\beta_1$). These are unknown parameters that characterize the relationship between Y and X. If we knew their values, then using data on X we can compute the model value of Y. For example, suppose $\beta_0=5$ and $\beta_1$=2. Then, if X=10, we get:
+3. Further, taking the second derivative we get:
 
-\[E(Y_i|X_i=10)=5+2\times 10=25\]
+\[\frac{d^2Y_i}{dX_i^2}=2 \beta_2\]
 
-Note that the above value of Y is what our model expects Y to be when X takes a value of 10. In data, we may find that the actual value of Y corresponding to X=10 is different. This difference between data on Y and model-generated value of Y is called the **regression error term** and is denoted by $\epsilon_i$. Formally,
+Hence, the sign of $\beta_2$ tells us whether the relationship is *concave* ($\beta_2<0$) or *convex* ($\beta_2>0$). 
 
-\[\epsilon_i= Y_i - E(Y_i|X_i)\]
+4. Finally, we can set the first derivative equal to $0$ and solve for $X^*$ as follows:
 
-or equivalently,
+\[\frac{dY_i}{dX_i}=\beta_1 + 2 \beta_2 X_i= 0 \Rightarrow X^*_i=-\frac{\beta_1}{2\beta_2}\]
 
-\[Y_i = E(Y_i|X_i) + \epsilon_i\]
+$X^*_i$  will either maximize or minimize $Y$ depending on the sign of $\beta_2$.
 
-By substituting our assumed functional form for $E(Y_i|X_i)$ in the above equation we obtain the simple regression model. For example, if we assume that $E(Y_i|X_i)=\beta_0 + \beta_1 X_i$, then the corresponding regression model is given by:
+### Obtaining optimal polynomial order using goodness of fit
 
-\begin{equation}
-Y_i=\beta_0 + \beta_1 X_i + \epsilon_i
-(\#eq:simple)
-\end{equation}
+In general we do not know the order of polynomial and in theory can express the relationship between $Y$ and $X$ as a polynomial of order $q$ given by:
 
-The specification in (\#eq:simple) is the simple regression model with parameter $\beta_1$ capturing the effect of changes in X on Y:
+\[Y_i = \beta_0 + \beta_1 X_i + \beta_2 X_i^2 + \beta_3 X_i^3+...+ \beta_q X_i^q + \epsilon_i\]
 
-\[\beta_1= \frac{dY_i}{dX_i}\]
+In order to determine what value of $q$ best explain our data we need to compare models with different number of explanatory variables. For example, to compare a quadratic model with a cubic model, we are comparing a model with two explanatory variables ($X_i$ and $X_i^2$) with a model with three independent variables ($X_i$, $X_i^2$, and $X_i^3$). Such comparisons require us to incorporate the tradeoff between improved fit and loss of degrees of freedom. In practice, do determine a value for $q$ we can follow the following procedure:
 
-So if X changes by 1 unit, then Y changes by $\beta_1$ units. Under certain assumptions that we will discuss later in the course, $\beta_1$ is also the causal effect of X on Y.
+Step 1: Pick a maximum value for $q$. This part is arbitrary and usually will affect your final answer. Let us denote this value as $q_{max}$.
 
-## Ordinary Least Squares (OLS)
+Step 2: Estimate the polynomial of order $q_{max}$:
 
-The goal of any empirical analysis is to find a **functional** relationship between the outcome (or dependent variable) and the explanatory (or control variable). As discussed in the previous section, the PRF is one such function. Once we have estimated this function it can be used for either explaining variations in outcome caused by variations in control or to predict the outcome given data on control. For example, economic theory tells us that consumption and income are positively related implying there must be a numerical mapping between these two variables. For example, assuming a linear relationship between consumption (Y) and income (X) we get the following PRF:
+\[Y_i = \beta_0 + \beta_1 X_i + \beta_2 X_i^2 + \beta_3 X_i^3+...+ \beta_q X_i^{q_{max}} + \epsilon_i\]
 
-\[E(Y_i|X_i)=\beta_0 +\beta_1 X_i\]
+This is our unrestricted model and we denote R-squared from this model as $R^2_U$.
 
-As discussed earlier, this relationship will not be perfect in data. This could be due to other factors affecting consumption such as gifts, inheritances, wealth etc. The regression error term captures all such influences on consumption that stem from non-income sources. This error can be negative or positive and is captured in the following regression model:
+Step 3:  Estimate the polynomial of order $q_{max}-1$
 
-\[Y_i=E(Y_i|X_i)+\epsilon_i \]
+\[Y_i = \beta_0 + \beta_1 X_i + \beta_2 X_i^2 + \beta_3 X_i^3+...+ \beta_q X_i^{q_{max}-1} + \epsilon_i\]
 
-Or equivalently,
+This is our restricted model and we denote R-squared from this model as $R^2_R$.
 
-\[Y_i=\beta_0 + \beta_1 X_i + \epsilon_i\]
+Step 4: Test whether there is a loss in fit between step 2 and step 3 using the F-test:
 
+\[H_0: \text{True model is polynomial of order} \ q_{max}-1 \]
+\[H_A: \text{True model is polynomial of order} \ q_{max}\]
 
-If we knew the error term for each observation, then given data on consumption and income, we can simply choose values of the intercept and slope that best fits our data. However, by definition the regression error is a random variable whose values we do not observe. Consequently, the two parameters of the model, $\beta_0$ and $\beta_1$ are also unknown to us. To circumvent this problem, we focus on the sample counterpart of the  regression error term called the **residuals** which is denoted by $e_i$ and can be computed using data on the outcome and the control variable. Let $\hat{\beta_0}$ and $\hat{\beta_1}$ be the sample estimators of $\beta_0$ and $\beta_1$. Let $\hat{Y_i}$ denote the **predicted** value of consumption given by:
+The test statistic is given by:
 
-\[\hat{Y_i}=\hat{\beta_0} + \hat{\beta_1} X_i \]
+\[F=\frac{(R^2_U-R^2_R)/1}{(1-R^2_U)/(N-q_{max}-1)}\]
 
-The predicted value of consumption is also the sample estimator of $E(Y_i|X_i)$. Now, the residuals are defined as the difference between actual consumption and consumption predicted from our model:
+Under the null-hypothesis, the test statistic follows F distribution with $v_1=1$ and $v_2=N-q_{max}-1$ degrees of freedom. If you reject the null hypothesis, stop and conclude that $q=q_{max}$ is the final model.
 
-\[e_i=Y_i -\hat{Y_i}= Y_i- \hat{\beta_0} - \hat{\beta_1} X_i\]
-
-Given data on consumption and income, we can now choose values of $\hat{\beta_0}$ and $\hat{\beta_1}$ that will minimize our residuals in some sense. This is displayed below in Figure \@ref(fig:ch3fig1) below:
-
-```{r ch3fig1, echo=F, fig.cap="Line of best-fit", message=FALSE, warning=FALSE, fig.align='center'}
-library(dplyr)
-library(ggplot2)
-
-mtcars %>%
-  ggplot(aes(x = 100*sqrt(disp), y = 2000/sqrt(mpg))) +
-  geom_point(colour = "red") +
-  geom_smooth(method = "lm", fill = NA)+
-  labs(x = "Income", y="Consumption")
-```
-
-In Figure \@ref(fig:ch3fig1), each red dot denote the level of income and corresponding level of consumption for that particular observation. The blue solid line is our estimated regression line or $\hat{Y_i}$. The gap between the red dot and the regression line is the residual for that observation. In this graph we hope that the regression line passes through our data as closely as possible. In other words, we would like our residuals to be as small as possible. 
-
-
-The canonical estimation method used in Econometrics for finding the line of best fit is called the **Ordinary Least Squares (OLS)**. Here, the values of  $\hat{\beta_0}$ and $\hat{\beta_1}$ are chosen such that the sum of squared residuals is minimized. Let RSS denotes sum of squared residuals which is given by:
-
-\[RSS=\sum_{i=1}^{N} e_i^2=\sum_{i=1}^{N}(Y_i- \hat{\beta_0} - \hat{\beta_1} X_i)^2\] 
-
-Mathematically, OLS solves the following optimization problem:
-
-\[min_{\hat{\beta_0}, \hat{\beta_1}} \quad \sum_{i=1}^N RSS\]
-
-The solution to the above optimization problem gives us the following formulas:
-
-\[\hat{\beta_0}= \overline{Y} - \hat{\beta_1}\overline{X}\]
-
-and
-
-\[\hat{\beta_1}=\frac{\sum_{i=1}^N (Y_i-\overline{Y})(X_i-\overline{X})}{\sum_{i=1}^N(X_i-\overline{X})^2}\]
-
-where $\overline{Y}$ and $\overline{X}$ denote sample means of consumption (Y) and income (X). By definition, these OLS estimators satisfy the following desirable properties:
-
-1. Sum of residuals is zero, i.e., $\sum_{i=1}^N e_i=0$.  
-
-2. Residuals and the explanatory variables are uncorrelated, i.e, $\sum_{i=1}^N e_iX_i=0$.
+Step 5: If you do not reject the null hypothesis in Step 4, continue the process until you find the highest order polynomial where you reject the null hypothesis.
 
 ```{example}
-
-Suppose you have the following data:
+Suppose we are interested in estimating the relationship between wages ($Y$) and labor market characteristics of workers. Specifically, we collect data on years of education ($X_1$) and years of experience ($X_2$). Consider the following specification:
   
-<caption> (\#tab:ch3table1) OLS Estimation Example </caption>  
-   
-| $ID$ |  $Y_i$ | $X_i$ |
-|:--:|:--:|:-:|
-|  1 | 10 | 3 |
-|  2 |  8 | 6 |
-|  3 | 12 | 3 |
-|  4 | 14 | 8 |
-           
-Suppose we assume that the relationship between Y and X can be captured by the following regression model:
+\[Y_i= \beta_0 + \beta_1 X_{1i} + \beta_2 X_{2i} + \beta_3 X_{2i}^2 + \epsilon_i\]
+
+In the above model we assume that the relationship between wages  and years of experience is quadratic. We can test this formally by estimating the following restricted version of the model with only linear term in experience.
+
+\[Y_i= \beta_0 + \beta_1 X_{1i} + \beta_2 X_{2i} + \epsilon_i\]
+
+If the true relationship between experience and wages is indeed quadratic, then estimating the restricted model will result in substantial loss of fit and hence will be rejected by our F-test.  Table \@ref(tab:ch5table1) below provides the estimation results of these two models. Notice that there is an drop in $R^2$ from 19.8\%, to 16\% indicating that removal of squared experience does lead to loss of fit. Next, we test whether this loss in fit is statistically significant using the F-test:
   
-\[Y_i=\beta_0 + \beta_1 X_i + \epsilon_i\]
+\[H_0: \text{True model is linear in experience} \]
+\[H_A: \text{True model is quadratic in experience}\]
 
-We can now use the data given to us and compute the OLS estimators for two regression parameters.  First, note that the sample means are given by: $\overline{Y}=11$ and $\overline{X}=5$.  Second, we compute the slope cofficient by utilizing the information provided in the table below:
+  \[F=\frac{(R^2_U-R^2_R)/1}{(1-R^2_U)/(N-3-1)}=\frac{0.198-0.16}{(1-0.198)/(100-3-1)}=47.19202\]
+
+The critical value from F-table with $v_1=1$ and $v_2=1000-3-1=996$ is 3.84. Because the F statistic is greater than this critical value, we reject the null hypothesis and conclude that the relationship between wages and experience is quadratic. Also note that the coefficient of the squared term in  experience is negative implying a concave relationship between experience and wages. Finally, we can also compute the level of experience that maximizes wages by taking the first derivative with respect to experience and setttin it 0:
   
- <caption> (\#tab:ch3table2) OLS Estimation Example contd..</caption>  
-  
-  | $ID$ 	| $Y_i$ 	| $X_i$ 	| $Y_i-\overline{Y}$ 	| $X_i-\overline{X}$ 	| $(Y_i-\overline{Y})(X_i-\overline{X})$ 	| $(X_i-\overline{X})^2$ 	|
-|:-----:	|:--:	|:-:	|:----------------:	|:----------------:	|:----------------:	|:----------------:	|
-| 1 	| 10 	| 3 	| -1 	| -2 	| 2 	| 4 	|
-| 2 	| 8 	| 6 	| -3 	| 1 	| -3 	| 1 	|
-| 3 	| 12 	| 3 	| 1 	| -2 	| -2 	| 4 	|
-| 4 	| 14 	| 8 	| 3 	| 3 	| 9 	| 9 	|
-| **Total** 	|  	|  	| 0 	| 0 	| 6 	| 18 	|
-  
-Using the OLS formular, we get:
-  
-  \[\hat{\beta_1}=\frac{6}{18}=0.33\]
+  \[\frac{dY_i}{d X_{2i}}= \beta_2 + 2\beta_3 X_{2i}=0 \Rightarrow X^*_{2i}=-\frac{\beta_1}{2\beta_2}\]
 
-\[\hat{\beta_0}= 11-.33\times 5= 9.33\]
-
-Hence, our model provides us the following equation for the predicted value of $Y_i$:
-  
-  \[\hat{Y_i} = 9.33 + 0.33 \times X_i \]
-
-Using the above equation we can easily find what our model predicts about the dependent variable given data on X. Note that we can compute this predicted value for observations for which we have data on X  and compare it with the actual data on $Y$. The difference between the two gives us the regression residuals. This is provided in the table below:
-  
-<caption> (\#tab:ch3table3) OLS Estimation Example contd..</caption>  
-   
-  | $ID$ 	| $Y_i$ 	| $X_i$ 	| $\hat{Y_i}$ 	| $e_i$ 	|
-|:--:	|:--:	|:-:	|:-----------:	|:-----:	|
-| 1 	| 10 	| 3 	| 10.32 	| -0.32 	|
-| 2 	| 8 	| 6 	| 11.31 	| -3.31 	|
-| 3 	| 12 	| 3 	| 10.32 	| 1.68 	|
-| 4 	| 14 	| 8 	| 11.97 	| 2.03 	|
-
-  
-  
-Using data used in estimating the regression model to compute predicted values of the outcome variable is called **in-sample** prediction. In the above table, we have in-sample prediction for the outcome variable. We can also similarly compute the predicted value for any value of $X$ even outside our given sample. Such an exercise is called **out-sample** prediction. So for example, consider $X=7$ which is not part of our sample. We can compute the corresponding predicted value of $Y$ is given by:
-  
-\[\hat{Y} = 9.33+0.33\times 7= 11.64 \]
-
-This is one of the primary uses of a regression model, namely, the ability to predict the value of the outcome variable, given information on the value of the control variable. Another objective of estimating a regression model is to explain how $X$ affects $Y$. In our example, a 1 unit change in $X$ will change $Y$ by 0.33 units. Under some assumptions, this denotes the causal effect of $X$ and $Y$. The sign and the size of this effect provides meaningful information on the nature of the relationship between the outcome and the control variables.  
-
-```
-  
-
-## Goodness of fit
-
-After estimating a regression model using OLS  a natural question to ask is how good is our estimated model in fitting data on the outcome variable. One measure of this is the **goodness of fit** which is based on the proportion of total variation in the dependent variable that can be explained by our model. A better fit would imply greater amount of variation being explained. 
-
-
-Essentially, our goal is to decompose the total variation in the dependent variable into two components, nameley, **explained variation** and **residual variation**. Formally,  
-rewriting the definition of residuals to get the following relationship:
-
-\[Y_i = \hat{Y_i}+ e_i\]
-
-Subtract mean of the dependent variable from both sides we get:
-
-\[Y_i-\overline{Y} = \hat{Y_i}-\overline{Y}+ e_i\]
-
-Finally, squaring and summing across all observations gives us the following identity:
-
-\[\underbrace{\sum_{i=1}^N (Y_i-\overline{Y})^2}_{TSS}=\underbrace{\sum_{i=1}^N (\hat{Y_i}-\overline{Y})^2}_{ESS}+\underbrace{\sum_{i=1}^N e_i^2}_{RSS}\]
-
-where $TSS$ stands for total sum of squares and measures variation in the dependent variable, $Y_i$. $ESS$ denotes explained sum of squares and measures variation in the predicted value of the dependent variable, $\hat{Y_i}$. Finally, $RSS$, as previously defined captures variation in regression residuals. We can now define a measure of fit known as the **R-squared** which is denoted by $R^2$ and is defined as the ratio of $ESS$ to $TSS$. Formally,
-
-\[R^2=\frac{ESS}{TSS}\]
-
-Hence, $R^2$ tells us the fraction of total variation in the dependent variable that can be explained by our model. If $R^2=0$, then our model explains none of the variation in $Y_i$. Similarly, $R^2=1$, then our model explains all of the variation in $Y_i$.  As a result, $R^2$ will always be a number between $0$ and $1$ with a higher number indicating a better fit.  Note that by definition:
-
-\[1-R^2= \frac{RSS}{TSS}\]
-
-
-As a result,  $1-R^2$ gives us the unexplained variation. For example, a value of 0.4 will imply 40\% of the variation in $Y_i$ is explained by our model or 60\% of the variation is not explained.
-
-
-## Applications of the simple regression model
-
-
-### Aggregate consumption function
-
-Suppose you are interested in finding out the relationship between consumption and income at the national level. The first step in any empirical anaylsis is to determine the empirical measures of the variables of interest, consumption and disposable income here. We will use real personal consumption expenditure as a measure of $C$ and real personal disposable income as a measure of $Y^D$. Both of these data are available at the monthly frequency from the FRED Stat database and can be downloaded from the following links:
-
-i)  https://fred.stlouisfed.org/series/PCEC96
-
-ii) https://fred.stlouisfed.org/series/DSPIC96
-
-We will use the data from Jan-2002 through June 2019. The next step is to formulate our regression model. Here, we can use economic theory and propose a linear relationship between consumption and income:
-
-\[E(Consumption_t|Income_t)=\beta_0+\beta_1 Income_t\]
-
-
-```{block2, type = "rmdNote"}
-In macroeconomics, the above relationship is known as the **Keynesian** consumption function. John Maynard Keynes proposed that at the aggregate level, consumption changes in proportion to changes in disposable income:
-
-   \[C = a + b \ Y^D\] Here $C$ denotes private consumption expenditure and $Y^D$ denotes post-tax or disposable income. $a$ is the intercept and captures the part of consumption that is indpenedent of income. $b$ is the slope and measures the unit change in consumption caused by a unit change in disposable income. $b$ measures the marginal propensity to consume and is a parameter of interest we would like to estimate using data.
+Given our estimates, this indicates that for $X^*_{2i}=-\displaystyle \frac{0.058}{2\times (-0.001)}=29$ years, we expect wages to reach a maximum with respect to experience and then level off or decline after that.
 ```
 
-The implied regression model is given by: 
+```{block2, type="rmdCaution"}
+The use of the squared experience term is motivated by the empirical literature on determinants of earnings. As discussed earlier, the orginal Mincerian equation included a squared experience to capture the non-linear relationship between wages and experience.
+```
 
-\[Consumption_i  = \beta_0 + \beta_1 Income_i + \epsilon_i\]
+```{r , eval=knitr::is_html_output(), message=FALSE, warning=FALSE, echo=FALSE}
 
-Our parameter of interest is $\beta_1$ which maps to the marginal propensity of consume in the original regression model. 
-Table \@ref(tab:ch3table4) below presents a summary of the OLS estimation results for the above model. A coefficient of 0.82 for income implies that for every dollar increase in disposable income, consumption increases by 82 cents. Under certain assumptions which will be discussed in Chapter 5, this is the **causal** effect of change in income on consumption at the aggregate level. Note that this relationship is estimated using time series data and does not tell us anything about how changes in income across individuals affect their consumption spending. We also note that the R-squared is 0.986 which means that roughly 98 percent of variation in the aggregate consumption expenditure from one month to another can be explained by personal disposable income. 
+library(ipumsr)
 
-<caption> (\#tab:ch3table4) OLS Estimation of Keynesian Consumption Function </caption>  
- 
-```{r, eval=knitr::is_html_output(), echo = FALSE, warning=FALSE }
-suppressMessages(library(quantmod))
+ddi = read_ipums_ddi("~/Dropbox/Ebooks/Econ-385-Notes/datafiles/cps_00010.xml")
+data =read_ipums_micro(ddi, verbose=F)
 
-# get data from fred stat
-options("getSymbols.warning4.0"=FALSE)
-invisible(getSymbols('PCEC96',src='FRED'))
-invisible(getSymbols('DSPIC96',src='FRED'))
+##### drop missing  work hours
+
+data=subset(data, UHRSWORK1!=999)
+data=subset(data, UHRSWORK1!=997)
+data=subset(data, UHRSWORK1!=0)
+
+### drop missing wages
+
+data=subset(data,INCWAGE!=9999999)
+data=subset(data,INCWAGE!=9999998)
+data=subset(data,INCWAGE!=0)
+## generate schooling data
+data$schooling=NA
+data$schooling[data$EDUC==011]=1
+data$schooling[data$EDUC==012]=2
+data$schooling[data$EDUC==013]=3
+data$schooling[data$EDUC==014]=4
+data$schooling[data$EDUC==021]=5
+data$schooling[data$EDUC==022]=6
+data$schooling[data$EDUC==031]=7
+data$schooling[data$EDUC==032]=8
+data$schooling[data$EDUC==040]=9
+data$schooling[data$EDUC==050]=10
+data$schooling[data$EDUC==060]=11
+data$schooling[data$EDUC==073]=12
+data$schooling[data$EDUC==080]=13
+data$schooling[data$EDUC==090]=14
+data$schooling[data$EDUC==100]=15
+data$schooling[data$EDUC==111]=16
+data$schooling[data$EDUC==123]=18
+data$schooling[data$EDUC==125]=21
+
+### drop NA from schooling
+data=na.omit(data)
+
+### keep full time workers only
+
+data=subset(data,UHRSWORK1>=40)
+
+## only look at first 1000 observations
+data=data[1:1000,]
 
 
-y=PCEC96['2002-01-01/2019-06-01']
-x=DSPIC96['2002-01-01/2019-06-01']
+y=log(data$INCWAGE)
+x1=data$schooling
+x2=data$AGE-data$schooling-6
+x3=x2^2
+fit2=lm(y~x1+x2)
+fit1=lm(y~x1+x2+x3)
 
-fit=lm(y~x)
+### regression table using sjplot package
+
+suppressMessages(library(sjPlot))
+suppressMessages(library(sjmisc))
+suppressMessages(library(sjlabelled))
+
+tab_model(fit1,fit2, digits=3, CSS = list(css.table='border: solid 2px;', css.td='border: solid 1px;',css.thead='font-weight: bold;', css.col2='text-align: center;', css.col3='text-align:center;', css.col4='text-align: center;', css.col5='text-align: center;', css.depvarhead = 'font-weight:bold;',css.firsttablerow='border-top: solid 2px;',
+    css.firstsumrow= 'border-top:2px solid;'), show.ci=F, show.loglik=T,p.style="numeric", show.obs=T, show.se=T, show.stat=T,dv.labels=c("Model 1","Model 2") , pred.labels = c("Intercept","Education", "Experience", "Experience-squared"), string.p="p-value", string.se="s.e.(b)", string.est="b", string.stat="t-ratio", string.pred="Explanatory Variables", col.order = c("est", "se", "stat", "p"))
+```
+<caption> (\#tab:ch5table1) OLS Estimation of Earnings Equation </caption>
+
+
+```{r , eval=knitr::is_latex_output(), message=FALSE, warning=FALSE, echo=FALSE, results='asis'}
+
+library(ipumsr)
+
+ddi = read_ipums_ddi("~/Dropbox/Ebooks/Econ-385-Notes/datafiles/cps_00010.xml")
+data =read_ipums_micro(ddi, verbose=F)
+
+##### drop missing  work hours
+
+data=subset(data, UHRSWORK1!=999)
+data=subset(data, UHRSWORK1!=997)
+data=subset(data, UHRSWORK1!=0)
+
+### drop missing wages
+
+data=subset(data,INCWAGE!=9999999)
+data=subset(data,INCWAGE!=9999998)
+data=subset(data,INCWAGE!=0)
+## generate schooling data
+data$schooling=NA
+data$schooling[data$EDUC==011]=1
+data$schooling[data$EDUC==012]=2
+data$schooling[data$EDUC==013]=3
+data$schooling[data$EDUC==014]=4
+data$schooling[data$EDUC==021]=5
+data$schooling[data$EDUC==022]=6
+data$schooling[data$EDUC==031]=7
+data$schooling[data$EDUC==032]=8
+data$schooling[data$EDUC==040]=9
+data$schooling[data$EDUC==050]=10
+data$schooling[data$EDUC==060]=11
+data$schooling[data$EDUC==073]=12
+data$schooling[data$EDUC==080]=13
+data$schooling[data$EDUC==090]=14
+data$schooling[data$EDUC==100]=15
+data$schooling[data$EDUC==111]=16
+data$schooling[data$EDUC==123]=18
+data$schooling[data$EDUC==125]=21
+
+### drop NA from schooling
+data=na.omit(data)
+
+### keep full time workers only
+
+data=subset(data,UHRSWORK1>=40)
+
+## only look at first 1000 observations
+data=data[1:1000,]
+
+
+y=log(data$INCWAGE)
+x1=data$schooling
+x2=data$AGE-data$schooling-6
+x3=x2^2
+fit2=lm(y~x1+x2)
+fit1=lm(y~x1+x2+x3)
+
+### regression table using sjplot package
+
+suppressMessages(library(stargazer))
+
+stargazer(fit1,fit2, type="latex", header=FALSE, report="vc*s", covariate.labels =c("Intercept","Education", "Experience", "Experience-squared"), dep.var.labels="Natural Log of Wages", intercept.top = T, intercept.bottom = F,title="OLS Estimation of Earnings Function" )
+
+```
+
+
+
+## Step functions: Dummy variables in the regression model
+
+In many practical applications we may wish to estimate the effect of qualitative variables on an outcome of interest. For example,
+
+a. what is the effect of a worker's occupation or race on wages? 
+
+b. do we have an increase in consumer spending during Christmas season?
+
+c. how does college major affects starting salary of graduates? Or
+
+
+In each of the above examples, we want to estimate the effect of **group membership** on the outcome of interest. For example, do observations that belong to Christmas season have higher consumer spending than observations in non-Christmas season. One important thing to note here is that incorporating such variables in our regression mean that we need a **step-function** because we beleive there is a discrete jump in the outcome variable as we compare groups. 
+
+By definition qualitative variables are non-numeric in nature. One way to incorporte such variables is to use **dummy variables**. A dummy variable is an indicator variable that takes value of $1$ 
+if an observation belongs to a particular category and $0$ otherwise. For example, suppose we are interested in finding the effect of race on wages. Then, we can define a dummy variable, $D_i$ as follows:
+\[D_i= \begin{cases}
+1 & \text{if observation} \ i \ \text{is white} \\
+0 & \text{otherwise}
+\end{cases}\]
+
+Once we have defined the dummy variable, we can add it to the regression model as any other independent variable. Note that:
+
+1. A qualitative variable with $J$ categories can be incorporated by adding $J-1$ dummy variables in the regression model. The excluded category is called the **base group** and serves as the benchmark category relative to which the effect on the dependent variable is measured. For example, in the dummy variable we defined above, we have two categories in our data: white and non-white. The way we have defined the dummy variable implies that our excluded group is non-white workers. This is to avoid the *dummy variable trap*, where adding $J$ dummy variables for a qualitative variable with $J$ categories leads to perfectly linear relationship between included independent variables in our model. 
+
+2. The effect on the regression model depends on how we add the dummy variable to our regression model. There are two options:
+
+    2.1. Intercept dummy: here we are only interested in the categorical effect alone. This can be done by adding a dummy variable to the regression model and has the effect of shifting the intercept of the regression model.
+    
+    2.2. Slope dummy: here we are interested in capturing any interaction  a categorical variable may have with other indepedent variables in the regression model. This can be done by adding a product of the dummy variable with the independent variable in question and has the effect of shifting the slope of the regression model.
+    
+```{example, name="Intercept Dummy in Earnings Function"}
+Let us continue our example of the earnings function. Now suppose we want to find out whether being male has an effect on wages,i.e,  if we compare two workers with same years of education ($X_{1}$) and experience ($X_2$), but one is male and other is female, do we see any difference in their wages. This can be done by estimating the following regression model:
+  
+  
+\[Y_i= \beta_0 + \beta_1 X_{1i} + \beta_2 X_{2i} + \beta_3 X_{2i}^2 + \beta_4 Male_i+ \epsilon_i\]
+
+where, \[Male_i= \begin{cases}
+1 & \text{if observation} \ i \ \text{is male} \\
+0 & \text{otherwise}
+\end{cases}\]
+
+In this model, $\beta_4$  measures the effect of being male on wages for individuals with same years of education and experience. To see this, lets write down the predicted wage from our model for male and female workers separately:\[\widehat{Y^m_i}=\widehat{\beta_0} + \widehat{\beta_1} X^m_{1i} + \widehat{\beta_2} X^m_{2i} + \widehat{\beta_3} (X^m_{2i})^2 + \widehat{\beta_4}\]
+
+\[\widehat{Y^f_i}= \widehat{\beta_0} + \widehat{\beta_1} X^f_{1i} + \widehat{\beta_2} X^f_{2i} + \widehat{\beta_3} (X^f_{2i})^2\]
+
+Here the superscripts $m$ denotes male and $f$ denotes female. Note that if we equalize education and experience between men and women, then:
+  
+  \[\widehat{Y^m_i}-\widehat{Y^f_i}=\widehat{\beta_4}\]
+  
+
+Consquently, adding an intercept dummy simply changes the intercept of the regression line by the parameter of the intecept dummy. Table \@ref(tab:ch5table2) provides the estimation results for this model. Note that the estimated coefficient of Male dummy variable is 0.306. This means that a male worker's wages is 30.6\% higher than a female worker with same years of education and experience.
+
+
+```{r , eval=knitr::is_html_output(), message=FALSE, warning=FALSE, echo=FALSE}
+
+library(ipumsr)
+
+ddi = read_ipums_ddi("~/Dropbox/Ebooks/Econ-385-Notes/datafiles/cps_00010.xml")
+data =read_ipums_micro(ddi, verbose=F)
+
+##### drop missing  work hours
+
+data=subset(data, UHRSWORK1!=999)
+data=subset(data, UHRSWORK1!=997)
+data=subset(data, UHRSWORK1!=0)
+
+### drop missing wages
+
+data=subset(data,INCWAGE!=9999999)
+data=subset(data,INCWAGE!=9999998)
+data=subset(data,INCWAGE!=0)
+## generate schooling data
+data$schooling=NA
+data$schooling[data$EDUC==011]=1
+data$schooling[data$EDUC==012]=2
+data$schooling[data$EDUC==013]=3
+data$schooling[data$EDUC==014]=4
+data$schooling[data$EDUC==021]=5
+data$schooling[data$EDUC==022]=6
+data$schooling[data$EDUC==031]=7
+data$schooling[data$EDUC==032]=8
+data$schooling[data$EDUC==040]=9
+data$schooling[data$EDUC==050]=10
+data$schooling[data$EDUC==060]=11
+data$schooling[data$EDUC==073]=12
+data$schooling[data$EDUC==080]=13
+data$schooling[data$EDUC==090]=14
+data$schooling[data$EDUC==100]=15
+data$schooling[data$EDUC==111]=16
+data$schooling[data$EDUC==123]=18
+data$schooling[data$EDUC==125]=21
+
+### drop NA from schooling
+data=na.omit(data)
+
+### keep full time workers only
+
+data=subset(data,UHRSWORK1>=40)
+
+## only look at first 1000 observations
+data=data[1:1000,]
+
+
+y=log(data$INCWAGE)
+x1=data$schooling
+x2=data$AGE-data$schooling-6
+x3=x2^2
+x4=as.numeric(data$SEX==1)
+
+fit=lm(y~x1+x2+x3+x4)
 
 ### regression table using sjplot package
 
@@ -253,81 +350,15 @@ suppressMessages(library(sjmisc))
 suppressMessages(library(sjlabelled))
 
 tab_model(fit, digits=3, CSS = list(css.table='border: solid 2px;', css.td='border: solid 1px;',css.thead='font-weight: bold;', css.col2='text-align: center;', css.col3='text-align:center;', css.col4='text-align: center;', css.col5='text-align: center;', css.depvarhead = 'font-weight:bold;',css.firsttablerow='border-top: solid 2px;',
-    css.firstsumrow= 'border-top:2px solid;'), show.ci=F, show.loglik=T,p.style="numeric_stars", show.obs=T, show.se=T, show.stat=T,dv.labels="Dependent variable: Real Personal Consumption Expenditure", pred.labels = c("Intercept","Real Personal Disposable Income"), string.p="p-value", string.se="s.e.(b)", string.est="b", string.stat="t-ratio", string.pred="Explanatory Variables", col.order = c("est", "se", "stat", "p"))
-
+    css.firstsumrow= 'border-top:2px solid;'), show.ci=F, show.loglik=T,p.style="numeric", show.obs=T, show.se=T, show.stat=T,dv.labels=c("Dependent variable: Natural logs of wages") , pred.labels = c("Intercept","Education", "Experience", "Experience-squared", "Male"), string.p="p-value", string.se="s.e.(b)", string.est="b", string.stat="t-ratio", string.pred="Explanatory Variables", col.order = c("est", "se", "stat", "p"))
 ```
+<caption> (\#tab:ch5table2) Earnings Equation  with intercept dummy variable</caption>
 
-```{r , echo = FALSE, warning=FALSE, results='asis',eval=knitr::is_latex_output()}
-suppressMessages(library(quantmod))
+```{r , eval=knitr::is_latex_output(), message=FALSE, warning=FALSE, echo=FALSE, results='asis'}
 
-# get data from fred stat
-options("getSymbols.warning4.0"=FALSE)
-invisible(getSymbols('PCEC96',src='FRED'))
-invisible(getSymbols('DSPIC96',src='FRED'))
-
-
-y=PCEC96['2002-01-01/2019-06-01']
-x=DSPIC96['2002-01-01/2019-06-01']
-
-fit=lm(y~x)
-
-### regression table using stargazer
-
-suppressMessages(library(stargazer))
-stargazer(fit, type="latex", header=FALSE, report="vc*s", covariate.labels =c("Intercept","Real Personal Disposable Income"), dep.var.labels = "Real Personal Consumption Expenditure", intercept.top = T, intercept.bottom = F, title="OLS Estimation of Keynesian Consumption Function")
-
-```
-
-
-Note that we can use our estimated regression model to predict future aggregate consumption expenditure. Our regression used data from Jan 2002 through June 2019. Suppose, we believe that in Jan 2020, the real personable disposable income will be 1\% higher than the June 2019 level of \$15007.5 Billion. Then, using our estimated model, the real personal consumption expenditure will be:
-
-\[Consumption_{Jan, 2020} = 1037.389+ 0.82*(15007.5 \times 1.01)=\$13475.29 \ Billion\]
-
-Note that instead of assuming a single value for the future income, we can consider a range of scenarios and compute the predicted consumption expenditure for each scenario. These scenarios are based on our understanding of the state of the economy and policy environment. For example, what if there is a tax cut that increases disposable income? Or what if there is a crash in the housing market leading to a large drop in disposable income for many households? This type of exercise is known as **scenario-based** forecasting. Table \@ref(tab:ch3table5) below provides future consumption expenditure for these 3 scenarios.
-
-
-<caption> (\#tab:ch3table5) OLS Estimation of Keynesian Consumption Function </caption> 
-| Scenario of Jan 2020 	| Real Personal Disposable Income 	| Real Consumption Expenditure 	|
-|:-------------------------------------:	|:-------------------------------:	|:----------------------------:	|
-| Average income growth (Apr-Jun, 2019) 	| 0.19\% 	| \$13375.61 Billions 	|
-| One std. dev. below average 	| 0.07\% 	| \$13360.84 Billions 	|
-| One std. dev. above average 	| 0.31\% 	| \$13390.38 Billions 	|
-
-
-
-
-### Returns to education
-
-An important research question in labor economics is how education affects labor income. Economic theory suggests that education makes a worker more productive through acquisition of skills that are rewarded in the labor market as higher wages. To test this in data, we would need to collect information on education and wages for a sample of workers. Often such an exercise is conducted using a cross-sectional data at a point in time. One such source is the Annual Social and Economic Supplement (ASEC) of the Current population survey (CPS) which is a monthly survey of households in the U.S. conducted by the Bureau of Labor Statistics (BLS). The data is publicly available in a user-friendly format at:
-
-https://cps.ipums.org/cps/
-
-We will use a sample of 1000 observations from the ASEC 2018 in this exercise. Suppose, our theoretical model for the average relationship between income and education is log-linear:
-
-\[E[ln(wage_i)|education_i]=\beta_0+\beta_1 education_i\]
-
-
-```{block2, type = "rmdNote"}
-
-  
-The above formulation is a simplified version of the specification that has been extensively used in the labor economics literature. The above log-linear relationship between wages and education was made famous by Jacob Mincer and is commonly known as the **Mincerian earnings function**. The orginal specification also includes controls for years of experience. Using Census data from 1950 and 1960, he caluculated that every additional year of education increases annual earnings by 5 to 10\%.
-```
-
-
-The implied regression model is given by:
-
-
-\[ln(Wage_i)= \beta_0 +\beta_1 Education_i + \epsilon_i\]
-
-where $Wage_i$ is the annual wages and salaries of individual $i$ in dollars. $Education_i$ denotes years of education of individual $i$. Table \@ref(tab:ch3table6) below presents the estimation results. A coefficient of 0.106 for education implies that for every additional year of schooling, annual wages increase by 10.6\%. Again, only under certain assumption this captures causal effect of education on wages. We also note that the R-squared is 0.122 which means that roughly 12 percent of the variation in wages across individuals can be explained by differences in their education levels.
-
-
-<caption> (\#tab:ch3table6) OLS Estimation of Earnings Function </caption> 
-
-```{r, eval=knitr::is_html_output(), message=FALSE, warning=FALSE, echo=FALSE}
 library(ipumsr)
 
-ddi = read_ipums_ddi("C:/Users/bhattvx/Dropbox/Ebooks/Econ-385-Notes/datafiles/cps_00010.xml")
+ddi = read_ipums_ddi("~/Dropbox/Ebooks/Econ-385-Notes/datafiles/cps_00010.xml")
 data =read_ipums_micro(ddi, verbose=F)
 
 ##### drop missing  work hours
@@ -370,14 +401,100 @@ data=na.omit(data)
 data=subset(data,UHRSWORK1>=40)
 
 ## only look at first 1000 observations
-
 data=data[1:1000,]
 
 
 y=log(data$INCWAGE)
-x=data$schooling
+x1=data$schooling
+x2=data$AGE-data$schooling-6
+x3=x2^2
+x4=as.numeric(data$SEX==1)
 
-fit=lm(y~x)
+fit=lm(y~x1+x2+x3+x4)
+
+### regression table using sjplot package
+
+
+suppressMessages(library(stargazer))
+
+stargazer(fit1,fit2, type="latex", header=FALSE, report="vc*s", covariate.labels =c("Intercept","Education", "Experience", "Experience-squared","Male"), dep.var.labels="Natural Log of Wages", intercept.top = T, intercept.bottom = F,title="Earnings Equation  with intercept dummy variable" )
+
+```
+
+
+```{example, name="Slope Dummy in Earnings Function"}
+
+In the previous example, we investigated whether being Male affects wages once we have controlled for education and experience. But in that analysis we assumed that there is not interaction between whether a worker is make with his years of education or experience. But is quite easy to think of interactions between the sex of a worker and their education or experience. For example, on average women tend to accumulate less years of experience than men of same age due to women taking more breaks from work due to child birth. Similarly, in many economies, men tend to have greater level of education, especially in emerging economies where parents allocate resources differentially between male and female child.  To capture such interactions, we can use slope dummy variables. Consider the following regression model:
+
+  
+  
+\[Y_i= \beta_0 + \beta_1 X_{1i} + \beta_2 X_{2i} + \beta_3 X_{2i}^2 + \beta_4 Male_i+ \beta_5 (Male_i \times X_{1i}) +\epsilon_i\]
+
+In this model, $\beta_5$ measures the differential effect education may have on wages depending on the sex of the worker. To see this note that: 
+  
+\[\frac{\partial Y_i}{\partial X_{1i}}= \beta_1 + \beta_5 Male_i\]
+  
+As a result, for male workers, the effect of education on wages is $\beta_1 + \beta_5$ whereas for female workers this effect is $\beta_1$. Table \@ref(tab:ch5table3) provides the estimation results for this model. Note that the estimated coefficient of the interaction between Male and education is positive but statistically insignificant. Hence, in our sample, there is no evidence that sex of workers interacts with their education.
+
+
+```{r , eval=knitr::is_html_output(), message=FALSE, warning=FALSE, echo=FALSE}
+
+library(ipumsr)
+
+ddi = read_ipums_ddi("~/Dropbox/Ebooks/Econ-385-Notes/datafiles/cps_00010.xml")
+data =read_ipums_micro(ddi, verbose=F)
+
+##### drop missing  work hours
+
+data=subset(data, UHRSWORK1!=999)
+data=subset(data, UHRSWORK1!=997)
+data=subset(data, UHRSWORK1!=0)
+
+### drop missing wages
+
+data=subset(data,INCWAGE!=9999999)
+data=subset(data,INCWAGE!=9999998)
+data=subset(data,INCWAGE!=0)
+## generate schooling data
+data$schooling=NA
+data$schooling[data$EDUC==011]=1
+data$schooling[data$EDUC==012]=2
+data$schooling[data$EDUC==013]=3
+data$schooling[data$EDUC==014]=4
+data$schooling[data$EDUC==021]=5
+data$schooling[data$EDUC==022]=6
+data$schooling[data$EDUC==031]=7
+data$schooling[data$EDUC==032]=8
+data$schooling[data$EDUC==040]=9
+data$schooling[data$EDUC==050]=10
+data$schooling[data$EDUC==060]=11
+data$schooling[data$EDUC==073]=12
+data$schooling[data$EDUC==080]=13
+data$schooling[data$EDUC==090]=14
+data$schooling[data$EDUC==100]=15
+data$schooling[data$EDUC==111]=16
+data$schooling[data$EDUC==123]=18
+data$schooling[data$EDUC==125]=21
+
+### drop NA from schooling
+data=na.omit(data)
+
+### keep full time workers only
+
+data=subset(data,UHRSWORK1>=40)
+
+## only look at first 1000 observations
+data=data[1:1000,]
+
+
+y=log(data$INCWAGE)
+x1=data$schooling
+x2=data$AGE-data$schooling-6
+x3=x2^2
+x4=as.numeric(data$SEX==1)
+x5=x1*x4
+
+fit=lm(y~x1+x2+x3+x4+x5)
 
 ### regression table using sjplot package
 
@@ -385,17 +502,18 @@ suppressMessages(library(sjPlot))
 suppressMessages(library(sjmisc))
 suppressMessages(library(sjlabelled))
 
-tab_model(fit,digits=3,  CSS = list(css.table='border: solid 2px;', css.td='border: solid 1px;',css.thead='font-weight: bold;', css.col2='text-align: center;', css.col3='text-align:center;', css.col4='text-align: center;', css.col5='text-align: center;', css.depvarhead = 'font-weight:bold;',css.firsttablerow='border-top: solid 2px;',
-    css.firstsumrow= 'border-top:2px solid;'), show.ci=F, show.loglik=T,p.style="numeric_stars", show.obs=T, show.se=T, show.stat=T,dv.labels="Dependent variable: Log of Annual Wages", pred.labels = c("Intercept","Years of Schooling"), string.p="p-value", string.se="s.e.(b)", string.est="b", string.stat="t-ratio", string.pred="Explanatory Variables", col.order = c("est", "se", "stat", "p"))
-
+tab_model(fit, digits=3, CSS = list(css.table='border: solid 2px;', css.td='border: solid 1px;',css.thead='font-weight: bold;', css.col2='text-align: center;', css.col3='text-align:center;', css.col4='text-align: center;', css.col5='text-align: center;', css.depvarhead = 'font-weight:bold;',css.firsttablerow='border-top: solid 2px;',
+    css.firstsumrow= 'border-top:2px solid;'), show.ci=F, show.loglik=T,p.style="numeric", show.obs=T, show.se=T, show.stat=T,dv.labels=c("Dependent variable: Natural logs of wages") , pred.labels = c("Intercept","Education", "Experience", "Experience-squared", "Male", "Male*Education"), string.p="p-value", string.se="s.e.(b)", string.est="b", string.stat="t-ratio", string.pred="Explanatory Variables", col.order = c("est", "se", "stat", "p"))
 ```
+<caption> (\#tab:ch5table3) Earnings Equation  with intercept and slope dummy variables</caption>
 
 
 
-```{r, eval=knitr::is_latex_output(), message=FALSE, warning=FALSE, echo=FALSE, results='asis'}
+```{r , eval=knitr::is_latex_output(), message=FALSE, warning=FALSE, echo=FALSE, results='asis'}
+
 library(ipumsr)
 
-ddi = read_ipums_ddi("C:/Users/bhattvx/Dropbox/Ebooks/Econ-385-Notes/datafiles/cps_00010.xml")
+ddi = read_ipums_ddi("~/Dropbox/Ebooks/Econ-385-Notes/datafiles/cps_00010.xml")
 data =read_ipums_micro(ddi, verbose=F)
 
 ##### drop missing  work hours
@@ -438,300 +556,28 @@ data=na.omit(data)
 data=subset(data,UHRSWORK1>=40)
 
 ## only look at first 1000 observations
-
 data=data[1:1000,]
 
 
 y=log(data$INCWAGE)
-x=data$schooling
+x1=data$schooling
+x2=data$AGE-data$schooling-6
+x3=x2^2
+x4=as.numeric(data$SEX==1)
+x5=x1*x4
 
-fit=lm(y~x)
+fit=lm(y~x1+x2+x3+x4+x5)
 
 ### regression table using sjplot package
 
 suppressMessages(library(stargazer))
-stargazer(fit, type="latex", header=FALSE, report="vc*s", covariate.labels =c("Intercept","Years of Schooling"), dep.var.labels= "Log of Annual Wages", intercept.top = T, intercept.bottom = F,title="OLS Estimation of Earnings Function" )
+
+stargazer(fit1,fit2, type="latex", header=FALSE, report="vc*s", covariate.labels = c("Intercept","Education", "Experience", "Experience-squared", "Male", "Male*Education"), dep.var.labels="Natural Log of Wages", intercept.top = T, intercept.bottom = F,title="Earnings Equation  with intercept and slope dummy variables" )
 
 ```
 
-```{block2, type="rmdNote"}
-Notice how the interepretion of the coefficient of education is percent terms here: multiply the slope coefficient by 100 and interpret as implying a 10.6\% increase in wages. This is because the dependent variable  is transformed into natural logs. Mathematically, 100 times one unit change in natural logs of a variable is approximately equal to a percent change in the level of the variable. More on this in the next section.
-
-```
-
-
-
-
-
-## Use of natural logs and interpretation of the slope coefficients
-
-Suppose we have data on two variables: Y and X. Consider the following regression model:
-
-\[Y_i = \beta_0 + \beta_1 X_i + \epsilon_i\]
-
-There are two things to remember when use a model like above:
-
-1. We assume that there is a linear relationship between Y and X. This is what we mean by **functional form** or **specification** of our regression model.
-
-2. The interpretation of the slope coefficient is in terms of original units of our data. So, if $X$ denotes number of hours studied and $Y$ denotes test score in points from 1 through 100, then an additional **hour** of study will change your test score by $\beta_1$ **points**.
-
-
-Once we transform our data by using some form of mathematical operation we need to change both our belief about the functional relationship between Y and X, as well as our interpretation of the slope coefficient. One of the most commonly used transformation in economic analysis is the use of natural logs. For example, consider the following specification:
-
-\[ln(Y_i)=\beta_0 + \beta_1 ln(X_i) + \epsilon_i\]
-
-In this case, we believe that after transforming our data to natural logs, the relationship becomes linear. However, the above regression model implies that the relationship between Y and X in original units is non-linear. Specifically to obtain the above regression model, the underlying relationship between Y and X in original units must be:
-
-\[e^{Y_i} = e^{\beta_0}X_i^{\beta_1}e^{\epsilon_i}\]
-
-
-Further, the interpretation of $\beta_1$ is now different as well. Specifically, if ln(X) changes by 1 log point then ln(Y) changes by $\beta_1$ log points. A more intuitive interpretation is that if X changes by 1\% then Y will change by $\beta_1$\%. 
-
-```{block2, type="rmdNote"}
-To understand this section, we need to revisit the concept of natural logs. The natural logs of a number $x$ is its log using the mathematicl constant $e\approx 2.718$ as the base. The natural logs of $x$ is the power to which $e$ has to be raised to be equal to $x$
-For example, natural log of 10 is 2.302585 because $e^{2.302585}=10$. Some useful properties of the logs that are applicable to natural logs as well are:
-  
-  
-1. $ln(1)=0$
-  
-2. $ln(x \times y)=ln(x)+ln(y)$
-
-3. $ln\left(\frac{x}{y}\right)=ln(x)-ln(y)$
-
-4. $ln(x^a)=a \times ln(x)$
-  
-5. $ln(e^x)=e^{ln(x)}=x$
-
-6. If $y=ln(x)$, then $\displaystyle \frac{dy}{dx}=\frac{1}{x}$
-  
-7. $\Delta ln (X) \times 100 \approx \text{percent change in X}$. This implies that $\displaystyle \frac{d ln(Y)}{d ln(X)}=\frac{\text{percent change in Y}}{\text{percent change in X}}$
-
-  
-  
-```
-
-
-There are three types of  log transformations we can use for a simple regression model. The table below shows all three with corresponding interpretations for the slope coefficient.
-
-
-| Model Name 	| Model Specification 	| Interpretation of $\beta_1$ 	|
-|--------------------------------	|----------------------------------------	|--------------------------------------------------------------------	|
-| Log-Log 	| \[ln(Y_i) = \beta_0 +\beta_1 ln(X_i)+\epsilon_i\] 	| If X changes by 1\%, then Y changes by $\beta_1$\% 	|
-| Log-Linear 	| \[ln(Y_i) = \beta_0 +\beta_1 X_i+\epsilon_i\] 	| If X changes by 1 unit, then Y changes by $100 \times \beta_1$\% 	|
-| Linear-Log 	| \[Y_i= \beta_0 +\beta_1 ln(X_i)+\epsilon_i\] 	| If X changes by 1\%, then Y changes by $\frac{\beta_1}{100}$ units 	|
-
-
-```{block2, type="rmdCaution"}
-If we want to compare goodness of fit of two different models, then the units of the dependent variable must be the same. In the above example, we can compare the $R^2$ of the log-log and log-linear models as they both have natural log of Y as the dependent variable. However, neither can be compared with linear-log model. This is because a linear-log model explains observed variation in the orginal units of Y. In contrast the other two models explain variations in natural logs of Y.
-```
-
-## Hypothesis testing and confidence interval estimation
-
-We can use the sampling distribution of the OLS estimator to carry out hypotheses about the true population parameter for interest. For example, suppose we have the following regression model:
-
-\[Y_i =\beta_0 + \beta_1 X_i + \epsilon_i\]
-
-Using the OLS we can obtain $\hat{\beta_0}$ and $\hat{\beta_1}$, both of which are computed for a given random sample. As we change our sample, we get a different set of values for $\hat{\beta_0}$ and $\hat{\beta_1}$. Hence, we should think of these OLS estimators as random variables. In principle, we can collect large number of samples and compute $\hat{\beta_0}$ and $\hat{\beta_1}$ for each sample, giving us a sampling distribution of these estimators. Let us focus on the slope parameter's OLS estimator, namely, $\hat{\beta_1}$. Using repeated samples for Y and X, we can obtain a distribution of values for $\hat{\beta_1}$ with a mean of  $E(\hat{\beta_1})$ and a variance of $Var(\hat{\beta_1})$. Under some conditions, we can show that $E(\hat{\beta_1})=\beta_1$ and
-
-\[Var(\hat{\beta_1})=\frac{Var(e_i)}{\sum_{i=1}^N(X_i-\overline{X})^2}\]
-
-where $Var(e_i)=\frac{\sum_{i=1}^N e_i^2}{N-2}$ denotes the variance of the regression residuals.
-
-In order to conduct hypotheses about the slope parameter, we need to make some assumption about the regression error term, $\epsilon_i$. We will assume that the error term is normally distributed with a mean of 0 and variance of $\sigma^2$. Then, we can test any hypothesis about $\beta_1$ using the t-test.  The formal procedure for a two-sided test is outlined below:
-
-1. Specify the null and the alternative hypotheses:
-
-\[H_0: \beta_1= R\] 
-\[H_0: \beta_1\neq R\] 
-
-where $R$ can be any numerical value.
-
-2. Compute the t-ratio:
-
-\[t=\frac{\hat{\beta_1}-R}{s.e.(\hat{\beta_1})}\]
-
-where $s.e.(\hat{\beta_1})=\sqrt{Var(\hat{\beta_1})}$
-
-
-3. Under the null hypothesis, and assuming that the error term is normally distributed, we can show that the above t-ratio follows a t-distribution with $N-2$ degrees of freedom. The decision rule is given by:
-
-\[|t|>t_c, \  reject \ H_0\]
-
-where $t_c$ is the critical value that can be obtained from the t-distribution table for a given level of significance.
-
-```{block2, type="rmdNote"}
-
-**Test of Statistical Significance**: If we use $R=0$, then the test becomes:
-  
-\[H_0: \beta_1= 0\] 
-\[H_0: \beta_1\neq 0\]  
-  
-
-If the null hypothesis is true, then there is no statistically significant effect of X on Y.  Most statistical softwares provide the t-ratio and the associated p-values for this test by default. Note that the results of this test cannot be used for inferring the economic significane of the effect of X on Y. For that the magnitude of $\hat{\beta_1}$ is more informative.
-
-
-```
-
-```{example, name="Test of Statistical Significance"}
-Let us go back to our example of returns to education and the estimation results provided in  Table \@ref(tab:ch3table6). The hypotheses for statistical significance of the effect of education on wages is given by:
-  
-\[H_0: \beta_1= 0\] 
-\[H_0: \beta_1\neq 0\] 
-
-
-From the estimation results, we notice that the t-ratio for the coefficient of years of schooling is 11.785. Note that the p-value is less than 0.05. Hence, using the p-value rule we will reject the null hypothesis and conclude that the effect of education on wages is **statistically significant**. You can also look at the critical value from the t-distribution at 5\% level of significance, two-sided, and with $N-2=998$ degrees of freedom. The corresponding value is 1.96 which is less than the absolute value of the t-ratio, leading us to reject the null hypothesis as well.
-
-```
-
-### Confidence interval for regression coefficients
-
-Note that for every regression coefficient in our model, we can compute the 95\% confidence interval. For example, for the slope coefficient estimate, the 95\% confidence interval is given by:
-
-\[C.I.(\hat{\beta_1}) =   \left[\hat{\beta_1}-t_{c,2-sided} \times s.e.(\hat{\beta_1}),\hat{\beta_1}+t_{c,2-sided} \times s.e.(\hat{\beta_1}) \right]\]
-
-where where $t_{c,2-sided}$ is the critical value that can be obtained from the t-distribution table for a given level of significance (usually 5\%) and degrees of freedom. 
-
-```{example, name="Confidence interval"}
-Again, using the returns to education example and results from Table \@ref(tab:ch3table6), the 95\% confidence interval is given by:
-  
-  \[[0.106-1.96\times 0.009, 0.106+1.96\times 0.009]=[0.088,0.124]\]
-
-Notice that becuase, $0$ is not part of the confidence interval, we can infer that the effect of education on wage is statistically significant.
-```
 
 ## Problems{-}
 
-```{exercise}
-
-Consider the following regression model:\[Y_i= \beta_0 + \beta_1 X_i^3 + \epsilon_i\]
-
-a. Is this model considered a **linear regression** in parameters?
-
-b. Write down the equation for the population regression function.
-
-c.  Suppose after using OLS you obtain: $\hat{\beta_0}=12$ and $\hat{\beta_1}=-0.14$. Write down the equation for the predicted value.
-
-```
-
-```{exercise}
-
-Suppose you have the following data on two variables:
-  
-| $ID$ |  $Y_i$ | $X_i$ |
-|:--:|:--:|:-:|
-|  1 | 7 | 4 |
-|  2 |  9 | 8 |
-|  3 | 11 | 5 |
-|  4 | 13 | 7 |
-  
-a. Using OLS, compute the estimator for the slope coefficient ($\beta_1$) and the intercept ($\beta_0) for the following model:
-  
-\[Y_i = \beta_0 + \beta_1 X_i + \epsilon_i\]
-
-b. Compute residuals ($e_i$) for each observation. 
-
-c. Show that $\sum_{i=1}^4 e_i=0$ and $\sum_{i=1}^4 e_iX_i=0$.
-
-```
-
-```{exercise}
-
-Suppose you have the following data on sales (Y) and advertising expenditure (X):
-  
-| $ID$ |  $Y_i$ | $X_i$ |
-|:--:|:--:|:-:|
-|  1 | 8 | 5 |
-|  2 |  10 | 9 |
-|  3 | 12 | 7 |
-|  4 | 14 | 9 |
-  
-a. Using OLS, compute the estimator for the slope coefficient ($\beta_1$) and the intercept ($\beta_0) for the following model:
-  
-\[ln(Y_i) = \beta_0 + \beta_1 ln(X_i) + \epsilon_i\]
-
-b. Interpret the estimated slope coefficient. 
-
-```
-
-
-```{exercise}
-Suppose you have the following regression model:
-  
-  \[Y_i=\beta_0 + \beta_1 ln(X_i) +\epsilon_i\]
-
-After estimating this model in R, you obtain the following output:
-  
-| Variable  | b      | s.e.(b) | t-stat | p-value |
-|:-----------:|--------:|---------:|--------:|---------:|
-| Intercept | -0.004 | 0.003   | 1.333  | 0.242   |
-| Ln(X)     | 0.887  | 0.277   | 3.202  | 0.003   | 
-  
-Suppose sample size is 36 and the R-squared is 0.48.
-   
-
-a. Interpret the slope coefficients.
-
-b. Test whether the slope coefficient is statistically significant.
-
-c. Compute the 95\% confidence interval for the slope coefficients.
-
-d. Interpret $R^2$ of this model.
-
-```
-
 ## Solutions{-}
 
-**Exercise 3.1:**
-
-a. Yes, because both $\beta_0$ and $\beta_1$  enter linearly in the model.
-
-b. The population regression function is given by:
-
-\[E(Y_i|X_i)=\beta_0 + \beta_1 X_i^3\]
-
-c. The predicted value is given by:
-
-\[\widehat{Y_i}=12 - 0.14 X_i^3\]
-
-
-**Exercise 3.2:**
-
-a. Using OLS we get $\widehat{\beta_0}=6.4$ and $\widehat{\beta_1}=0.6$.
-
-b. $e_i=Y_i-\widehat{Y_i}=Y_i - 6.4-0.6X_i$. Hence,
-
-| $ID$ |  $Y_i$ | $X_i$ | $e_i$|
-|:--:|:--:|:-:|:-:|
-|  1 | 7 | 4 | -1.8|
-|  2 |  9 | 8 |-2.2|
-|  3 | 11 | 5 |1.6|
-|  4 | 13 | 7 |2.4|
-
-c. It is easy to show that sum of residuals from above table is 0. Similarly you can show the sum of residuals multiplied by X is 0.
-
-**Exercise 3.3:**
-
-a. You need to first compute natural logs of both Y and X. You will get:
-
-| $ID$ |  $Y_i$ | $X_i$ |
-|:--:|:--:|:-:|
-|  1 | 2.08 | 1.61 |
-|  2 |  2.30 | 2.20 |
-|  3 | 2.48| 1.95 |
-|  4 | 2.64 | 2.20|
-
-Now apply OLS to get  $\widehat{\beta_0}=1.1191$ and $\widehat{\beta_1}=0.6311$.
-
-b. Because both variables are in logs, the interpretation of the slope is in terms of elasticity. Hence, if X increases by 1\%, then Y increases by 0.6311%.
-
-**Exercise 3.4:**
-
-a. Because Y is in levels but X is in logs, the interpretation is in terms of semi-logs. So if X increases by 1 \%, Y increases by 0.00887 units.
-
-b. Using the p-value rule, the R output suggests that the coefficient of X is statisticall significant. This is because p-value is 0.003 which is less than the level of significance of 5\%. Hence, we will reject the null hypothesis that the slope coefficient is equal to 0.
-
-c. Using the confidence interval formula and critical value from t-distribution of 2.042 we get:
-
-\[CI(\beta_1): 0.887 \pm 0.277 \times 2.042=(0.3214,1.4526)\]
-
-d. An R-squared of 0.48 indicates the 48\% of the total variation in the dependent variable is explained by our model.

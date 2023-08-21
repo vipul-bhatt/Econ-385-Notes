@@ -1,0 +1,20 @@
+# Discrete Choice Model
+
+## Binary Dependent Variable
+
+So far we have discussed how we can use a dummy variable as a regressor in our model. For example, if we want to capture the effect of sex on wages, we can simply include a binary variable capturing sex of a worker in our regression model. However, some times we may want to use a dummy variable as our dependent variable. Consider the following scenario. Suppose you are managing financial risk for a major bank and you have been tasked to explain what factors leads to a default on a personal loan. In this case, the dependent variable of interest is categorical in nature. A person who borrowed can either default or not. In this case our outcome of interest is a binary variable:
+
+\[Y_i= \begin{cases}
+1 & \text{if observation} \ i \ \text{defaults on loan} \\
+0 & \text{otherwise}
+\end{cases}\]
+
+Suppose one of the important factor affecting default is the financial wellbeing of a person, denoted by $X$. Then, our simple regression model is given by:
+
+\[Y_i=\beta_0+\beta_1\cdot X_i +\epsilon_i\]
+
+In this chapter we will learn how do we estimate this model and more importantly, why using OLS may not be a good idea when our dependent variable is a dummy variable.
+
+## Problems{-}
+
+## Solutions{-}
